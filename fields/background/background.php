@@ -17,10 +17,6 @@ class CSFramework_Option_background extends CSFramework_Options {
 
     echo $this->element_before();
 
-    if( isset( $this->field['settings'] ) ){
-      extract( $this->field['settings'] );
-    }
-
     $value_defaults = array(
       'image'       => '',
       'repeat'      => '',
@@ -35,7 +31,6 @@ class CSFramework_Option_background extends CSFramework_Options {
     $button_title   = ( isset( $button_title ) ) ? $button_title : __( 'Upload', CS_TEXTDOMAIN );
     $frame_title    = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', CS_TEXTDOMAIN );
     $insert_title   = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', CS_TEXTDOMAIN );
-    $defaults       = ( isset( $this->field['defaults'] ) ) ? $this->field['defaults'] : array();
 
     echo '<div class="cs-uploader">';
     echo '<input type="text" name="'. $this->element_name( '[image]' ) .'" value="'. $this->value['image'] .'"'. $this->element_class( 'cs-attachment' ) . $this->element_attributes() .'/>';
@@ -102,6 +97,8 @@ class CSFramework_Option_background extends CSFramework_Options {
           'data-atts'     => 'bgcolor',
         ),
         'value'           => $this->value['color'],
+        'default'         => ( isset( $this->field['default']['color'] ) ) ? $this->field['default']['color'] : '',
+        'rgba'            => ( isset( $this->field['rgba'] ) && $this->field['rgba'] === false ) ? false : '',
     ) );
     echo '</fieldset>';
 
