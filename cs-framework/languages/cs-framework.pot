@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cs-framework\n"
-"POT-Creation-Date: 2015-01-04 13:33:35+00:00\n"
+"POT-Creation-Date: 2015-01-10 16:17:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,25 +45,25 @@ msgstr ""
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 
-#: classes/shortcode.class.php:78 classes/shortcode.class.php:86
+#: classes/shortcode.class.php:81 classes/shortcode.class.php:89
 #: fields/textarea/textarea.php:27
 msgid "Add Shortcode"
 msgstr ""
 
-#: classes/shortcode.class.php:88
+#: classes/shortcode.class.php:91
 msgid "Select a shortcode"
 msgstr ""
 
-#: classes/shortcode.class.php:104
+#: classes/shortcode.class.php:107
 msgid "Insert Shortcode"
 msgstr ""
 
-#: fields/background/background.php:35 fields/background/background.php:36
+#: fields/background/background.php:31 fields/background/background.php:32
 #: fields/upload/upload.php:23 fields/upload/upload.php:24
 msgid "Upload"
 msgstr ""
 
-#: fields/background/background.php:37 fields/upload/upload.php:25
+#: fields/background/background.php:33 fields/upload/upload.php:25
 msgid "Use Image"
 msgstr ""
 
