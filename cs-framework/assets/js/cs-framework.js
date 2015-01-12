@@ -718,7 +718,8 @@
             // multiple-shortcode each
             $('[' + cloneID + ']', '.cs-dialog-load').each( function() {
 
-                var _this_clone = $(this), _clone_id = _this_clone.data('clone-id');
+                var _this_clone = $(this),
+                    _clone_id   = _this_clone.data('clone-id');
 
                 send_to_shortcode += '[' + _clone_id; // begin: multiple-shortcode
 
@@ -750,14 +751,17 @@
             // multiple-shortcode each
             $('[' + cloneID + ']', '.cs-dialog-load').each( function() {
 
-              var _this_clone = $(this), _clone_id = _this_clone.data('clone-id');
+              var _this_clone = $(this),
+                  _clone_id   = _this_clone.data('clone-id');
 
               send_to_shortcode += '[' + _clone_id; // begin: multiple-shortcode
 
               // multiple-shortcode attributes
               $('[' + cloneAttr + ']', _this_clone.find('.cs-element').not('.hidden') ).each( function() {
 
-                var _this_multiple = $(this), _atts_multiple = _this_multiple.data('clone-atts');
+                var _this_multiple = $(this),
+                    _atts_multiple = _this_multiple.data('clone-atts');
+
 
                 // is not attr content, add shortcode attribute else write content and close shortcode tag
                 if( _atts_multiple !== 'content' ){
@@ -843,14 +847,14 @@
 
     base.validate_atts = function( _atts, _this ) {
 
-      if( deploy_atts === _atts ) { return ''; }
+      var el_value;
+
+      if( _this.data('check') !== undefined && deploy_atts === _atts ) { return ''; }
 
       deploy_atts = _atts;
 
-      var el_value;
-
-      if ( _this.closest('.pseudo-field').hasClass('hidden') === true ){ return ''; }
-      if ( _this.hasClass('pseudo') === true ){ return ''; }
+      if ( _this.closest('.pseudo-field').hasClass('hidden') === true ) { return ''; }
+      if ( _this.hasClass('pseudo') === true ) { return ''; }
 
       if( _this.is(':checkbox') || _this.is(':radio') ) {
         el_value = _this.is(':checked') ? _this.val() : '';
