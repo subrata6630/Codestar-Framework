@@ -34,7 +34,7 @@ if ( ! function_exists( 'cs_set_option' ) ) {
 
     $options = get_option( CS_OPTION );
 
-    if( ! empty( $option_name ) && ! empty( $options[$option_name] ) ) {
+    if( ! empty( $option_name ) ) {
       $options[$option_name] = $new_value;
       update_option( CS_OPTION, $options );
     }
