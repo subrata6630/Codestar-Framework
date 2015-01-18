@@ -75,6 +75,8 @@
             console.log( html );
             blockflood = true;
           },
+          dataType: "xml",
+          crossDomain: true,
         });
 
       } else {
