@@ -34,7 +34,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
         $value = '';
       }
 
-    } else if ( ! is_array( $this->multilang ) && ( isset( $this->value['multilang'] ) ) ) {
+    } else if ( ! is_array( $this->multilang ) && isset( $this->value['multilang'] ) && is_array( $this->value ) ) {
 
       $value = array_values( $this->value );
       $value = $value[0];
