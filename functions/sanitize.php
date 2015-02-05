@@ -118,3 +118,18 @@ if( ! function_exists( 'cs_sanitize_title' ) ) {
   }
   add_filter( 'cs_sanitize_title', 'cs_sanitize_title' );
 }
+
+/**
+ *
+ * Text clean
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if( ! function_exists( 'cs_sanitize_clean' ) ) {
+  function cs_sanitize_clean( $value ) {
+    return $value;
+  }
+  add_filter( 'cs_sanitize_clean', 'cs_sanitize_clean', 10, 2 );
+}

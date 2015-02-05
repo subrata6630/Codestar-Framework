@@ -169,6 +169,11 @@ class CSFramework_Metabox extends CSFramework_Abstract{
         $meta_value  = get_post_meta( $post_id, $request_key, true );
         $request     = ( isset( $_POST[$request_key] ) ) ? $_POST[$request_key] : array();
 
+        // ignore _nonce
+        if( isset( $request['_nonce'] ) ) {
+          unset( $request['_nonce'] );
+        }
+
         foreach( $request_value['sections'] as $key => $section ) {
 
           if( isset( $section['fields'] ) ) {

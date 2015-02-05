@@ -112,13 +112,15 @@ class CSFramework_Customize extends CSFramework_Abstract {
 
         $setting_name = CS_CUSTOMIZE . '[' . $setting['name'] .']';
 
-        $default_setting_args = array(
-          'type'              => 'option',
-          'capability'        => 'edit_theme_options',
-        );
-
         // add_setting
-        $wp_customize->add_setting( $setting_name, wp_parse_args( $setting, $default_setting_args ) );
+        $wp_customize->add_setting( $setting_name,
+          wp_parse_args( $setting, array(
+              'type'              => 'option',
+              'capability'        => 'edit_theme_options',
+              'sanitize_callback' => 'cs_sanitize_clean',
+            )
+          )
+        );
 
 
         // add_setting
