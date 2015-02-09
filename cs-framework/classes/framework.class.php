@@ -199,7 +199,7 @@ class CSFramework extends CSFramework_Abstract {
         foreach( $section['fields'] as $field ) {
 
           // ignore santize and validate if element multilangual
-          if ( isset( $field['type'] ) && ! isset( $field['multilang'] ) && isset( $field['id'] ) && isset( $request[$field['id']] ) ) {
+          if ( isset( $field['type'] ) && ! isset( $field['multilang'] ) && isset( $field['id'] ) ) {
 
             // sanitize options
             $sanitize_type = $field['type'];
