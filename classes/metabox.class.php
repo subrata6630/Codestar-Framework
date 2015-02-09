@@ -180,7 +180,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
             foreach( $section['fields'] as $field ) {
 
-              if( isset( $field['type'] ) && isset( $field['id'] ) && isset( $request[$field['id']] ) ) {
+              if( isset( $field['type'] ) && isset( $field['id'] ) ) {
 
                 $field_value = ( isset( $_POST[$request_key][$field['id']] ) ) ? $_POST[$request_key][$field['id']] : '';
 
