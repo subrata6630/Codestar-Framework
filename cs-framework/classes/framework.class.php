@@ -202,6 +202,7 @@ class CSFramework extends CSFramework_Abstract {
           if ( isset( $field['type'] ) && ! isset( $field['multilang'] ) && isset( $field['id'] ) ) {
 
             // sanitize options
+            $request_value = isset( $request[$field['id']] ) ? $request[$field['id']] : '';
             $sanitize_type = $field['type'];
 
             if( isset( $field['sanitize'] ) ) {
@@ -209,13 +210,13 @@ class CSFramework extends CSFramework_Abstract {
             }
 
             if( $sanitize_type !== false && has_filter( 'cs_sanitize_'. $sanitize_type ) ) {
-              $request[$field['id']] = apply_filters( 'cs_sanitize_' . $sanitize_type, $request[$field['id']], $field, $section['fields'] );
+              $request[$field['id']] = apply_filters( 'cs_sanitize_' . $sanitize_type, $request_value, $field, $section['fields'] );
             }
 
             // validate options
             if ( isset( $field['validate'] ) && has_filter( 'cs_validate_'. $field['validate'] ) ) {
 
-              $validate = apply_filters( 'cs_validate_' . $field['validate'], $request[$field['id']], $field, $section['fields'] );
+              $validate = apply_filters( 'cs_validate_' . $field['validate'], $request_value, $field, $section['fields'] );
 
               if( ! empty( $validate ) ) {
                 $this->add_settings_error( $validate, 'error', $field['id'] );
