@@ -180,7 +180,7 @@ class CSFramework extends CSFramework_Abstract {
       foreach ( $this->sections as $value ) {
         if( $value['name'] == $_POST['cs_section_id'] ) {
           foreach ( $value['fields'] as $field ) {
-            if( isset( $field['id'] ) && isset( $request[$field['id']] ) ) {
+            if( isset( $field['id'] ) ) {
               if( isset( $field['default'] ) ) {
                 $request[$field['id']] = $field['default'];
               } else {
