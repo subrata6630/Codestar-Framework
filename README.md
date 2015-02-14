@@ -73,6 +73,7 @@ themename/cs-framework-override/fields/text/text.php
 - Number
 - Icons
 - Group
+- Wysiwyg
 - Upload
 - Switcher
 - Background
