@@ -2,7 +2,7 @@
 title: Framework Configure
 type: h2
 weight: 301
-filename: config/framework_configure.md
+filename: configure/framework_configure.md
 ---
 
 {% highlight text hl_lines=5 %}

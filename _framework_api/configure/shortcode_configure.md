@@ -2,7 +2,7 @@
 title: Shortcode Configure
 type: h2
 weight: 303
-filename: config/shortcode_configure.md
+filename: configure/shortcode_configure.md
 ---
 
 {% highlight text hl_lines=7 %}

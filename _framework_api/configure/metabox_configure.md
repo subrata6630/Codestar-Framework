@@ -2,7 +2,7 @@
 title: Metabox Configure
 type: h2
 weight: 302
-filename: config/metabox_configure.md
+filename: configure/metabox_configure.md
 ---
 
 {% highlight text hl_lines=6 %}
@@ -85,10 +85,11 @@ $metaboxes[]      = array(
 CSFramework_Metabox::instance( $metaboxes );
 {% endhighlight %}
 
-> How to getting options
+> You should use `_custom_meta_options` as this is the id for your key declared into metabox config file. So your code must look like this:
 
 {% highlight php startinline %}
-$meta_data = get_post_meta( POST_ID, '_custom_meta_options', true );
+
+$meta_data = get_post_meta( THE_POST_ID, '_custom_meta_options', true );
 var_dump( $meta_data );
 {% endhighlight %}
 

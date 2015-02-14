@@ -2,7 +2,7 @@
 title: Customize Configure
 type: h2
 weight: 304
-filename: config/customize_configure.md
+filename: configure/customize_configure.md
 ---
 
 {% highlight text hl_lines=8 %}
