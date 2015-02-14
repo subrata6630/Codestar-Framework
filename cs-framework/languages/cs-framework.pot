@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cs-framework\n"
-"POT-Creation-Date: 2015-01-12 14:59:30+00:00\n"
+"POT-Creation-Date: 2015-02-14 12:38:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,23 +13,23 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
-#: classes/framework.class.php:331
+#: classes/framework.class.php:332
 msgid "Settings saved."
 msgstr ""
 
-#: classes/framework.class.php:332
+#: classes/framework.class.php:333
 msgid "Save"
 msgstr ""
 
-#: classes/framework.class.php:332
+#: classes/framework.class.php:333
 msgid "Saving..."
 msgstr ""
 
-#: classes/framework.class.php:333
+#: classes/framework.class.php:334
 msgid "Restore"
 msgstr ""
 
-#: classes/framework.class.php:335
+#: classes/framework.class.php:336
 msgid "show all options"
 msgstr ""
 

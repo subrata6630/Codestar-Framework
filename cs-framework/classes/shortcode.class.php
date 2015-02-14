@@ -71,13 +71,13 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
   }
 
   // add shortcode button
-  public function media_shortcode_button() {
+  public function media_shortcode_button( $editor_id ) {
 
     global $post;
 
     $post_type = ( isset( $post ) ) ? $post->post_type : '';
 
-    if( ! in_array( $post_type, $this->exclude_post_types ) ) {
+    if( ! in_array( $post_type, $this->exclude_post_types ) || $editor_id !== 'content' ) {
       echo '<a href="#" class="button button-primary cs-shortcode">'. __( 'Add Shortcode', CS_TEXTDOMAIN ) .'</a>';
     }
 

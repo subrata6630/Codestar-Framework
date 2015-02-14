@@ -1366,61 +1366,79 @@ $options[]   = array(
       'fields'    => array(
 
         array(
-          'id'        => 'unique_image_select_1',
-          'type'      => 'image_select',
-          'title'     => 'Image Select (Checkbox)',
-          'options'   => array(
-            'value-1' => 'http://dummyimage.com/150x125/2ecc71/fff.png',
-            'value-2' => 'http://dummyimage.com/150x125/e74c3c/fff.png',
-            'value-3' => 'http://dummyimage.com/150x125/ffbc00/fff.png',
-            'value-4' => 'http://dummyimage.com/150x125/3498db/fff.png',
+          'id'           => 'unique_image_select_1',
+          'type'         => 'image_select',
+          'title'        => 'Image Select (Checkbox)',
+          'options'      => array(
+            'value-1'    => 'http://dummyimage.com/150x125/2ecc71/fff.png',
+            'value-2'    => 'http://dummyimage.com/150x125/e74c3c/fff.png',
+            'value-3'    => 'http://dummyimage.com/150x125/ffbc00/fff.png',
+            'value-4'    => 'http://dummyimage.com/150x125/3498db/fff.png',
           ),
         ),
 
         array(
-          'id'        => 'unique_image_select_2',
-          'type'      => 'image_select',
-          'title'     => 'Image Select (Checkbox) with Default',
-          'options'   => array(
-            'value-1' => 'http://dummyimage.com/125x100/34495e/fff.png',
-            'value-2' => 'http://dummyimage.com/125x100/3498db/fff.png',
-            'value-3' => 'http://dummyimage.com/125x100/e74c3c/fff.png',
-            'value-4' => 'http://dummyimage.com/125x100/2ecc71/fff.png',
-            'value-5' => 'http://dummyimage.com/125x100/ffbc00/fff.png',
+          'id'           => 'unique_image_select_2',
+          'type'         => 'image_select',
+          'title'        => 'Image Select (Checkbox) with Default',
+          'options'      => array(
+            'value-1'    => 'http://dummyimage.com/125x100/34495e/fff.png',
+            'value-2'    => 'http://dummyimage.com/125x100/3498db/fff.png',
+            'value-3'    => 'http://dummyimage.com/125x100/e74c3c/fff.png',
+            'value-4'    => 'http://dummyimage.com/125x100/2ecc71/fff.png',
+            'value-5'    => 'http://dummyimage.com/125x100/ffbc00/fff.png',
           ),
-          'default'   => 'value-2'
+          'default'      => 'value-2'
         ),
 
         array(
-          'id'        => 'unique_image_select_3',
-          'type'      => 'image_select',
-          'title'     => 'Image Select (Radio) with Default',
-          'options'   => array(
-            'value-1' => 'http://dummyimage.com/150x150/2ecc71/fff.png',
-            'value-2' => 'http://dummyimage.com/150x150/e74c3c/fff.png',
-            'value-3' => 'http://dummyimage.com/150x150/ffbc00/fff.png',
-            'value-4' => 'http://dummyimage.com/150x150/3498db/fff.png',
+          'id'           => 'unique_image_select_3',
+          'type'         => 'image_select',
+          'title'        => 'Image Select (Radio) with Default',
+          'options'      => array(
+            'value-1'    => 'http://dummyimage.com/150x150/2ecc71/fff.png',
+            'value-2'    => 'http://dummyimage.com/150x150/e74c3c/fff.png',
+            'value-3'    => 'http://dummyimage.com/150x150/ffbc00/fff.png',
+            'value-4'    => 'http://dummyimage.com/150x150/3498db/fff.png',
           ),
-          'radio'     => true,
-          'default'   => 'value-3'
+          'radio'        => true,
+          'default'      => 'value-3'
         ),
 
         array(
-          'id'        => 'unique_image_select_4',
-          'type'      => 'image_select',
-          'title'     => 'Image Select (Radio) with Default',
-          'options'   => array(
-            'value-1' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-2' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-3' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-4' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-5' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-6' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-7' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
-            'value-8' => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+          'id'           => 'unique_image_select_4',
+          'type'         => 'image_select',
+          'title'        => 'Image Select (Radio) with Default',
+          'options'      => array(
+            'value-1'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-2'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-3'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-4'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-5'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-6'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-7'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-8'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
           ),
-          'radio'     => true,
-          'default'   => 'value-2'
+          'radio'        => true,
+          'default'      => 'value-2'
+        ),
+
+        array(
+          'id'           => 'unique_image_select_5',
+          'type'         => 'image_select',
+          'title'        => 'Image Select with Multi Select',
+          'options'      => array(
+            'value-1'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-2'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-3'    => 'http://dummyimage.com/80x80/e74c3c/fff.png',
+            'value-4'    => 'http://dummyimage.com/80x80/ffbc00/fff.png',
+            'value-5'    => 'http://dummyimage.com/80x80/3498db/fff.png',
+            'value-6'    => 'http://dummyimage.com/80x80/2ecc71/fff.png',
+            'value-7'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+            'value-8'    => 'http://dummyimage.com/80x80/2c3e50/fff.png',
+          ),
+          'multi_select' => true,
+          'default'      => array( 'value-3', 'value-4', 'value-5', 'value-6' )
         ),
 
       ),
@@ -1582,6 +1600,37 @@ $options[]   = array(
 
       ),
     ), // end: other options
+
+
+    // -----------------------------
+    // begin: new fields options   -
+    // -----------------------------
+    array(
+      'name'         => 'new_options',
+      'title'        => 'New Options Fields',
+      'icon'         => 'fa fa-inbox',
+      'fields'       => array(
+
+        array(
+          'id'       => 'wysiwyg_1',
+          'type'     => 'wysiwyg',
+          'title'    => 'Wysiwyg',
+        ),
+
+        array(
+          'id'       => 'wysiwyg_2',
+          'type'     => 'wysiwyg',
+          'title'    => 'Wysiwyg with Custom Settings',
+          'settings' => array(
+            'textarea_rows' => 5,
+            'tinymce'       => false,
+            'media_buttons' => false,
+          )
+        ),
+
+
+      ),
+    ), // end: new fields options
 
 
   )
