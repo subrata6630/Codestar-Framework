@@ -354,6 +354,19 @@
   }
 }
 
+// wysiwyg
+.cs-field-wysiwyg{
+  textarea{
+    width: 100%;
+    max-width: 100%;
+    min-height: 125px;
+  }
+
+  .wp-editor-container{
+    clear: none;
+  }
+}
+
 // number
 .cs-field-number{
   input{
@@ -496,27 +509,24 @@
   label{
     display: inline-block;
     margin: 5px;
-    background-color: #fff;
-    border: 2px solid #eee;
-    @include transition(all 0.15s ease-out);
-
-    &.selected{
-      border-color: #333;
-
-      img {
-        @include opacity(1);
-      }
-    }
 
     img{
       max-width: 100%;
       vertical-align: bottom;
+      background-color: #fff;
+      border: 2px solid #eee;
       @include opacity(0.75);
+      @include transition(all 0.15s ease-out);
     }
   }
 
   input{
     display: none;
+
+    &:checked ~ img {
+      border-color: #333;
+      @include opacity(1);
+    }
   }
 }
 

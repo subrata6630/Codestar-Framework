@@ -18,7 +18,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
     echo $this->element_before();
 
     $googlefonts      = array();
-    $google_json      = json_decode( wp_remote_retrieve_body( wp_remote_get( CS_URI .'/fields/typography/google-fonts.json' ) ) );
+    $google_json      = json_decode( @file_get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
     $defaults_value   = array( 'family' => 'Arial', 'variant' => 'regular' );
     $default_variants = array( 'regular', 'italic', '700', '700italic', 'inherit' );
     $websafe_fonts    = cs_get_websafe_fonts();

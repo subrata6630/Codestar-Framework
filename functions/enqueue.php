@@ -18,8 +18,8 @@ if( ! function_exists( 'cs_admin_enqueue_scripts' ) ) {
     wp_enqueue_style( 'wp-jquery-ui-dialog' );
 
     // framework core styles
-    wp_enqueue_style( 'cs-framework', CS_URI .'/assets/css/cs-framework.min.css', array(), '1.0.0', 'all' );
-    wp_enqueue_style( 'font-awesome', CS_URI .'/assets/css/font-awesome.min.css', array(), '4.2.0', 'all' );
+    wp_enqueue_style( 'cs-framework', CS_URI .'/assets/css/cs-framework.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'font-awesome', CS_URI .'/assets/css/font-awesome.css', array(), '4.2.0', 'all' );
 
     // wp core scripts
     wp_enqueue_script( 'wp-color-picker' );
@@ -28,8 +28,8 @@ if( ! function_exists( 'cs_admin_enqueue_scripts' ) ) {
     wp_enqueue_script( 'jquery-ui-accordion' );
 
     // framework core scripts
-    wp_enqueue_script( 'cs-plugins',    CS_URI .'/assets/js/cs-plugins.min.js',    array(), '1.0.0', true );
-    wp_enqueue_script( 'cs-framework',  CS_URI .'/assets/js/cs-framework.min.js',  array( 'cs-plugins' ), '1.0.0', true );
+    wp_enqueue_script( 'cs-plugins',    CS_URI .'/assets/js/cs-plugins.js',    array(), '1.0.0', true );
+    wp_enqueue_script( 'cs-framework',  CS_URI .'/assets/js/cs-framework.js',  array( 'cs-plugins' ), '1.0.0', true );
 
   }
   add_action( 'admin_enqueue_scripts', 'cs_admin_enqueue_scripts' );

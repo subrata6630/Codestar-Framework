@@ -158,33 +158,8 @@
   $.fn.CSFRAMEWORK_IMAGE_SELECTOR = function() {
     return this.each(function() {
 
-      $('label', this).each( function () {
-
-        var $label = $(this);
-
-        if ( $label.find('input').is(':checked') ) {
-          $label.addClass('selected');
-        }
-
-        $label.bind('click', function() {
-
-          var $element = $(this);
-
-          if ( $element.find('input').is(':checked') ) {
-
-            $element.addClass('selected').siblings().removeClass('selected');
-
-          } else {
-
-            $element.removeClass('selected');
-            $element.parent().find('input').each( function() {
-              $(this).attr('checked', false);
-            });
-
-          }
-
-        });
-
+      $(this).find('label').on('click', function () {
+        $(this).siblings().find('input').attr('checked', false);
       });
 
     });

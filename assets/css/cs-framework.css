@@ -731,6 +731,15 @@
   margin-bottom: 10px;
 }
 
+.cs-field-wysiwyg textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 125px;
+}
+.cs-field-wysiwyg .wp-editor-container {
+  clear: none;
+}
+
 .cs-field-number input {
   width: 70px;
 }
@@ -853,26 +862,24 @@
 .cs-field-image_select label {
   display: inline-block;
   margin: 5px;
+}
+.cs-field-image_select label img {
+  max-width: 100%;
+  vertical-align: bottom;
   background-color: #fff;
   border: 2px solid #eee;
+  opacity: 0.75;
   -moz-transition: all 0.15s ease-out;
   -o-transition: all 0.15s ease-out;
   -webkit-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
-.cs-field-image_select label.selected {
-  border-color: #333;
-}
-.cs-field-image_select label.selected img {
-  opacity: 1;
-}
-.cs-field-image_select label img {
-  max-width: 100%;
-  vertical-align: bottom;
-  opacity: 0.75;
-}
 .cs-field-image_select input {
   display: none;
+}
+.cs-field-image_select input:checked ~ img {
+  border-color: #333;
+  opacity: 1;
 }
 
 .cs-field-upload input {
