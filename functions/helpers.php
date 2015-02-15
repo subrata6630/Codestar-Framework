@@ -1,35 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
- * Array search key & value
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! function_exists( 'cs_array_search' ) ) {
-  function cs_array_search( $array, $key, $value ) {
-
-    $results = array();
-
-    if ( is_array( $array ) ) {
-      if ( isset( $array[$key] ) && $array[$key] == $value ) {
-        $results[] = $array;
-      }
-
-      foreach ( $array as $sub_array ) {
-        $results = array_merge( $results, cs_array_search( $sub_array, $key, $value ) );
-      }
-
-    }
-
-    return $results;
-
-  }
-}
-
-/**
- *
  * Add framework element
  *
  * @since 1.0.0
@@ -223,6 +194,35 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
     }
 
     do_action( 'cs_load_option_fields' );
+
+  }
+}
+
+/**
+ *
+ * Array search key & value
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_array_search' ) ) {
+  function cs_array_search( $array, $key, $value ) {
+
+    $results = array();
+
+    if ( is_array( $array ) ) {
+      if ( isset( $array[$key] ) && $array[$key] == $value ) {
+        $results[] = $array;
+      }
+
+      foreach ( $array as $sub_array ) {
+        $results = array_merge( $results, cs_array_search( $sub_array, $key, $value ) );
+      }
+
+    }
+
+    return $results;
 
   }
 }
