@@ -37,24 +37,13 @@
  * ----------------------------------------------------------------------------------------------------
  *
  */
+
+// ------------------------------------------------------------------------------------------------
+require_once dirname( __FILE__ ) .'/cs-framework-path.php';
+// ------------------------------------------------------------------------------------------------
+
 if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) ) {
   function cs_framework_init() {
-
-    // ------------------------------------------------------------------------------------------------
-    require_once dirname( __FILE__ ) .'/cs-framework-path.php';
-    $get_path = cs_get_path_locate();
-    // ------------------------------------------------------------------------------------------------
-
-    // constants
-    defined( 'CS_VERSION' )           or  define( 'CS_VERSION',           '1.0.0' );
-    defined( 'CS_USING_AS_THEME' )    or  define( 'CS_USING_AS_THEME',    $get_path['as_theme'] );
-    defined( 'CS_BASENAME' )          or  define( 'CS_BASENAME',          $get_path['basename'] );
-    defined( 'CS_DIR' )               or  define( 'CS_DIR',               $get_path['dir'] );
-    defined( 'CS_URI' )               or  define( 'CS_URI',               $get_path['uri'] );
-    defined( 'CS_TEXTDOMAIN' )        or  define( 'CS_TEXTDOMAIN',        'cs-framework' );
-    defined( 'CS_OPTION' )            or  define( 'CS_OPTION',            '_cs_options' );
-    defined( 'CS_METABOX' )           or  define( 'CS_METABOX',           '_cs_meta_options' );
-    defined( 'CS_CUSTOMIZE' )         or  define( 'CS_CUSTOMIZE',         '_cs_customize_options' );
 
     // active modules
     defined( 'CS_ACTIVE_FRAMEWORK' )  or  define( 'CS_ACTIVE_FRAMEWORK',  true );
@@ -63,28 +52,25 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
     defined( 'CS_ACTIVE_CUSTOMIZE' )  or  define( 'CS_ACTIVE_CUSTOMIZE',  true );
 
     // helpers
-    cs_locate_template ( CS_BASENAME .'/functions/helpers.php'   );
-    cs_locate_template ( CS_BASENAME .'/functions/actions.php'   );
-    cs_locate_template ( CS_BASENAME .'/functions/enqueue.php'   );
-    cs_locate_template ( CS_BASENAME .'/functions/sanitize.php'  );
-    cs_locate_template ( CS_BASENAME .'/functions/validate.php'  );
+    cs_locate_template ( 'functions/helpers.php'   );
+    cs_locate_template ( 'functions/actions.php'   );
+    cs_locate_template ( 'functions/enqueue.php'   );
+    cs_locate_template ( 'functions/sanitize.php'  );
+    cs_locate_template ( 'functions/validate.php'  );
 
     // classes
-    cs_locate_template ( CS_BASENAME .'/classes/abstract.class.php'   );
-    cs_locate_template ( CS_BASENAME .'/classes/options.class.php'    );
-    cs_locate_template ( CS_BASENAME .'/classes/framework.class.php'  );
-    cs_locate_template ( CS_BASENAME .'/classes/metabox.class.php'    );
-    cs_locate_template ( CS_BASENAME .'/classes/shortcode.class.php'  );
-    cs_locate_template ( CS_BASENAME .'/classes/customize.class.php'  );
+    cs_locate_template ( 'classes/abstract.class.php'   );
+    cs_locate_template ( 'classes/options.class.php'    );
+    cs_locate_template ( 'classes/framework.class.php'  );
+    cs_locate_template ( 'classes/metabox.class.php'    );
+    cs_locate_template ( 'classes/shortcode.class.php'  );
+    cs_locate_template ( 'classes/customize.class.php'  );
 
     // configs
-    cs_locate_template ( CS_BASENAME .'/config/framework.config.php'  );
-    cs_locate_template ( CS_BASENAME .'/config/metabox.config.php'    );
-    cs_locate_template ( CS_BASENAME .'/config/shortcode.config.php'  );
-    cs_locate_template ( CS_BASENAME .'/config/customize.config.php'  );
-
-    // load textdomain
-    load_textdomain( CS_TEXTDOMAIN, CS_DIR . '/languages/'. cs_get_locale() .'.mo' );
+    cs_locate_template ( 'config/framework.config.php'  );
+    cs_locate_template ( 'config/metabox.config.php'    );
+    cs_locate_template ( 'config/shortcode.config.php'  );
+    cs_locate_template ( 'config/customize.config.php'  );
 
   }
   add_action( 'init', 'cs_framework_init', 10 );
