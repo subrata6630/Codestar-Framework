@@ -6,7 +6,7 @@ filename: options/extendable.md
 ---
 
 {% highlight php startinline %}
-// cs-framework/fields/password.php
+// cs-framework/fields/password/password.php
 /**
  *
  * Field: Password
