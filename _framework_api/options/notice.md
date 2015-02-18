@@ -1,7 +1,7 @@
 ---
 title: Notice
 type: h2
-weight: 218
+weight: 220
 filename: options/notice.md
 ---
 
