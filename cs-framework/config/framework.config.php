@@ -1477,6 +1477,110 @@ $options[]   = array(
 
 
     // -----------------------------
+    // begin: new fields options   -
+    // -----------------------------
+    array(
+      'name'         => 'wysiwyg_options',
+      'title'        => 'Wysiwyg',
+      'icon'         => 'fa fa-check',
+      'fields'       => array(
+
+        array(
+          'id'       => 'wysiwyg_1',
+          'type'     => 'wysiwyg',
+          'title'    => 'Wysiwyg',
+        ),
+
+        array(
+          'id'       => 'wysiwyg_2',
+          'type'     => 'wysiwyg',
+          'title'    => 'Wysiwyg with Custom Settings',
+          'settings' => array(
+            'textarea_rows' => 5,
+            'tinymce'       => false,
+            'media_buttons' => false,
+          )
+        ),
+
+
+      ),
+    ), // end: new fields options
+
+
+    // -----------------------------
+    // begin: image options        -
+    // -----------------------------
+    array(
+      'name'          => 'image_options',
+      'title'         => 'Image',
+      'icon'          => 'fa fa-check',
+      'fields'        => array(
+
+        array(
+          'id'        => 'image_1',
+          'type'      => 'image',
+          'title'     => 'Image',
+        ),
+
+        array(
+          'id'        => 'image_2',
+          'type'      => 'image',
+          'title'     => 'Image with After Text',
+          'desc'      => 'Lets write some description for this image field.',
+          'help'      => 'This option field is useful. You will love it!',
+        ),
+
+        array(
+          'id'        => 'image_3',
+          'type'      => 'image',
+          'title'     => 'Image with Custom Title',
+          'add_title' => 'Add Logo',
+        ),
+
+      ),
+    ), // end: image options
+
+
+    // -----------------------------
+    // begin: gallery options      -
+    // -----------------------------
+    array(
+      'name'            => 'gallery_options',
+      'title'           => 'Gallery',
+      'icon'            => 'fa fa-check',
+      'fields'          => array(
+
+        array(
+          'id'          => 'gallery_1',
+          'type'        => 'gallery',
+          'title'       => 'Gallery',
+        ),
+
+        array(
+          'id'          => 'gallery_2',
+          'type'        => 'gallery',
+          'title'       => 'Gallery with Custom Title',
+          'add_title'   => 'Add Images',
+          'edit_title'  => 'Edit Images',
+          'clear_title' => 'Remove Images',
+        ),
+
+        array(
+          'id'          => 'gallery_3',
+          'type'        => 'gallery',
+          'title'       => 'Gallery with Custom Title',
+          'desc'        => 'Lets write some description for this image field.',
+          'help'        => 'This option field is useful. You will love it!',
+          'add_title'   => 'Add Image(s)',
+          'edit_title'  => 'Edit Image(s)',
+          'clear_title' => 'Clear Image(s)',
+        ),
+
+      ),
+    ), // end: gallery options
+
+
+    // -----------------------------
     // begin: backup option        -
     // -----------------------------
     array(
@@ -1600,38 +1704,6 @@ $options[]   = array(
 
       ),
     ), // end: other options
-
-
-    // -----------------------------
-    // begin: new fields options   -
-    // -----------------------------
-    array(
-      'name'         => 'new_options',
-      'title'        => 'New Options Fields',
-      'icon'         => 'fa fa-inbox',
-      'fields'       => array(
-
-        array(
-          'id'       => 'wysiwyg_1',
-          'type'     => 'wysiwyg',
-          'title'    => 'Wysiwyg',
-        ),
-
-        array(
-          'id'       => 'wysiwyg_2',
-          'type'     => 'wysiwyg',
-          'title'    => 'Wysiwyg with Custom Settings',
-          'settings' => array(
-            'textarea_rows' => 5,
-            'tinymce'       => false,
-            'media_buttons' => false,
-          )
-        ),
-
-
-      ),
-    ), // end: new fields options
-
 
   )
 );

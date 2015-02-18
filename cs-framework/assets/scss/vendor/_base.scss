@@ -540,7 +540,8 @@
 
 // background
 .cs-field-background{
-  .cs-attachment{
+
+  .cs-uploader input{
     width: 340px;
     max-width: 100%;
     margin-bottom: 5px;
@@ -844,6 +845,78 @@
     background-color: #f7f7f7;
     @include border-radius(3px);
     @include box-shadow(0 1px 0 rgba(black, 0.08));
+  }
+}
+
+// image & gallery
+.cs-field-image{
+
+  .cs-preview{
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    @include border-radius(2px);
+    @include box-shadow(0 1px 0 rgba(black, 0.08));
+
+    img{
+      max-height: 90px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .cs-remove{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: #e14d43;
+    @include opacity(0.8);
+    @include transition(opacity .2s);
+
+    &:hover{
+      @include opacity(1);
+    }
+  }
+}
+
+// gallery
+.cs-field-gallery{
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li{
+      display: inline-block;
+      position: relative;
+      padding: 4px;
+      margin: 0 5px 10px 0;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      @include border-radius(2px);
+      @include box-shadow(0 1px 0 rgba(black, 0.08));
+
+      img{
+        max-height: 60px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .button{
+    margin-right: 5px;
   }
 }
 

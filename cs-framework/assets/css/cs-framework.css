@@ -887,7 +887,7 @@
   max-width: 100%;
 }
 
-.cs-field-background .cs-attachment {
+.cs-field-background .cs-uploader input {
   width: 340px;
   max-width: 100%;
   margin-bottom: 5px;
@@ -1144,6 +1144,75 @@
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.cs-field-image .cs-preview {
+  display: inline-block;
+  position: relative;
+  padding: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+.cs-field-image .cs-preview img {
+  max-height: 90px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cs-field-image .cs-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #e14d43;
+  opacity: 0.8;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.cs-field-image .cs-remove:hover {
+  opacity: 1;
+}
+
+.cs-field-gallery ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.cs-field-gallery ul li {
+  display: inline-block;
+  position: relative;
+  padding: 4px;
+  margin: 0 5px 10px 0;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+.cs-field-gallery ul li img {
+  max-height: 60px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cs-field-gallery .button {
+  margin-right: 5px;
 }
 
 .cs-warning-primary {

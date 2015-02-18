@@ -172,14 +172,14 @@
   $.fn.CSFRAMEWORK_UPLOADER = function() {
     return this.each(function() {
 
-      var el           = $(this),
-          media_upload = el.find('.cs-add-media'),
-          send_val     = el.find('.cs-attachment'),
-          frame;
+      var $this  = $(this),
+          $add   = $this.find('.cs-add'),
+          $input = $this.find('input'),
+          wp_media_frame;
 
-      media_upload.click( function( event ) {
+      $add.on('click', function( e ) {
 
-        event.preventDefault();
+        e.preventDefault();
 
         // Check if the `wp.media.gallery` API exists.
         if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) {
@@ -187,43 +187,214 @@
         }
 
         // If the media frame already exists, reopen it.
-        if ( frame ) {
-          frame.open();
+        if ( wp_media_frame ) {
+          wp_media_frame.open();
           return;
         }
 
         // Create the media frame.
-        frame = wp.media.frames.customUpload = wp.media({
+        wp_media_frame = wp.media({
 
           // Set the title of the modal.
-          title: media_upload.data('frame-title'),
+          title: $add.data('frame-title'),
 
           // Tell the modal to show only images.
           library: {
-            type: media_upload.data('upload-type')
+            type: $add.data('upload-type')
           },
 
           // Customize the submit button.
           button: {
             // Set the text of the button.
-            text: media_upload.data('insert-title'),
+            text: $add.data('insert-title'),
           }
 
         });
 
         // When an image is selected, run a callback.
-        frame.on( 'select', function() {
+        wp_media_frame.on( 'select', function() {
 
           // Grab the selected attachment.
-          var attachment = frame.state().get('selection').first();
-
-          send_val.val( attachment.attributes.url ).trigger('keyup');
+          var attachment = wp_media_frame.state().get('selection').first();
+          $input.val( attachment.attributes.url ).trigger('keyup');
 
         });
 
         // Finally, open the modal.
-        frame.open();
+        wp_media_frame.open();
 
+      });
+
+    });
+
+  };
+  // ======================================================
+
+  // ======================================================
+  // CSFRAMEWORK IMAGE UPLOADER
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_IMAGE_UPLOADER = function() {
+    return this.each(function() {
+
+      var $this    = $(this),
+          $add     = $this.find('.cs-add'),
+          $preview = $this.find('.cs-image-preview'),
+          $remove  = $this.find('.cs-remove'),
+          $input   = $this.find('input'),
+          $img     = $this.find('img'),
+          wp_media_frame;
+
+      $add.on('click', function( e ) {
+
+        e.preventDefault();
+
+        // Check if the `wp.media.gallery` API exists.
+        if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) {
+          return;
+        }
+
+        // If the media frame already exists, reopen it.
+        if ( wp_media_frame ) {
+          wp_media_frame.open();
+          return;
+        }
+
+        // Create the media frame.
+        wp_media_frame = wp.media({
+          library: {
+            type: 'image'
+          }
+        });
+
+        // When an image is selected, run a callback.
+        wp_media_frame.on( 'select', function() {
+
+          var attachment = wp_media_frame.state().get('selection').first().attributes;
+          var thumbnail  = ( typeof attachment.sizes.thumbnail !== 'undefined' ) ? attachment.sizes.thumbnail.url : attachment.url;
+
+          $preview.removeClass('hidden');
+          $img.attr('src', thumbnail);
+          $input.val( attachment.id ).trigger('keyup');
+
+        });
+
+        // Finally, open the modal.
+        wp_media_frame.open();
+
+      });
+
+      // Remove image
+      $remove.on('click', function() {
+        $input.val('');
+        $preview.addClass('hidden');
+      });
+
+    });
+
+  };
+  // ======================================================
+
+  // ======================================================
+  // CSFRAMEWORK IMAGE GALLERY
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_IMAGE_GALLERY = function() {
+    return this.each(function() {
+
+      var $this   = $(this),
+          $edit   = $this.find('.cs-edit'),
+          $remove = $this.find('.cs-remove'),
+          $list   = $this.find('ul'),
+          $input  = $this.find('input'),
+          $img    = $this.find('img'),
+          wp_media_frame,
+          wp_media_click;
+
+      $this.on('click', '.cs-add, .cs-edit', function( e ) {
+
+        var $el   = $(this),
+            what  = ( $el.hasClass('cs-edit') ) ? 'edit' : 'add',
+            state = ( what === 'edit' ) ? 'gallery-edit' : 'gallery-library';
+
+        e.preventDefault();
+
+        // Check if the `wp.media.gallery` API exists.
+        if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) {
+          return;
+        }
+
+        // If the media frame already exists, reopen it.
+        if ( wp_media_frame ) {
+          wp_media_frame.open();
+          wp_media_frame.setState(state);
+          return;
+        }
+
+        // Create the media frame.
+        wp_media_frame = wp.media({
+          library: {
+            type: 'image'
+          },
+          frame: 'post',
+          state: 'gallery',
+          multiple: true
+        });
+
+        // Open the media frame.
+        wp_media_frame.on('open', function() {
+
+          var ids = $input.val();
+
+          if ( ids ) {
+
+            var get_array = ids.split(',');
+            var library   = wp_media_frame.state('gallery-edit').get('library');
+
+            wp_media_frame.setState(state);
+
+            get_array.forEach(function(id) {
+              var attachment = wp.media.attachment(id);
+              library.add( attachment ? [ attachment ] : [] );
+            });
+
+          }
+        });
+
+        // When an image is selected, run a callback.
+        wp_media_frame.on( 'update', function() {
+
+          var inner  = '';
+          var ids    = [];
+          var images = wp_media_frame.state().get('library');
+
+          images.each(function(attachment) {
+
+            var attributes = attachment.attributes;
+            var thumbnail  = ( typeof attributes.sizes.thumbnail !== 'undefined' ) ? attributes.sizes.thumbnail.url : attributes.url;
+
+            inner += '<li><img src="'+ thumbnail +'"></li>';
+            ids.push(attributes.id);
+
+          });
+
+          $input.val(ids);
+          $list.html('').append(inner);
+          $remove.removeClass('hidden');
+          $edit.removeClass('hidden');
+
+        });
+
+        // Finally, open the modal.
+        wp_media_frame.open();
+        wp_media_click = what;
+
+      });
+
+      // Remove image
+      $remove.on('click', function() {
+        $input.val('');
+        $list.html('');
+        $remove.addClass('hidden');
+        $edit.addClass('hidden');
       });
 
     });
@@ -1044,6 +1215,8 @@
   $.CSFRAMEWORK.RELOAD_PLUGINS = function() {
     $('.chosen').CSFRAMEWORK_CHOSEN();
     $('.cs-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
+    $('.cs-image-upload').CSFRAMEWORK_IMAGE_UPLOADER();
+    $('.cs-image-gallery').CSFRAMEWORK_IMAGE_GALLERY();
     $('.cs-uploader').CSFRAMEWORK_UPLOADER();
     $('.cs-typography').CSFRAMEWORK_TYPOGRAPHY();
     $('.cs-color-picker').CSFRAMEWORK_COLORPICKER();
