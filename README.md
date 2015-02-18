@@ -61,7 +61,7 @@ themename/cs-framework-override/fields/text/text.php
 - Fields Dependencies
 - Supports Multilangual Fields
 - Reset/Restore/Export/Import Options
-- WordPress 4.0.1+ Compatibility
+- WordPress 4.1+ Compatibility
 - and so much more...
 
 ## Options Fields
@@ -73,8 +73,10 @@ themename/cs-framework-override/fields/text/text.php
 - Number
 - Icons
 - Group
-- Wysiwyg
+- Image
 - Upload
+- Gallery
+- Wysiwyg
 - Switcher
 - Background
 - Color Picker

@@ -157,7 +157,8 @@ class CSFramework extends CSFramework_Abstract {
 
     // set section id
     if( isset( $_POST['cs_section_id'] ) ) {
-      set_transient( 'cs_section_id', $_POST['cs_section_id'], 5 );
+      $transient_time = ( cs_language_defaults() ) ? 30 : 5;
+      set_transient( 'cs_section_id', $_POST['cs_section_id'], $transient_time );
     }
 
     // import
