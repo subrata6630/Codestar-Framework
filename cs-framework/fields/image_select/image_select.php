@@ -19,7 +19,7 @@ class CSFramework_Option_image_select extends CSFramework_Options {
     $input_attr  = ( ! empty( $this->field['multi_select'] ) ) ? '[]' : '';
 
     echo $this->element_before();
-    echo ( empty( $input_attr ) ) ? '<div class="cs-image-select">' : '';
+    echo ( empty( $input_attr ) ) ? '<div class="cs-field-image-select">' : '';
 
     if( isset( $this->field['options'] ) ) {
       $options  = $this->field['options'];

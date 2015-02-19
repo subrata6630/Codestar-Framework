@@ -167,6 +167,42 @@
   // ======================================================
 
   // ======================================================
+  // CSFRAMEWORK SORTER
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_SORTER = function() {
+    return this.each(function() {
+
+      var $this     = $(this),
+          $enabled  = $this.find('.cs-enabled'),
+          $disabled = $this.find('.cs-disabled');
+
+      $enabled.sortable({
+        connectWith: $disabled,
+        placeholder: 'ui-sortable-placeholder',
+        update: function( event, ui ){
+
+          var $el = ui.item.find('input');
+
+          if( ui.item.parent().hasClass('cs-enabled') ) {
+            $el.attr('name', $el.attr('name').replace('disabled', 'enabled'));
+          } else {
+            $el.attr('name', $el.attr('name').replace('enabled', 'disabled'));
+          }
+
+        }
+      });
+
+      // avoid conflict
+      $disabled.sortable({
+        connectWith: $enabled,
+        placeholder: 'ui-sortable-placeholder'
+      });
+
+    });
+  };
+  // ======================================================
+
+  // ======================================================
   // CSFRAMEWORK MEDIA UPLOADER / UPLOAD
   // ------------------------------------------------------
   $.fn.CSFRAMEWORK_UPLOADER = function() {
@@ -1214,12 +1250,13 @@
   // ------------------------------------------------------
   $.CSFRAMEWORK.RELOAD_PLUGINS = function() {
     $('.chosen').CSFRAMEWORK_CHOSEN();
-    $('.cs-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
-    $('.cs-image-upload').CSFRAMEWORK_IMAGE_UPLOADER();
-    $('.cs-image-gallery').CSFRAMEWORK_IMAGE_GALLERY();
-    $('.cs-uploader').CSFRAMEWORK_UPLOADER();
-    $('.cs-typography').CSFRAMEWORK_TYPOGRAPHY();
-    $('.cs-color-picker').CSFRAMEWORK_COLORPICKER();
+    $('.cs-field-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
+    $('.cs-field-image').CSFRAMEWORK_IMAGE_UPLOADER();
+    $('.cs-field-gallery').CSFRAMEWORK_IMAGE_GALLERY();
+    $('.cs-field-sorter').CSFRAMEWORK_SORTER();
+    $('.cs-field-upload').CSFRAMEWORK_UPLOADER();
+    $('.cs-field-typography').CSFRAMEWORK_TYPOGRAPHY();
+    $('.cs-field-color-picker').CSFRAMEWORK_COLORPICKER();
     $('.cs-help').tooltip({html:true, placement:'left', container:'body'});
   };
 

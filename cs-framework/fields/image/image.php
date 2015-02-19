@@ -27,11 +27,9 @@ class CSFramework_Option_Image extends CSFramework_Options {
       $preview    = $attachment[0];
     }
 
-    echo '<div class="cs-image-upload">';
     echo '<div class="cs-image-preview'. $hidden .'"><div class="cs-preview"><i class="fa fa-times cs-remove"></i><img src="'. $preview .'" alt="preview" /></div></div>';
     echo '<a href="#" class="button button-primary cs-add">'. $add .'</a>';
     echo '<input type="hidden" name="'. $this->element_name() .'" value="'. $this->element_value() .'"'. $this->element_class() . $this->element_attributes() .'/>';
-    echo '</div>';
 
     echo $this->element_after();
 

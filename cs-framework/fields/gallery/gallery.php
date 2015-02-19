@@ -23,7 +23,6 @@ class CSFramework_Option_Gallery extends CSFramework_Options {
     $clear  = ( ! empty( $this->field['clear_title'] ) ) ? $this->field['clear_title'] : __( 'Clear', CS_TEXTDOMAIN );
     $hidden = ( empty( $value ) ) ? ' hidden' : '';
 
-    echo '<div class="cs-image-gallery">';
     echo '<ul>';
 
     if( ! empty( $value ) ) {
@@ -42,7 +41,6 @@ class CSFramework_Option_Gallery extends CSFramework_Options {
     echo '<a href="#" class="button cs-edit'. $hidden .'">'. $edit .'</a>';
     echo '<a href="#" class="button button-primary cs-warning-primary cs-remove'. $hidden .'">'. $clear .'</a>';
     echo '<input type="hidden" name="'. $this->element_name() .'" value="'. $value .'"'. $this->element_class() . $this->element_attributes() .'/>';
-    echo '</div>';
 
     echo $this->element_after();
 
