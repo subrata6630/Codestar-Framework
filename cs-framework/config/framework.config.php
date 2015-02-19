@@ -31,47 +31,6 @@ $options[]      = array(
 
     // begin: a field
     array(
-      'id'             => 'sorter_1',
-      'type'           => 'sorter',
-      'title'          => 'Sorter',
-      'default'        => array(
-        'enabled'      => array(
-          'highlights' => 'Highlights',
-          'slider'     => 'Slider',
-          'staticpage' => 'Static Page',
-          'services'   => 'Services'
-        ),
-        'disabled'     => array(
-          'models'     => 'Models'
-        ),
-      ),
-    ),
-    // end: a field
-
-    // begin: a field
-    array(
-      'id'             => 'sorter_2',
-      'type'           => 'sorter',
-      'title'          => 'Sorter',
-      'default'        => array(
-        'enabled'      => array(
-          'highlights' => 'Highlights',
-          'slider'     => 'Slider',
-          'staticpage' => 'Static Page',
-          'services'   => 'Services'
-        ),
-        'disabled'     => array(
-          'models'     => 'Models'
-        ),
-      ),
-      'enabled_title'  => 'Actives',
-      'disabled_title' => 'InActives',
-      'after'          => '<p class="cs-text-desc">Drag and Drop For Active and InActive Modules, This is a new option field! Enjoy.</p>',
-    ),
-    // end: a field
-
-    // begin: a field
-    array(
       'id'      => 'text_1',
       'type'    => 'text',
       'title'   => 'Text',
