@@ -1581,6 +1581,58 @@ $options[]   = array(
 
 
     // -----------------------------
+    // begin: sorter options       -
+    // -----------------------------
+    array(
+      'name'     => 'sorter_options',
+      'title'    => 'Sorter',
+      'icon'     => 'fa fa-check',
+      'fields'   => array(
+
+        array(
+          'id'             => 'sorter_1',
+          'type'           => 'sorter',
+          'title'          => 'Sorter',
+          'default'        => array(
+            'enabled'      => array(
+              'bmw'        => 'BMW',
+              'mercedes'   => 'Mercedes',
+              'volkswagen' => 'Volkswagen',
+            ),
+            'disabled'     => array(
+              'ferrari'    => 'Ferrari',
+              'mustang'    => 'Mustang',
+            ),
+          ),
+        ),
+
+        array(
+          'id'             => 'sorter_2',
+          'type'           => 'sorter',
+          'title'          => 'Sorter',
+          'default'        => array(
+            'enabled'      => array(
+              'blue'       => 'Blue',
+              'green'      => 'Green',
+              'red'        => 'Red',
+              'yellow'     => 'Yellow',
+              'orange'     => 'Orange',
+              'ocean'      => 'Ocean',
+            ),
+            'disabled'     => array(
+              'black'      => 'Black',
+              'white'      => 'White',
+            ),
+          ),
+          'enabled_title'  => 'Active Colors',
+          'disabled_title' => 'Deactive Colors',
+        ),
+      ),
+
+    ), // end: sorter options
+
+
+    // -----------------------------
     // begin: backup option        -
     // -----------------------------
     array(
