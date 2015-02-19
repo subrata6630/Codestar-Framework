@@ -763,6 +763,7 @@
           position: {my: 'center', at: 'center', of: window},
           open: function() {
 
+            $("body").css({ overflow: 'hidden' });
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
 
@@ -781,6 +782,7 @@
 
           },
           close: function() {
+            $("body").css({ overflow: 'inherit' });
             shortcode_target = false;
           }
         });
