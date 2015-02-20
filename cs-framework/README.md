@@ -76,6 +76,7 @@ themename/cs-framework-override/fields/text/text.php
 - Image
 - Upload
 - Gallery
+- Sorter
 - Wysiwyg
 - Switcher
 - Background
