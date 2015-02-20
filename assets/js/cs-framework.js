@@ -274,7 +274,7 @@
 
           $preview.removeClass('hidden');
           $img.attr('src', thumbnail);
-          $input.val( attachment.id ).trigger('keyup');
+          $input.val( attachment.id ).trigger('change');
 
         });
 
