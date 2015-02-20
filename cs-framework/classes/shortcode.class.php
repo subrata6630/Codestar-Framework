@@ -56,6 +56,7 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
       $this->shortcodes = $this->get_shortcodes();
       $this->addAction( 'media_buttons', 'media_shortcode_button', 99 );
       $this->addAction( 'admin_footer', 'shortcode_dialog', 99 );
+      $this->addAction( 'customize_controls_print_footer_scripts', 'shortcode_dialog', 99 );
       $this->addAction( 'wp_ajax_cs-get-shortcode', 'shortcode_generator', 99 );
 
     }

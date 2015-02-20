@@ -1127,6 +1127,9 @@
   background-color: #f2dede;
 }
 
+.cs-field-icon input {
+  display: none;
+}
 .cs-field-icon .button {
   margin-right: 5px;
 }
@@ -1150,6 +1153,9 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
+.cs-field-image input {
+  display: none;
+}
 .cs-field-image .cs-preview {
   display: inline-block;
   position: relative;
@@ -1191,6 +1197,9 @@
   opacity: 1;
 }
 
+.cs-field-gallery input {
+  display: none;
+}
 .cs-field-gallery ul {
   margin: 0;
   padding: 0;
@@ -1217,6 +1226,7 @@
 }
 .cs-field-gallery .button {
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .cs-field-sorter .ui-sortable-placeholder {
@@ -1487,6 +1497,16 @@
 #cs-icon-dialog .cs-icon-title:first-child {
   margin-top: 0;
   border-top: 0;
+}
+
+.cs-shortcode-scrolling,
+.cs-icon-scrolling {
+  overflow: hidden;
+  height: 100%;
+}
+.cs-shortcode-scrolling .wp-full-overlay,
+.cs-icon-scrolling .wp-full-overlay {
+  z-index: 1;
 }
 
 #side-sortables .cs-content .cs-section-title {

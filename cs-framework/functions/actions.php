@@ -51,4 +51,5 @@ if( ! function_exists( 'cs_set_icons' ) ) {
 
   }
   add_action( 'admin_footer', 'cs_set_icons' );
+  add_action( 'customize_controls_print_footer_scripts', 'cs_set_icons' );
 }

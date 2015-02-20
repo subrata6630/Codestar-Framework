@@ -827,6 +827,10 @@
 // icons
 .cs-field-icon{
 
+  input{
+    display: none;
+  }
+
   .button{
     margin-right: 5px;
   }
@@ -848,8 +852,12 @@
   }
 }
 
-// image & gallery
+// image
 .cs-field-image{
+
+  input{
+    display: none;
+  }
 
   .cs-preview{
     display: inline-block;
@@ -892,6 +900,10 @@
 // gallery
 .cs-field-gallery{
 
+  input{
+    display: none;
+  }
+
   ul{
     margin: 0;
     padding: 0;
@@ -917,6 +929,7 @@
 
   .button{
     margin-right: 5px;
+    margin-bottom: 5px;
   }
 }
 
@@ -1212,6 +1225,16 @@
       margin-top: 0;
       border-top: 0;
     }
+  }
+}
+
+.cs-shortcode-scrolling,
+.cs-icon-scrolling{
+  overflow: hidden;
+  height: 100%;
+
+  .wp-full-overlay{
+    z-index: 1;
   }
 }
 

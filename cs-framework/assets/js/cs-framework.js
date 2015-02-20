@@ -321,7 +321,7 @@
 
       // Remove image
       $remove.on('click', function() {
-        $input.val('');
+        $input.val('').trigger('keyup');
         $preview.addClass('hidden');
       });
 
@@ -412,7 +412,7 @@
 
           });
 
-          $input.val(ids);
+          $input.val(ids).trigger('keyup');
           $list.html('').append(inner);
           $remove.removeClass('hidden');
           $edit.removeClass('hidden');
@@ -427,8 +427,8 @@
 
       // Remove image
       $remove.on('click', function() {
-        $input.val('');
         $list.html('');
+        $input.val('').trigger('keyup');
         $remove.addClass('hidden');
         $edit.addClass('hidden');
       });
@@ -668,6 +668,9 @@
           position: {my: 'center', at: 'center', of: window},
           open: function() {
 
+            // fix scrolling
+            $('body').addClass('cs-icon-scrolling');
+
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
 
@@ -685,6 +688,9 @@
             }).resize();
 
           },
+          close: function() {
+            $('body').removeClass('cs-icon-scrolling');
+          }
         });
 
         // load icons
@@ -708,7 +714,7 @@
                 var icon = $(this).data('icon');
 
                 $parent.find('i').removeAttr('class').addClass(icon);
-                $parent.find('input').val(icon);
+                $parent.find('input').val(icon).trigger('keyup');
                 $parent.find('.cs-icon-preview').removeClass('hidden');
                 $parent.find('.cs-icon-remove').removeClass('hidden');
                 $dialog.dialog('close');
@@ -751,7 +757,7 @@
             $parent = $this.closest('.cs-icon-select');
 
         $parent.find('.cs-icon-preview').addClass('hidden');
-        $parent.find('input').val('');
+        $parent.find('input').val('').trigger('keyup');
         $this.addClass('hidden');
 
       });
@@ -799,6 +805,9 @@
           position: {my: 'center', at: 'center', of: window},
           open: function() {
 
+            // fix scrolling
+            $('body').addClass('cs-shortcode-scrolling');
+
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
 
@@ -817,6 +826,7 @@
 
           },
           close: function() {
+            $('body').removeClass('cs-shortcode-scrolling');
             shortcode_target = false;
           }
         });
@@ -989,7 +999,7 @@
 
         if( shortcode_target ) {
           var textarea_target = shortcode_button.next();
-          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) );
+          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) ).trigger('keyup');
         } else {
           window.send_to_editor( send_to_shortcode );
         }

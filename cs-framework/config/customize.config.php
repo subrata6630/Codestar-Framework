@@ -169,6 +169,42 @@ $options[]        = array(
       ),
     ),
 
+    // codestar image
+    array(
+      'name'      => 'codestar_image',
+      'control'   => array(
+        'type'    => 'cs_field',
+        'options' => array(
+          'type'  => 'image',
+          'title' => 'Codestar Image Field',
+        ),
+      ),
+    ),
+
+    // codestar gallery
+    array(
+      'name'      => 'codestar_gallery',
+      'control'   => array(
+        'type'    => 'cs_field',
+        'options' => array(
+          'type'  => 'gallery',
+          'title' => 'Codestar Gallery Field',
+        ),
+      ),
+    ),
+
+    // codestar icon
+    array(
+      'name'      => 'codestar_icon',
+      'control'   => array(
+        'type'    => 'cs_field',
+        'options' => array(
+          'type'  => 'icon',
+          'title' => 'Codestar Icon Field',
+        ),
+      ),
+    ),
+
     // codestar image select
     array(
       'name'          => 'codestar_image_select',
