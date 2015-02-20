@@ -330,7 +330,6 @@
       color: #ffbc00;
     }
   }
-
 }
 
 // text
@@ -692,6 +691,7 @@
   .ui-widget-header .ui-state-default {
     border: 1px solid $acc_border_color;
     background: $acc_background_color;
+    @include transition(border-color 0.15s);
   }
 
   .ui-state-focus,
@@ -827,6 +827,10 @@
 // icons
 .cs-field-icon{
 
+  input{
+    display: none;
+  }
+
   .button{
     margin-right: 5px;
   }
@@ -848,8 +852,12 @@
   }
 }
 
-// image & gallery
+// image
 .cs-field-image{
+
+  input{
+    display: none;
+  }
 
   .cs-preview{
     display: inline-block;
@@ -892,6 +900,10 @@
 // gallery
 .cs-field-gallery{
 
+  input{
+    display: none;
+  }
+
   ul{
     margin: 0;
     padding: 0;
@@ -917,6 +929,68 @@
 
   .button{
     margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+// sorter
+.cs-field-sorter{
+
+  .ui-sortable-placeholder{
+    height: 20px;
+    border: 1px dashed #f1c40f;
+    background-color: #fffae4;
+  }
+
+  .cs-modules{
+    float: left;
+    width: 45%;
+    margin-right: 10px;
+  }
+
+  .cs-disabled,
+  .cs-enabled{
+    padding: 5px 15px;
+    border: 1px dashed #ddd;
+    background-color: #fff;
+  }
+
+  .cs-disabled{
+    li{
+      @include transition(opacity 0.15s);
+      @include opacity(0.5);
+    }
+
+    .ui-sortable-helper{
+      @include opacity(1);
+    }
+  }
+
+  h3{
+    font-size: 14px;
+    margin: 0 0 15px 0;
+  }
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 62px;
+
+    li{
+      margin: 10px 0;
+      padding: 10px 15px;
+      cursor: move;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #e5e5e5;
+      background-color: #fafafa;
+      @include transition(border-color 0.15s);
+
+      &:hover{
+        border-color: #bbb;
+      }
+    }
   }
 }
 
@@ -1151,6 +1225,16 @@
       margin-top: 0;
       border-top: 0;
     }
+  }
+}
+
+.cs-shortcode-scrolling,
+.cs-icon-scrolling{
+  overflow: hidden;
+  height: 100%;
+
+  .wp-full-overlay{
+    z-index: 1;
   }
 }
 

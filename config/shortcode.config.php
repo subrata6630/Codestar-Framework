@@ -21,6 +21,34 @@ $options[]     = array(
 
         // shortcode option field
         array(
+          'id'    => 'icon',
+          'type'  => 'icon',
+          'title' => 'Icon',
+        ),
+
+        array(
+          'id'    => 'image',
+          'type'  => 'image',
+          'title' => 'Image',
+        ),
+
+        // shortcode option field
+        array(
+          'id'    => 'gallery',
+          'type'  => 'gallery',
+          'title' => 'Gallery',
+        ),
+
+        // shortcode option field
+        array(
+          'id'    => 'title',
+          'type'  => 'text',
+          'title' => 'Title',
+        ),
+
+
+        // shortcode option field
+        array(
           'id'    => 'title',
           'type'  => 'text',
           'title' => 'Title',

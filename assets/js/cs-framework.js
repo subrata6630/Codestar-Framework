@@ -167,6 +167,42 @@
   // ======================================================
 
   // ======================================================
+  // CSFRAMEWORK SORTER
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_SORTER = function() {
+    return this.each(function() {
+
+      var $this     = $(this),
+          $enabled  = $this.find('.cs-enabled'),
+          $disabled = $this.find('.cs-disabled');
+
+      $enabled.sortable({
+        connectWith: $disabled,
+        placeholder: 'ui-sortable-placeholder',
+        update: function( event, ui ){
+
+          var $el = ui.item.find('input');
+
+          if( ui.item.parent().hasClass('cs-enabled') ) {
+            $el.attr('name', $el.attr('name').replace('disabled', 'enabled'));
+          } else {
+            $el.attr('name', $el.attr('name').replace('enabled', 'disabled'));
+          }
+
+        }
+      });
+
+      // avoid conflict
+      $disabled.sortable({
+        connectWith: $enabled,
+        placeholder: 'ui-sortable-placeholder'
+      });
+
+    });
+  };
+  // ======================================================
+
+  // ======================================================
   // CSFRAMEWORK MEDIA UPLOADER / UPLOAD
   // ------------------------------------------------------
   $.fn.CSFRAMEWORK_UPLOADER = function() {
@@ -274,7 +310,7 @@
 
           $preview.removeClass('hidden');
           $img.attr('src', thumbnail);
-          $input.val( attachment.id ).trigger('change');
+          $input.val( attachment.id ).trigger('keyup');
 
         });
 
@@ -285,7 +321,7 @@
 
       // Remove image
       $remove.on('click', function() {
-        $input.val('');
+        $input.val('').trigger('keyup');
         $preview.addClass('hidden');
       });
 
@@ -376,7 +412,7 @@
 
           });
 
-          $input.val(ids);
+          $input.val(ids).trigger('keyup');
           $list.html('').append(inner);
           $remove.removeClass('hidden');
           $edit.removeClass('hidden');
@@ -391,8 +427,8 @@
 
       // Remove image
       $remove.on('click', function() {
-        $input.val('');
         $list.html('');
+        $input.val('').trigger('keyup');
         $remove.addClass('hidden');
         $edit.addClass('hidden');
       });
@@ -632,6 +668,9 @@
           position: {my: 'center', at: 'center', of: window},
           open: function() {
 
+            // fix scrolling
+            $('body').addClass('cs-icon-scrolling');
+
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
 
@@ -649,6 +688,9 @@
             }).resize();
 
           },
+          close: function() {
+            $('body').removeClass('cs-icon-scrolling');
+          }
         });
 
         // load icons
@@ -672,7 +714,7 @@
                 var icon = $(this).data('icon');
 
                 $parent.find('i').removeAttr('class').addClass(icon);
-                $parent.find('input').val(icon);
+                $parent.find('input').val(icon).trigger('keyup');
                 $parent.find('.cs-icon-preview').removeClass('hidden');
                 $parent.find('.cs-icon-remove').removeClass('hidden');
                 $dialog.dialog('close');
@@ -715,7 +757,7 @@
             $parent = $this.closest('.cs-icon-select');
 
         $parent.find('.cs-icon-preview').addClass('hidden');
-        $parent.find('input').val('');
+        $parent.find('input').val('').trigger('keyup');
         $this.addClass('hidden');
 
       });
@@ -763,7 +805,9 @@
           position: {my: 'center', at: 'center', of: window},
           open: function() {
 
-            $("body").css({ overflow: 'hidden' });
+            // fix scrolling
+            $('body').addClass('cs-shortcode-scrolling');
+
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
 
@@ -782,7 +826,7 @@
 
           },
           close: function() {
-            $("body").css({ overflow: 'inherit' });
+            $('body').removeClass('cs-shortcode-scrolling');
             shortcode_target = false;
           }
         });
@@ -955,7 +999,7 @@
 
         if( shortcode_target ) {
           var textarea_target = shortcode_button.next();
-          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) );
+          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) ).trigger('keyup');
         } else {
           window.send_to_editor( send_to_shortcode );
         }
@@ -1216,12 +1260,13 @@
   // ------------------------------------------------------
   $.CSFRAMEWORK.RELOAD_PLUGINS = function() {
     $('.chosen').CSFRAMEWORK_CHOSEN();
-    $('.cs-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
-    $('.cs-image-upload').CSFRAMEWORK_IMAGE_UPLOADER();
-    $('.cs-image-gallery').CSFRAMEWORK_IMAGE_GALLERY();
-    $('.cs-uploader').CSFRAMEWORK_UPLOADER();
-    $('.cs-typography').CSFRAMEWORK_TYPOGRAPHY();
-    $('.cs-color-picker').CSFRAMEWORK_COLORPICKER();
+    $('.cs-field-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
+    $('.cs-field-image').CSFRAMEWORK_IMAGE_UPLOADER();
+    $('.cs-field-gallery').CSFRAMEWORK_IMAGE_GALLERY();
+    $('.cs-field-sorter').CSFRAMEWORK_SORTER();
+    $('.cs-field-upload').CSFRAMEWORK_UPLOADER();
+    $('.cs-field-typography').CSFRAMEWORK_TYPOGRAPHY();
+    $('.cs-field-color-picker').CSFRAMEWORK_COLORPICKER();
     $('.cs-help').tooltip({html:true, placement:'left', container:'body'});
   };
 

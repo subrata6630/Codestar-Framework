@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cs-framework\n"
-"POT-Creation-Date: 2015-02-18 14:00:30+00:00\n"
+"POT-Creation-Date: 2015-02-20 13:30:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,16 +45,16 @@ msgstr ""
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 
-#: classes/shortcode.class.php:81 classes/shortcode.class.php:89
+#: classes/shortcode.class.php:82 classes/shortcode.class.php:90
 #: fields/textarea/textarea.php:27
 msgid "Add Shortcode"
 msgstr ""
 
-#: classes/shortcode.class.php:91
+#: classes/shortcode.class.php:92
 msgid "Select a shortcode"
 msgstr ""
 
-#: classes/shortcode.class.php:107
+#: classes/shortcode.class.php:108
 msgid "Insert Shortcode"
 msgstr ""
 
@@ -123,6 +123,14 @@ msgstr ""
 msgid "Add Image"
 msgstr ""
 
+#: fields/sorter/sorter.php:24
+msgid "Enabled Modules"
+msgstr ""
+
+#: fields/sorter/sorter.php:25
+msgid "Disabled Modules"
+msgstr ""
+
 #: fields/switcher/switcher.php:20
 msgid "on"
 msgstr ""
@@ -131,7 +139,7 @@ msgstr ""
 msgid "off"
 msgstr ""
 
-#: fields/typography/typography.php:70
+#: fields/typography/typography.php:65
 msgid "Error! Can not load json file."
 msgstr ""
 

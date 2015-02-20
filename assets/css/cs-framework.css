@@ -1015,6 +1015,10 @@
 .cs-field-group .ui-widget-header .ui-state-default {
   border: 1px solid #e5e5e5;
   background: #fafafa;
+  -moz-transition: border-color 0.15s;
+  -o-transition: border-color 0.15s;
+  -webkit-transition: border-color 0.15s;
+  transition: border-color 0.15s;
 }
 .cs-field-group .ui-state-focus,
 .cs-field-group .ui-widget-content .ui-state-focus,
@@ -1123,6 +1127,9 @@
   background-color: #f2dede;
 }
 
+.cs-field-icon input {
+  display: none;
+}
 .cs-field-icon .button {
   margin-right: 5px;
 }
@@ -1146,6 +1153,9 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
+.cs-field-image input {
+  display: none;
+}
 .cs-field-image .cs-preview {
   display: inline-block;
   position: relative;
@@ -1187,6 +1197,9 @@
   opacity: 1;
 }
 
+.cs-field-gallery input {
+  display: none;
+}
 .cs-field-gallery ul {
   margin: 0;
   padding: 0;
@@ -1213,6 +1226,60 @@
 }
 .cs-field-gallery .button {
   margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.cs-field-sorter .ui-sortable-placeholder {
+  height: 20px;
+  border: 1px dashed #f1c40f;
+  background-color: #fffae4;
+}
+.cs-field-sorter .cs-modules {
+  float: left;
+  width: 45%;
+  margin-right: 10px;
+}
+.cs-field-sorter .cs-disabled,
+.cs-field-sorter .cs-enabled {
+  padding: 5px 15px;
+  border: 1px dashed #ddd;
+  background-color: #fff;
+}
+.cs-field-sorter .cs-disabled li {
+  -moz-transition: opacity 0.15s;
+  -o-transition: opacity 0.15s;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+  opacity: 0.5;
+}
+.cs-field-sorter .cs-disabled .ui-sortable-helper {
+  opacity: 1;
+}
+.cs-field-sorter h3 {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+}
+.cs-field-sorter ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-height: 62px;
+}
+.cs-field-sorter ul li {
+  margin: 10px 0;
+  padding: 10px 15px;
+  cursor: move;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  background-color: #fafafa;
+  -moz-transition: border-color 0.15s;
+  -o-transition: border-color 0.15s;
+  -webkit-transition: border-color 0.15s;
+  transition: border-color 0.15s;
+}
+.cs-field-sorter ul li:hover {
+  border-color: #bbb;
 }
 
 .cs-warning-primary {
@@ -1430,6 +1497,16 @@
 #cs-icon-dialog .cs-icon-title:first-child {
   margin-top: 0;
   border-top: 0;
+}
+
+.cs-shortcode-scrolling,
+.cs-icon-scrolling {
+  overflow: hidden;
+  height: 100%;
+}
+.cs-shortcode-scrolling .wp-full-overlay,
+.cs-icon-scrolling .wp-full-overlay {
+  z-index: 1;
 }
 
 #side-sortables .cs-content .cs-section-title {
