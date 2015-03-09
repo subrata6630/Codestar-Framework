@@ -31,7 +31,7 @@ array(
 {% highlight php startinline %}
 $gallery = cs_get_option( 'gallery_1' );
 
-if( ! empty( $galley ) ) {
+if( ! empty( $gallery ) ) {
 
   $ids = explode( ',', $gallery );
 
