@@ -252,7 +252,7 @@
 
           // Grab the selected attachment.
           var attachment = wp_media_frame.state().get('selection').first();
-          $input.val( attachment.attributes.url ).trigger('keyup');
+          $input.val( attachment.attributes.url ).trigger('change');
 
         });
 
@@ -310,7 +310,7 @@
 
           $preview.removeClass('hidden');
           $img.attr('src', thumbnail);
-          $input.val( attachment.id ).trigger('keyup');
+          $input.val( attachment.id ).trigger('change');
 
         });
 
@@ -320,8 +320,9 @@
       });
 
       // Remove image
-      $remove.on('click', function() {
-        $input.val('').trigger('keyup');
+      $remove.on('click', function( e ) {
+        e.preventDefault();
+        $input.val('').trigger('change');
         $preview.addClass('hidden');
       });
 
@@ -412,7 +413,7 @@
 
           });
 
-          $input.val(ids).trigger('keyup');
+          $input.val(ids).trigger('change');
           $list.html('').append(inner);
           $remove.removeClass('hidden');
           $edit.removeClass('hidden');
@@ -426,9 +427,10 @@
       });
 
       // Remove image
-      $remove.on('click', function() {
+      $remove.on('click', function( e ) {
+        e.preventDefault();
         $list.html('');
-        $input.val('').trigger('keyup');
+        $input.val('').trigger('change');
         $remove.addClass('hidden');
         $edit.addClass('hidden');
       });
@@ -714,7 +716,7 @@
                 var icon = $(this).data('icon');
 
                 $parent.find('i').removeAttr('class').addClass(icon);
-                $parent.find('input').val(icon).trigger('keyup');
+                $parent.find('input').val(icon).trigger('change');
                 $parent.find('.cs-icon-preview').removeClass('hidden');
                 $parent.find('.cs-icon-remove').removeClass('hidden');
                 $dialog.dialog('close');
@@ -757,7 +759,7 @@
             $parent = $this.closest('.cs-icon-select');
 
         $parent.find('.cs-icon-preview').addClass('hidden');
-        $parent.find('input').val('').trigger('keyup');
+        $parent.find('input').val('').trigger('change');
         $this.addClass('hidden');
 
       });
@@ -999,7 +1001,7 @@
 
         if( shortcode_target ) {
           var textarea_target = shortcode_button.next();
-          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) ).trigger('keyup');
+          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) ).trigger('change');
         } else {
           window.send_to_editor( send_to_shortcode );
         }
