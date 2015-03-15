@@ -312,7 +312,7 @@ class CSFramework extends CSFramework_Abstract {
   // option page html output
   public function admin_page() {
 
-    $has_nav    = ( count( $this->options ) <= 2 ) ? ' cs-show-all' : '';
+    $has_nav    = ( count( $this->options ) <= 1 ) ? ' cs-show-all' : '';
     $section_id = ( get_transient( 'cs_section_id' ) ) ? get_transient( 'cs_section_id' ) : $this->sections[0]['name'];
     $section_id = ( isset( $_GET['cs-section'] ) ) ? esc_attr( $_GET['cs-section'] ) : $section_id;
 
