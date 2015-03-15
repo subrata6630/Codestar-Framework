@@ -420,7 +420,7 @@ class CSFramework extends CSFramework_Abstract {
       echo '</div>'; // end .cs-body
 
       echo '<footer class="cs-footer">';
-      echo 'Codestar Framework <strong>v('. CS_VERSION .') by Codestar</strong>';
+      echo 'Codestar Framework <strong>v'. CS_VERSION .' by Codestar</strong>';
       echo '</footer>'; // end .cs-footer
 
       echo '</form>'; // end form
