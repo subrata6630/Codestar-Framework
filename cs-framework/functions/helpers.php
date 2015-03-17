@@ -176,7 +176,7 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
 
     $located_fields = array();
 
-    foreach ( glob( CS_DIR .'/fields/*/*.{php}', GLOB_BRACE ) as $cs_field ) {
+    foreach ( glob( CS_DIR .'/fields/*/*.php' ) as $cs_field ) {
       $located_fields[] = basename( $cs_field );
       cs_locate_template( str_replace(  CS_DIR, '', $cs_field ) );
     }
@@ -186,7 +186,7 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
 
     if( is_dir( $override_dir ) ) {
 
-      foreach ( glob( $override_dir .'/*/*.{php}', GLOB_BRACE ) as $override_field ) {
+      foreach ( glob( $override_dir .'/*/*.php' ) as $override_field ) {
 
         if( ! in_array( basename( $override_field ), $located_fields ) ) {
 
