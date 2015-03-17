@@ -10,7 +10,7 @@
 if( ! function_exists( 'cs_get_icons' ) ) {
   function cs_get_icons() {
 
-    $jsons = glob( CS_DIR . '/fields/icon/*.{json}', GLOB_BRACE );
+    $jsons = glob( CS_DIR . '/fields/icon/*.json' );
 
     if( ! empty( $jsons ) ) {
       foreach ( $jsons as $path ) {
