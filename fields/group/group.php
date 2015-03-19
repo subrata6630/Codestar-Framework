@@ -22,7 +22,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     echo '<div class="cs-group hidden">';
 
-      echo '<h4>'. $accordion_title .'</h4>';
+      echo '<h4 class="cs-group-title">'. $accordion_title .'</h4>';
       echo '<div class="cs-group-content">';
       foreach ( $this->field['fields'] as $field_key => $field ) {
         $field['sub']   = true;
@@ -30,8 +30,7 @@ class CSFramework_Option_group extends CSFramework_Options {
         $field_default  = ( isset( $field['default'] ) ) ? $field['default'] : '';
         echo cs_add_element( $field, $field_default, $unique );
       }
-      echo '<div class="cs-remove"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', CS_TEXTDOMAIN ) .'</a></div>';
-      echo '<div class="clear"></div>';
+      echo '<div class="cs-element cs-text-right"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', CS_TEXTDOMAIN ) .'</a></div>';
       echo '</div>';
 
     echo '</div>'; // end hidden group
@@ -52,7 +51,7 @@ class CSFramework_Option_group extends CSFramework_Options {
           }
 
           echo '<div class="cs-group">';
-          echo '<h4>'. $this->field['fields'][0]['title'] .': '. $title .'</h4>';
+          echo '<h4 class="cs-group-title">'. $this->field['fields'][0]['title'] .': '. $title .'</h4>';
           echo '<div class="cs-group-content">';
 
           foreach ( $this->field['fields'] as $field_key => $field ) {
@@ -62,8 +61,7 @@ class CSFramework_Option_group extends CSFramework_Options {
             echo cs_add_element( $field, $value, $unique );
           }
 
-          echo '<div class="cs-remove"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', CS_TEXTDOMAIN ) .'</a></div>';
-          echo '<div class="clear"></div>';
+          echo '<div class="cs-element cs-text-right"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', CS_TEXTDOMAIN ) .'</a></div>';
           echo '</div>';
           echo '</div>';
 

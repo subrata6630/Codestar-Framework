@@ -494,7 +494,7 @@
 
       if ( accordion_group.length ) {
         accordion_group.accordion({
-          header: '> div > h4',
+          header: '.cs-group-title',
           collapsible : true,
           active: false,
           animate: 250,
@@ -511,19 +511,19 @@
 
       field_groups.sortable({
         axis: 'y',
-        handle: 'h4',
+        handle: '.cs-group-title',
         helper: 'clone',
         cursor: 'move',
         placeholder: 'widget-placeholder',
         start: function( event, ui ) {
-          var inside = ui.item.children('.ui-accordion-content');
+          var inside = ui.item.children('.cs-group-content');
           if ( inside.css('display') === 'block' ) {
             inside.hide();
             field_groups.sortable('refreshPositions');
           }
         },
         stop: function( event, ui ) {
-          ui.item.children( 'h4' ).triggerHandler( 'focusout' );
+          ui.item.children( '.cs-group-title' ).triggerHandler( 'focusout' );
           accordion_group.accordion({ active:false });
         }
       });
