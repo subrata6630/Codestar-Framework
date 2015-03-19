@@ -684,6 +684,13 @@
 .cs-element p:last-child {
   margin-bottom: 0 !important;
 }
+.cs-element:after, .cs-element:before {
+  content: " ";
+  display: table;
+}
+.cs-element:after {
+  clear: both;
+}
 .cs-element h4 {
   margin-top: 0;
 }
@@ -977,6 +984,9 @@
   margin: 30px 0;
 }
 
+.cs-field-group .cs-element {
+  padding: 20px;
+}
 .cs-field-group .cs-group {
   display: none;
   position: relative;
@@ -985,22 +995,11 @@
 .cs-field-group .cs-group h4 {
   font-size: 1em;
 }
-.cs-field-group .ui-accordion .cs-group {
-  display: block;
-}
-.cs-field-group .cs-remove {
-  text-align: right;
-  padding: 20px;
-}
-.cs-field-group .ui-accordion-content {
+.cs-field-group .cs-group-content {
   border: 1px solid #e5e5e5;
   background: #fff;
 }
-.cs-field-group .ui-icon {
-  text-indent: 0;
-  color: #bbb;
-}
-.cs-field-group .ui-accordion-header {
+.cs-field-group .cs-group-title {
   border: 1px solid #e5e5e5;
   background: #fafafa;
   -moz-transition: border-color 0.15s;
@@ -1008,12 +1007,12 @@
   -webkit-transition: border-color 0.15s;
   transition: border-color 0.15s;
 }
-.cs-field-group .ui-accordion-header:active, .cs-field-group .ui-accordion-header:hover, .cs-field-group .ui-accordion-header:focus {
+.cs-field-group .cs-group-title:active, .cs-field-group .cs-group-title:hover, .cs-field-group .cs-group-title:focus {
   border: 1px solid #bbb;
   background: #fafafa;
   outline: none;
 }
-.cs-field-group .ui-accordion .ui-accordion-header {
+.cs-field-group .cs-group-title {
   display: block;
   cursor: pointer;
   position: relative;
@@ -1022,21 +1021,26 @@
   min-height: 0;
   font-size: 100%;
 }
-.cs-field-group .ui-accordion .ui-accordion-icons {
-  padding-left: 30px;
-}
-.cs-field-group .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-  position: absolute;
-  left: .5em;
-  top: 50%;
-  margin-top: -10px;
-}
-.cs-field-group .ui-accordion .ui-accordion-content {
+.cs-field-group .cs-group-content {
   padding: 0;
   border-top: 0;
 }
 .cs-field-group .widget-placeholder {
   margin-bottom: 8px;
+}
+.cs-field-group .ui-accordion .cs-group {
+  display: block;
+}
+.cs-field-group .ui-accordion-icons {
+  padding-left: 30px;
+}
+.cs-field-group .ui-accordion-header-icon {
+  position: absolute;
+  left: .5em;
+  top: 50%;
+  margin-top: -10px;
+  text-indent: 0;
+  color: #bbb;
 }
 .cs-field-group .ui-sortable-helper .cs-group-content {
   display: none !important;
@@ -1304,8 +1308,16 @@
   color: #aaa;
 }
 
+.cs-text-left {
+  text-align: left;
+}
+
 .cs-text-center {
   text-align: center;
+}
+
+.cs-text-right {
+  text-align: right;
 }
 
 #cs-save-ajax {

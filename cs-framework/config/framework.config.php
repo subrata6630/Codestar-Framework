@@ -1633,23 +1633,6 @@ $options[]   = array(
 
 
     // -----------------------------
-    // begin: backup option        -
-    // -----------------------------
-    array(
-      'name'     => 'backup_option',
-      'title'    => 'Backup',
-      'icon'     => 'fa fa-check',
-      'fields'   => array(
-
-        array(
-          'type' => 'backup',
-        ),
-
-      ),
-    ), // end: backup option
-
-
-    // -----------------------------
     // begin: others options       -
     // -----------------------------
     array(
@@ -2005,7 +1988,7 @@ $options[]   = array(
 
     array(
       'type'    => 'content',
-      'content' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=info%40codestarlive%2ecom&lc=US&item_name=Codestar%20Framework&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate" /></a>',
+      'content' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=32VSHY265GXY2" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate" /></a>',
     ),
 
   )

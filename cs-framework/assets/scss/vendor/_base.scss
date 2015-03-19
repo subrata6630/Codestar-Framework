@@ -282,6 +282,16 @@
     margin-bottom: 0 !important;
   }
 
+  &:after,
+  &:before{
+    content: " ";
+    display: table;
+  }
+
+  &:after{
+    clear: both;
+  }
+
   h4{
     margin-top: 0;
   }
@@ -608,11 +618,9 @@
 
 .cs-field-group{
 
-  $acc_text_color: #555;
-  $acc_border_color: #e5e5e5;
-  $acc_border_hover_color: #bbb;
-  $acc_background_color: #fafafa;
-  $acc_background_hover_color: #fafafa;
+  .cs-element{
+    padding: 20px;
+  }
 
   .cs-group{
     display: none;
@@ -624,40 +632,26 @@
     }
   }
 
-  .ui-accordion .cs-group{
-    display: block;
-  }
-
-  .cs-remove{
-    text-align: right;
-    padding: 20px;
-  }
-
-  .ui-accordion-content {
-    border: 1px solid $acc_border_color;
+  .cs-group-content{
+    border: 1px solid #e5e5e5;
     background: #fff;
   }
 
-  .ui-icon{
-    text-indent: 0;
-    color: $acc_border_hover_color;
-  }
-
-  .ui-accordion-header {
-    border: 1px solid $acc_border_color;
-    background: $acc_background_color;
+  .cs-group-title{
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
     @include transition(border-color 0.15s);
 
     &:active,
     &:hover,
     &:focus {
-      border: 1px solid $acc_border_hover_color;
-      background: $acc_background_hover_color;
+      border: 1px solid #bbb;
+      background: #fafafa;
       outline: none;
     }
   }
 
-  .ui-accordion .ui-accordion-header {
+  .cs-group-title{
     display: block;
     cursor: pointer;
     position: relative;
@@ -667,24 +661,30 @@
     font-size: 100%;
   }
 
-  .ui-accordion .ui-accordion-icons {
-    padding-left: 30px;
-  }
-
-  .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-    position: absolute;
-    left: .5em;
-    top: 50%;
-    margin-top: -10px;
-  }
-
-  .ui-accordion .ui-accordion-content {
+  .cs-group-content{
     padding: 0;
     border-top: 0;
   }
 
   .widget-placeholder{
     margin-bottom: 8px;
+  }
+
+  .ui-accordion .cs-group{
+    display: block;
+  }
+
+  .ui-accordion-icons{
+    padding-left: 30px;
+  }
+
+  .ui-accordion-header-icon{
+    position: absolute;
+    left: .5em;
+    top: 50%;
+    margin-top: -10px;
+    text-indent: 0;
+    color: #bbb;
   }
 
   .ui-sortable-helper{
@@ -972,10 +972,17 @@
   color: #aaa;
 }
 
+.cs-text-left{
+  text-align: left;
+}
+
 .cs-text-center{
   text-align: center;
 }
 
+.cs-text-right{
+  text-align: right;
+}
 
 #cs-save-ajax{
   display: none;
