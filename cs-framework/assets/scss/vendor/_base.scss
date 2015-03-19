@@ -1,15 +1,12 @@
-// framework
 .cs-framework{
   position: relative;
   margin-top: 20px;
   margin-right: 20px;
 
-  // wp core settings error div
   .settings-error {
     margin: 0 0 15px 0;
   }
 
-  // header
   .cs-header{
     position: relative;
     background-color: #050505;
@@ -41,13 +38,11 @@
     }
   }
 
-  // body
   .cs-body{
     position: relative;
     background-color: #fff;
   }
 
-  // option navigation
   .cs-nav{
     display: block;
     position: relative;
@@ -84,7 +79,6 @@
           }
         }
 
-        // active style and arrow
         .cs-section-active{
           color: #fff;
           background-color: #111;
@@ -176,7 +170,6 @@
     }
   }
 
-  // nav background
   .cs-nav-background{
     position: absolute;
     top: 0;
@@ -187,7 +180,6 @@
     background-color: #222;
   }
 
-  // content
   .cs-content{
     position: relative;
     margin-left: 225px;
@@ -218,7 +210,6 @@
 
   }
 
-  // footer
   .cs-footer{
     padding: 20px;
     color: #555;
@@ -228,7 +219,6 @@
     @include border-radius(0 0 2px 2px);
   }
 
-  // others things
   .cs-show-all{
     .cs-nav-background,
     .cs-nav{
@@ -269,7 +259,6 @@
   }
 }
 
-// metabox framework
 .cs-metabox-framework{
   margin: -6px -12px -12px -12px;
 
@@ -280,7 +269,6 @@
   }
 }
 
-// elements
 .cs-element{
   position: relative;
   padding: 30px;
@@ -292,12 +280,6 @@
 
   p:last-child{
     margin-bottom: 0 !important;
-  }
-
-  &.pseudo-field{
-    padding: 0 5px 0 0 !important;
-    border: none;
-    display: inline-block;
   }
 
   h4{
@@ -332,7 +314,12 @@
   }
 }
 
-// text
+.cs-pseudo-field{
+  padding: 0 5px 0 0 !important;
+  border: 0;
+  display: inline-block;
+}
+
 .cs-field-text{
   input{
     width: 340px;
@@ -340,7 +327,6 @@
   }
 }
 
-// textarea
 .cs-field-textarea{
   textarea{
     width: 100%;
@@ -353,7 +339,6 @@
   }
 }
 
-// wysiwyg
 .cs-field-wysiwyg{
   textarea{
     width: 100%;
@@ -366,7 +351,6 @@
   }
 }
 
-// number
 .cs-field-number{
   input{
     width: 70px;
@@ -377,14 +361,12 @@
   }
 }
 
-// select
 .cs-field-select{
   select{
     max-width: 100%;
   }
 }
 
-// chosen fix
 .chosen-container{
   max-width: 100%;
 
@@ -393,7 +375,6 @@
   }
 }
 
-// typography
 .cs-field-typography{
   select,
   .chosen-container{
@@ -401,7 +382,6 @@
   }
 }
 
-// checkbox and radio
 .cs-field-checkbox,
 .cs-field-radio{
   ul{
@@ -417,8 +397,6 @@
   }
 }
 
-
-// switch
 .cs-field-switcher{
 
   label {
@@ -474,7 +452,7 @@
       font-style: normal;
       text-transform: uppercase;
       color: #fff;
-      background-color: #ed6f6f; // #d55050
+      background-color: #ed6f6f;
       @include transition(background 0.15s ease-out);
     }
 
@@ -502,7 +480,6 @@
   }
 }
 
-// image_select
 .cs-field-image_select{
 
   label{
@@ -529,7 +506,6 @@
   }
 }
 
-// upload
 .cs-field-upload{
   input{
     width: 340px;
@@ -537,22 +513,13 @@
   }
 }
 
-// background
 .cs-field-background{
-
-  .cs-uploader input{
-    width: 340px;
-    max-width: 100%;
-    margin-bottom: 5px;
-  }
-
-  .wp-color-result{
-    margin: 0;
-    vertical-align: middle;
+  .cs-field-color_picker{
+    position: relative;
+    top: 10px;
   }
 }
 
-// color_picker
 .cs-field-color_picker {
 
   .cs-alpha-wrap {
@@ -622,7 +589,6 @@
   }
 }
 
-// backup
 .cs-field-backup{
   textarea{
     width: 100%;
@@ -640,7 +606,6 @@
   }
 }
 
-// group
 .cs-field-group{
 
   $acc_text_color: #555;
@@ -649,13 +614,10 @@
   $acc_background_color: #fafafa;
   $acc_background_hover_color: #fafafa;
 
-  .cs-add-group{
-    margin-top: 10px;
-  }
-
   .cs-group{
     display: none;
     position: relative;
+    margin-bottom: 5px;
 
     h4{
       font-size: 1em;
@@ -671,7 +633,7 @@
     padding: 20px;
   }
 
-  .ui-widget-content {
+  .ui-accordion-content {
     border: 1px solid $acc_border_color;
     background: #fff;
   }
@@ -681,55 +643,31 @@
     color: $acc_border_hover_color;
   }
 
-  .ui-widget-header {
-    border: 1px solid $acc_border_color;
-    background: $acc_background_color;
-  }
-
-  .ui-state-default,
-  .ui-widget-content .ui-state-default,
-  .ui-widget-header .ui-state-default {
+  .ui-accordion-header {
     border: 1px solid $acc_border_color;
     background: $acc_background_color;
     @include transition(border-color 0.15s);
-  }
 
-  .ui-state-focus,
-  .ui-widget-content .ui-state-focus,
-  .ui-widget-header .ui-state-focus {
-    border: 1px solid $acc_border_color;
-    background: $acc_background_hover_color;
-    outline: none;
-  }
-
-  .ui-state-hover,
-  .ui-widget-content .ui-state-hover,
-  .ui-widget-header .ui-state-hover{
-    border-color: $acc_border_hover_color;
-  }
-
-  .ui-state-active,
-  .ui-widget-content .ui-state-active,
-  .ui-widget-header .ui-state-active {
-    border: 1px solid $acc_border_color;
-    background: $acc_background_hover_color;
+    &:active,
+    &:hover,
+    &:focus {
+      border: 1px solid $acc_border_hover_color;
+      background: $acc_background_hover_color;
+      outline: none;
+    }
   }
 
   .ui-accordion .ui-accordion-header {
     display: block;
     cursor: pointer;
     position: relative;
-    margin: 2px 0 0 0;
+    margin: 0;
     padding: 15px;
     min-height: 0;
     font-size: 100%;
   }
 
   .ui-accordion .ui-accordion-icons {
-    padding-left: 30px;
-  }
-
-  .ui-accordion .ui-accordion-icons .ui-accordion-icons {
     padding-left: 30px;
   }
 
@@ -745,6 +683,10 @@
     border-top: 0;
   }
 
+  .widget-placeholder{
+    margin-bottom: 8px;
+  }
+
   .ui-sortable-helper{
     .cs-group-content {
       display: none !important;
@@ -752,7 +694,6 @@
   }
 }
 
-// help tooltip
 .cs-help{
   position: absolute;
   top: 5px;
@@ -762,7 +703,6 @@
   color: #aaa;
 }
 
-// heading
 .cs-field-heading{
   background-color: #f5f5f5;
 
@@ -772,7 +712,6 @@
   }
 }
 
-// subheading
 .cs-field-subheading{
   padding-top: 17px;
   padding-bottom: 17px;
@@ -785,7 +724,6 @@
   }
 }
 
-// notice
 .cs-field-notice{
   padding: 0 !important;
   border: 0 !important;
@@ -824,7 +762,6 @@
 
 }
 
-// icons
 .cs-field-icon{
 
   input{
@@ -852,7 +789,6 @@
   }
 }
 
-// image
 .cs-field-image{
 
   input{
@@ -897,7 +833,6 @@
   }
 }
 
-// gallery
 .cs-field-gallery{
 
   input{
@@ -933,7 +868,6 @@
   }
 }
 
-// sorter
 .cs-field-sorter{
 
   .ui-sortable-placeholder{
@@ -994,7 +928,6 @@
   }
 }
 
-// red primary button
 .cs-warning-primary{
   color: #fff !important;
   border-color: #d02c21 !important;
@@ -1044,7 +977,6 @@
 }
 
 
-// ajax-save
 #cs-save-ajax{
   display: none;
   position: relative;
@@ -1057,7 +989,6 @@
   @include border-radius(2px);
 }
 
-// bootstrap tooltip
 .tooltip {
   position: absolute;
   z-index: 500001;
@@ -1073,7 +1004,6 @@
   }
 }
 
-// wrapper for the tooltip content
 .tooltip-inner {
   max-width: 200px;
   padding: 6px 12px;
@@ -1085,7 +1015,6 @@
   @include border-radius(4px);
 }
 
-// framework shortcode manager
 .cs-dialog{
   display: none;
   padding: 0;
@@ -1168,7 +1097,6 @@
 
 }
 
-// icon dialog
 #cs-icon-dialog{
 
   .cs-icon-search{
@@ -1238,7 +1166,6 @@
   }
 }
 
-// side metabox
 #side-sortables{
   .cs-content .cs-section-title{
     padding: 15px 20px;
@@ -1265,7 +1192,6 @@
   }
 }
 
-// wp customize options
 #customize-controls{
 
   .customize-control-cs_field{
@@ -1313,7 +1239,6 @@
   }
 }
 
-// framework responsive utilities
 @media only screen and (max-width:1200px){
   .cs-metabox-framework{
     .cs-element{

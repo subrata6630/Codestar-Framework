@@ -684,11 +684,6 @@
 .cs-element p:last-child {
   margin-bottom: 0 !important;
 }
-.cs-element.pseudo-field {
-  padding: 0 5px 0 0 !important;
-  border: none;
-  display: inline-block;
-}
 .cs-element h4 {
   margin-top: 0;
 }
@@ -715,6 +710,12 @@
 }
 .cs-element pre strong {
   color: #ffbc00;
+}
+
+.cs-pseudo-field {
+  padding: 0 5px 0 0 !important;
+  border: 0;
+  display: inline-block;
 }
 
 .cs-field-text input {
@@ -887,14 +888,9 @@
   max-width: 100%;
 }
 
-.cs-field-background .cs-uploader input {
-  width: 340px;
-  max-width: 100%;
-  margin-bottom: 5px;
-}
-.cs-field-background .wp-color-result {
-  margin: 0;
-  vertical-align: middle;
+.cs-field-background .cs-field-color_picker {
+  position: relative;
+  top: 10px;
 }
 
 .cs-field-color_picker .cs-alpha-wrap {
@@ -981,12 +977,10 @@
   margin: 30px 0;
 }
 
-.cs-field-group .cs-add-group {
-  margin-top: 10px;
-}
 .cs-field-group .cs-group {
   display: none;
   position: relative;
+  margin-bottom: 5px;
 }
 .cs-field-group .cs-group h4 {
   font-size: 1em;
@@ -998,7 +992,7 @@
   text-align: right;
   padding: 20px;
 }
-.cs-field-group .ui-widget-content {
+.cs-field-group .ui-accordion-content {
   border: 1px solid #e5e5e5;
   background: #fff;
 }
@@ -1006,13 +1000,7 @@
   text-indent: 0;
   color: #bbb;
 }
-.cs-field-group .ui-widget-header {
-  border: 1px solid #e5e5e5;
-  background: #fafafa;
-}
-.cs-field-group .ui-state-default,
-.cs-field-group .ui-widget-content .ui-state-default,
-.cs-field-group .ui-widget-header .ui-state-default {
+.cs-field-group .ui-accordion-header {
   border: 1px solid #e5e5e5;
   background: #fafafa;
   -moz-transition: border-color 0.15s;
@@ -1020,37 +1008,21 @@
   -webkit-transition: border-color 0.15s;
   transition: border-color 0.15s;
 }
-.cs-field-group .ui-state-focus,
-.cs-field-group .ui-widget-content .ui-state-focus,
-.cs-field-group .ui-widget-header .ui-state-focus {
-  border: 1px solid #e5e5e5;
+.cs-field-group .ui-accordion-header:active, .cs-field-group .ui-accordion-header:hover, .cs-field-group .ui-accordion-header:focus {
+  border: 1px solid #bbb;
   background: #fafafa;
   outline: none;
-}
-.cs-field-group .ui-state-hover,
-.cs-field-group .ui-widget-content .ui-state-hover,
-.cs-field-group .ui-widget-header .ui-state-hover {
-  border-color: #bbb;
-}
-.cs-field-group .ui-state-active,
-.cs-field-group .ui-widget-content .ui-state-active,
-.cs-field-group .ui-widget-header .ui-state-active {
-  border: 1px solid #e5e5e5;
-  background: #fafafa;
 }
 .cs-field-group .ui-accordion .ui-accordion-header {
   display: block;
   cursor: pointer;
   position: relative;
-  margin: 2px 0 0 0;
+  margin: 0;
   padding: 15px;
   min-height: 0;
   font-size: 100%;
 }
 .cs-field-group .ui-accordion .ui-accordion-icons {
-  padding-left: 30px;
-}
-.cs-field-group .ui-accordion .ui-accordion-icons .ui-accordion-icons {
   padding-left: 30px;
 }
 .cs-field-group .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
@@ -1062,6 +1034,9 @@
 .cs-field-group .ui-accordion .ui-accordion-content {
   padding: 0;
   border-top: 0;
+}
+.cs-field-group .widget-placeholder {
+  margin-bottom: 8px;
 }
 .cs-field-group .ui-sortable-helper .cs-group-content {
   display: none !important;
