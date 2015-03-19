@@ -18,7 +18,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
     $class      = 'CSFramework_Option_' . $field['type'];
     $wrap_class = ( isset( $field['wrap_class'] ) ) ? ' ' . $field['wrap_class'] : '';
     $hidden     = ( isset( $field['show_only_language'] ) && ( $field['show_only_language'] != $languages['current'] ) ) ? ' hidden' : '';
-    $is_pseudo  = ( isset( $field['pseudo'] ) ) ? ' pseudo-field' : '';
+    $is_pseudo  = ( isset( $field['pseudo'] ) ) ? ' cs-pseudo-field' : '';
 
     if ( isset( $field['dependency'] ) ) {
       $hidden  = ' hidden';
@@ -27,8 +27,6 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $depend .= " data-". $sub ."value='". $field['dependency'][2] ."'";
     }
 
-    $fieldset_class = ( isset( $field['title'] ) ) ? 'cs-fieldset ' : '';
-
     $output .= '<div class="cs-element cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
 
     if( isset( $field['title'] ) ) {
@@ -36,7 +34,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $output .= '<div class="cs-title"><h4>' . $field['title'] . '</h4>'. $field_desc .'</div>';
     }
 
-    $output .= '<div class="'. $fieldset_class .'">';
+    $output .= ( isset( $field['title'] ) ) ? '<div class="cs-fieldset">' : '';
 
     $value   = ( !isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
     $value   = ( isset( $field['value'] ) ) ? $field['value'] : $value;
@@ -51,7 +49,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $output .= '<p>'. __( 'This field class is not available!', CS_TEXTDOMAIN ) .'</p>';
     }
 
-    $output .= '</div>';
+    $output .= ( isset( $field['title'] ) ) ? '</div>' : '';
 
     $output .= '<div class="clear"></div>';
 
