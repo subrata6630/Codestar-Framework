@@ -39,7 +39,7 @@
  */
 
 // ------------------------------------------------------------------------------------------------
-require_once dirname( __FILE__ ) .'/cs-framework-path.php';
+include_once dirname( __FILE__ ) .'/cs-framework-path.php';
 // ------------------------------------------------------------------------------------------------
 
 if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) ) {

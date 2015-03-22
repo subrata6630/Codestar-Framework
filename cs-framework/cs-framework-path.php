@@ -11,7 +11,7 @@ if( ! function_exists( 'cs_get_path_locate' ) ) {
   function cs_get_path_locate() {
 
     if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active' ) ) {
-      require_once ( ABSPATH . 'wp-admin/includes/plugin.php' );
+      include_once ABSPATH .'wp-admin/includes/plugin.php';
     }
 
     foreach ( get_plugins() as $key => $value ) {
