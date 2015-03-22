@@ -10,12 +10,15 @@
 if( ! function_exists( 'cs_get_icons' ) ) {
   function cs_get_icons() {
 
+    WP_Filesystem();
+    global $wp_filesystem;
+
     $jsons = glob( CS_DIR . '/fields/icon/*.json' );
 
     if( ! empty( $jsons ) ) {
       foreach ( $jsons as $path ) {
 
-        $object = json_decode( @file_get_contents( CS_URI .'/fields/icon/'. basename( $path ) ) );
+        $object = json_decode( $wp_filesystem->get_contents( CS_URI .'/fields/icon/'. basename( $path ) ) );
 
         echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">'. $object->name .'</h4>' : '';
 

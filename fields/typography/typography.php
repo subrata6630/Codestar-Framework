@@ -17,8 +17,11 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
     echo $this->element_before();
 
+    WP_Filesystem();
+    global $wp_filesystem;
+
     $googlefonts      = array();
-    $google_json      = json_decode( @file_get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
+    $google_json      = json_decode( $wp_filesystem->get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
     $defaults_value   = array( 'family' => 'Arial', 'variant' => 'regular' );
     $default_variants = array( 'regular', 'italic', '700', '700italic', 'inherit' );
     $websafe_fonts    = cs_get_websafe_fonts();
@@ -36,19 +39,25 @@ class CSFramework_Option_typography extends CSFramework_Options {
       // fonts family selector
       echo '<label class="cs-typography-family">';
       echo '<select name="'. $this->element_name( '[family]' ) .'" class="chosen cs-typo-family" data-atts="family">';
-      echo '<optgroup label="Web Safe Fonts">';
+
+      do_action( 'cs_typography_family' );
+
+      // Web Safe Fonts
+      echo '<optgroup label="'. __( 'Web Safe Fonts', CS_TEXTDOMAIN ) .'">';
       foreach ( $websafe_fonts as $websafe_value ) {
-        echo '<option value="'. $websafe_value .'" data-variants="'. implode( '|', $default_variants ).'" data-type="safefonts"'. selected( $websafe_value, $family_value, true ) .'>'. $websafe_value .'</option>';
+        echo '<option value="'. $websafe_value .'" data-variants="'. implode( '|', $default_variants ) .'" data-type="safefonts"'. selected( $websafe_value, $family_value, true ) .'>'. $websafe_value .'</option>';
       }
       echo '</optgroup>';
-      echo '<optgroup label="Google Fonts">';
+
+      // Google Fonts
+      echo '<optgroup label="'. __( 'Google Fonts', CS_TEXTDOMAIN ) .'">';
       foreach ( $googlefonts as $google_key => $google_value ) {
-        echo '<option value="'. $google_key .'" data-variants="'. implode( '|', $google_value ).'" data-type="googlefonts"'. selected( $google_key, $family_value, true ) .'>'. $google_key .'</option>';
+        echo '<option value="'. $google_key .'" data-variants="'. implode( '|', $google_value ) .'" data-type="googlefonts"'. selected( $google_key, $family_value, true ) .'>'. $google_key .'</option>';
       }
       echo '</optgroup>';
+
       echo '</select>';
       echo '</label>';
-
 
       // fonts variant selector
       $variants = ( cs_is_googe_font( $family_value ) ) ? $googlefonts[$family_value] : $default_variants;
