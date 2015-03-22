@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cs-framework\n"
-"POT-Creation-Date: 2015-03-19 16:29:12+00:00\n"
+"POT-Creation-Date: 2015-03-22 14:49:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: fields/icon/icon.php:25 functions/actions.php:47
+#: fields/icon/icon.php:25 functions/actions.php:50
 msgid "Add Icon"
 msgstr ""
 
@@ -139,15 +139,23 @@ msgstr ""
 msgid "off"
 msgstr ""
 
-#: fields/typography/typography.php:65
+#: fields/typography/typography.php:46
+msgid "Web Safe Fonts"
+msgstr ""
+
+#: fields/typography/typography.php:53
+msgid "Google Fonts"
+msgstr ""
+
+#: fields/typography/typography.php:74
 msgid "Error! Can not load json file."
 msgstr ""
 
-#: functions/actions.php:48
+#: functions/actions.php:51
 msgid "Search a Icon..."
 msgstr ""
 
-#: functions/actions.php:49
+#: functions/actions.php:52
 msgid "Loading..."
 msgstr ""
 

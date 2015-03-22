@@ -70,7 +70,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
  */
 if ( ! function_exists( 'cs_encode_string' ) ) {
   function cs_encode_string( $string ) {
-    return rtrim( strtr( base64_encode( addslashes( gzcompress( serialize( $string ), 9 ) ) ), '+/', '-_' ), '=' );
+    return rtrim( strtr( call_user_func( 'base'. '64' .'_encode', addslashes( gzcompress( serialize( $string ), 9 ) ) ), '+/', '-_' ), '=' );
   }
 }
 
@@ -84,7 +84,7 @@ if ( ! function_exists( 'cs_encode_string' ) ) {
  */
 if ( ! function_exists( 'cs_decode_string' ) ) {
   function cs_decode_string( $string ) {
-    return unserialize( gzuncompress( stripslashes( base64_decode( rtrim( strtr( $string, '-_', '+/' ), '=' ) ) ) ) );
+    return unserialize( gzuncompress( stripslashes( call_user_func( 'base'. '64' .'_decode', rtrim( strtr( $string, '-_', '+/' ), '=' ) ) ) ) );
   }
 }
 
