@@ -39,7 +39,6 @@ if ( ! function_exists( 'cs_add_element' ) ) {
     $value   = ( !isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
     $value   = ( isset( $field['value'] ) ) ? $field['value'] : $value;
 
-    // check class
     if( class_exists( $class ) ) {
       ob_start();
       $element = new $class( $field, $value, $unique );
@@ -50,9 +49,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
     }
 
     $output .= ( isset( $field['title'] ) ) ? '</div>' : '';
-
     $output .= '<div class="clear"></div>';
-
     $output .= '</div>';
 
     return $output;
@@ -119,50 +116,6 @@ if ( ! function_exists( 'cs_array_search' ) ) {
 
 /**
  *
- * Safe web fonts
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! function_exists( 'cs_get_websafe_fonts' ) ) {
-  function cs_get_websafe_fonts() {
-
-    return apply_filters( 'cs_websafe_fonts', array(
-      'Arial',
-      'Arial Black',
-      'Comic Sans MS',
-      'Impact',
-      'Lucida Sans Unicode',
-      'Tahoma',
-      'Trebuchet MS',
-      'Verdana',
-      'Courier New',
-      'Lucida Console',
-      'Georgia, serif',
-      'Palatino Linotype',
-      'Times New Roman'
-    ) );
-
-  }
-}
-
-/**
- *
- * Check for google font
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! function_exists( 'cs_is_googe_font' ) ) {
-  function cs_is_googe_font( $font ) {
-    return ( ! empty( $font ) && ! in_array( $font, cs_get_websafe_fonts() ) ) ? true : false;
-  }
-}
-
-/**
- *
  * Load options fields
  *
  * @since 1.0.0
@@ -179,7 +132,6 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
       cs_locate_template( str_replace(  CS_DIR, '', $cs_field ) );
     }
 
-    // theme override fields
     $override_dir = get_template_directory() .'/cs-framework-override/fields';
 
     if( is_dir( $override_dir ) ) {
@@ -197,6 +149,32 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
     }
 
     do_action( 'cs_load_option_fields' );
+
+  }
+}
+
+/**
+ *
+ * WP Filesystem helper
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_filesystem' ) ) {
+  function cs_filesystem() {
+
+    global $wp_filesystem;
+
+    if ( ! function_exists( 'WP_Filesystem' ) ) {
+      include_once ABSPATH .'wp-admin/includes/file.php';
+    }
+
+    if ( ! is_object( $wp_filesystem ) ) {
+      WP_Filesystem();
+    }
+
+    return $wp_filesystem;
 
   }
 }

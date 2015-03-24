@@ -771,6 +771,9 @@
 .cs-field-typography .chosen-container {
   margin-right: 5px;
 }
+.cs-field-typography .cs-typo-variant {
+  min-width: 90px;
+}
 
 .cs-field-checkbox ul,
 .cs-field-radio ul {

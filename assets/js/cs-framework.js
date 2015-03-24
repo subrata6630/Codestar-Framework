@@ -446,34 +446,30 @@
   $.fn.CSFRAMEWORK_TYPOGRAPHY = function() {
     return this.each( function() {
 
-      var typography        = $(this),
-          typography_select = typography.find('.cs-typo-family'),
-          variants_select   = typography.find('.cs-typo-variant'),
-          variants;
+      var typography      = $(this),
+          family_select   = typography.find('.cs-typo-family'),
+          variants_select = typography.find('.cs-typo-variant'),
+          typography_type = typography.find('.cs-typo-font');
 
-      typography_select.on('change', function() {
+      family_select.on('change', function() {
 
-        var _this           = $(this),
-            _type           = _this.find(':selected').data('type'),
-            _variants       = _this.find(':selected').data('variants'),
-            _current        = _this.find(':selected').val(),
-            _variants_opts  = variants_select.find('option');
+        var _this     = $(this),
+            _type     = _this.find(':selected').data('type') || 'custom',
+            _variants = _this.find(':selected').data('variants');
 
-        variants = _variants.split('|');
+        if( variants_select.length ) {
 
-        // clear variants
-        _variants_opts.remove();
+          variants_select.find('option').remove();
 
-        // set default variants
-        $.each( variants, function( key, text ) {
-          variants_select.append('<option value="'+ text +'">'+ text +'</option>');
-        });
+          $.each( _variants.split('|'), function( key, text ) {
+            variants_select.append('<option value="'+ text +'">'+ text +'</option>');
+          });
 
-        // selected regular as default
-        variants_select.find('option[value="regular"]').attr('selected', 'selected');
+          variants_select.find('option[value="regular"]').attr('selected', 'selected').trigger('chosen:updated');
 
-        // update chosen
-        variants_select.trigger('chosen:updated');
+        }
+
+        typography_type.val(_type);
 
       });
 
@@ -553,7 +549,7 @@
 
         // run all field plugins
         cloned.CSFRAMEWORK_DEPENDENCY( 'sub' );
-        $.CSFRAMEWORK.RELOAD_PLUGINS();
+        cloned.CSFRAMEWORK_RELOAD_PLUGINS();
 
         i++;
 
@@ -861,7 +857,7 @@
 
               $shortcodeload.CSFRAMEWORK_DEPENDENCY();
               $shortcodeload.CSFRAMEWORK_DEPENDENCY('sub');
-              $.CSFRAMEWORK.RELOAD_PLUGINS();
+              $shortcodeload.CSFRAMEWORK_RELOAD_PLUGINS();
 
             }
           });
@@ -1032,7 +1028,7 @@
 
         // reloadPlugins
         cloned_el.CSFRAMEWORK_DEPENDENCY('sub');
-        $.CSFRAMEWORK.RELOAD_PLUGINS();
+        cloned_el.CSFRAMEWORK_RELOAD_PLUGINS();
         co++;
 
       });
@@ -1260,16 +1256,18 @@
   // ======================================================
   // RELOAD FRAMEWORK PLUGINS
   // ------------------------------------------------------
-  $.CSFRAMEWORK.RELOAD_PLUGINS = function() {
-    $('.chosen').CSFRAMEWORK_CHOSEN();
-    $('.cs-field-image-select').CSFRAMEWORK_IMAGE_SELECTOR();
-    $('.cs-field-image').CSFRAMEWORK_IMAGE_UPLOADER();
-    $('.cs-field-gallery').CSFRAMEWORK_IMAGE_GALLERY();
-    $('.cs-field-sorter').CSFRAMEWORK_SORTER();
-    $('.cs-field-upload').CSFRAMEWORK_UPLOADER();
-    $('.cs-field-typography').CSFRAMEWORK_TYPOGRAPHY();
-    $('.cs-field-color-picker').CSFRAMEWORK_COLORPICKER();
-    $('.cs-help').tooltip({html:true, placement:'left', container:'body'});
+  $.fn.CSFRAMEWORK_RELOAD_PLUGINS = function() {
+    return this.each(function() {
+      $('.chosen', this).CSFRAMEWORK_CHOSEN();
+      $('.cs-field-image-select', this).CSFRAMEWORK_IMAGE_SELECTOR();
+      $('.cs-field-image', this).CSFRAMEWORK_IMAGE_UPLOADER();
+      $('.cs-field-gallery', this).CSFRAMEWORK_IMAGE_GALLERY();
+      $('.cs-field-sorter', this).CSFRAMEWORK_SORTER();
+      $('.cs-field-upload', this).CSFRAMEWORK_UPLOADER();
+      $('.cs-field-typography', this).CSFRAMEWORK_TYPOGRAPHY();
+      $('.cs-field-color-picker', this).CSFRAMEWORK_COLORPICKER();
+      $('.cs-help', this).tooltip({html:true, placement:'left', container:'body'});
+    });
   };
 
   // ======================================================
@@ -1282,9 +1280,9 @@
     $('.cs-content').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('#cs-save-ajax').CSFRAMEWORK_SAVE_AJAX();
+    $('body').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
-    $.CSFRAMEWORK.RELOAD_PLUGINS();
 
   });
 

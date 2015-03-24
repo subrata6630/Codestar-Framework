@@ -150,6 +150,20 @@ if ( ! function_exists( 'cs_set_option' ) ) {
 
 /**
  *
+ * Get all option
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_all_option' ) ) {
+  function cs_get_all_option() {
+    return get_option( CS_OPTION );
+  }
+}
+
+/**
+ *
  * Multi language value
  *
  * @since 1.0.0
@@ -175,7 +189,6 @@ if ( ! function_exists( 'cs_get_multilang_option' ) ) {
   }
 }
 
-
 /**
  *
  * Get customize option
@@ -195,6 +208,41 @@ if ( ! function_exists( 'cs_get_customize_option' ) ) {
       return ( ! empty( $default ) ) ? $default : null;
     }
 
+  }
+}
+
+/**
+ *
+ * Set customize option
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_set_customize_option' ) ) {
+  function cs_set_customize_option( $option_name = '', $new_value = '' ) {
+
+    $options = get_option( CS_CUSTOMIZE );
+
+    if( ! empty( $option_name ) ) {
+      $options[$option_name] = $new_value;
+      update_option( CS_CUSTOMIZE, $options );
+    }
+
+  }
+}
+
+/**
+ *
+ * Get all customize option
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_all_customize_option' ) ) {
+  function cs_get_all_customize_option() {
+    return get_option( CS_CUSTOMIZE );
   }
 }
 

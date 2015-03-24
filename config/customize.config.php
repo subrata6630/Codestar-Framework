@@ -125,7 +125,7 @@ $options[]        = array(
       'control'   => array(
         'type'    => 'cs_field',
         'options' => array(
-          'id' => 'Text_Field',
+          'id'    => 'Text_Field',
           'type'  => 'color_picker',
           'title' => 'Text Field',
         ),

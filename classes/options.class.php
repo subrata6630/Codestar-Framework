@@ -119,6 +119,8 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
     if( ( isset( $this->field['debug'] ) && $this->field['debug'] === true ) || ( defined( 'CS_OPTIONS_DEBUG' ) && CS_OPTIONS_DEBUG ) ) {
 
+      $value = $this->element_value();
+
       $out .= "<pre>";
       $out .= "<strong>". __( 'CONFIG', CS_TEXTDOMAIN ) .":</strong>";
       $out .= "\n";
@@ -129,6 +131,16 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       $out .= "<strong>". __( 'USAGE', CS_TEXTDOMAIN ) .":</strong>";
       $out .= "\n";
       $out .= ( isset( $this->field['id'] ) ) ? "cs_get_option( '". $this->field['id'] ."' );" : '';
+
+      if( ! empty( $value ) ) {
+        $out .= "\n\n";
+        $out .= "<strong>". __( 'VALUE', CS_TEXTDOMAIN ) .":</strong>";
+        $out .= "\n";
+        ob_start();
+        var_export( $value );
+        $out .= htmlspecialchars( ob_get_clean() );
+      }
+
       $out .= "</pre>";
 
     }
@@ -213,7 +225,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'page':
 
         $pages = get_pages( $query_args );
-        if ( ! empty( $pages ) ) {
+        if ( ! is_wp_error( $pages ) && ! empty( $pages ) ) {
           foreach ( $pages as $page ) {
             $options[$page->ID] = $page->post_title;
           }
@@ -225,7 +237,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'post':
 
         $posts = get_posts( $query_args );
-        if ( ! empty( $posts ) ) {
+        if ( ! is_wp_error( $posts ) && ! empty( $posts ) ) {
           foreach ( $posts as $post ) {
             $options[$post->ID] = $post->post_title;
           }
@@ -237,7 +249,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'category':
 
         $categories = get_categories( $query_args );
-        if ( ! empty( $categories ) && ! empty( $categories[0] ) ) {
+        if ( ! is_wp_error( $categories ) && ! empty( $categories ) && ! empty( $categories[0] ) ) {
           foreach ( $categories as $category ) {
             $options[$category->term_id] = $category->name;
           }
@@ -251,7 +263,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
         $taxonomies = ( isset( $query_args['taxonomies'] ) ) ? $query_args['taxonomies'] : 'post_tag';
         $tags = get_terms( $taxonomies, $query_args );
 
-        if ( ! empty( $tags ) ) {
+        if ( ! is_wp_error( $tags ) && ! empty( $tags ) ) {
           foreach ( $tags as $tag ) {
             $options[$tag->term_id] = $tag->name;
           }
