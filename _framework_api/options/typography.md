@@ -21,7 +21,35 @@ array(
   'default'   => array(
     'family'  => 'Open Sans',
     'variant' => '800',
+    'font'    => 'google', // this is helper for output
   ),
+),
+{% endhighlight %}
+
+{% highlight php startinline %}
+array(
+  'id'        => 'unique_option_4002',
+  'type'      => 'typography',
+  'title'     => 'Typography Field',
+  'default'   => array(
+    'family'  => 'Arial',
+    'font'    => 'websafe',
+  ),
+),
+{% endhighlight %}
+
+{% highlight php startinline %}
+// Typography without Chosen and Variant
+array(
+  'id'        => 'unique_option_4002',
+  'type'      => 'typography',
+  'title'     => 'Typography Field',
+  'default'   => array(
+    'family'  => 'Ubuntu',
+    'font'    => 'google',
+  ),
+  'variant'   => false,
+  'chosen'    => false,
 ),
 {% endhighlight %}
 
@@ -46,3 +74,5 @@ array(
 | `default`        | array       | default value of field
 | `family`         | font-face   | font family of field
 | `variant`        | 800         | font family of variant
+| `chosen`         | true        | disable chosen select
+| `font`           | null        | helper for output google, websafe, custom
