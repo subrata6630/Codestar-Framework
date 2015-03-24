@@ -1160,7 +1160,7 @@ $options[]   = array(
 
             array(
               'id'          => 'unique_group_3_text',
-              'type'        => 'text',
+              'type'        => 'upload',
               'title'       => 'Text Field',
             ),
 
@@ -1449,27 +1449,43 @@ $options[]   = array(
     // begin: typography options   -
     // -----------------------------
     array(
-      'name'      => 'typography_options',
-      'title'     => 'Typography',
-      'icon'      => 'fa fa-check',
-      'fields'    => array(
-
-        /*
-        array(
-          'id'      => 'unique_typography_1',
-          'type'    => 'typography',
-          'title'   => 'Typography',
-        ),
-        */
+      'name'          => 'typography_options',
+      'title'         => 'Typography',
+      'icon'          => 'fa fa-check',
+      'fields'        => array(
 
         array(
-          'id'        => 'unique_typography_2',
+          'id'        => 'unique_typography_1',
           'type'      => 'typography',
           'title'     => 'Typography with Default',
           'default'   => array(
             'family'  => 'Open Sans',
+            'font'    => 'google', // this is helper for output ( google, websafe, custom )
             'variant' => '800',
           ),
+        ),
+
+        array(
+          'id'        => 'unique_typography_2',
+          'type'      => 'typography',
+          'title'     => 'Typography without Chosen',
+          'default'   => array(
+            'family'  => 'Ubuntu',
+            'font'    => 'google',
+          ),
+          'chosen'    => false,
+        ),
+
+        array(
+          'id'        => 'unique_typography_3',
+          'type'      => 'typography',
+          'title'     => 'Typography without Chosen/Variant',
+          'default'   => array(
+            'family'  => 'Arial',
+            'font'    => 'websafe',
+          ),
+          'variant'   => false,
+          'chosen'    => false,
         ),
 
       ),

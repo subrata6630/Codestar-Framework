@@ -17,57 +17,89 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
     echo $this->element_before();
 
-    WP_Filesystem();
-    global $wp_filesystem;
+    $defaults_value = array(
+      'family'  => 'Arial',
+      'variant' => 'regular',
+      'font'    => 'websafe',
+    );
 
-    $googlefonts      = array();
-    $google_json      = json_decode( $wp_filesystem->get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
-    $defaults_value   = array( 'family' => 'Arial', 'variant' => 'regular' );
-    $default_variants = array( 'regular', 'italic', '700', '700italic', 'inherit' );
-    $websafe_fonts    = cs_get_websafe_fonts();
-    $value            = wp_parse_args( $this->element_value(), $defaults_value );
-    $family_value     = $value['family'];
-    $variant_value    = $value['variant'];
+    $default_variants = apply_filters( 'cs_websafe_fonts_variants', array(
+      'regular',
+      'italic',
+      '700',
+      '700italic',
+      'inherit'
+    ));
+
+    $websafe_fonts = apply_filters( 'cs_websafe_fonts', array(
+      'Arial',
+      'Arial Black',
+      'Comic Sans MS',
+      'Impact',
+      'Lucida Sans Unicode',
+      'Tahoma',
+      'Trebuchet MS',
+      'Verdana',
+      'Courier New',
+      'Lucida Console',
+      'Georgia, serif',
+      'Palatino Linotype',
+      'Times New Roman'
+    ));
+
+    $value         = wp_parse_args( $this->element_value(), $defaults_value );
+    $family_value  = $value['family'];
+    $variant_value = $value['variant'];
+    $is_variant    = ( isset( $this->field['variant'] ) && $this->field['variant'] === false ) ? false : true;
+    $is_chosen     = ( isset( $this->field['chosen'] ) && $this->field['chosen'] === false ) ? '' : 'chosen ';
+    $google_json   = json_decode( cs_filesystem()->get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
 
     if( ! empty( $google_json ) ) {
 
-      // set google fonts
+      $googlefonts = array();
+
       foreach ( $google_json->items as $key => $font ) {
         $googlefonts[$font->family] = $font->variants;
       }
 
-      // fonts family selector
+      $is_google = ( array_key_exists( $family_value, $googlefonts ) ) ? true : false;
+
       echo '<label class="cs-typography-family">';
-      echo '<select name="'. $this->element_name( '[family]' ) .'" class="chosen cs-typo-family" data-atts="family">';
+      echo '<select name="'. $this->element_name( '[family]' ) .'" class="'. $is_chosen .'cs-typo-family" data-atts="family"'. $this->element_attributes() .'>';
 
-      do_action( 'cs_typography_family' );
+      do_action( 'cs_typography_family', $family_value, $this );
 
-      // Web Safe Fonts
       echo '<optgroup label="'. __( 'Web Safe Fonts', CS_TEXTDOMAIN ) .'">';
       foreach ( $websafe_fonts as $websafe_value ) {
-        echo '<option value="'. $websafe_value .'" data-variants="'. implode( '|', $default_variants ) .'" data-type="safefonts"'. selected( $websafe_value, $family_value, true ) .'>'. $websafe_value .'</option>';
+        echo '<option value="'. $websafe_value .'" data-variants="'. implode( '|', $default_variants ) .'" data-type="websafe"'. selected( $websafe_value, $family_value, true ) .'>'. $websafe_value .'</option>';
       }
       echo '</optgroup>';
 
-      // Google Fonts
       echo '<optgroup label="'. __( 'Google Fonts', CS_TEXTDOMAIN ) .'">';
       foreach ( $googlefonts as $google_key => $google_value ) {
-        echo '<option value="'. $google_key .'" data-variants="'. implode( '|', $google_value ) .'" data-type="googlefonts"'. selected( $google_key, $family_value, true ) .'>'. $google_key .'</option>';
+        echo '<option value="'. $google_key .'" data-variants="'. implode( '|', $google_value ) .'" data-type="google"'. selected( $google_key, $family_value, true ) .'>'. $google_key .'</option>';
       }
       echo '</optgroup>';
 
       echo '</select>';
       echo '</label>';
 
-      // fonts variant selector
-      $variants = ( cs_is_googe_font( $family_value ) ) ? $googlefonts[$family_value] : $default_variants;
-      echo '<label class="cs-typography-variant">';
-      echo '<select name="'. $this->element_name( '[variant]' ) .'" class="chosen cs-typo-variant" data-atts="variant">';
-      foreach ( $variants as $variant ) {
-        echo '<option value="'. $variant .'"'. $this->checked( $variant_value, $variant, 'selected' ) .'>'. $variant .'</option>';
+      if( ! empty( $is_variant ) ) {
+
+        $variants = ( $is_google ) ? $googlefonts[$family_value] : $default_variants;
+        $variants = ( $value['font'] === 'google' || $value['font'] === 'websafe' ) ? $variants : array( 'regular' );
+
+        echo '<label class="cs-typography-variant">';
+        echo '<select name="'. $this->element_name( '[variant]' ) .'" class="'. $is_chosen .'cs-typo-variant" data-atts="variant">';
+        foreach ( $variants as $variant ) {
+          echo '<option value="'. $variant .'"'. $this->checked( $variant_value, $variant, 'selected' ) .'>'. $variant .'</option>';
+        }
+        echo '</select>';
+        echo '</label>';
+
       }
-      echo '</select>';
-      echo '</label>';
+
+      echo '<input type="text" name="'. $this->element_name( '[font]' ) .'" class="cs-typo-font hidden" data-atts="font" value="'. $value['font'] .'" />';
 
     } else {
 

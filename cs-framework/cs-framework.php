@@ -52,11 +52,12 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
     defined( 'CS_ACTIVE_CUSTOMIZE' )  or  define( 'CS_ACTIVE_CUSTOMIZE',  true );
 
     // helpers
-    cs_locate_template ( 'functions/helpers.php'   );
-    cs_locate_template ( 'functions/actions.php'   );
-    cs_locate_template ( 'functions/enqueue.php'   );
-    cs_locate_template ( 'functions/sanitize.php'  );
-    cs_locate_template ( 'functions/validate.php'  );
+    cs_locate_template ( 'functions/deprecated.php'     );
+    cs_locate_template ( 'functions/helpers.php'        );
+    cs_locate_template ( 'functions/actions.php'        );
+    cs_locate_template ( 'functions/enqueue.php'        );
+    cs_locate_template ( 'functions/sanitize.php'       );
+    cs_locate_template ( 'functions/validate.php'       );
 
     // classes
     cs_locate_template ( 'classes/abstract.class.php'   );

@@ -3,7 +3,7 @@
   margin-top: 20px;
   margin-right: 20px;
 
-  .settings-error {
+  .settings-error{
     margin: 0 0 15px 0;
   }
 
@@ -380,7 +380,7 @@
 .chosen-container{
   max-width: 100%;
 
-  .search-field input[type="text"] {
+  .search-field input[type="text"]{
     height: inherit !important;
   }
 }
@@ -389,6 +389,10 @@
   select,
   .chosen-container{
     margin-right: 5px;
+  }
+
+  .cs-typo-variant{
+    min-width: 90px;
   }
 }
 
@@ -409,7 +413,7 @@
 
 .cs-field-switcher{
 
-  label {
+  label{
     float: left;
     cursor: pointer;
     position: relative;
@@ -418,7 +422,7 @@
     overflow: hidden;
     @include border-radius(20px);
 
-    span {
+    span{
       position: absolute;
       top: 4px;
       left: 4px;
@@ -429,30 +433,30 @@
       @include transition(left 0.15s ease-out);
     }
 
-    input {
+    input{
       position: absolute;
       top: 0;
       left: 0;
       opacity: 0;
 
-      &:checked ~ em {
+      &:checked ~ em{
         background: #4fb845;
       }
 
-      &:checked ~ em:before {
+      &:checked ~ em:before{
         opacity: 0;
       }
 
-      &:checked ~ em:after {
+      &:checked ~ em:after{
         opacity: 1;
       }
 
-      &:checked ~ span {
+      &:checked ~ span{
         left: 40px;
       }
     }
 
-    em {
+    em{
       position: relative;
       display: block;
       height: inherit;
@@ -466,17 +470,17 @@
       @include transition(background 0.15s ease-out);
     }
 
-    em:before, em:after {
+    em:before, em:after{
       position: absolute;
       @include transition(opacity 0.15s ease-out);
     }
 
-    em:before {
+    em:before{
       content: attr(data-off);
       right: 14px;
     }
 
-    em:after {
+    em:after{
       content: attr(data-on);
       left: 14px;
       opacity: 0;
@@ -509,7 +513,7 @@
   input{
     display: none;
 
-    &:checked ~ img {
+    &:checked ~ img{
       border-color: #333;
       @include opacity(1);
     }
@@ -530,9 +534,9 @@
   }
 }
 
-.cs-field-color_picker {
+.cs-field-color_picker{
 
-  .cs-alpha-wrap {
+  .cs-alpha-wrap{
     display: none;
     position: relative;
     top: -1px;
@@ -543,13 +547,13 @@
     background-color: #fff;
   }
 
-  .cs-alpha-slider {
+  .cs-alpha-slider{
     position: absolute;
     width: 190px;
     margin-left: 2px;
     height: 18px;
 
-    .ui-slider-handle {
+    .ui-slider-handle{
       position: absolute;
       top: -3px;
       bottom: -3px;
@@ -566,7 +570,7 @@
       @include border-radius(4px);
       @include box-shadow(0 1px 2px rgba(black, 0.2));
 
-      &:before {
+      &:before{
         content: " ";
         position: absolute;
         left: -2px;
@@ -579,7 +583,7 @@
     }
   }
 
-  .cs-alpha-slider-offset {
+  .cs-alpha-slider-offset{
     height: 18px;
     width: 200px;
     background: url(../images/checkerboard.png) repeat-y center left scroll #fff;
@@ -644,7 +648,7 @@
 
     &:active,
     &:hover,
-    &:focus {
+    &:focus{
       border: 1px solid #bbb;
       background: #fafafa;
       outline: none;
@@ -688,7 +692,7 @@
   }
 
   .ui-sortable-helper{
-    .cs-group-content {
+    .cs-group-content{
       display: none !important;
     }
   }
@@ -941,7 +945,7 @@
     @include box-shadow(inset 0 1px #e8776f !important);
   }
 
-  &:active {
+  &:active{
     border-color: #ba281e !important;
     background: #d02c21 !important;
     color: white !important;
@@ -996,7 +1000,7 @@
   @include border-radius(2px);
 }
 
-.tooltip {
+.tooltip{
   position: absolute;
   z-index: 500001;
   display: block;
@@ -1006,12 +1010,12 @@
   @include opacity(0);
   @include transition(opacity .15s linear);
 
-  &.in {
+  &.in{
     @include opacity(1);
   }
 }
 
-.tooltip-inner {
+.tooltip-inner{
   max-width: 200px;
   padding: 6px 12px;
   color: #fff;
