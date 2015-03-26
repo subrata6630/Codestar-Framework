@@ -322,7 +322,19 @@ class CSFramework extends CSFramework_Abstract {
       echo '<input type="hidden" class="cs-reset" name="cs_section_id" value="'. $section_id .'" />';
 
       if( $this->settings['ajax_save'] !== true ) {
-        settings_errors();
+
+        $errors = get_settings_errors();
+
+        if ( ! empty( $errors ) ) {
+          foreach ( $errors as $error ) {
+            if( in_array( $error['setting'], array( 'general', 'cs-framework-errors' ) ) ) {
+              echo '<div class="cs-settings-error '. $error['type'] .'">';
+              echo '<p><strong>'. $error['message'] .'</strong></p>';
+              echo '</div>';
+            }
+          }
+        }
+
       }
 
       settings_fields( $this->unique. '_group' );
