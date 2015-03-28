@@ -25,7 +25,9 @@ class CSFramework_Option_color_picker extends CSFramework_Options {
 
     $atts = array();
 
-    $atts['data-depend-id'] = $this->field['id'];
+    if( isset( $this->field['id'] ) ) {
+      $atts['data-depend-id'] = $this->field['id'];
+    }
 
     if ( isset( $this->field['rgba'] ) &&  $this->field['rgba'] === false ) {
       $atts['data-rgba'] = 'false';

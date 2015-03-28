@@ -1140,17 +1140,24 @@
         // wpColorPicker core
         $this.wpColorPicker({
 
+          // wpColorPicker: clear
+          clear: function() {
+            $this.trigger('keyup');
+          },
+
           // wpColorPicker: change
           change: function( event, ui ) {
 
+            var ui_color_value = ui.color.toString();
+
             // update checkerboard background color
-            $this.closest('.wp-picker-container').find('.cs-alpha-slider-offset').css('background-color', ui.color.toString());
-            $this.trigger('keyup');
+            $this.closest('.wp-picker-container').find('.cs-alpha-slider-offset').css('background-color', ui_color_value);
+            $this.val(ui_color_value).trigger('change');
 
           },
 
           // wpColorPicker: create
-          create: function( event, ui ) {
+          create: function() {
 
             // set variables for alpha slider
             var a8cIris       = $this.data('a8cIris'),
@@ -1241,8 +1248,11 @@
 
         // wpColorPicker default picker
         $this.wpColorPicker({
-          change: function() {
+          clear: function() {
             $this.trigger('keyup');
+          },
+          change: function( event, ui ) {
+            $this.val(ui.color.toString()).trigger('change');
           }
         });
 
@@ -1274,16 +1284,14 @@
   // JQUERY DOCUMENT READY
   // ------------------------------------------------------
   $(document).ready( function() {
-
     $('.cs-framework').CSFRAMEWORK_TAB_NAVIGATION();
     $('.cs-reset-confirm, .cs-import-backup').CSFRAMEWORK_CONFIRM();
-    $('.cs-content').CSFRAMEWORK_DEPENDENCY();
+    $('.cs-content, .wp-customizer').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('#cs-save-ajax').CSFRAMEWORK_SAVE_AJAX();
     $('body').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
-
   });
 
 })( jQuery, window, document );

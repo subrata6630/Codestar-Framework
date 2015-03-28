@@ -122,23 +122,34 @@ class CSFramework_Customize extends CSFramework_Abstract {
           )
         );
 
+        // add_control
+        $control_args = wp_parse_args( $setting['control'], array(
+          'unique'    => CS_CUSTOMIZE,
+          'section'   => $section['name'],
+          'settings'  => $setting_name,
+          'priority'  => $setting_priority,
+        ));
 
-        // add_setting
-        $setting_control = $setting['control'];
+        if( $control_args['type'] == 'cs_field' ) {
 
-        $control_args    = array(
-          'section'      => $section['name'],
-          'settings'     => $setting_name,
-          'unique'       => CS_CUSTOMIZE,
-          'priority'     => $setting_priority,
-        );
-        $control_args    = wp_parse_args( $setting_control, $control_args );
-
-        if( $setting_control['type'] == 'cs_field' ) {
-          $call_class =  'WP_Customize_'. $setting_control['type'] .'_Control';
+          $call_class = 'WP_Customize_'. $control_args['type'] .'_Control';
           $wp_customize->add_control( new $call_class( $wp_customize, $setting['name'], $control_args ) );
+
         } else {
-          $wp_customize->add_control( $setting['name'], $control_args );
+
+          $wp_controls = array( 'color', 'upload', 'image', 'media' );
+
+          if( in_array( $control_args['type'], $wp_controls ) ) {
+
+            $call_class = 'WP_Customize_'. ucfirst( $control_args['type'] ) .'_Control';
+            $wp_customize->add_control( new $call_class( $wp_customize, $setting['name'], $control_args ) );
+
+          } else {
+
+            $wp_customize->add_control( $setting['name'], $control_args );
+
+          }
+
         }
 
         $setting_priority++;

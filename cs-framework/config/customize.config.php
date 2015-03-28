@@ -4,107 +4,125 @@
 // CUSTOMIZE SETTINGS
 // -----------------------------------------------------------------------------------------------
 // ===============================================================================================
-$options          = array();
+$options              = array();
 
 // -----------------------------------------
 // Customize Core Fields                   -
 // -----------------------------------------
-$options[]        = array(
-  'name'          => 'core_fields',
-  'title'         => 'Core Fields',
-  'settings'      => array(
+$options[]            = array(
+  'name'              => 'wp_core_fields',
+  'title'             => 'WP Core Fields',
+  'settings'          => array(
 
-    // core text
+    // color
     array(
-      'name'      => 'text_option',
-      'control'   => array(
-        'label'   => 'Text Field',
-        'type'    => 'text',
+      'name'          => 'color_option_with_default',
+      'default'       => '#d80039',
+      'control'       => array(
+        'label'       => 'Color',
+        'type'        => 'color',
       ),
     ),
 
-    // core text with default
+    // text
     array(
-      'name'      => 'text_option_with_default',
-      'default'   => 'bla bla bla',
-      'control'   => array(
-        'label'   => 'Text Field with Default',
-        'type'    => 'text',
+      'name'          => 'text_option',
+      'control'       => array(
+        'label'       => 'Text',
+        'type'        => 'text',
       ),
     ),
 
-    // core textarea
+    // text with default
     array(
-      'name'      => 'textarea_option',
-      'control'   => array(
-        'label'   => 'Textarea Field',
-        'type'    => 'textarea',
+      'name'          => 'text_option_with_default',
+      'default'       => 'bla bla bla',
+      'control'       => array(
+        'label'       => 'Text with Default',
+        'type'        => 'text',
       ),
     ),
 
-    // core checkbox
+    // textarea
     array(
-      'name'      => 'checkbox_option',
-      'control'   => array(
-        'label'   => 'Single Checkbox Field',
-        'type'    => 'checkbox',
+      'name'          => 'textarea_option',
+      'control'       => array(
+        'label'       => 'Textarea',
+        'type'        => 'textarea',
       ),
     ),
 
-    // core radio
+    // checkbox
     array(
-      'name'      => 'radio_option',
-      'control'   => array(
-        'label'   => 'Radio Field',
-        'type'    => 'radio',
-        'choices' => array(
-          'key1'  => 'value 1',
-          'key2'  => 'value 2',
-          'key3'  => 'value 3',
+      'name'          => 'checkbox_option',
+      'control'       => array(
+        'label'       => 'Checkbox',
+        'type'        => 'checkbox',
+      ),
+    ),
+
+    // radio
+    array(
+      'name'          => 'radio_option',
+      'control'       => array(
+        'label'       => 'Radio',
+        'type'        => 'radio',
+        'choices'     => array(
+          'key1'      => 'value 1',
+          'key2'      => 'value 2',
+          'key3'      => 'value 3',
         )
       ),
     ),
 
-    // core select
+    // select
     array(
-      'name'      => 'select_option',
-      'control'   => array(
-        'label'   => 'Select Field',
-        'type'    => 'select',
-        'choices' => array(
-          ''      => '- Select a value -',
-          'key1'  => 'value 1',
-          'key2'  => 'value 2',
-          'key3'  => 'value 3',
+      'name'          => 'select_option',
+      'control'       => array(
+        'label'       => 'Select',
+        'type'        => 'select',
+        'choices'     => array(
+          ''          => '- Select a value -',
+          'key1'      => 'value 1',
+          'key2'      => 'value 2',
+          'key3'      => 'value 3',
         )
       ),
     ),
 
-    // core dropdown-pages
+    // dropdown-pages
     array(
-      'name'      => 'dropdown_pages_option',
-      'control'   => array(
-        'label'   => 'Dropdown-Pages Field',
-        'type'    => 'dropdown-pages',
+      'name'          => 'dropdown_pages_option',
+      'control'       => array(
+        'label'       => 'Dropdown-Pages',
+        'type'        => 'dropdown-pages',
       ),
     ),
 
-    // core color
+    // upload
     array(
-      'name'      => 'color_option',
-      'control'   => array(
-        'label'   => 'Color Picker Field',
-        'type'    => 'color',
+      'name'          => 'upload_option',
+      'control'       => array(
+        'label'       => 'Upload',
+        'type'        => 'upload',
       ),
     ),
 
-    // core color with default
+    // image
     array(
-      'name'      => 'color_option_with_default',
-      'default'   => '#ffbc00',
-      'control'   => array(
-        'label'   => 'Color Picker Field with Default',
-        'type'    => 'color',
+      'name'          => 'image_option',
+      'control'       => array(
+        'label'       => 'Image',
+        'type'        => 'image',
+      ),
+    ),
+
+    // media
+    array(
+      'name'          => 'media_option',
+      'control'       => array(
+        'label'       => 'Media',
+        'type'        => 'media',
       ),
     ),
 
@@ -114,94 +132,107 @@ $options[]        = array(
 // -----------------------------------------
 // Customize Codestar Fields               -
 // -----------------------------------------
-$options[]        = array(
-  'name'          => 'codestar_fields',
-  'title'         => 'Codestar Fields',
-  'settings'      => array(
+$options[]            = array(
+  'name'              => 'codestar_fields',
+  'title'             => 'Codestar Framework Fields',
+  'settings'          => array(
+
+    // codestar color picker
+    array(
+      'name'          => 'codestar_color_picker',
+      'default'       => '#3498db',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'color_picker',
+          'title'     => 'Color Picker Field',
+        ),
+      ),
+    ),
 
     // codestar text
     array(
-      'name'      => 'codestar_text',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'id'    => 'Text_Field',
-          'type'  => 'color_picker',
-          'title' => 'Text Field',
+      'name'          => 'codestar_text',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'text',
+          'desc'      => 'Codestar Switcher Field',
+          'title'     => 'Text Field',
         ),
       ),
     ),
 
     // codestar textarea
     array(
-      'name'      => 'codestar_textarea',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'textarea',
-          'title' => 'Text Area',
+      'name'          => 'codestar_textarea',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'textarea',
+          'title'     => 'Text Area',
         ),
       ),
     ),
 
     // codestar switcher
     array(
-      'name'      => 'codestar_switcher',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'switcher',
-          'title' => 'Codestar Switcher Field',
-          'label' => 'Do you want to ?',
-          'help'  => 'Lorem Ipsum Dollar',
+      'name'          => 'codestar_switcher',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'switcher',
+          'title'     => 'Codestar Switcher Field',
+          'label'     => 'Do you want to ?',
+          'help'      => 'Lorem Ipsum Dollar',
         ),
       ),
     ),
 
     // codestar upload
     array(
-      'name'      => 'codestar_upload',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'upload',
-          'title' => 'Codestar Upload Field',
+      'name'          => 'codestar_upload',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'upload',
+          'title'     => 'Codestar Upload Field',
         ),
       ),
     ),
 
     // codestar image
     array(
-      'name'      => 'codestar_image',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'image',
-          'title' => 'Codestar Image Field',
+      'name'          => 'codestar_image',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'image',
+          'title'     => 'Codestar Image Field',
         ),
       ),
     ),
 
     // codestar gallery
     array(
-      'name'      => 'codestar_gallery',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'gallery',
-          'title' => 'Codestar Gallery Field',
+      'name'          => 'codestar_gallery',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'gallery',
+          'title'     => 'Codestar Gallery Field',
         ),
       ),
     ),
 
     // codestar icon
     array(
-      'name'      => 'codestar_icon',
-      'control'   => array(
-        'type'    => 'cs_field',
-        'options' => array(
-          'type'  => 'icon',
-          'title' => 'Codestar Icon Field',
+      'name'          => 'codestar_icon',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'icon',
+          'title'     => 'Codestar Icon Field',
         ),
       ),
     ),
@@ -224,71 +255,156 @@ $options[]        = array(
       ),
     ),
 
+    // codestar heading
+    array(
+      'name'          => 'codestar_heading',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'heading',
+          'content'   => 'Codestar Heading',
+        ),
+      ),
+    ),
+
+    // codestar subheading
+    array(
+      'name'          => 'codestar_subheading',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'subheading',
+          'content'   => 'Codestar Sub-Heading',
+        ),
+      ),
+    ),
+
+    // codestar notice:success
+    array(
+      'name'          => 'codestar_notice_success',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'notice',
+          'class'     => 'success',
+          'content'   => 'Notice Success: Lorem Ipsum...',
+        ),
+      ),
+    ),
+
+    // codestar notice:info
+    array(
+      'name'          => 'codestar_notice_info',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'notice',
+          'class'     => 'info',
+          'content'   => 'Notice Info: Lorem Ipsum...',
+        ),
+      ),
+    ),
+
+    // codestar notice:danger
+    array(
+      'name'          => 'codestar_notice_danger',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'notice',
+          'class'     => 'danger',
+          'content'   => 'Notice Danger: Lorem Ipsum...',
+        ),
+      ),
+    ),
+
+    // codestar content
+    array(
+      'name'          => 'codestar_content',
+      'control'       => array(
+        'type'        => 'cs_field',
+        'options'     => array(
+          'type'      => 'content',
+          'content'   => 'Simple Content Field...',
+        ),
+      ),
+    ),
+
   )
 );
 
 // -----------------------------------------
 // Customize Panel Options Fields          -
 // -----------------------------------------
-$options[]      = array(
-  'name'        => 'codestar_panel_1',
-  'title'       => 'Codestar Panel Example',
-  'description' => 'Codestar customize panel description.',
-  'sections'    => array(
+$options[]            = array(
+  'name'              => 'codestar_panel_1',
+  'title'             => 'Codestar Framework Panel',
+  'description'       => 'Codestar customize panel description.',
+  'sections'          => array(
 
     // begin: section
     array(
-      'name'        => 'section_1',
-      'title'       => 'Section 1',
-      'settings'    => array(
+      'name'          => 'section_1',
+      'title'         => 'Section 1',
+      'settings'      => array(
 
-        // core color
         array(
           'name'      => 'color_option_1',
           'default'   => '#ffbc00',
           'control'   => array(
-            'label'   => 'Color Option 1',
-            'type'    => 'color',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'color_picker',
+              'title' => 'Color Option 1',
+            ),
           ),
         ),
 
-        // core color
         array(
           'name'      => 'color_option_2',
           'default'   => '#2ecc71',
           'control'   => array(
-            'label'   => 'Color Option 2',
-            'type'    => 'color',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'color_picker',
+              'title' => 'Color Option 2',
+            ),
           ),
         ),
 
-        // core color
         array(
           'name'      => 'color_option_3',
           'default'   => '#e74c3c',
           'control'   => array(
-            'label'   => 'Color Option 3',
-            'type'    => 'color',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'color_picker',
+              'title' => 'Color Option 3',
+            ),
           ),
         ),
 
-        // core color
         array(
           'name'      => 'color_option_4',
           'default'   => '#3498db',
           'control'   => array(
-            'label'   => 'Color Option 4',
-            'type'    => 'color',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'color_picker',
+              'title' => 'Color Option 4',
+            ),
           ),
         ),
 
-        // core color
         array(
           'name'      => 'color_option_5',
           'default'   => '#555555',
           'control'   => array(
-            'label'   => 'Color Option 5',
-            'type'    => 'color',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'color_picker',
+              'title' => 'Color Option 5',
+            ),
           ),
         ),
 
@@ -298,34 +414,40 @@ $options[]      = array(
 
     // begin: section
     array(
-      'name'        => 'section_2',
-      'title'       => 'Section 2',
-      'settings'    => array(
+      'name'          => 'section_2',
+      'title'         => 'Section 2',
+      'settings'      => array(
 
-        // core text
         array(
           'name'      => 'text_option_1',
           'control'   => array(
-            'label'   => 'Text Option 1',
-            'type'    => 'text',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'text',
+              'title' => 'Text Option 1',
+            ),
           ),
         ),
 
-        // core text
         array(
           'name'      => 'text_option_2',
           'control'   => array(
-            'label'   => 'Text Option 2',
-            'type'    => 'text',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'text',
+              'title' => 'Text Option 2',
+            ),
           ),
         ),
 
-        // core text
         array(
           'name'      => 'text_option_3',
           'control'   => array(
-            'label'   => 'Text Option 3',
-            'type'    => 'text',
+            'type'    => 'cs_field',
+            'options' => array(
+              'type'  => 'text',
+              'title' => 'Text Option 3',
+            ),
           ),
         ),
 

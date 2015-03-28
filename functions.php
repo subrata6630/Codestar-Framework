@@ -6,3 +6,10 @@
  *
  */
 require_once dirname( __FILE__ ) .'/cs-framework/cs-framework.php';
+
+/**
+ *
+ * Unit-Test Functions
+ *
+ */
+require_once dirname( __FILE__ ) .'/inc/unit.php';
