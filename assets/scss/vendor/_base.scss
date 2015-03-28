@@ -708,7 +708,7 @@
 }
 
 .cs-field-heading{
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 !important;
 
   h2{
     margin: 0;
@@ -719,7 +719,7 @@
 .cs-field-subheading{
   padding-top: 17px;
   padding-bottom: 17px;
-  background-color: #f7f7f7;
+  background-color: #f7f7f7 !important;
 
   h3{
     margin: 0;
@@ -957,7 +957,7 @@
   font-style: italic;
   font-weight: 400;
   margin-top: 10px;
-  color: #aaa;
+  color: #999;
 }
 
 .cs-text-success{
@@ -1222,7 +1222,7 @@
   .cs-element{
     margin-right: -20px;
     margin-left: -20px;
-    padding: 20px;
+    padding: 12px 15px;
 
     .cs-title{
       float: none;
@@ -1245,8 +1245,31 @@
   }
 
   .cs-field-upload input{
-    width: 170px;
+    width: 175px;
     margin-right: 5px;
+  }
+
+  .cs-field-heading h2{
+    color: #555;
+    padding: 0;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1em;
+  }
+
+  .cs-field-subheading h3{
+    color: #555;
+    font-size: 11px;
+  }
+
+  .cs-text-desc{
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .cs-field-content,
+  .cs-field-notice .cs-notice{
+    padding: 15px;
   }
 }
 
