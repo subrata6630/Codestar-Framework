@@ -159,7 +159,7 @@
     return this.each(function() {
 
       $(this).find('label').on('click', function () {
-        $(this).siblings().find('input').attr('checked', false);
+        $(this).siblings().find('input').prop('checked', false);
       });
 
     });
