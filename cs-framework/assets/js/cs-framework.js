@@ -1264,6 +1264,15 @@
   // ======================================================
 
   // ======================================================
+  // ON WIDGET-ADDED RELOAD FRAMEWORK PLUGINS
+  // ------------------------------------------------------
+  $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
+    $(document).on('widget-added', function( event, $widget ) {
+      $widget.CSFRAMEWORK_RELOAD_PLUGINS();
+    });
+  };
+
+  // ======================================================
   // RELOAD FRAMEWORK PLUGINS
   // ------------------------------------------------------
   $.fn.CSFRAMEWORK_RELOAD_PLUGINS = function() {
@@ -1292,6 +1301,7 @@
     $('body').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
+    $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
   });
 
 })( jQuery, window, document );

@@ -1571,6 +1571,31 @@
   padding: 15px;
 }
 
+.widgets-holder-wrap .cs-element {
+  position: relative;
+  top: -1px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 12px 15px;
+}
+.widgets-holder-wrap .cs-element:last-child {
+  margin-bottom: 15px;
+}
+.widgets-holder-wrap .cs-element .cs-title {
+  float: none;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.widgets-holder-wrap .cs-element .cs-fieldset {
+  margin-left: 0;
+}
+.widgets-holder-wrap .cs-field-text input {
+  width: 100%;
+}
+.widgets-holder-wrap .cs-field-upload input {
+  width: 330px;
+}
+
 @media only screen and (max-width: 1200px) {
   .cs-metabox-framework .cs-element .cs-title {
     float: none;
