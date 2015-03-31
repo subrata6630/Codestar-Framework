@@ -1,6 +1,19 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
+ * Framework constants
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+defined( 'CS_VERSION' )     or  define( 'CS_VERSION',     '1.0.0' );
+defined( 'CS_TEXTDOMAIN' )  or  define( 'CS_TEXTDOMAIN',  'cs-framework' );
+defined( 'CS_OPTION' )      or  define( 'CS_OPTION',      '_cs_options' );
+defined( 'CS_CUSTOMIZE' )   or  define( 'CS_CUSTOMIZE',   '_cs_customize_options' );
+
+/**
+ *
  * Framework path finder
  *
  * @since 1.0.0
@@ -38,6 +51,21 @@ if( ! function_exists( 'cs_get_path_locate' ) ) {
 
   }
 }
+
+/**
+ *
+ * Framework set paths
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ *
+ */
+$get_path = cs_get_path_locate();
+
+defined( 'CS_BASENAME' )  or  define( 'CS_BASENAME',  $get_path['basename'] );
+defined( 'CS_DIR' )       or  define( 'CS_DIR',       $get_path['dir'] );
+defined( 'CS_URI' )       or  define( 'CS_URI',       $get_path['uri'] );
 
 /**
  *
@@ -396,19 +424,6 @@ function cs_get_locale() {
   return apply_filters( 'locale', $locale );
 
 }
-
-// ------------------------------------------------------------------------------------
-// constants
-// ------------------------------------------------------------------------------------
-$get_path = cs_get_path_locate();
-
-defined( 'CS_VERSION' )     or  define( 'CS_VERSION',     '1.0.0' );
-defined( 'CS_TEXTDOMAIN' )  or  define( 'CS_TEXTDOMAIN',  'cs-framework' );
-defined( 'CS_OPTION' )      or  define( 'CS_OPTION',       '_cs_options' );
-defined( 'CS_CUSTOMIZE' )   or  define( 'CS_CUSTOMIZE',    '_cs_customize_options' );
-defined( 'CS_BASENAME' )    or  define( 'CS_BASENAME',     $get_path['basename'] );
-defined( 'CS_DIR' )         or  define( 'CS_DIR',          $get_path['dir'] );
-defined( 'CS_URI' )         or  define( 'CS_URI',          $get_path['uri'] );
 
 // ------------------------------------------------------------------------------------
 // load textdomain
