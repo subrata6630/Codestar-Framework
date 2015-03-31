@@ -1203,6 +1203,38 @@
   }
 }
 
+.widgets-holder-wrap{
+  .cs-element{
+    position: relative;
+    top: -1px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 12px 15px;
+
+    &:last-child{
+      margin-bottom: 15px;
+    }
+
+    .cs-title{
+      float: none;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    .cs-fieldset{
+      margin-left: 0;
+    }
+  }
+
+  .cs-field-text input{
+    width: 100%;
+  }
+
+  .cs-field-upload input{
+    width: 330px;
+  }
+}
+
 #customize-controls{
 
   .customize-control-cs_field{
@@ -1240,6 +1272,18 @@
 
   }
 
+  .widget-content{
+    .cs-element{
+      margin-right: -10px;
+      margin-left: -10px;
+      padding: 10px 12px;
+
+      &:last-child{
+        margin-bottom: 10px;
+      }
+    }
+  }
+
   .cs-field-select select{
     width: 100%;
   }
@@ -1270,38 +1314,6 @@
   .cs-field-content,
   .cs-field-notice .cs-notice{
     padding: 15px;
-  }
-}
-
-.widgets-holder-wrap{
-  .cs-element{
-    position: relative;
-    top: -1px;
-    margin-right: -15px;
-    margin-left: -15px;
-    padding: 12px 15px;
-
-    &:last-child{
-      margin-bottom: 15px;
-    }
-
-    .cs-title{
-      float: none;
-      width: 100%;
-      margin-bottom: 5px;
-    }
-
-    .cs-fieldset{
-      margin-left: 0;
-    }
-  }
-
-  .cs-field-text input{
-    width: 100%;
-  }
-
-  .cs-field-upload input{
-    width: 330px;
   }
 }
 
