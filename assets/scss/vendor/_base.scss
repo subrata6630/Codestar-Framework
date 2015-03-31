@@ -1203,7 +1203,7 @@
   }
 }
 
-.widgets-holder-wrap{
+.widget-content{
   .cs-element{
     position: relative;
     top: -1px;
@@ -1269,7 +1269,6 @@
     .cs-fieldset{
       margin-left: 0;
     }
-
   }
 
   .widget-content{
@@ -1277,10 +1276,6 @@
       margin-right: -10px;
       margin-left: -10px;
       padding: 10px 12px;
-
-      &:last-child{
-        margin-bottom: 10px;
-      }
     }
   }
 
