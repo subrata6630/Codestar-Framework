@@ -2,6 +2,7 @@
 // net against concatenated scripts and/or other plugins
 // that are not closed properly.
 // set root Object
+
 ;(function ( $, window, document, undefined ) {
   'use strict';
 
@@ -92,17 +93,23 @@
 
       base.$el.each( function() {
 
-        var _elem = $(this);
+        $(this).find('[data-controller]').each( function() {
 
-        _elem.find('[data-controller]').each( function() {
+          var $this       = $(this),
+              _controller = $this.data('controller').split('|'),
+              _condition  = $this.data('condition').split('|'),
+              _value      = $this.data('value').toString().split('|'),
+              _rules      = base.ruleset;
 
-          var _this         = $(this),
-              _dependElem   = _this.data('controller'),
-              _dependRule   = _this.data('condition'),
-              _dependValue  = _this.data('value'),
-              _dependTarget = _elem.find('[data-depend-id="' + _dependElem + '"]');
+          $.each(_controller, function(index, element) {
 
-          base.ruleset.createRule(_dependTarget, _dependRule, _dependValue).include(_this);
+            var value     = _value[index] || '',
+                condition = _condition[index] || _condition[0];
+
+            _rules = _rules.createRule('[data-depend-id="'+ element +'"]', condition, value);
+            _rules.include($this);
+
+          });
 
         });
 
@@ -114,23 +121,30 @@
 
       base.$el.each( function() {
 
-        var _elem = $(this);
+        $(this).find('[data-sub-controller]').each( function() {
 
-        _elem.find('[data-sub-controller]').each( function() {
+          var $this       = $(this),
+              _controller = $this.data('sub-controller').split('|'),
+              _condition  = $this.data('sub-condition').split('|'),
+              _value      = $this.data('sub-value').toString().split('|'),
+              _rules      = base.ruleset;
 
-          var _this     = $(this),
-            _dependElem   = _this.data('sub-controller'),
-            _dependRule   = _this.data('sub-condition'),
-            _dependValue  = _this.data('sub-value'),
-            _dependTarget = _elem.find('[data-depend-id="' + _dependElem + '"]');
+          $.each(_controller, function(index, element) {
 
-          base.ruleset.createRule(_dependTarget, _dependRule, _dependValue).include(_this);
+            var value     = _value[index] || '',
+                condition = _condition[index] || _condition[0];
+
+            _rules = _rules.createRule('[data-sub-depend-id="'+ element +'"]', condition, value);
+            _rules.include($this);
+
+          });
 
         });
 
       });
 
     };
+
 
     base.init();
   };

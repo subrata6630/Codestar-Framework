@@ -41,9 +41,8 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         foreach ( $this->value as $key => $value ) {
 
-          $title = $this->value[$key][$this->field['fields'][0]['id']];
+          $title = isset( $this->value[$key][$this->field['fields'][0]['id']] ) ? $this->value[$key][$this->field['fields'][0]['id']] : '';
 
-          // multi-lang title
           if ( is_array( $title ) && isset( $this->multilang ) ) {
             $multilang = cs_language_defaults();
             $title     = $title[$multilang['current']];

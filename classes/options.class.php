@@ -75,8 +75,9 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
     $element_id = ( isset( $this->field['id'] ) ) ? $this->field['id'] : '';
 
     if( $el_attributes !== false ) {
-      $el_attributes  = ( is_string( $el_attributes ) || is_numeric( $el_attributes ) ) ? array('data-depend-id' => $element_id . '_' . $el_attributes ) : $el_attributes;
-      $el_attributes  = ( empty( $el_attributes ) && isset( $element_id ) ) ? array('data-depend-id' => $element_id ) : $el_attributes;
+      $sub_elemenet   = ( isset( $this->field['sub'] ) ) ? 'sub-': '';
+      $el_attributes  = ( is_string( $el_attributes ) || is_numeric( $el_attributes ) ) ? array('data-'. $sub_elemenet .'depend-id' => $element_id . '_' . $el_attributes ) : $el_attributes;
+      $el_attributes  = ( empty( $el_attributes ) && isset( $element_id ) ) ? array('data-'. $sub_elemenet .'depend-id' => $element_id ) : $el_attributes;
     }
 
     $attributes = wp_parse_args( $attributes, $el_attributes );

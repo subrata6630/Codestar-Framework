@@ -17,7 +17,6 @@ class CSFramework_Option_checkbox extends CSFramework_Options {
 
     echo $this->element_before();
 
-    // if checkbox has options
     if( isset( $this->field['options'] ) ) {
 
       $options  = $this->field['options'];

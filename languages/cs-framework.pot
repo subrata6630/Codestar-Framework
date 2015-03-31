@@ -28,19 +28,19 @@ msgstr ""
 msgid "show all options"
 msgstr ""
 
-#: classes/options.class.php:125
+#: classes/options.class.php:126
 msgid "CONFIG"
 msgstr ""
 
-#: classes/options.class.php:131
+#: classes/options.class.php:132
 msgid "USAGE"
 msgstr ""
 
-#: classes/options.class.php:137
+#: classes/options.class.php:138
 msgid "VALUE"
 msgstr ""
 
-#: classes/options.class.php:210
+#: classes/options.class.php:211
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Adding"
 msgstr ""
 
-#: fields/group/group.php:33 fields/group/group.php:64
+#: fields/group/group.php:33 fields/group/group.php:63
 msgid "Remove"
 msgstr ""
 
