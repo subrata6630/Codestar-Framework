@@ -286,29 +286,6 @@ $options[]   = array(
           'after'  => '<p class="cs-text-muted">This Text Field do not using left title, just using before text here. also you can remove it.</h4>',
         ),
 
-        array(
-          'id'    => 'unique_text_14',
-          'type'  => 'text',
-          'title' => 'Text Field with Dependency Method',
-          'after' => ' <i class="cs-text-muted">write something for hidden text</i>'
-        ),
-
-        array(
-          'id'         => 'unique_text_15',
-          'type'       => 'text',
-          'title'      => 'Text Field Hidden Level 1',
-          'dependency' => array( 'unique_text_14', '!=', '' ), // not empty
-        ),
-
-        // begin: a field
-        array(
-          'id'         => 'unique_text_16',
-          'type'       => 'text',
-          'title'      => 'Text Field Hidden Level 2',
-          'dependency' => array( 'unique_text_15', '!=', '' ), // not empty
-        ),
-        // end: a field
-
       ), // end: fields
 
     ), // end: text options
@@ -546,29 +523,6 @@ $options[]   = array(
           'after'        => '<div class="cs-text-muted"><strong>query_args:</strong> taxonomies=your_taxonomy_name, order=asc, orderby=name</div>',
         ),
 
-        array(
-          'id'         => 'unique_checkbox_15',
-          'type'       => 'checkbox',
-          'title'      => 'Checkbox with Dependenciy',
-          'label'      => 'Click me for next dependency checkbox!',
-        ),
-
-        array(
-          'id'         => 'unique_checkbox_16',
-          'type'       => 'checkbox',
-          'title'      => 'Checkbox Level 1',
-          'label'      => 'Click me too!',
-          'dependency' => array( 'unique_checkbox_15', '!=', '' ),
-        ),
-
-        array(
-          'id'         => 'unique_checkbox_16',
-          'type'       => 'checkbox',
-          'title'      => 'Checkbox Level 2',
-          'label'      => 'Done! :)',
-          'dependency' => array( 'unique_checkbox_16', '!=', '' ),
-        ),
-
       ),
     ), // end: checkbox options
 
@@ -689,22 +643,6 @@ $options[]   = array(
             'no'       => 'No, Thank you.',
             'nothing'  => 'Nothing.',
           ),
-        ),
-
-        array(
-          'id'         => 'unique_text_checkbox_1',
-          'type'       => 'text',
-          'title'      => 'Text Field for YES',
-          'label'      => 'This is YES dependency!',
-          'dependency' => array( 'unique_radio_11_yes', '==', 'true' ),
-        ),
-
-        array(
-          'id'         => 'unique_text_checkbox_2',
-          'type'       => 'text',
-          'title'      => 'Text Field for NO',
-          'label'      => 'This is NO dependency!',
-          'dependency' => array( 'unique_radio_11_no', '==', 'true' ),
         ),
 
       ),
@@ -948,20 +886,6 @@ $options[]   = array(
           'type'    => 'switcher',
           'title'   => 'Switcher Field with Default',
           'default' => true,
-        ),
-
-        array(
-          'id'         => 'unique_switcher_5',
-          'type'       => 'switcher',
-          'title'      => 'Switcher Field with Dependency Method',
-          'label'      => 'Set on for next level option field'
-        ),
-
-        array(
-          'id'         => 'unique_switcher_text_1',
-          'type'       => 'text',
-          'title'      => 'Text Field Hidden Level 1',
-          'dependency' => array( 'unique_switcher_5', '!=', '' ),
         ),
 
       ),
@@ -1889,6 +1813,300 @@ $options[]   = array(
     ),
 
   )
+);
+
+// ----------------------------------------
+// dependencies                           -
+// ----------------------------------------
+$options[]           = array(
+  'name'             => 'dependencies',
+  'title'            => 'Dependencies',
+  'icon'             => 'fa fa-code-fork',
+  'fields'           => array(
+
+    // ------------------------------------
+    // Basic Dependencies
+    // ------------------------------------
+    array(
+      'type'         => 'subheading',
+      'content'      => 'Basic Dependencies',
+    ),
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_1',
+      'type'         => 'text',
+      'title'        => 'If text <u>not be empty</u>',
+    ),
+
+    array(
+      'id'           => 'dummy_1',
+      'type'         => 'notice',
+      'class'        => 'info',
+      'content'      => 'Done, this text option have something.',
+      'dependency'   => array( 'dep_1', '!=', '' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_2',
+      'type'         => 'switcher',
+      'title'        => 'If switcher mode <u>ON</u>',
+    ),
+
+    array(
+      'id'           => 'dummy_2',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Woow! Switcher is ON',
+      'dependency'   => array( 'dep_2', '==', 'true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_3',
+      'type'         => 'select',
+      'title'        => 'Select color <u>black or white</u>',
+      'options'      => array(
+        'blue'       => 'Blue',
+        'yellow'     => 'Yellow',
+        'green'      => 'Green',
+        'black'      => 'Black',
+        'white'      => 'White',
+      ),
+    ),
+
+    array(
+      'id'           => 'dummy_3',
+      'type'         => 'notice',
+      'class'        => 'danger',
+      'content'      => 'Well done!',
+      'dependency'   => array( 'dep_3', 'any', 'black,white' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_4',
+      'type'         => 'radio',
+      'title'        => 'If set <u>No, Thanks</u>',
+      'options'      => array(
+        'yes'        => 'Yes, Please',
+        'no'         => 'No, Thanks',
+        'not-sure'   => 'I am not sure!',
+      ),
+      'default'      => 'yes'
+    ),
+
+    array(
+      'id'           => 'dummy_4',
+      'type'         => 'notice',
+      'class'        => 'info',
+      'content'      => 'Uh why?!!!',
+      'dependency'   => array( 'dep_4_no', '==', 'true' ),
+      //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_5',
+      'type'         => 'checkbox',
+      'title'        => 'If checked <u>danger</u>',
+      'options'      => array(
+        'success'    => 'Success',
+        'danger'     => 'Danger',
+        'info'       => 'Info',
+        'warning'    => 'Warning',
+      ),
+    ),
+
+    array(
+      'id'           => 'dummy_5',
+      'type'         => 'notice',
+      'class'        => 'danger',
+      'content'      => 'Danger!',
+      'dependency'   => array( 'dep_5_danger', '==', 'true' ),
+      //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_6',
+      'type'         => 'image_select',
+      'title'        => 'If check <u>Blue box</u>',
+      'options'      => array(
+        'green'      => 'http://dummyimage.com/100x80/2ecc71/fff.png',
+        'red'        => 'http://dummyimage.com/100x80/e74c3c/fff.png',
+        'yellow'     => 'http://dummyimage.com/100x80/ffbc00/fff.png',
+        'blue'       => 'http://dummyimage.com/100x80/3498db/fff.png',
+        'gray'       => 'http://dummyimage.com/100x80/555555/fff.png',
+      ),
+      'info'         => 'Image select field input="checkbox" model. in checkbox model unselected available.',
+    ),
+
+    array(
+      'id'           => 'dummy_6',
+      'type'         => 'notice',
+      'class'        => 'info',
+      'content'      => 'Blue box selected!',
+      'dependency'   => array( 'dep_6_blue', '==', 'true' ),
+      //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_7',
+      'type'         => 'image_select',
+      'title'        => 'If check <u>Green box</u>',
+      'options'      => array(
+        'green'      => 'http://dummyimage.com/100x80/2ecc71/fff.png',
+        'red'        => 'http://dummyimage.com/100x80/e74c3c/fff.png',
+        'yellow'     => 'http://dummyimage.com/100x80/ffbc00/fff.png',
+        'blue'       => 'http://dummyimage.com/100x80/3498db/fff.png',
+        'gray'       => 'http://dummyimage.com/100x80/555555/fff.png',
+      ),
+      'info'         => 'Image select field input="radio" model. in radio model unselected unavailable.',
+      'radio'        => true,
+      'default'      => 'gray',
+    ),
+
+    array(
+      'id'           => 'dummy_7',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Green box selected!',
+      'dependency'   => array( 'dep_7_green', '==', 'true' ),
+      //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_8',
+      'type'         => 'image',
+      'title'        => 'Add a image',
+    ),
+
+    array(
+      'id'           => 'dummy_8',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Added a image!',
+      'dependency'   => array( 'dep_8', '!=', '' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_9',
+      'type'         => 'icon',
+      'title'        => 'Add a icon',
+    ),
+
+    array(
+      'id'           => 'dummy_9',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Added a icon!',
+      'dependency'   => array( 'dep_9', '!=', '' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    // Advanced Dependencies
+    // ------------------------------------
+    array(
+      'type'         => 'subheading',
+      'content'      => 'Advanced Dependencies',
+    ),
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_10',
+      'type'         => 'text',
+      'title'        => 'If text string <u>hello</u>',
+    ),
+
+    array(
+      'id'           => 'dep_11',
+      'type'         => 'text',
+      'title'        => 'and this text string <u>world</u>',
+    ),
+
+    array(
+      'id'           => 'dep_12',
+      'type'         => 'checkbox',
+      'title'        => 'and checkbox mode <u>checked</u>',
+      'label'        => 'Check me!'
+    ),
+
+    array(
+      'id'           => 'dummy_10',
+      'type'         => 'notice',
+      'class'        => 'info',
+      'content'      => 'Done, Multiple Dependencies worked.',
+      'dependency'   => array( 'dep_10|dep_11|dep_12', '==|==|==', 'hello|world|true' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    // Another Dependencies
+    // ------------------------------------
+    array(
+      'type'         => 'subheading',
+      'content'      => 'Another Dependencies',
+    ),
+
+    // ------------------------------------
+    array(
+      'id'           => 'dep_13',
+      'type'         => 'select',
+      'title'        => 'If color <u>black or white</u>',
+      'options'      => array(
+        'blue'       => 'Blue',
+        'black'      => 'Black',
+        'white'      => 'White',
+      ),
+    ),
+
+    array(
+      'id'           => 'dep_14',
+      'type'         => 'select',
+      'title'        => 'If size <u>middle</u>',
+      'options'      => array(
+        'small'      => 'Small',
+        'middle'     => 'Middle',
+        'large'      => 'Large',
+        'xlage'      => 'XLarge',
+      ),
+    ),
+
+    array(
+      'id'           => 'dep_15',
+      'type'         => 'select',
+      'title'        => 'If text is <u>world</u>',
+      'options'      => array(
+        'hello'      => 'Hello',
+        'world'      => 'World',
+      ),
+      'dependency'   => array( 'dep_13|dep_14', 'any|==', 'black,white|middle' ),
+    ),
+
+    array(
+      'id'           => 'dummy_11',
+      'type'         => 'notice',
+      'class'        => 'info',
+      'content'      => 'Well done, Correctly!',
+      'dependency'   => array( 'dep_15', '==', 'world' ),
+    ),
+    // ------------------------------------
+
+  ),
 );
 
 // ------------------------------

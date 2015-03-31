@@ -153,20 +153,73 @@
          */
         evalCondition : function(context, control, condition, val1, val2) {
 
-           if(this.condition == "==") {
-                return val1 == val2;
-            } else if(condition == "!=") {
-                return val1 != val2;
-            } else if(condition == "()") {
-                return val1(context, control, val2);
-            } else if(condition == "any") {
-                return $.inArray(val2, val1) > -1;
-            } else if(condition == "not-any") {
-                return $.inArray(val2, val1) == -1;
-            } else {
-                throw new Error("Unknown condition:" + condition);
-            }
+          /**
+           *
+           * Codestar Framework
+           * Added new condition for Codestar Framework
+           *
+           * @since 1.0.0
+           * @version 1.0.0
+           *
+           */
+          if(condition == "==") {
+            return this.checkBoolean(val1) == this.checkBoolean(val2);
+          } else if(condition == "!=") {
+            return this.checkBoolean(val1) != this.checkBoolean(val2);
+          } else if(condition == ">=") {
+            return Number(val2) >= Number(val1);
+          } else if(condition == "<=") {
+            return Number(val2) <= Number(val1);
+          } else if(condition == ">") {
+            return Number(val2) > Number(val1);
+          } else if(condition == "<") {
+            return Number(val2) < Number(val1);
+          } else if(condition == "()") {
+            return window[val1](context, control, val2); // FIXED: function method
+          } else if(condition == "any") {
+            return $.inArray(val2, val1.split(',')) > -1;
+          } else if(condition == "not-any") {
+            return $.inArray(val2, val1.split(',')) == -1;
+          } else {
+            throw new Error("Unknown condition:" + condition);
+          }
 
+        },
+
+        /**
+         *
+         * Codestar Framework
+         * Added Boolean value type checker
+         *
+         * @since 1.0.0
+         * @version 1.0.0
+         *
+         */
+        checkBoolean: function(value) {
+
+          switch(value) {
+
+            case true:
+            case 'true':
+            case 1:
+            case '1':
+            //case 'on':
+            //case 'yes':
+              value = true;
+            break;
+
+            case false:
+            case 'false':
+            case 0:
+            case '0':
+            //case 'off':
+            //case 'no':
+              value = false;
+            break;
+
+          }
+
+          return value;
         },
 
         /**
