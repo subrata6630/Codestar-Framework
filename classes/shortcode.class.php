@@ -86,10 +86,11 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
 
   // shortcode dialog
   public function shortcode_dialog() {
+  $chosen_rtl_class = (is_rtl())?"chosen-rtl":"";
   ?>
     <div id="cs-shortcode-dialog" class="cs-dialog" title="<?php _e( 'Add Shortcode', CS_TEXTDOMAIN ); ?>">
       <div class="cs-dialog-header">
-        <select class="chosen cs-dialog-select" data-placeholder="<?php _e( 'Select a shortcode', CS_TEXTDOMAIN ); ?>">
+        <select class="chosen <?php echo $chosen_rtl_class; ?> cs-dialog-select" data-placeholder="<?php _e( 'Select a shortcode', CS_TEXTDOMAIN ); ?>">
           <option value=""></option>
           <?php
             foreach ( $this->options as $group ) {
