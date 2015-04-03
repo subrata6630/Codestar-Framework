@@ -290,22 +290,6 @@ body{
   height: auto;
 }
 
-#tf-items{
-  .btn{
-    width: 100%;
-  }
-
-  .tf-item{
-    height: 275px;
-  }
-
-  img{
-    width: 100%;
-    margin-bottom: 20px;
-    @include border-radius(3px);
-  }
-}
-
 .pagination .disabled{
   opacity: 0.75;
 }
