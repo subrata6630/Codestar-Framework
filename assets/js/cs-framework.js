@@ -8,6 +8,12 @@
 
   $.CSFRAMEWORK = $.CSFRAMEWORK || {};
 
+  // caching selector
+  var $cs_body = $('body');
+
+  // caching variables
+  var cs_is_rtl  = $cs_body.hasClass('rtl');
+
   // ======================================================
   // CSFRAMEWORK TAB NAVIGATION
   // ------------------------------------------------------
@@ -656,7 +662,7 @@
 
     base.init = function () {
 
-      $(document.body).on('click', '.cs-icon-add', function( e ) {
+      $cs_body.on('click', '.cs-icon-add', function( e ) {
 
         e.preventDefault();
 
@@ -681,7 +687,7 @@
           open: function() {
 
             // fix scrolling
-            $('body').addClass('cs-icon-scrolling');
+            $cs_body.addClass('cs-icon-scrolling');
 
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
@@ -701,7 +707,7 @@
 
           },
           close: function() {
-            $('body').removeClass('cs-icon-scrolling');
+            $cs_body.removeClass('cs-icon-scrolling');
           }
         });
 
@@ -761,7 +767,7 @@
 
       });
 
-      $(document.body).on('click', '.cs-icon-remove', function( e ) {
+      $cs_body.on('click', '.cs-icon-remove', function( e ) {
 
         e.preventDefault();
 
@@ -800,7 +806,7 @@
           shortcode_view,
           shortcode_clone;
 
-      $(document.body).on('click', '.cs-shortcode', function( e ) {
+      $cs_body.on('click', '.cs-shortcode', function( e ) {
 
 
         e.preventDefault();
@@ -818,7 +824,7 @@
           open: function() {
 
             // fix scrolling
-            $('body').addClass('cs-shortcode-scrolling');
+            $cs_body.addClass('cs-shortcode-scrolling');
 
             // fix button for VC
             $('.ui-dialog-titlebar-close').addClass('ui-button');
@@ -838,7 +844,7 @@
 
           },
           close: function() {
-            $('body').removeClass('cs-shortcode-scrolling');
+            $cs_body.removeClass('cs-shortcode-scrolling');
             shortcode_target = false;
           }
         });
@@ -1241,7 +1247,7 @@
                 });
 
                 // hide alpha wrapper on click body
-                $('body').on( 'click.wpcolorpicker', function() {
+                $cs_body.on( 'click.wpcolorpicker', function() {
                   $alpha_wrap.hide();
                 });
 
@@ -1287,6 +1293,16 @@
   };
 
   // ======================================================
+  // TOOLTIP HELPER
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_TOOLTIP = function() {
+    return this.each(function() {
+      var placement = ( cs_is_rtl ) ? 'right' : 'left';
+      $(this).tooltip({html:true, placement:placement, container:'body'});
+    });
+  };
+
+  // ======================================================
   // RELOAD FRAMEWORK PLUGINS
   // ------------------------------------------------------
   $.fn.CSFRAMEWORK_RELOAD_PLUGINS = function() {
@@ -1299,7 +1315,7 @@
       $('.cs-field-upload', this).CSFRAMEWORK_UPLOADER();
       $('.cs-field-typography', this).CSFRAMEWORK_TYPOGRAPHY();
       $('.cs-field-color-picker', this).CSFRAMEWORK_COLORPICKER();
-      $('.cs-help', this).tooltip({html:true, placement:'left', container:'body'});
+      $('.cs-help', this).CSFRAMEWORK_TOOLTIP();
     });
   };
 
@@ -1312,7 +1328,7 @@
     $('.cs-content, .wp-customizer').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('#cs-save-ajax').CSFRAMEWORK_SAVE_AJAX();
-    $('body').CSFRAMEWORK_RELOAD_PLUGINS();
+    $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
     $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
