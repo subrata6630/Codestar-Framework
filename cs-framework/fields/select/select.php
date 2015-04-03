@@ -20,10 +20,12 @@ class CSFramework_Option_select extends CSFramework_Options {
     if( isset( $this->field['options'] ) ) {
 
       $options    = $this->field['options'];
+      $class      = $this->element_class();
       $options    = ( is_array( $options ) ) ? $options : array_filter( $this->element_data( $options ) );
-      $extra_name = ( isset( $this->field['attributes']['multiple'] ) ) ? '[]' : '' ;
+      $extra_name = ( isset( $this->field['attributes']['multiple'] ) ) ? '[]' : '';
+      $chosen_rtl = ( is_rtl() && strpos( $class, 'chosen' ) ) ? 'chosen-rtl' : '';
 
-      echo '<select name="'. $this->element_name( $extra_name ) .'"'. $this->element_class() . $this->element_attributes() .'>';
+      echo '<select name="'. $this->element_name( $extra_name ) .'"'. $this->element_class( $chosen_rtl ) . $this->element_attributes() .'>';
 
       echo ( isset( $this->field['default_option'] ) ) ? '<option value="">'.$this->field['default_option'].'</option>' : '';
 

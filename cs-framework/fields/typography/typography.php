@@ -53,6 +53,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
     $is_variant    = ( isset( $this->field['variant'] ) && $this->field['variant'] === false ) ? false : true;
     $is_chosen     = ( isset( $this->field['chosen'] ) && $this->field['chosen'] === false ) ? '' : 'chosen ';
     $google_json   = json_decode( cs_filesystem()->get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
+    $chosen_rtl    = ( is_rtl() && ! empty( $is_chosen ) ) ? 'chosen-rtl ' : '';
 
     if( ! empty( $google_json ) ) {
 
@@ -65,7 +66,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
       $is_google = ( array_key_exists( $family_value, $googlefonts ) ) ? true : false;
 
       echo '<label class="cs-typography-family">';
-      echo '<select name="'. $this->element_name( '[family]' ) .'" class="'. $is_chosen .'cs-typo-family" data-atts="family"'. $this->element_attributes() .'>';
+      echo '<select name="'. $this->element_name( '[family]' ) .'" class="'. $is_chosen . $chosen_rtl .'cs-typo-family" data-atts="family"'. $this->element_attributes() .'>';
 
       do_action( 'cs_typography_family', $family_value, $this );
 
@@ -90,7 +91,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
         $variants = ( $value['font'] === 'google' || $value['font'] === 'websafe' ) ? $variants : array( 'regular' );
 
         echo '<label class="cs-typography-variant">';
-        echo '<select name="'. $this->element_name( '[variant]' ) .'" class="'. $is_chosen .'cs-typo-variant" data-atts="variant">';
+        echo '<select name="'. $this->element_name( '[variant]' ) .'" class="'. $is_chosen . $chosen_rtl .'cs-typo-variant" data-atts="variant">';
         foreach ( $variants as $variant ) {
           echo '<option value="'. $variant .'"'. $this->checked( $variant_value, $variant, 'selected' ) .'>'. $variant .'</option>';
         }
