@@ -1,0 +1,90 @@
+.cs-framework .cs-nav {
+  float: right;
+}
+.cs-framework .cs-nav-background {
+  left: auto;
+  right: 0;
+}
+
+
+.cs-framework .cs-content {
+  margin-left: auto;
+  margin-right: 225px;
+}
+
+.cs-framework .cs-show-all .cs-content {
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+}
+
+
+
+.cs-framework .cs-header h1 {
+  float: right;
+}
+.cs-framework .cs-header fieldset {
+  float: left;
+}
+.cs-framework .cs-expand-all {
+  right: auto;
+  left: 40px;
+}
+
+
+.cs-framework .cs-nav ul li .cs-arrow:after {
+  content: "\f104";
+  right: auto;
+  left: 10px;
+  top: 50%;
+}
+.cs-framework .cs-nav .cs-icon {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+
+
+.cs-field-sorter .cs-modules {
+  float: right;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+
+
+
+.cs-element .cs-title {
+  float: right;
+}
+.cs-element .cs-fieldset {
+  margin-left: auto;
+  margin-right: 30%;
+}
+.cs-field-switcher label {
+  float: right;
+}
+.cs-field-switcher .cs-text-desc {
+  margin-left: auto;
+  margin-right: 70px;
+}
+
+.cs-help {
+  right: auto;
+  right: 5px;
+}
+
+
+.ui-dialog{
+  right: auto;
+}
+
+/* 
+.ui-dialog .ui-dialog-title {
+    direction: rtl;
+    float: right;
+    margin: 0.1em 0 0.2em 16px;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    left: 0.3em;
+} */
