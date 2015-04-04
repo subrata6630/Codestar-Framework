@@ -106,8 +106,9 @@
   float: right;
 }
 .cs-field-switcher .cs-text-desc {
+  float: right;
   margin-left: 0;
-  margin-right: 70px;
+  margin-right: 5px;
 }
 
 .cs-field-color_picker .cs-alpha-slider {

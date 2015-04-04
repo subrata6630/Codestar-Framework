@@ -14,7 +14,7 @@ module.exports = function( grunt ) {
       path: 'cs-framework',
       assets: 'cs-framework/assets',
       dbox: '/home/codestar/Dropbox/CSFramework',
-      banner: '/* <%= pkg.title %> | <%= pkg.description %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+      banner: '/* <%= pkg.title %> | <%= pkg.description %> - v<%= pkg.version %>*/'
     }
   });
 
