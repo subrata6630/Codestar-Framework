@@ -203,9 +203,9 @@ $options[]     = array(
           'title'      => 'Layout',
           'type'       => 'image_select',
           'options'    => array(
-            'layout-1' => 'http://dummyimage.com/65x65/2ecc71/fff.png',
-            'layout-2' => 'http://dummyimage.com/65x65/3498db/fff.png',
-            'layout-3' => 'http://dummyimage.com/65x65/ffbc00/fff.png',
+            'layout-1' => 'http://codestarframework.com/assets/images/placeholder/65x65-2ecc71.gif',
+            'layout-2' => 'http://codestarframework.com/assets/images/placeholder/65x65-e74c3c.gif',
+            'layout-3' => 'http://codestarframework.com/assets/images/placeholder/65x65-3498db.gif',
           ),
         ),
 

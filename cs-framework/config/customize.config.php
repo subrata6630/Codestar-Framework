@@ -246,9 +246,9 @@ $options[]            = array(
           'type'      => 'image_select',
           'title'     => 'Codestar Image Select Field',
           'options'   => array(
-            'value-1' => 'http://dummyimage.com/65x65/2ecc71/fff.png',
-            'value-2' => 'http://dummyimage.com/65x65/e74c3c/fff.png',
-            'value-3' => 'http://dummyimage.com/65x65/3498db/fff.png',
+            'value-1' => 'http://codestarframework.com/assets/images/placeholder/65x65-2ecc71.gif',
+            'value-2' => 'http://codestarframework.com/assets/images/placeholder/65x65-e74c3c.gif',
+            'value-3' => 'http://codestarframework.com/assets/images/placeholder/65x65-3498db.gif',
           ),
           'radio'     => true,
         ),
