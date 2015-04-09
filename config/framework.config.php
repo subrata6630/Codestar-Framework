@@ -1573,6 +1573,79 @@ $options[]   = array(
 
 
     // -----------------------------
+    // begin: sorter options       -
+    // -----------------------------
+    array(
+      'name'     => 'fieldset_options',
+      'title'    => 'Fieldset',
+      'icon'     => 'fa fa-check',
+      'fields'   => array(
+
+        array(
+          'id'        => 'fieldset_1',
+          'type'      => 'fieldset',
+          'title'     => 'Fieldset Field',
+          'fields'    => array(
+
+            array(
+              'id'    => 'fieldset_1_text',
+              'type'  => 'text',
+              'title' => 'Text Field',
+            ),
+
+            array(
+              'id'    => 'fieldset_1_upload',
+              'type'  => 'upload',
+              'title' => 'Upload Field',
+            ),
+
+            array(
+              'id'    => 'fieldset_1_textarea',
+              'type'  => 'textarea',
+              'title' => 'Textarea Field',
+            ),
+
+          ),
+        ),
+
+        array(
+          'id'        => 'fieldset_2',
+          'type'      => 'fieldset',
+          'title'     => 'Fieldset Field with Default',
+          'fields'    => array(
+
+            array(
+              'id'    => 'fieldset_2_text',
+              'type'  => 'text',
+              'title' => 'Text Field',
+            ),
+
+            array(
+              'id'    => 'fieldset_2_checkbox',
+              'type'  => 'checkbox',
+              'title' => 'Checkbox Field',
+              'label' => 'Are you sure?',
+            ),
+
+            array(
+              'id'    => 'fieldset_2_textarea',
+              'type'  => 'textarea',
+              'title' => 'Upload Field',
+            ),
+
+          ),
+          'default'   => array(
+            'fieldset_2_text'     => 'Hello',
+            'fieldset_2_checkbox' => true,
+            'fieldset_2_textarea' => 'Do stuff',
+          )
+        ),
+
+      ),
+    ), // end: sorter options
+
+
+    // -----------------------------
     // begin: others options       -
     // -----------------------------
     array(

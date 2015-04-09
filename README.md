@@ -88,6 +88,7 @@ themename/cs-framework-override/fields/text/text.php
 - Backup
 - Heading
 - Sub Heading
+- Fieldset
 - Notice
 - and **extendable** fields
 
