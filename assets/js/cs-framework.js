@@ -1,8 +1,15 @@
-// the semi-colon before the function invocation is a safety
-// net against concatenated scripts and/or other plugins
-// that are not closed properly.
-// set root Object
-
+/**
+ *
+ * -----------------------------------------------------------
+ *
+ * Codestar Framework
+ * A Lightweight and easy-to-use WordPress Options Framework
+ *
+ * Copyright 2015 Codestar <info@codestarlive.com>
+ *
+ * -----------------------------------------------------------
+ *
+ */
 ;(function ( $, window, document, undefined ) {
   'use strict';
 
@@ -920,6 +927,8 @@
             // main-shortcode attributes
             $('[' + ruleAttr + ']', '.cs-dialog-load .cs-element:not(.hidden)').each( function() {
               var _this_main = $(this), _this_main_atts = _this_main.data('atts');
+
+              console.log(_this_main_atts);
               send_to_shortcode += base.validate_atts( _this_main_atts, _this_main );  // validate empty atts
             });
 
@@ -1022,6 +1031,8 @@
           window.send_to_editor( send_to_shortcode );
         }
 
+        deploy_atts = null;
+
         $dialog.dialog( 'close' );
 
       });
@@ -1073,7 +1084,7 @@
       }
 
       if( _this.data('check') !== undefined ) {
-        el_value = _this.closest('.cs-element').find('input:checkbox:checked').map( function() {
+        el_value = _this.closest('.cs-element').find('input:checked').map( function() {
          return $(this).val();
         }).get();
       }

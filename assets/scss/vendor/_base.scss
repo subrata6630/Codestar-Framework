@@ -480,9 +480,10 @@
   }
 
   .cs-text-desc{
-    margin-left: 70px;
+    float: left;
+    margin-left: 5px;
     margin-top: 0;
-    padding-top: 3px;
+    padding-top: 4px;
   }
 }
 
@@ -1055,7 +1056,7 @@
   }
 
   .cs-clone-button{
-    margin-top: 10px;
+    margin: 10px 0;
     text-align: center;
   }
 
