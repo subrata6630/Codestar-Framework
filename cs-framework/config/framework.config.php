@@ -1615,6 +1615,12 @@ $options[]   = array(
           'fields'    => array(
 
             array(
+              'id'      => 'subheading',
+              'type'    => 'subheading',
+              'content' => 'Title of Fieldset',
+            ),
+
+            array(
               'id'    => 'fieldset_2_text',
               'type'  => 'text',
               'title' => 'Text Field',

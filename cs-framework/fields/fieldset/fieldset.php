@@ -19,11 +19,11 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
 
     echo '<div class="cs-inner">';
 
-    foreach ( $this->field['fields'] as $field_key => $field ) {
+    foreach ( $this->field['fields'] as $field ) {
 
-      $field_id    = $field['id'];
-      $unique_id   = $this->unique .'['. $this->field['id'] .']';
+      $field_id    = ( isset( $field['id'] ) ) ? $field['id'] : '';
       $field_value = ( isset( $this->value[$field_id] ) ) ? $this->value[$field_id] : '';
+      $unique_id   = $this->unique .'['. $this->field['id'] .']';
 
       echo cs_add_element( $field, $field_value, $unique_id );
 
