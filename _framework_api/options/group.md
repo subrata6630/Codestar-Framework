@@ -32,6 +32,38 @@ array(
 ),
 {% endhighlight %}
 
+{% highlight php startinline %}
+array(
+  'id'              => 'unique_group_2',
+  'type'            => 'group',
+  'title'           => 'Group Field',
+  'desc'            => 'Accordion title using the ID of the field.',
+  'button_title'    => 'Add New',
+  'accordion_title' => 'unique_group_2_text_2',
+  'fields'          => array(
+
+    array(
+      'id'          => 'unique_group_2_text_1',
+      'type'        => 'text',
+      'title'       => 'Text Field 1',
+    ),
+
+    array(
+      'id'          => 'unique_group_2_text_2',
+      'type'        => 'text',
+      'title'       => 'Text Field 2',
+    ),
+
+    array(
+      'id'          => 'unique_group_2_text_3',
+      'type'        => 'text',
+      'title'       => 'Text Field 3',
+    ),
+
+  )
+),
+{% endhighlight %}
+
 | **Key**           | **Default** | **Description**
 | `id`              | unique      | an unique id - use nice name
 | `type`            | group       | type of option
@@ -47,5 +79,5 @@ array(
 | **Extra Key**     | ---         | ---
 | `default`         | array       | default value for group field
 | `button_title`    | string      | button title of group field
-| `accordion_title` | string      | accordion title of group field
+| `accordion_title` | string      | accordion title of group field or use ID of the field
 | `fields`          | array       | fields of group field this is inside fields of field
