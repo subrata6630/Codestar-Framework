@@ -1091,6 +1091,36 @@ $options[]   = array(
           )
         ),
 
+        array(
+          'id'              => 'unique_group_4',
+          'type'            => 'group',
+          'title'           => 'Group Field',
+          'desc'            => 'Accordion title using the ID of the field, for eg. "Text Field 2" using as accordion title here.',
+          'button_title'    => 'Add New',
+          'accordion_title' => 'unique_group_4_text_2',
+          'fields'          => array(
+
+            array(
+              'id'          => 'unique_group_4_text_1',
+              'type'        => 'text',
+              'title'       => 'Text Field 1',
+            ),
+
+            array(
+              'id'          => 'unique_group_4_text_2',
+              'type'        => 'text',
+              'title'       => 'Text Field 2',
+            ),
+
+            array(
+              'id'          => 'unique_group_4_text_3',
+              'type'        => 'text',
+              'title'       => 'Text Field 3',
+            ),
+
+          )
+        ),
+
       ),
     ), // end: group options
 

@@ -19,6 +19,17 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     $last_array_id    = ( is_array( $this->value ) ) ? count( $this->value ) : 0;
     $accordion_title  = ( isset( $this->field['accordion_title'] ) ) ? $this->field['accordion_title'] : __( 'Adding', CS_TEXTDOMAIN );
+    $group_loop_title = ( isset( $this->field['fields'][0]['title'] ) ) ? $this->field['fields'][0]['title'] : $this->field['fields'][1]['title'];
+    $accordion_id     = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : $this->field['fields'][1]['id'];
+    $accordion_search = cs_array_search( $this->field['fields'], 'id', $accordion_title );
+
+    if( ! empty( $accordion_search ) ) {
+
+      $accordion_search = array_shift( $accordion_search );
+      $accordion_title  = ( ! empty( $accordion_search['title'] ) ) ? $accordion_search['title'] : $accordion_title;
+      $accordion_id     = ( ! empty( $accordion_search['id'] ) ) ? $accordion_search['id'] : $accordion_id;
+
+    }
 
     echo '<div class="cs-group hidden">';
 
@@ -41,7 +52,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         foreach ( $this->value as $key => $value ) {
 
-          $title = isset( $this->value[$key][$this->field['fields'][0]['id']] ) ? $this->value[$key][$this->field['fields'][0]['id']] : '';
+          $title = isset( $this->value[$key][$accordion_id] ) ? $this->value[$key][$accordion_id] : '';
 
           if ( is_array( $title ) && isset( $this->multilang ) ) {
             $multilang = cs_language_defaults();
@@ -49,8 +60,10 @@ class CSFramework_Option_group extends CSFramework_Options {
             $title     = is_array( $title ) ? $title[0] : $title;
           }
 
+          $group_loop_title = ( ! empty( $accordion_search ) ) ? $accordion_title : $group_loop_title;
+
           echo '<div class="cs-group">';
-          echo '<h4 class="cs-group-title">'. $this->field['fields'][0]['title'] .': '. $title .'</h4>';
+          echo '<h4 class="cs-group-title">'. $group_loop_title .': '. $title .'</h4>';
           echo '<div class="cs-group-content">';
 
           foreach ( $this->field['fields'] as $field_key => $field ) {
