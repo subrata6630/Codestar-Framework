@@ -17,27 +17,26 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     echo $this->element_before();
 
-    $last_array_id    = ( is_array( $this->value ) ) ? count( $this->value ) : 0;
-    $accordion_title  = ( isset( $this->field['accordion_title'] ) ) ? $this->field['accordion_title'] : __( 'Adding', CS_TEXTDOMAIN );
-    $group_loop_title = ( isset( $this->field['fields'][0]['title'] ) ) ? $this->field['fields'][0]['title'] : $this->field['fields'][1]['title'];
-    $accordion_id     = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : $this->field['fields'][1]['id'];
-    $accordion_search = cs_array_search( $this->field['fields'], 'id', $accordion_title );
+    $last_id     = ( is_array( $this->value ) ) ? count( $this->value ) : 0;
+    $acc_title   = ( isset( $this->field['accordion_title'] ) ) ? $this->field['accordion_title'] : __( 'Adding', CS_TEXTDOMAIN );
+    $field_title = ( isset( $this->field['fields'][0]['title'] ) ) ? $this->field['fields'][0]['title'] : $this->field['fields'][1]['title'];
+    $field_id    = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : $this->field['fields'][1]['id'];
+    $search_id   = cs_array_search( $this->field['fields'], 'id', $acc_title );
 
-    if( ! empty( $accordion_search ) ) {
+    if( ! empty( $search_id ) ) {
 
-      $accordion_search = array_shift( $accordion_search );
-      $accordion_title  = ( ! empty( $accordion_search['title'] ) ) ? $accordion_search['title'] : $accordion_title;
-      $accordion_id     = ( ! empty( $accordion_search['id'] ) ) ? $accordion_search['id'] : $accordion_id;
+      $acc_title = ( ! empty( $search_id[0]['title'] ) ) ? $search_id[0]['title'] : $acc_title;
+      $field_id  = ( ! empty( $search_id[0]['id'] ) ) ? $search_id[0]['id'] : $field_id;
 
     }
 
     echo '<div class="cs-group hidden">';
 
-      echo '<h4 class="cs-group-title">'. $accordion_title .'</h4>';
+      echo '<h4 class="cs-group-title">'. $acc_title .'</h4>';
       echo '<div class="cs-group-content">';
       foreach ( $this->field['fields'] as $field_key => $field ) {
         $field['sub']   = true;
-        $unique         = $this->unique .'[_nonce]['. $this->field['id'] .']['. $last_array_id .']';
+        $unique         = $this->unique .'[_nonce]['. $this->field['id'] .']['. $last_id .']';
         $field_default  = ( isset( $field['default'] ) ) ? $field['default'] : '';
         echo cs_add_element( $field, $field_default, $unique );
       }
@@ -52,7 +51,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         foreach ( $this->value as $key => $value ) {
 
-          $title = isset( $this->value[$key][$accordion_id] ) ? $this->value[$key][$accordion_id] : '';
+          $title = isset( $this->value[$key][$field_id] ) ? $this->value[$key][$field_id] : '';
 
           if ( is_array( $title ) && isset( $this->multilang ) ) {
             $multilang = cs_language_defaults();
@@ -60,10 +59,10 @@ class CSFramework_Option_group extends CSFramework_Options {
             $title     = is_array( $title ) ? $title[0] : $title;
           }
 
-          $group_loop_title = ( ! empty( $accordion_search ) ) ? $accordion_title : $group_loop_title;
+          $field_title = ( ! empty( $search_id ) ) ? $acc_title : $field_title;
 
           echo '<div class="cs-group">';
-          echo '<h4 class="cs-group-title">'. $group_loop_title .': '. $title .'</h4>';
+          echo '<h4 class="cs-group-title">'. $field_title .': '. $title .'</h4>';
           echo '<div class="cs-group-content">';
 
           foreach ( $this->field['fields'] as $field_key => $field ) {
