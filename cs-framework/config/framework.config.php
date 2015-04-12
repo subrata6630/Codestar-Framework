@@ -1645,28 +1645,27 @@ $options[]   = array(
           'fields'    => array(
 
             array(
-              'id'      => 'subheading',
               'type'    => 'subheading',
               'content' => 'Title of Fieldset',
             ),
 
             array(
-              'id'    => 'fieldset_2_text',
-              'type'  => 'text',
-              'title' => 'Text Field',
+              'id'      => 'fieldset_2_text',
+              'type'    => 'text',
+              'title'   => 'Text Field',
             ),
 
             array(
-              'id'    => 'fieldset_2_checkbox',
-              'type'  => 'checkbox',
-              'title' => 'Checkbox Field',
-              'label' => 'Are you sure?',
+              'id'      => 'fieldset_2_checkbox',
+              'type'    => 'checkbox',
+              'title'   => 'Checkbox Field',
+              'label'   => 'Are you sure?',
             ),
 
             array(
-              'id'    => 'fieldset_2_textarea',
-              'type'  => 'textarea',
-              'title' => 'Upload Field',
+              'id'      => 'fieldset_2_textarea',
+              'type'    => 'textarea',
+              'title'   => 'Upload Field',
             ),
 
           ),

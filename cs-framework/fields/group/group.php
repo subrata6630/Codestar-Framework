@@ -25,8 +25,8 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     if( ! empty( $search_id ) ) {
 
-      $acc_title = ( ! empty( $search_id[0]['title'] ) ) ? $search_id[0]['title'] : $acc_title;
-      $field_id  = ( ! empty( $search_id[0]['id'] ) ) ? $search_id[0]['id'] : $field_id;
+      $acc_title = ( ! isset( $search_id[0]['title'] ) ) ? $search_id[0]['title'] : $acc_title;
+      $field_id  = ( ! isset( $search_id[0]['id'] ) ) ? $search_id[0]['id'] : $field_id;
 
     }
 
@@ -43,7 +43,7 @@ class CSFramework_Option_group extends CSFramework_Options {
       echo '<div class="cs-element cs-text-right"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', CS_TEXTDOMAIN ) .'</a></div>';
       echo '</div>';
 
-    echo '</div>'; // end hidden group
+    echo '</div>';
 
     echo '<div class="cs-groups cs-accordion">';
 
@@ -51,12 +51,12 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         foreach ( $this->value as $key => $value ) {
 
-          $title = isset( $this->value[$key][$field_id] ) ? $this->value[$key][$field_id] : '';
+          $title = ( isset( $this->value[$key][$field_id] ) ) ? $this->value[$key][$field_id] : '';
 
           if ( is_array( $title ) && isset( $this->multilang ) ) {
-            $multilang = cs_language_defaults();
-            $title     = $title[$multilang['current']];
-            $title     = is_array( $title ) ? $title[0] : $title;
+            $lang  = cs_language_defaults();
+            $title = $title[$lang['current']];
+            $title = is_array( $title ) ? $title[0] : $title;
           }
 
           $field_title = ( ! empty( $search_id ) ) ? $acc_title : $field_title;
@@ -68,7 +68,7 @@ class CSFramework_Option_group extends CSFramework_Options {
           foreach ( $this->field['fields'] as $field_key => $field ) {
             $field['sub'] = true;
             $unique = $this->unique . '[' . $this->field['id'] . ']['.$key.']';
-            $value  = isset($this->value[$key][$field['id']]) ? $this->value[$key][$field['id']]:'';
+            $value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
             echo cs_add_element( $field, $value, $unique );
           }
 
@@ -80,7 +80,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
       }
 
-    echo '</div>';  // end groups
+    echo '</div>';
 
     echo '<a href="#" class="button button-primary cs-add-group">'. $this->field['button_title'] .'</a>';
 
