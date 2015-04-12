@@ -8,23 +8,35 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: classes/framework.class.php:345
+#: classes/framework.class.php:179
+msgid "Success. Imported backup options."
+msgstr ""
+
+#: classes/framework.class.php:184
+msgid "Default options restored."
+msgstr ""
+
+#: classes/framework.class.php:203
+msgid "Default options restored for only this section."
+msgstr ""
+
+#: classes/framework.class.php:359
 msgid "Settings saved."
 msgstr ""
 
-#: classes/framework.class.php:346
+#: classes/framework.class.php:360
 msgid "Save"
 msgstr ""
 
-#: classes/framework.class.php:346
+#: classes/framework.class.php:360
 msgid "Saving..."
 msgstr ""
 
-#: classes/framework.class.php:347
+#: classes/framework.class.php:361
 msgid "Restore"
 msgstr ""
 
-#: classes/framework.class.php:349
+#: classes/framework.class.php:363
 msgid "show all options"
 msgstr ""
 

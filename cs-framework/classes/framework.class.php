@@ -20,6 +20,15 @@ class CSFramework extends CSFramework_Abstract {
 
   /**
    *
+   * settings
+   * @access public
+   * @var array
+   *
+   */
+  public $settings = array();
+
+  /**
+   *
    * options tab
    * @access public
    * @var array
@@ -167,12 +176,12 @@ class CSFramework extends CSFramework_Abstract {
       if( is_array( $decode_string ) ) {
         return $decode_string;
       }
-      $this->add_settings_error( 'Success. Imported backup options.', 'updated' );
+      $this->add_settings_error( __( 'Success. Imported backup options.', CS_TEXTDOMAIN ), 'updated' );
     }
 
     // reset all options
     if ( isset( $request['resetall'] ) ) {
-      $this->add_settings_error( 'Default options restored.', 'updated' );
+      $this->add_settings_error( __( 'Default options restored.', CS_TEXTDOMAIN ), 'updated' );
       return;
     }
 
@@ -191,7 +200,7 @@ class CSFramework extends CSFramework_Abstract {
           }
         }
       }
-      $this->add_settings_error( 'Default options restored for only this section.', 'updated' );
+      $this->add_settings_error( __( 'Default options restored for only this section.', CS_TEXTDOMAIN ), 'updated' );
     }
 
     // option sanitize and validate
@@ -294,7 +303,8 @@ class CSFramework extends CSFramework_Abstract {
   // adding option page
   public function admin_menu() {
 
-    $defaults           = array(
+    $defaults_menu_args = array(
+      'menu_parent'     => '',
       'menu_title'      => '',
       'menu_type'       => '',
       'menu_slug'       => '',
@@ -303,9 +313,13 @@ class CSFramework extends CSFramework_Abstract {
       'menu_position'   => null,
     );
 
-    $args = wp_parse_args( $this->settings, $defaults );
+    $args = wp_parse_args( $this->settings, $defaults_menu_args );
 
-    call_user_func( $args['menu_type'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+    if( $args['menu_type'] == 'add_submenu_page' ) {
+      call_user_func( $args['menu_type'], $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
+    } else {
+      call_user_func( $args['menu_type'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+    }
 
   }
 
