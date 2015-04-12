@@ -106,7 +106,7 @@ msgstr ""
 msgid "Adding"
 msgstr ""
 
-#: fields/group/group.php:33 fields/group/group.php:63
+#: fields/group/group.php:43 fields/group/group.php:75
 msgid "Remove"
 msgstr ""
 

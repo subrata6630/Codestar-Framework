@@ -1091,6 +1091,36 @@ $options[]   = array(
           )
         ),
 
+        array(
+          'id'              => 'unique_group_4',
+          'type'            => 'group',
+          'title'           => 'Group Field',
+          'desc'            => 'Accordion title using the ID of the field, for eg. "Text Field 2" using as accordion title here.',
+          'button_title'    => 'Add New',
+          'accordion_title' => 'unique_group_4_text_2',
+          'fields'          => array(
+
+            array(
+              'id'          => 'unique_group_4_text_1',
+              'type'        => 'text',
+              'title'       => 'Text Field 1',
+            ),
+
+            array(
+              'id'          => 'unique_group_4_text_2',
+              'type'        => 'text',
+              'title'       => 'Text Field 2',
+            ),
+
+            array(
+              'id'          => 'unique_group_4_text_3',
+              'type'        => 'text',
+              'title'       => 'Text Field 3',
+            ),
+
+          )
+        ),
+
       ),
     ), // end: group options
 
@@ -1615,22 +1645,27 @@ $options[]   = array(
           'fields'    => array(
 
             array(
-              'id'    => 'fieldset_2_text',
-              'type'  => 'text',
-              'title' => 'Text Field',
+              'type'    => 'subheading',
+              'content' => 'Title of Fieldset',
             ),
 
             array(
-              'id'    => 'fieldset_2_checkbox',
-              'type'  => 'checkbox',
-              'title' => 'Checkbox Field',
-              'label' => 'Are you sure?',
+              'id'      => 'fieldset_2_text',
+              'type'    => 'text',
+              'title'   => 'Text Field',
             ),
 
             array(
-              'id'    => 'fieldset_2_textarea',
-              'type'  => 'textarea',
-              'title' => 'Upload Field',
+              'id'      => 'fieldset_2_checkbox',
+              'type'    => 'checkbox',
+              'title'   => 'Checkbox Field',
+              'label'   => 'Are you sure?',
+            ),
+
+            array(
+              'id'      => 'fieldset_2_textarea',
+              'type'    => 'textarea',
+              'title'   => 'Upload Field',
             ),
 
           ),
