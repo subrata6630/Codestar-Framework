@@ -1101,7 +1101,7 @@
 
       var obj = ( typeof _this[0].name !== undefined ) ? _this[0] : _this;
 
-      if ( $.browser.mozilla || $.browser.webkit ) {
+      if ( obj.value.length && typeof obj.selectionStart !== undefined ) {
         obj.focus();
         return obj.value.substring( 0, obj.selectionStart ) + currentValue + obj.value.substring( obj.selectionEnd, obj.value.length );
       } else {
