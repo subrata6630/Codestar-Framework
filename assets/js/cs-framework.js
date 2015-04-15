@@ -808,18 +808,19 @@
           $shortcodeload   = $dialog.find('.cs-dialog-load'),
           $selector        = $dialog.find('.cs-dialog-select'),
           shortcode_target = false,
-          shortcode_button,
           shortcode_name,
           shortcode_view,
-          shortcode_clone;
+          shortcode_clone,
+          $shortcode_button,
+          editor_id;
 
       $cs_body.on('click', '.cs-shortcode', function( e ) {
 
-
         e.preventDefault();
 
-        shortcode_button = $(this);
-        shortcode_target = shortcode_button.hasClass('cs-shortcode-textarea');
+        $shortcode_button = $(this);
+        shortcode_target  = $shortcode_button.hasClass('cs-shortcode-textarea');
+        editor_id         = $shortcode_button.data('editor-id');
 
         $dialog.dialog({
           width: 850,
@@ -851,19 +852,18 @@
 
           },
           close: function() {
-            $cs_body.removeClass('cs-shortcode-scrolling');
             shortcode_target = false;
+            $cs_body.removeClass('cs-shortcode-scrolling');
           }
         });
 
       });
 
-
       $selector.on( 'change', function() {
 
-        var elem_this      = $(this);
-            shortcode_name = elem_this.val();
-            shortcode_view = elem_this.find(':selected').data('view');
+        var $elem_this     = $(this);
+            shortcode_name = $elem_this.val();
+            shortcode_view = $elem_this.find(':selected').data('view');
 
         // check val
         if( shortcode_name.length ){
@@ -1023,12 +1023,11 @@
 
         }
 
-
         if( shortcode_target ) {
-          var textarea_target = shortcode_button.next();
-          textarea_target.val( base.insertAtChars( textarea_target, send_to_shortcode ) ).trigger('change');
+          var $textarea = $shortcode_button.next();
+          $textarea.val( base.insertAtChars( $textarea, send_to_shortcode ) ).trigger('change');
         } else {
-          window.send_to_editor( send_to_shortcode );
+          base.send_to_editor( send_to_shortcode, editor_id );
         }
 
         deploy_atts = null;
@@ -1037,30 +1036,33 @@
 
       });
 
-
       // cloner button
-      var co = 0;
+      var cloned = 0;
       $dialog.on('click', '#shortcode-clone-button', function( e ) {
 
         e.preventDefault();
 
         // clone from cache
         var cloned_el = shortcode_clone.clone().hide();
-          cloned_el.find('input:radio').attr('name', '_nonce_' + co);
+
+        cloned_el.find('input:radio').attr('name', '_nonce_' + cloned);
 
         $('.cs-shortcode-clone:last').after( cloned_el );
 
         // add - remove effects
         cloned_el.slideDown(100);
+
         cloned_el.find('.cs-remove-clone').show().click( function( e ) {
+
           cloned_el.slideUp(100, function(){ cloned_el.remove(); });
           e.preventDefault();
+
         });
 
         // reloadPlugins
         cloned_el.CSFRAMEWORK_DEPENDENCY('sub');
         cloned_el.CSFRAMEWORK_RELOAD_PLUGINS();
-        co++;
+        cloned++;
 
       });
 
@@ -1101,12 +1103,29 @@
 
       var obj = ( typeof _this[0].name !== undefined ) ? _this[0] : _this;
 
-      if ( $.browser.mozilla || $.browser.webkit ) {
+      if ( obj.value.length && typeof obj.selectionStart !== undefined ) {
         obj.focus();
         return obj.value.substring( 0, obj.selectionStart ) + currentValue + obj.value.substring( obj.selectionEnd, obj.value.length );
       } else {
         obj.focus();
         return currentValue;
+      }
+
+    };
+
+    base.send_to_editor = function( html, editor_id ) {
+
+      var tinymce_editor;
+
+      if ( typeof tinymce !== undefined ) {
+        tinymce_editor = tinymce.get( editor_id );
+      }
+
+      if ( tinymce_editor && !tinymce_editor.isHidden() ) {
+        tinymce_editor.execCommand( 'mceInsertContent', false, html );
+      } else {
+        var $editor = $('#'+editor_id);
+        $editor.val( base.insertAtChars( $editor, html ) ).trigger('change');
       }
 
     };
