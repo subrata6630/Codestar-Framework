@@ -303,6 +303,7 @@
 
     h4{
       margin: 0;
+      color: #23282d;
     }
   }
 
@@ -712,24 +713,19 @@
 }
 
 .cs-field-heading{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #23282d;
   background-color: #f5f5f5 !important;
-
-  h2{
-    margin: 0;
-    font-weight: bold;
-  }
 }
 
 .cs-field-subheading{
+  font-size: 14px;
+  font-weight: bold;
   padding-top: 17px;
   padding-bottom: 17px;
+  color: #23282d;
   background-color: #f7f7f7 !important;
-
-  h3{
-    margin: 0;
-    font-size: 14px;
-    font-weight: bold;
-  }
 }
 
 .cs-field-notice{
@@ -1198,12 +1194,14 @@
     .cs-fieldset{
       margin-left: 0;
     }
+  }
 
-    .cs-field-upload{
-      input{
-        width: 170px;
-      }
-    }
+  .cs-field-upload input{
+    width: 185px;
+  }
+
+  .cs-field-notice .cs-notice{
+    padding: 12px;
   }
 }
 
@@ -1237,6 +1235,10 @@
   .cs-field-upload input{
     width: 330px;
   }
+
+  .cs-field-notice .cs-notice{
+    padding: 15px;
+  }
 }
 
 #customize-controls{
@@ -1267,6 +1269,8 @@
 
       h4{
         font-size: 14px;
+        font-weight: 600;
+        color: inherit;
       }
     }
 
@@ -1292,16 +1296,14 @@
     margin-right: 5px;
   }
 
-  .cs-field-heading h2{
-    color: #555;
-    padding: 0;
-    margin: 5px 0;
+  .cs-field-heading{
+    color: inherit;
     font-size: 14px;
     line-height: 1em;
   }
 
-  .cs-field-subheading h3{
-    color: #555;
+  .cs-field-subheading{
+    color: inherit;
     font-size: 11px;
   }
 

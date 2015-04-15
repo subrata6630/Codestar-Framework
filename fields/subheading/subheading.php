@@ -16,7 +16,7 @@ class CSFramework_Option_subheading extends CSFramework_Options {
   public function output() {
 
     echo $this->element_before();
-    echo '<h3>'. $this->field['content'] .'</h3>';
+    echo $this->field['content'];
     echo $this->element_after();
 
   }

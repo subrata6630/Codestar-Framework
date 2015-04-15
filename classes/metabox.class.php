@@ -119,7 +119,8 @@ class CSFramework_Metabox extends CSFramework_Abstract{
               foreach ( $val['fields'] as $field_key => $field ) {
 
                 $default    = ( isset( $field['default'] ) ) ? $field['default'] : '';
-                $elem_value = ( is_array( $meta_value ) && isset( $meta_value[$field['id']] ) ) ? $meta_value[$field['id']] : $default;
+                $elem_id    = ( isset( $field['id'] ) ) ? $field['id'] : '';
+                $elem_value = ( is_array( $meta_value ) && isset( $meta_value[$elem_id] ) ) ? $meta_value[$elem_id] : $default;
                 echo cs_add_element( $field, $elem_value, $unique );
 
               }
