@@ -1101,9 +1101,9 @@
 
     base.insertAtChars = function( _this, currentValue ) {
 
-      var obj = ( typeof _this[0].name !== undefined ) ? _this[0] : _this;
+      var obj = ( typeof _this[0].name !== 'undefined' ) ? _this[0] : _this;
 
-      if ( obj.value.length && typeof obj.selectionStart !== undefined ) {
+      if ( obj.value.length && typeof obj.selectionStart !== 'undefined' ) {
         obj.focus();
         return obj.value.substring( 0, obj.selectionStart ) + currentValue + obj.value.substring( obj.selectionEnd, obj.value.length );
       } else {
@@ -1117,7 +1117,7 @@
 
       var tinymce_editor;
 
-      if ( typeof tinymce !== undefined ) {
+      if ( typeof tinymce !== 'undefined' ) {
         tinymce_editor = tinymce.get( editor_id );
       }
 
@@ -1138,7 +1138,7 @@
   // ======================================================
   // CSFRAMEWORK COLORPICKER
   // ------------------------------------------------------
-  if( typeof Color.fn.toString !== undefined ) {
+  if( typeof Color.fn.toString !== 'undefined' ) {
 
     // adding alpha support for Automattic Color.js toString function.
     Color.fn.toString = function () {
