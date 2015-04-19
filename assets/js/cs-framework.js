@@ -1319,6 +1319,7 @@
   $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
     $(document).on('widget-added', function( event, $widget ) {
       $widget.CSFRAMEWORK_RELOAD_PLUGINS();
+      $widget.CSFRAMEWORK_DEPENDENCY();
     });
   };
 
@@ -1355,7 +1356,7 @@
   $(document).ready( function() {
     $('.cs-framework').CSFRAMEWORK_TAB_NAVIGATION();
     $('.cs-reset-confirm, .cs-import-backup').CSFRAMEWORK_CONFIRM();
-    $('.cs-content, .wp-customizer').CSFRAMEWORK_DEPENDENCY();
+    $('.cs-content, .wp-customizer, .widget-content').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('#cs-save-ajax').CSFRAMEWORK_SAVE_AJAX();
     $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
