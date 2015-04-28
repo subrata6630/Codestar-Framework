@@ -25,8 +25,8 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     if( ! empty( $search_id ) ) {
 
-      $acc_title = ( ! isset( $search_id[0]['title'] ) ) ? $search_id[0]['title'] : $acc_title;
-      $field_id  = ( ! isset( $search_id[0]['id'] ) ) ? $search_id[0]['id'] : $field_id;
+      $acc_title = ( isset( $search_id[0]['title'] ) ) ? $search_id[0]['title'] : $acc_title;
+      $field_id  = ( isset( $search_id[0]['id'] ) ) ? $search_id[0]['id'] : $field_id;
 
     }
 
