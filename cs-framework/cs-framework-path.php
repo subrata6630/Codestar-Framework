@@ -79,10 +79,11 @@ if( ! function_exists( 'cs_locate_template' ) ) {
   function cs_locate_template( $template_name ) {
 
     $located      = '';
+    $override     = apply_filters( 'cs_framework_override', 'cs-framework-override', $template_name );
     $dir_plugin   = WP_PLUGIN_DIR;
     $dir_theme    = get_template_directory();
     $dir_child    = get_stylesheet_directory();
-    $dir_override = '/cs-framework-override/'. $template_name;
+    $dir_override = '/'. $override .'/'. $template_name;
     $dir_template = CS_BASENAME .'/'. $template_name;
 
     // child theme override
