@@ -19,14 +19,14 @@ class CSFramework_Option_radio extends CSFramework_Options {
 
     if( isset( $this->field['options'] ) ) {
 
-      $options  = $this->field['options'];
-      $options  = ( is_array( $options ) ) ? $options : array_filter( $this->element_data( $options ) );
+      $options = $this->field['options'];
+      $options = ( is_array( $options ) ) ? $options : array_filter( $this->element_data( $options ) );
 
       if( ! empty( $options ) ) {
 
         echo '<ul'. $this->element_class() .'>';
         foreach ( $options as $key => $value ) {
-          echo '<li><label><input type="radio" name="'. $this->element_name( '[]' ) .'" value="'. $key .'"'. $this->element_attributes( $key ) . $this->checked( $this->element_value(), $key ) .'/> '.$value.'</label></li>';
+          echo '<li><label><input type="radio" name="'. $this->element_name() .'" value="'. $key .'"'. $this->element_attributes( $key ) . $this->checked( $this->element_value(), $key ) .'/> '. $value .'</label></li>';
         }
         echo '</ul>';
       }
