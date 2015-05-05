@@ -15,7 +15,7 @@ if( ! function_exists( 'cs_get_icons' ) ) {
     if( ! empty( $jsons ) ) {
       foreach ( $jsons as $path ) {
 
-        $object = json_decode( cs_filesystem()->get_contents( CS_URI .'/fields/icon/'. basename( $path ) ) );
+        $object = json_decode( wp_remote_fopen( CS_URI .'/fields/icon/'. basename( $path ) ) );
 
         echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">'. $object->name .'</h4>' : '';
 

@@ -132,7 +132,8 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
       cs_locate_template( str_replace(  CS_DIR, '', $cs_field ) );
     }
 
-    $override_dir = get_template_directory() .'/cs-framework-override/fields';
+    $override_name = apply_filters( 'cs_framework_override', 'cs-framework-override' );
+    $override_dir  = get_template_directory() .'/'. $override_name .'/fields';
 
     if( is_dir( $override_dir ) ) {
 
@@ -149,32 +150,6 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
     }
 
     do_action( 'cs_load_option_fields' );
-
-  }
-}
-
-/**
- *
- * WP Filesystem helper
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! function_exists( 'cs_filesystem' ) ) {
-  function cs_filesystem() {
-
-    global $wp_filesystem;
-
-    if ( ! function_exists( 'WP_Filesystem' ) ) {
-      include_once ABSPATH .'wp-admin/includes/file.php';
-    }
-
-    if ( ! is_object( $wp_filesystem ) ) {
-      WP_Filesystem();
-    }
-
-    return $wp_filesystem;
 
   }
 }
