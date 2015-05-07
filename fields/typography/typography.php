@@ -52,7 +52,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
     $variant_value = $value['variant'];
     $is_variant    = ( isset( $this->field['variant'] ) && $this->field['variant'] === false ) ? false : true;
     $is_chosen     = ( isset( $this->field['chosen'] ) && $this->field['chosen'] === false ) ? '' : 'chosen ';
-    $google_json   = json_decode( cs_filesystem()->get_contents( CS_URI .'/fields/typography/google-fonts.json' ) );
+    $google_json   = json_decode( wp_remote_fopen( CS_URI .'/fields/typography/google-fonts.json' ) );
     $chosen_rtl    = ( is_rtl() && ! empty( $is_chosen ) ) ? 'chosen-rtl ' : '';
 
     if( ! empty( $google_json ) ) {
