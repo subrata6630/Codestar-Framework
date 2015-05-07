@@ -34,7 +34,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
     if( ! empty( $this->options ) ) {
       $this->addAction( 'add_meta_boxes', 'add_meta_box' );
-      $this->addAction( 'save_post', 'save_post' );
+      $this->addAction( 'save_post', 'save_post', 10, 2 );
     }
 
   }
@@ -145,7 +145,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
   }
 
   // save metabox options
-  public function save_post( $post_id ) {
+  public function save_post( $post_id, $post ) {
 
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return $post_id; }
 
