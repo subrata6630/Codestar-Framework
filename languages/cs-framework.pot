@@ -8,51 +8,51 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: classes/framework.class.php:179
+#: classes/framework.class.php:176
 msgid "Success. Imported backup options."
 msgstr ""
 
-#: classes/framework.class.php:184
+#: classes/framework.class.php:181
 msgid "Default options restored."
 msgstr ""
 
-#: classes/framework.class.php:203
+#: classes/framework.class.php:200
 msgid "Default options restored for only this section."
 msgstr ""
 
-#: classes/framework.class.php:359
+#: classes/framework.class.php:363
 msgid "Settings saved."
 msgstr ""
 
-#: classes/framework.class.php:360
+#: classes/framework.class.php:364
 msgid "Save"
 msgstr ""
 
-#: classes/framework.class.php:360
+#: classes/framework.class.php:364
 msgid "Saving..."
 msgstr ""
 
-#: classes/framework.class.php:361
+#: classes/framework.class.php:365
 msgid "Restore"
 msgstr ""
 
-#: classes/framework.class.php:363
+#: classes/framework.class.php:367
 msgid "show all options"
 msgstr ""
 
-#: classes/options.class.php:126
+#: classes/options.class.php:125
 msgid "CONFIG"
 msgstr ""
 
-#: classes/options.class.php:132
+#: classes/options.class.php:131
 msgid "USAGE"
 msgstr ""
 
-#: classes/options.class.php:138
+#: classes/options.class.php:137
 msgid "VALUE"
 msgstr ""
 
-#: classes/options.class.php:211
+#: classes/options.class.php:213
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 

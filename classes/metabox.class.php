@@ -61,23 +61,24 @@ class CSFramework_Metabox extends CSFramework_Abstract{
   // metabox render content
   public function render_meta_box_content( $post, $callback ) {
 
-    global $post;
+    global $post, $cs_errors;
 
     wp_nonce_field( 'cs-framework-metabox', 'cs-framework-metabox-nonce' );
 
     $unique       = $callback['args']['id'];
     $sections     = $callback['args']['sections'];
     $meta_value   = get_post_meta( $post->ID, $unique, true );
-    $current_id   = get_transient( 'cs_section_id'. $unique );
+    $transient    = get_transient( 'cs-metabox-transient' );
+    $cs_errors    = $transient['errors'];
     $has_nav      = ( count( $sections ) >= 2 && $callback['args']['context'] != 'side' ) ? true : false;
     $show_all     = ( ! $has_nav ) ? ' cs-show-all' : '';
     $section_name = ( ! empty( $sections[0]['fields'] ) ) ? $sections[0]['name'] : $sections[1]['name'];
-    $section_id   = ( ! empty( $current_id ) ) ? $current_id : $section_name;
+    $section_id   = ( ! empty( $transient['ids'][$unique] ) ) ? $transient['ids'][$unique] : $section_name;
     $section_id   = ( ! empty( $_GET['cs-section'] ) ) ? esc_attr( $_GET['cs-section'] ) : $section_id;
 
     echo '<div class="cs-framework cs-metabox-framework">';
 
-      echo '<input type="hidden" name="cs_section_id['. $unique .']" class="cs-reset-section" value="'. $section_id .'">';
+      echo '<input type="hidden" name="cs_section_id['. $unique .']" class="cs-reset" value="'. $section_id .'">';
 
       echo '<div class="cs-body'. $show_all .'">';
 
@@ -153,8 +154,8 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
     if ( ! wp_verify_nonce( $nonce, 'cs-framework-metabox' ) ) { return $post_id; }
 
-    $post_type   = ( isset( $_POST['post_type'] ) ) ? $_POST['post_type'] : '';
-    $meta_errors = array();
+    $errors = array();
+    $post_type = ( isset( $_POST['post_type'] ) ) ? $_POST['post_type'] : '';
 
     if ( 'page' == $post_type ) {
       if ( ! current_user_can( 'edit_page', $post_id ) ) { return $post_id; }
@@ -203,13 +204,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
                   if( ! empty( $validate ) ) {
 
-                    $meta_errors[$field['id']] = array(
-                      'setting' => 'cs-framework-errors',
-                      'code'    => $field['id'],
-                      'message' => $validate,
-                      'type'    => 'error'
-                    );
-
+                    $errors[$field['id']] = array( 'code' => $field['id'], 'message' => $validate, 'type' => 'error' );
                     $default_value = isset( $field['default'] ) ? $field['default'] : '';
                     $request[$field['id']] = ( isset( $meta_value[$field['id']] ) ) ? $meta_value[$field['id']] : $default_value;
 
@@ -223,12 +218,6 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
           }
 
-        }
-
-        set_transient( 'cs_section_id'. $request_key, $_POST['cs_section_id'][$request_key], 5 );
-
-        if( count( $meta_errors ) ) {
-          set_transient( 'settings_errors', $meta_errors, 5 );
         }
 
         $request = apply_filters( 'cs_save_post', $request, $request_key, $meta_value, $this );
@@ -253,8 +242,12 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
       }
 
+      $transient['ids'][$request_key] = $_POST['cs_section_id'][$request_key];
+      $transient['errors'] = $errors;
+
     }
 
+    set_transient( 'cs-metabox-transient', $transient, 5000 );
 
   }
 
