@@ -247,7 +247,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
     }
 
-    set_transient( 'cs-metabox-transient', $transient, 5000 );
+    set_transient( 'cs-metabox-transient', $transient, 10 );
 
   }
 
