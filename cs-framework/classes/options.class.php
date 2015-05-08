@@ -15,7 +15,6 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
     $this->org_value  = $value;
     $this->unique     = $unique;
     $this->multilang  = $this->element_multilang();
-    $this->errors     = $this->get_settings_errors();
   }
 
   public function element_value( $value = '' ) {
@@ -152,9 +151,12 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
   public function element_get_error() {
 
+    global $cs_errors;
+
     $out = '';
-    if( is_array( $this->errors ) ) {
-      foreach ( $this->errors as $key => $value ) {
+
+    if( ! empty( $cs_errors ) ) {
+      foreach ( $cs_errors as $key => $value ) {
         if( isset( $this->field['id'] ) && $value['code'] == $this->field['id'] ) {
           $out .= '<p class="cs-text-warning">'. $value['message'] .'</p>';
         }
@@ -306,19 +308,6 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
   public function element_multilang() {
     return ( isset( $this->field['multilang'] ) ) ? cs_language_defaults() : false;
-  }
-
-  public function get_settings_errors() {
-
-    $errors = get_settings_errors( 'cs-framework-errors' );
-
-    if ( $this->unique != CS_OPTION && empty( $errors ) ) {
-      $errors = get_transient( 'settings_errors' );
-      $errors = is_array( $errors ) ? $errors : '';
-    }
-
-    return $errors;
-
   }
 
 }

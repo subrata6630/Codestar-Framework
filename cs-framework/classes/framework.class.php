@@ -161,14 +161,11 @@ class CSFramework extends CSFramework_Abstract {
   // section fields validate in save
   public function validate_save( $request ) {
 
+    $add_errors = array();
+    $section_id = ( isset( $_POST['cs_section_id'] ) ) ? $_POST['cs_section_id'] : '';
+
     // ignore nonce requests
     if( isset( $request['_nonce'] ) ) { unset( $request['_nonce'] ); }
-
-    // set section id
-    if( isset( $_POST['cs_section_id'] ) ) {
-      $transient_time = ( cs_language_defaults() ) ? 30 : 5;
-      set_transient( 'cs_section_id', $_POST['cs_section_id'], $transient_time );
-    }
 
     // import
     if ( isset( $request['import'] ) && ! empty( $request['import'] ) ) {
@@ -176,19 +173,19 @@ class CSFramework extends CSFramework_Abstract {
       if( is_array( $decode_string ) ) {
         return $decode_string;
       }
-      $this->add_settings_error( __( 'Success. Imported backup options.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Success. Imported backup options.', CS_TEXTDOMAIN ), 'updated' );
     }
 
     // reset all options
     if ( isset( $request['resetall'] ) ) {
-      $this->add_settings_error( __( 'Default options restored.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Default options restored.', CS_TEXTDOMAIN ), 'updated' );
       return;
     }
 
     // reset only section
-    if ( isset( $request['reset'] ) && isset( $_POST['cs_section_id'] ) ) {
+    if ( isset( $request['reset'] ) && ! empty( $section_id ) ) {
       foreach ( $this->sections as $value ) {
-        if( $value['name'] == $_POST['cs_section_id'] ) {
+        if( $value['name'] == $section_id ) {
           foreach ( $value['fields'] as $field ) {
             if( isset( $field['id'] ) ) {
               if( isset( $field['default'] ) ) {
@@ -200,7 +197,7 @@ class CSFramework extends CSFramework_Abstract {
           }
         }
       }
-      $this->add_settings_error( __( 'Default options restored for only this section.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Default options restored for only this section.', CS_TEXTDOMAIN ), 'updated' );
     }
 
     // option sanitize and validate
@@ -229,7 +226,7 @@ class CSFramework extends CSFramework_Abstract {
               $validate = apply_filters( 'cs_validate_' . $field['validate'], $request_value, $field, $section['fields'] );
 
               if( ! empty( $validate ) ) {
-                $this->add_settings_error( $validate, 'error', $field['id'] );
+                $add_errors[] = $this->add_settings_error( $validate, 'error', $field['id'] );
                 $request[$field['id']] = ( isset( $this->get_option[$field['id']] ) ) ? $this->get_option[$field['id']] : '';
               }
 
@@ -246,6 +243,10 @@ class CSFramework extends CSFramework_Abstract {
     }
 
     $request = apply_filters( 'cs_validate_save', $request );
+
+    // set transient
+    $transient_time = ( cs_language_defaults() ) ? 30 : 5;
+    set_transient( 'cs-framework-transient', array( 'errors' => $add_errors, 'section_id' => $section_id ), $transient_time );
 
     return $request;
   }
@@ -297,7 +298,7 @@ class CSFramework extends CSFramework_Abstract {
   }
 
   public function add_settings_error( $message, $type = 'error', $id = 'global' ) {
-    add_settings_error( 'cs-framework-errors', $id, $message, $type );
+    return array( 'setting' => 'cs-errors', 'code' => $id, 'message' => $message, 'type' => $type );
   }
 
   // adding option page
@@ -326,8 +327,9 @@ class CSFramework extends CSFramework_Abstract {
   // option page html output
   public function admin_page() {
 
+    $transient  = get_transient( 'cs-framework-transient' );
     $has_nav    = ( count( $this->options ) <= 1 ) ? ' cs-show-all' : '';
-    $section_id = ( get_transient( 'cs_section_id' ) ) ? get_transient( 'cs_section_id' ) : $this->sections[0]['name'];
+    $section_id = ( ! empty( $transient['section_id'] ) ) ? $transient['section_id'] : $this->sections[0]['name'];
     $section_id = ( isset( $_GET['cs-section'] ) ) ? esc_attr( $_GET['cs-section'] ) : $section_id;
 
     echo '<div class="cs-framework cs-option-framework">';
@@ -335,13 +337,15 @@ class CSFramework extends CSFramework_Abstract {
       echo '<form method="post" action="options.php" enctype="multipart/form-data" id="csframework_form">';
       echo '<input type="hidden" class="cs-reset" name="cs_section_id" value="'. $section_id .'" />';
 
-      if( $this->settings['ajax_save'] !== true ) {
+      if( $this->settings['ajax_save'] !== true && ! empty( $transient['errors'] ) ) {
 
-        $errors = get_settings_errors();
+        global $cs_errors;
 
-        if ( ! empty( $errors ) ) {
-          foreach ( $errors as $error ) {
-            if( in_array( $error['setting'], array( 'general', 'cs-framework-errors' ) ) ) {
+        $cs_errors = $transient['errors'];
+
+        if ( ! empty( $cs_errors ) ) {
+          foreach ( $cs_errors as $error ) {
+            if( in_array( $error['setting'], array( 'general', 'cs-errors' ) ) ) {
               echo '<div class="cs-settings-error '. $error['type'] .'">';
               echo '<p><strong>'. $error['message'] .'</strong></p>';
               echo '</div>';
