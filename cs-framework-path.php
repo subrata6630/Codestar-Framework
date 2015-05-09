@@ -145,7 +145,7 @@ if( ! function_exists( 'cs_locate_template' ) ) {
 if ( ! function_exists( 'cs_get_option' ) ) {
   function cs_get_option( $option_name = '', $default = '' ) {
 
-    $options = apply_filters( 'cs_get_option', get_option( CS_OPTION ) );
+    $options = apply_filters( 'cs_get_option', get_option( CS_OPTION ), $option_name, $default );
 
     if( ! empty( $option_name ) && ! empty( $options[$option_name] ) ) {
       return $options[$option_name];
@@ -167,7 +167,7 @@ if ( ! function_exists( 'cs_get_option' ) ) {
 if ( ! function_exists( 'cs_set_option' ) ) {
   function cs_set_option( $option_name = '', $new_value = '' ) {
 
-    $options = get_option( CS_OPTION );
+    $options = apply_filters( 'cs_set_option', get_option( CS_OPTION ), $option_name, $new_value );
 
     if( ! empty( $option_name ) ) {
       $options[$option_name] = $new_value;
@@ -229,7 +229,7 @@ if ( ! function_exists( 'cs_get_multilang_option' ) ) {
 if ( ! function_exists( 'cs_get_customize_option' ) ) {
   function cs_get_customize_option( $option_name = '', $default = '' ) {
 
-    $options = apply_filters( 'cs_get_customize_option', get_option( CS_CUSTOMIZE ) );
+    $options = apply_filters( 'cs_get_customize_option', get_option( CS_CUSTOMIZE ), $option_name, $default );
 
     if( ! empty( $option_name ) && ! empty( $options[$option_name] ) ) {
       return $options[$option_name];
@@ -251,7 +251,7 @@ if ( ! function_exists( 'cs_get_customize_option' ) ) {
 if ( ! function_exists( 'cs_set_customize_option' ) ) {
   function cs_set_customize_option( $option_name = '', $new_value = '' ) {
 
-    $options = get_option( CS_CUSTOMIZE );
+    $options = apply_filters( 'cs_set_customize_option', get_option( CS_CUSTOMIZE ), $option_name, $new_value );
 
     if( ! empty( $option_name ) ) {
       $options[$option_name] = $new_value;
@@ -283,8 +283,8 @@ if ( ! function_exists( 'cs_get_all_customize_option' ) ) {
  * @version 1.0.0
  *
  */
-if ( ! function_exists( 'is_wpml_activated' ) ) {
-  function is_wpml_activated() {
+if ( ! function_exists( 'cs_is_wpml_activated' ) ) {
+  function cs_is_wpml_activated() {
     if ( class_exists( 'SitePress' ) ) { return true; } else { return false; }
   }
 }
@@ -297,8 +297,8 @@ if ( ! function_exists( 'is_wpml_activated' ) ) {
  * @version 1.0.0
  *
  */
-if ( ! function_exists( 'is_qtranslate_activated' ) ) {
-  function is_qtranslate_activated() {
+if ( ! function_exists( 'cs_is_qtranslate_activated' ) ) {
+  function cs_is_qtranslate_activated() {
     if ( function_exists( 'qtrans_getSortedLanguages' ) ) { return true; } else { return false; }
   }
 }
@@ -311,9 +311,9 @@ if ( ! function_exists( 'is_qtranslate_activated' ) ) {
  * @version 1.0.0
  *
  */
-if ( ! function_exists( 'is_polylang_activated' ) ) {
-  function is_polylang_activated() {
-    if ( function_exists( 'pll_current_language' ) ) { return true; } else { return false; }
+if ( ! function_exists( 'cs_is_polylang_activated' ) ) {
+  function cs_is_polylang_activated() {
+    if ( class_exists( 'Polylang' ) ) { return true; } else { return false; }
   }
 }
 
@@ -330,16 +330,16 @@ if ( ! function_exists( 'cs_language_defaults' ) ) {
 
     $multilang = array();
 
-    if( is_wpml_activated() || is_qtranslate_activated() || is_polylang_activated() ) {
+    if( cs_is_wpml_activated() || cs_is_qtranslate_activated() || cs_is_polylang_activated() ) {
 
-      if( is_wpml_activated() ) {
+      if( cs_is_wpml_activated() ) {
 
         global $sitepress;
         $multilang['default']   = $sitepress->get_default_language();
         $multilang['current']   = $sitepress->get_current_language();
         $multilang['languages'] = $sitepress->get_active_languages();
 
-      } else if( is_polylang_activated() ) {
+      } else if( cs_is_polylang_activated() ) {
 
         global $polylang;
         $current    = pll_current_language();
@@ -356,7 +356,7 @@ if ( ! function_exists( 'cs_language_defaults' ) ) {
         $multilang['current']   = $current;
         $multilang['languages'] = $languages;
 
-      } else if( is_qtranslate_activated() ) {
+      } else if( cs_is_qtranslate_activated() ) {
 
         global $q_config;
         $multilang['default']   = $q_config['default_language'];
