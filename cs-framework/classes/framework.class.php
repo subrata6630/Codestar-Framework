@@ -245,7 +245,7 @@ class CSFramework extends CSFramework_Abstract {
     $request = apply_filters( 'cs_validate_save', $request );
 
     // set transient
-    $transient_time = ( cs_language_defaults() ) ? 30 : 5;
+    $transient_time = ( cs_language_defaults() !== false ) ? 30 : 10;
     set_transient( 'cs-framework-transient', array( 'errors' => $add_errors, 'section_id' => $section_id ), $transient_time );
 
     return $request;
