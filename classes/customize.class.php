@@ -25,7 +25,7 @@ class CSFramework_Customize extends CSFramework_Abstract {
    * @var bool
    *
    */
-  public $priority = 0;
+  public $priority = 1;
 
   /**
    *
@@ -62,7 +62,7 @@ class CSFramework_Customize extends CSFramework_Abstract {
     cs_locate_template ( 'functions/customize.php' );
     do_action( 'cs_customize_register' );
 
-    $panel_priority = 0;
+    $panel_priority = 1;
 
     foreach ( $this->options as $value ) {
 
@@ -93,7 +93,7 @@ class CSFramework_Customize extends CSFramework_Abstract {
   // add customize section
   public function add_section( $wp_customize, $value, $panel = false ) {
 
-    $section_priority = ( $panel ) ? 0 : $this->priority;
+    $section_priority = ( $panel ) ? 1 : $this->priority;
     $sections         = ( $panel ) ? $value['sections'] : array( 'sections' => $value );
 
     foreach ( $sections as $section ) {
@@ -106,7 +106,7 @@ class CSFramework_Customize extends CSFramework_Abstract {
         'panel'       => ( $panel ) ? $panel : '',
       ) );
 
-      $setting_priority = 0;
+      $setting_priority = 1;
 
       foreach ( $section['settings'] as $setting ) {
 
@@ -138,16 +138,12 @@ class CSFramework_Customize extends CSFramework_Abstract {
         } else {
 
           $wp_controls = array( 'color', 'upload', 'image', 'media' );
+          $call_class  = 'WP_Customize_'. ucfirst( $control_args['type'] ) .'_Control';
 
-          if( in_array( $control_args['type'], $wp_controls ) ) {
-
-            $call_class = 'WP_Customize_'. ucfirst( $control_args['type'] ) .'_Control';
+          if( in_array( $control_args['type'], $wp_controls ) && class_exists( $call_class ) ) {
             $wp_customize->add_control( new $call_class( $wp_customize, $setting['name'], $control_args ) );
-
           } else {
-
             $wp_customize->add_control( $setting['name'], $control_args );
-
           }
 
         }
