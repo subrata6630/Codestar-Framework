@@ -1255,6 +1255,13 @@
         border-bottom: none;
       }
     }
+    
+    // fix for hidden chosen content when placed at the last of section
+    .chosen-container{
+      &.chosen-with-drop .chosen-drop{
+        position: relative;
+      }
+    } 
   }
 
   .cs-element{
