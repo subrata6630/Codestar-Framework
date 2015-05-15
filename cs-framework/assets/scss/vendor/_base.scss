@@ -1255,6 +1255,12 @@
         border-bottom: none;
       }
     }
+
+    .chosen-container{
+      &.chosen-with-drop .chosen-drop{
+        position: relative;
+      }
+    }
   }
 
   .cs-element{
