@@ -240,10 +240,10 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
         }
 
-      }
+        $transient['ids'][$request_key] = $_POST['cs_section_id'][$request_key];
+        $transient['errors'] = $errors;
 
-      $transient['ids'][$request_key] = $_POST['cs_section_id'][$request_key];
-      $transient['errors'] = $errors;
+      }
 
     }
 
