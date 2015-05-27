@@ -138,6 +138,36 @@ array(
 {% endhighlight %}
 
 {% highlight php startinline %}
+// If image select is "blue or green"
+array(
+  'id'           => 'dep_7',
+  'type'         => 'image_select',
+  'title'        => 'If check <u>Blue box or Green box</u>',
+  'options'      => array(
+    'green'      => 'green.png',
+    'red'        => 'red.png',
+    'yellow'     => 'yellow.png',
+    'blue'       => 'blue.png',
+    'gray'       => 'gray.png',
+  ),
+  'radio'        => true,
+  'default'      => 'gray',
+  'attributes'   => array(
+    'data-depend-id' => 'dep_7',
+  ),
+),
+
+array(
+  'id'           => 'dummy_7',
+  'type'         => 'notice',
+  'class'        => 'info',
+  'content'      => 'Blue box selected!',
+  'dependency'   => array( 'dep_7', 'any', 'green,blue' ),
+  //'dependency' => array( 'data-depend-id', 'any', 'value,value' ),
+),
+{% endhighlight %}
+
+{% highlight php startinline %}
 // Multiple element dependencies
 array(
   'id'           => 'dep_10',
