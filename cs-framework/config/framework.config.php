@@ -2095,6 +2095,36 @@ $options[]           = array(
 
     // ------------------------------------
     array(
+      'id'           => 'dep_7_alt',
+      'type'         => 'image_select',
+      'title'        => 'If check <u>Green box or Blue box</u>',
+      'options'      => array(
+        'green'      => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
+        'red'        => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
+        'yellow'     => 'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif',
+        'blue'       => 'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif',
+        'gray'       => 'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif',
+      ),
+      'info'         => 'Multipel Image select field input="radio" model. in radio model unselected unavailable.',
+      'radio'        => true,
+      'default'      => 'gray',
+      'attributes'   => array(
+        'data-depend-id' => 'dep_7_alt',
+      ),
+    ),
+
+    array(
+      'id'           => 'dummy_7_alt',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Green or Blue box selected!',
+      'dependency'   => array( 'dep_7_alt', 'any', 'green,blue' ),
+      //'dependency' => array( 'data-depend-id', 'any', 'value,value' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
       'id'           => 'dep_8',
       'type'         => 'image',
       'title'        => 'Add a image',
