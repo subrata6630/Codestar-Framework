@@ -13,17 +13,25 @@ if( ! function_exists( 'cs_get_icons' ) ) {
     $jsons = glob( CS_DIR . '/fields/icon/*.json' );
 
     if( ! empty( $jsons ) ) {
+
       foreach ( $jsons as $path ) {
 
-        $object = json_decode( wp_remote_fopen( CS_URI .'/fields/icon/'. basename( $path ) ) );
+        $object = cs_get_icon_fonts( 'fields/icon/'. basename( $path ) );
 
-        echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">'. $object->name .'</h4>' : '';
+        if( is_object( $object ) ) {
 
-        foreach ( $object->icons as $icon ) {
-          echo '<a class="cs-icon-tooltip" data-icon="'. $icon .'" data-title="'. $icon .'"><span class="cs-icon cs-selector"><i class="'. $icon .'"></i></span></a>';
+          echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">'. $object->name .'</h4>' : '';
+
+          foreach ( $object->icons as $icon ) {
+            echo '<a class="cs-icon-tooltip" data-icon="'. $icon .'" data-title="'. $icon .'"><span class="cs-icon cs-selector"><i class="'. $icon .'"></i></span></a>';
+          }
+
+        } else {
+          echo '<h4 class="cs-icon-title">'. __( 'Error! Can not load json file.', CS_TEXTDOMAIN ) .'</h4>';
         }
 
       }
+
     }
 
     do_action( 'cs_add_icons' );

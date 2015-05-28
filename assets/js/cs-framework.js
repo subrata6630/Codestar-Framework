@@ -535,7 +535,7 @@
       field_groups.sortable({
         axis: 'y',
         handle: '.cs-group-title',
-        helper: 'clone',
+        helper: 'original',
         cursor: 'move',
         placeholder: 'widget-placeholder',
         start: function( event, ui ) {
