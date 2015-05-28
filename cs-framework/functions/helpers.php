@@ -87,6 +87,57 @@ if ( ! function_exists( 'cs_decode_string' ) ) {
 
 /**
  *
+ * Get google font from json file
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_google_fonts' ) ) {
+  function cs_get_google_fonts() {
+
+    global $cs_google_fonts;
+
+    if( ! empty( $cs_google_fonts ) ) {
+
+      return $cs_google_fonts;
+
+    } else {
+
+      ob_start();
+      cs_locate_template( 'fields/typography/google-fonts.json' );
+      $json = ob_get_clean();
+
+      $cs_google_fonts = json_decode( $json );
+
+      return $cs_google_fonts;
+    }
+
+  }
+}
+
+/**
+ *
+ * Get icon fonts from json file
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_icon_fonts' ) ) {
+  function cs_get_icon_fonts( $file ) {
+
+    ob_start();
+    cs_locate_template( $file );
+    $json = ob_get_clean();
+
+    return json_decode( $json );
+
+  }
+}
+
+/**
+ *
  * Array search key & value
  *
  * @since 1.0.0
