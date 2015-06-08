@@ -56,11 +56,11 @@ Please notice that the control name is wrapped within `_cs_customize_options[set
  * 
  * @see add_action('customize_preview_init',$func)
  */
-public static function cs_customizer_live_preview()
+function cs_customizer_live_preview()
 {
   wp_enqueue_script( 
       'mytheme-themecustomizer',      //Give the script an ID
-      get_template_directory_uri().'/assets/js/cs-customizer.js',//Point to file
+      get_template_directory_uri().'/js/cs-customizer.js',//Point to file
       array( 'jquery','customize-preview' ),  //Define dependencies
       '',           //Define a version (optional) 
       true            //Put script in footer?
