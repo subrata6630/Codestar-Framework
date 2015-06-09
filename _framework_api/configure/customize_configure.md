@@ -48,6 +48,7 @@ $options[]      = array(
 
     array(
       'name'    => 'textarea_option',
+      'transport' => 'postMessage', //Default Transport type for each setting is refresh, however, if you want to create live preview customization you can change it to 'postMessage'. Take a look at the example, we added trasport type to the color picker control.
       'control' => array(
         'label' => 'Textarea Field',
         'type'  => 'textarea',
