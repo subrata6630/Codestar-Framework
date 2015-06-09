@@ -1,18 +1,18 @@
 ---
-title: How to create Customizer Live Preview
+title: How to Customizer Live Preview
 type: h2
-weight: 1005
-filename: faq/how_to_create_customizer_live_preview.md
+weight: 1004
+filename: faq/how_to_customizer_live_preview.md
 ---
 
 ### Update transport type
 
-{% highlight php  hl_lines=4 %}
+{% highlight php startinline %}
 // codestar color picker
 array(
   'name'          => 'codestar_color_picker',
   'default'       => '#3498db',
-  'transport'     => 'postMessage',
+  'transport'     => 'postMessage', // Default Transport type for each setting is refresh, however, if you want to create live preview customization you can change it to 'postMessage'. Take a look at the example, we added trasport type to the color picker control.
   'control'       => array(
     'type'        => 'cs_field',
     'options'     => array(
@@ -35,7 +35,7 @@ Default Transport type for each setting is refresh, however, if you want to crea
 
     value.bind( function( newval ) {
       $( 'body' ).css( {
-        "background-color": newval 
+        "background-color": newval
       });
     });
 
@@ -50,20 +50,20 @@ Please notice that the control name is wrapped within `_cs_customize_options[set
 
 ### Enqueue the Script
 
-{% highlight php %}
+{% highlight php startinline %}
 /**
+ *
  * Used by hook: 'customize_preview_init'
- * 
- * @see add_action('customize_preview_init',$func)
+ * @see add_action( 'customize_preview_init', $func )
+ *
  */
-function cs_customizer_live_preview()
-{
-  wp_enqueue_script( 
-      'mytheme-themecustomizer',      //Give the script an ID
-      get_template_directory_uri().'/js/cs-customizer.js',//Point to file
-      array( 'jquery','customize-preview' ),  //Define dependencies
-      '',           //Define a version (optional) 
-      true            //Put script in footer?
+function cs_customizer_live_preview() {
+  wp_enqueue_script(
+    'mytheme-themecustomizer', // Give the script an ID
+    get_template_directory_uri().'/js/cs-customizer.js', // Point to file
+    array( 'jquery','customize-preview' ), // Define dependencies
+    '', // Define a version (optional)
+    true // Put script in footer ?
   );
 }
 add_action( 'customize_preview_init', 'cs_customizer_live_preview' );
