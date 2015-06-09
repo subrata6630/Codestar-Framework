@@ -5,7 +5,7 @@ weight: 1004
 filename: faq/how_to_create_customizer_live_preview.md
 ---
 
-### Update transport type
+### Edit transport type
 
 {% highlight php startinline %}
 // codestar color picker
