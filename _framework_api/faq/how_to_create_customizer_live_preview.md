@@ -1,8 +1,8 @@
 ---
-title: How to Customizer Live Preview
+title: How to create Customizer Live Preview
 type: h2
 weight: 1004
-filename: faq/how_to_customizer_live_preview.md
+filename: faq/how_to_create_customizer_live_preview.md
 ---
 
 ### Update transport type
