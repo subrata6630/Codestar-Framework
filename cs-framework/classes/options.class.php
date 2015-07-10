@@ -228,6 +228,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'page':
 
         $pages = get_pages( $query_args );
+
         if ( ! is_wp_error( $pages ) && ! empty( $pages ) ) {
           foreach ( $pages as $page ) {
             $options[$page->ID] = $page->post_title;
@@ -240,6 +241,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'post':
 
         $posts = get_posts( $query_args );
+
         if ( ! is_wp_error( $posts ) && ! empty( $posts ) ) {
           foreach ( $posts as $post ) {
             $options[$post->ID] = $post->post_title;
@@ -252,7 +254,8 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       case 'category':
 
         $categories = get_categories( $query_args );
-        if ( ! is_wp_error( $categories ) && ! empty( $categories ) && ! empty( $categories[0] ) ) {
+
+        if ( ! is_wp_error( $categories ) && ! empty( $categories ) && ! isset( $categories['errors'] ) ) {
           foreach ( $categories as $category ) {
             $options[$category->term_id] = $category->name;
           }
