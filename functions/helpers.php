@@ -192,7 +192,7 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
 
         if( ! in_array( basename( $override_field ), $located_fields ) ) {
 
-          cs_locate_template( str_replace(  CS_DIR .'-override', '', $override_field ) );
+          cs_locate_template( str_replace(  $override_dir, '/fields', $override_field ) );
 
         }
 
