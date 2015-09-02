@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
- * ----------------------------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------------------------
  *
  * Codestar Framework
  * A Lightweight and easy-to-use WordPress Options Framework
@@ -16,7 +16,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: cs-framework
  *
- * ----------------------------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------------------------
  *
  * Copyright 2015 Codestar <info@codestarlive.com>
  *
@@ -34,12 +34,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
- * ----------------------------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------------------------
  *
  */
 
 // ------------------------------------------------------------------------------------------------
-include_once dirname( __FILE__ ) .'/cs-framework-path.php';
+require_once plugin_dir_path( __FILE__ ) .'/cs-framework-path.php';
 // ------------------------------------------------------------------------------------------------
 
 if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) ) {
