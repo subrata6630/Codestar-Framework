@@ -21,8 +21,8 @@ class CSFramework_Option_Sorter extends CSFramework_Options {
     $value          = ( ! empty( $value ) ) ? $value : $this->field['default'];
     $enabled        = ( ! empty( $value['enabled'] ) ) ? $value['enabled'] : array();
     $disabled       = ( ! empty( $value['disabled'] ) ) ? $value['disabled'] : array();
-    $enabled_title  = ( isset( $this->field['enabled_title'] ) ) ? $this->field['enabled_title'] : __( 'Enabled Modules', CS_TEXTDOMAIN );
-    $disabled_title = ( isset( $this->field['disabled_title'] ) ) ? $this->field['disabled_title'] : __( 'Disabled Modules', CS_TEXTDOMAIN );
+    $enabled_title  = ( isset( $this->field['enabled_title'] ) ) ? $this->field['enabled_title'] : __( 'Enabled Modules', 'cs-framework' );
+    $disabled_title = ( isset( $this->field['disabled_title'] ) ) ? $this->field['disabled_title'] : __( 'Disabled Modules', 'cs-framework' );
 
     echo '<div class="cs-modules">';
     echo '<h3>'. $enabled_title .'</h3>';

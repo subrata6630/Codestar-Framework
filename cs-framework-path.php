@@ -7,10 +7,9 @@
  * @version 1.0.0
  *
  */
-defined( 'CS_VERSION' )     or  define( 'CS_VERSION',     '1.0.0' );
-defined( 'CS_TEXTDOMAIN' )  or  define( 'CS_TEXTDOMAIN',  'cs-framework' );
-defined( 'CS_OPTION' )      or  define( 'CS_OPTION',      '_cs_options' );
-defined( 'CS_CUSTOMIZE' )   or  define( 'CS_CUSTOMIZE',   '_cs_customize_options' );
+defined( 'CS_VERSION' )    or  define( 'CS_VERSION',    '1.0.0' );
+defined( 'CS_OPTION' )     or  define( 'CS_OPTION',     '_cs_options' );
+defined( 'CS_CUSTOMIZE' )  or  define( 'CS_CUSTOMIZE',  '_cs_customize_options' );
 
 /**
  *
@@ -23,30 +22,14 @@ defined( 'CS_CUSTOMIZE' )   or  define( 'CS_CUSTOMIZE',   '_cs_customize_options
 if( ! function_exists( 'cs_get_path_locate' ) ) {
   function cs_get_path_locate() {
 
-    if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active' ) ) {
-      include_once ABSPATH .'wp-admin/includes/plugin.php';
-    }
-
-    foreach ( get_plugins() as $key => $value ) {
-      if ( strpos( $key, 'cs-framework.php' ) !== false ) {
-        if( is_plugin_active( $key ) ) {
-          $basename = '/'. str_replace( '/cs-framework.php', '', $key );
-          $dir      = WP_PLUGIN_DIR . $basename;
-          $uri      = WP_PLUGIN_URL . $basename;
-        }
-      }
-    }
-
-    if ( ! isset( $basename ) ) {
-      $dirname        = wp_normalize_path( dirname( __FILE__ ) );
-      $plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
-      $located_plugin = ( preg_match( '#'. $plugin_dir .'#', $dirname ) ) ? true : false;
-      $directory      = ( $located_plugin ) ? $plugin_dir : get_template_directory();
-      $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_template_directory_uri();
-      $basename       = str_replace( wp_normalize_path( $directory ), '', $dirname );
-      $dir            = $directory . $basename;
-      $uri            = $directory_uri . $basename;
-    }
+    $dirname        = wp_normalize_path( dirname( __FILE__ ) );
+    $plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
+    $located_plugin = ( preg_match( '#'. $plugin_dir .'#', $dirname ) ) ? true : false;
+    $directory      = ( $located_plugin ) ? $plugin_dir : get_template_directory();
+    $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_template_directory_uri();
+    $basename       = str_replace( wp_normalize_path( $directory ), '', $dirname );
+    $dir            = $directory . $basename;
+    $uri            = $directory_uri . $basename;
 
     return apply_filters( 'cs_get_path_locate', array(
       'basename' => wp_normalize_path( $basename ),
@@ -439,4 +422,4 @@ function cs_get_locale() {
  * @version 1.0.0
  *
  */
-load_textdomain( CS_TEXTDOMAIN, CS_DIR . '/languages/'. cs_get_locale() .'.mo' );
+load_textdomain( 'cs-framework', CS_DIR .'/languages/'. cs_get_locale() .'.mo' );

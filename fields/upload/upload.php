@@ -20,9 +20,9 @@ class CSFramework_Option_upload extends CSFramework_Options {
     if( isset( $this->field['settings'] ) ) { extract( $this->field['settings'] ); }
 
     $upload_type  = ( isset( $upload_type  ) ) ? $upload_type  : 'image';
-    $button_title = ( isset( $button_title ) ) ? $button_title : __( 'Upload', CS_TEXTDOMAIN );
-    $frame_title  = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', CS_TEXTDOMAIN );
-    $insert_title = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', CS_TEXTDOMAIN );
+    $button_title = ( isset( $button_title ) ) ? $button_title : __( 'Upload', 'cs-framework' );
+    $frame_title  = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', 'cs-framework' );
+    $insert_title = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', 'cs-framework' );
 
     echo '<input type="text" name="'. $this->element_name() .'" value="'. $this->element_value() .'"'. $this->element_class() . $this->element_attributes() .'/>';
     echo '<a href="#" class="button cs-add" data-frame-title="'. $frame_title .'" data-upload-type="'. $upload_type .'" data-insert-title="'. $insert_title .'">'. $button_title .'</a>';

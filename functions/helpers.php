@@ -45,7 +45,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $element->output();
       $output .= ob_get_clean();
     } else {
-      $output .= '<p>'. __( 'This field class is not available!', CS_TEXTDOMAIN ) .'</p>';
+      $output .= '<p>'. __( 'This field class is not available!', 'cs-framework' ) .'</p>';
     }
 
     $output .= ( isset( $field['title'] ) ) ? '</div>' : '';
@@ -192,7 +192,7 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
 
         if( ! in_array( basename( $override_field ), $located_fields ) ) {
 
-          cs_locate_template( str_replace(  $override_dir, '/fields', $override_field ) );
+          cs_locate_template( str_replace( $override_dir, '/fields', $override_field ) );
 
         }
 

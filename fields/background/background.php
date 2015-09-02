@@ -28,9 +28,9 @@ class CSFramework_Option_background extends CSFramework_Options {
     $this->value    = wp_parse_args( $this->element_value(), $value_defaults );
 
     $upload_type    = ( isset( $upload_type  ) ) ? $upload_type  : 'image';
-    $button_title   = ( isset( $button_title ) ) ? $button_title : __( 'Upload', CS_TEXTDOMAIN );
-    $frame_title    = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', CS_TEXTDOMAIN );
-    $insert_title   = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', CS_TEXTDOMAIN );
+    $button_title   = ( isset( $button_title ) ) ? $button_title : __( 'Upload', 'cs-framework' );
+    $frame_title    = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', 'cs-framework' );
+    $insert_title   = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', 'cs-framework' );
 
     echo '<div class="cs-field-upload">';
     echo '<input type="text" name="'. $this->element_name( '[image]' ) .'" value="'. $this->value['image'] .'"'. $this->element_class() . $this->element_attributes() .'/>';

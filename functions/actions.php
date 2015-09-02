@@ -27,7 +27,7 @@ if( ! function_exists( 'cs_get_icons' ) ) {
           }
 
         } else {
-          echo '<h4 class="cs-icon-title">'. __( 'Error! Can not load json file.', CS_TEXTDOMAIN ) .'</h4>';
+          echo '<h4 class="cs-icon-title">'. __( 'Error! Can not load json file.', 'cs-framework' ) .'</h4>';
         }
 
       }
@@ -52,9 +52,9 @@ if( ! function_exists( 'cs_get_icons' ) ) {
 if( ! function_exists( 'cs_set_icons' ) ) {
   function cs_set_icons() {
 
-    echo '<div id="cs-icon-dialog" class="cs-dialog" title="'. __( 'Add Icon', CS_TEXTDOMAIN ) .'">';
-    echo '<div class="cs-dialog-header cs-text-center"><input type="text" placeholder='. __( 'Search a Icon...', CS_TEXTDOMAIN ) .'" class="cs-icon-search" /></div>';
-    echo '<div class="cs-dialog-load"><div class="cs-icon-loading">'. __( 'Loading...', CS_TEXTDOMAIN ) .'</div></div>';
+    echo '<div id="cs-icon-dialog" class="cs-dialog" title="'. __( 'Add Icon', 'cs-framework' ) .'">';
+    echo '<div class="cs-dialog-header cs-text-center"><input type="text" placeholder='. __( 'Search a Icon...', 'cs-framework' ) .'" class="cs-icon-search" /></div>';
+    echo '<div class="cs-dialog-load"><div class="cs-icon-loading">'. __( 'Loading...', 'cs-framework' ) .'</div></div>';
     echo '</div>';
 
   }
