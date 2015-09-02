@@ -173,12 +173,12 @@ class CSFramework extends CSFramework_Abstract {
       if( is_array( $decode_string ) ) {
         return $decode_string;
       }
-      $add_errors[] = $this->add_settings_error( __( 'Success. Imported backup options.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Success. Imported backup options.', 'cs-framework' ), 'updated' );
     }
 
     // reset all options
     if ( isset( $request['resetall'] ) ) {
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Default options restored.', 'cs-framework' ), 'updated' );
       return;
     }
 
@@ -197,7 +197,7 @@ class CSFramework extends CSFramework_Abstract {
           }
         }
       }
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored for only this section.', CS_TEXTDOMAIN ), 'updated' );
+      $add_errors[] = $this->add_settings_error( __( 'Default options restored for only this section.', 'cs-framework' ), 'updated' );
     }
 
     // option sanitize and validate
@@ -360,11 +360,11 @@ class CSFramework extends CSFramework_Abstract {
       echo '<header class="cs-header">';
       echo '<h1>Codestar Framework <small>by Codestar</small></h1>';
       echo '<fieldset>';
-      echo ( $this->settings['ajax_save'] === true ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', CS_TEXTDOMAIN ) .'</span>' : '';
-      submit_button( __( 'Save', CS_TEXTDOMAIN ), 'primary', 'save', false, array( 'data-ajax' => $this->settings['ajax_save'], 'data-save' => __( 'Saving...', CS_TEXTDOMAIN ) ) );
-      submit_button( __( 'Restore', CS_TEXTDOMAIN ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
+      echo ( $this->settings['ajax_save'] === true ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
+      submit_button( __( 'Save', 'cs-framework' ), 'primary', 'save', false, array( 'data-ajax' => $this->settings['ajax_save'], 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
+      submit_button( __( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
       echo '</fieldset>';
-      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( 'show all options', CS_TEXTDOMAIN ) .'</a>' : '';
+      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( 'show all options', 'cs-framework' ) .'</a>' : '';
       echo '<div class="clear"></div>';
       echo '</header>'; // end .cs-header
 

@@ -11,7 +11,7 @@ if( ! function_exists( 'cs_validate_email' ) ) {
   function cs_validate_email( $value, $field ) {
 
     if ( ! sanitize_email( $value ) ) {
-      return __( 'Please write a valid email address!', CS_TEXTDOMAIN );
+      return __( 'Please write a valid email address!', 'cs-framework' );
     }
 
   }
@@ -30,7 +30,7 @@ if( ! function_exists( 'cs_validate_numeric' ) ) {
   function cs_validate_numeric( $value, $field ) {
 
     if ( ! is_numeric( $value ) ) {
-      return __( 'Please write a numeric data!', CS_TEXTDOMAIN );
+      return __( 'Please write a numeric data!', 'cs-framework' );
     }
 
   }
@@ -48,7 +48,7 @@ if( ! function_exists( 'cs_validate_numeric' ) ) {
 if( ! function_exists( 'cs_validate_required' ) ) {
   function cs_validate_required( $value ) {
     if ( empty( $value ) ) {
-      return __( 'Fatal Error! This field is required!', CS_TEXTDOMAIN );
+      return __( 'Fatal Error! This field is required!', 'cs-framework' );
     }
   }
   add_filter( 'cs_validate_required', 'cs_validate_required' );

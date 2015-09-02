@@ -122,19 +122,19 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       $value = $this->element_value();
 
       $out .= "<pre>";
-      $out .= "<strong>". __( 'CONFIG', CS_TEXTDOMAIN ) .":</strong>";
+      $out .= "<strong>". __( 'CONFIG', 'cs-framework' ) .":</strong>";
       $out .= "\n";
       ob_start();
       var_export( $this->field );
       $out .= htmlspecialchars( ob_get_clean() );
       $out .= "\n\n";
-      $out .= "<strong>". __( 'USAGE', CS_TEXTDOMAIN ) .":</strong>";
+      $out .= "<strong>". __( 'USAGE', 'cs-framework' ) .":</strong>";
       $out .= "\n";
       $out .= ( isset( $this->field['id'] ) ) ? "cs_get_option( '". $this->field['id'] ."' );" : '';
 
       if( ! empty( $value ) ) {
         $out .= "\n\n";
-        $out .= "<strong>". __( 'VALUE', CS_TEXTDOMAIN ) .":</strong>";
+        $out .= "<strong>". __( 'VALUE', 'cs-framework' ) .":</strong>";
         $out .= "\n";
         ob_start();
         var_export( $value );
@@ -210,7 +210,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
       $out .= '<input type="hidden" name="'. $this->element_name( '[multilang]', true ) .'" value="true" />';
       $out .= '</fieldset>';
-      $out .= '<p class="cs-text-desc">'. sprintf( __( 'You are editing language: ( <strong>%s</strong> )', CS_TEXTDOMAIN ), $this->multilang['current'] ) .'</p>';
+      $out .= '<p class="cs-text-desc">'. sprintf( __( 'You are editing language: ( <strong>%s</strong> )', 'cs-framework' ), $this->multilang['current'] ) .'</p>';
 
     }
 

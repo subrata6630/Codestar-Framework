@@ -59,7 +59,7 @@ class CSFramework_Customize extends CSFramework_Abstract {
   public function customize_register( $wp_customize ) {
 
     // load extra WP_Customize_Control
-    cs_locate_template ( 'functions/customize.php' );
+    cs_locate_template( 'functions/customize.php' );
     do_action( 'cs_customize_register' );
 
     $panel_priority = 1;

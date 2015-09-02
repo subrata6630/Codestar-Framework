@@ -79,7 +79,7 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
     $post_type = ( isset( $post ) ) ? $post->post_type : '';
 
     if( ! in_array( $post_type, $this->exclude_post_types ) ) {
-      echo '<a href="#" class="button button-primary cs-shortcode" data-editor-id="'. $editor_id .'">'. __( 'Add Shortcode', CS_TEXTDOMAIN ) .'</a>';
+      echo '<a href="#" class="button button-primary cs-shortcode" data-editor-id="'. $editor_id .'">'. __( 'Add Shortcode', 'cs-framework' ) .'</a>';
     }
 
   }
@@ -87,9 +87,9 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
   // shortcode dialog
   public function shortcode_dialog() {
   ?>
-    <div id="cs-shortcode-dialog" class="cs-dialog" title="<?php _e( 'Add Shortcode', CS_TEXTDOMAIN ); ?>">
+    <div id="cs-shortcode-dialog" class="cs-dialog" title="<?php _e( 'Add Shortcode', 'cs-framework' ); ?>">
       <div class="cs-dialog-header">
-        <select class="chosen <?php echo ( is_rtl() ) ? 'chosen-rtl' : ''; ?> cs-dialog-select" data-placeholder="<?php _e( 'Select a shortcode', CS_TEXTDOMAIN ); ?>">
+        <select class="chosen <?php echo ( is_rtl() ) ? 'chosen-rtl' : ''; ?> cs-dialog-select" data-placeholder="<?php _e( 'Select a shortcode', 'cs-framework' ); ?>">
           <option value=""></option>
           <?php
             foreach ( $this->options as $group ) {
@@ -105,7 +105,7 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
       </div>
       <div class="cs-dialog-load"></div>
       <div class="cs-insert-button hidden">
-        <a href="#" class="button button-primary cs-dialog-insert"><?php _e( 'Insert Shortcode', CS_TEXTDOMAIN ); ?></a>
+        <a href="#" class="button button-primary cs-dialog-insert"><?php _e( 'Insert Shortcode', 'cs-framework' ); ?></a>
       </div>
     </div>
   <?php

@@ -24,7 +24,7 @@ class CSFramework_Option_textarea extends CSFramework_Options {
 
   public function shortcode_generator() {
     if( isset( $this->field['shortcode'] ) && CS_ACTIVE_SHORTCODE ) {
-      echo '<a href="#" class="button button-primary cs-shortcode cs-shortcode-textarea">'. __( 'Add Shortcode', CS_TEXTDOMAIN ) .'</a>';
+      echo '<a href="#" class="button button-primary cs-shortcode cs-shortcode-textarea">'. __( 'Add Shortcode', 'cs-framework' ) .'</a>';
     }
   }
 }
