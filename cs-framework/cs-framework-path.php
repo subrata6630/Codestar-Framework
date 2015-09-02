@@ -370,48 +370,50 @@ if ( ! function_exists( 'cs_language_defaults' ) ) {
  * @version 1.0.0
  *
  */
-function cs_get_locale() {
+if ( ! function_exists( 'cs_get_locale' ) ) {
+  function cs_get_locale() {
 
-  global $locale, $wp_local_package;
+    global $locale, $wp_local_package;
 
-  if ( isset( $locale ) ) {
+    if ( isset( $locale ) ) {
+      return apply_filters( 'locale', $locale );
+    }
+
+    if ( isset( $wp_local_package ) ) {
+      $locale = $wp_local_package;
+    }
+
+    if ( defined( 'WPLANG' ) ) {
+      $locale = WPLANG;
+    }
+
+    if ( is_multisite() ) {
+
+      if ( defined( 'WP_INSTALLING' ) || ( false === $ms_locale = get_option( 'WPLANG' ) ) ) {
+        $ms_locale = get_site_option( 'WPLANG' );
+      }
+
+      if ( $ms_locale !== false ) {
+        $locale = $ms_locale;
+      }
+
+    } else {
+
+      $db_locale = get_option( 'WPLANG' );
+
+      if ( $db_locale !== false ) {
+        $locale = $db_locale;
+      }
+
+    }
+
+    if ( empty( $locale ) ) {
+      $locale = 'en_US';
+    }
+
     return apply_filters( 'locale', $locale );
-  }
-
-  if ( isset( $wp_local_package ) ) {
-    $locale = $wp_local_package;
-  }
-
-  if ( defined( 'WPLANG' ) ) {
-    $locale = WPLANG;
-  }
-
-  if ( is_multisite() ) {
-
-    if ( defined( 'WP_INSTALLING' ) || ( false === $ms_locale = get_option( 'WPLANG' ) ) ) {
-      $ms_locale = get_site_option( 'WPLANG' );
-    }
-
-    if ( $ms_locale !== false ) {
-      $locale = $ms_locale;
-    }
-
-  } else {
-
-    $db_locale = get_option( 'WPLANG' );
-
-    if ( $db_locale !== false ) {
-      $locale = $db_locale;
-    }
 
   }
-
-  if ( empty( $locale ) ) {
-    $locale = 'en_US';
-  }
-
-  return apply_filters( 'locale', $locale );
-
 }
 
 /**
