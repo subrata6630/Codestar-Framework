@@ -404,6 +404,10 @@
     margin-right: 15px;
     margin-bottom: 15px;
   }
+
+  input[type="radio"]:checked:before{
+    line-height: 10px;
+  }
 }
 
 .cs-field-switcher{
