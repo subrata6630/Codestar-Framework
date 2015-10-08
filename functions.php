@@ -5,11 +5,11 @@
  * A Lightweight and easy-to-use WordPress Options Framework
  *
  */
-require_once dirname( __FILE__ ) .'/cs-framework/cs-framework.php';
+require_once get_template_directory() .'/cs-framework/cs-framework.php';
 
 /**
  *
  * Unit-Test Functions
  *
  */
-require_once dirname( __FILE__ ) .'/inc/unit.php';
+require_once get_template_directory() .'/inc/unit.php';
