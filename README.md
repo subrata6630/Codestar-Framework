@@ -15,6 +15,8 @@ Read the documentation for details [documentation](http://codestarframework.com/
 
 ```php
 require_once dirname( __FILE__ ) .'/cs-framework/cs-framework.php';
+// -(or)-
+require_once get_template_directory() .'/cs-framework/cs-framework.php';
 ```
 
 * Yay! Right now you are ready to configure framework, metaboxes, wp customize, shortcoder
