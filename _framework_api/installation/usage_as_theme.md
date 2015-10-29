@@ -22,10 +22,10 @@ filename: installation/usage_as_theme.md
  * A Lightweight and easy-to-use WordPress Options Framework
  *
  */
-require_once dirname( __FILE__ ) .'/cs-framework/cs-framework.php';
+require_once get_template_directory_uri() .'/cs-framework/cs-framework.php';
 
 // -( or )-
-// require_once dirname( __FILE__ ) .'/subfolder/cs-framework/cs-framework.php';
+// require_once get_template_directory_uri() .'/subfolder/cs-framework/cs-framework.php';
 
 {% endhighlight %}
 
