@@ -7,33 +7,33 @@ filename: options/notice.md
 
 {% highlight php startinline %}
 array(
-  'type'  => 'notice',
-  'class' => 'Success',
-  'title' => 'Success: Lorem Ipsum Dollar.',
+  'type'    => 'notice',
+  'class'   => 'Success',
+  'content' => 'Success: Lorem Ipsum Dollar.',
 ),
 {% endhighlight %}
 
 {% highlight php startinline %}
 array(
-  'type'  => 'notice',
-  'class' => 'warning',
-  'title' => 'Warning: Lorem Ipsum Dollar.',
+  'type'    => 'notice',
+  'class'   => 'warning',
+  'content' => 'Warning: Lorem Ipsum Dollar.',
 ),
 {% endhighlight %}
 
 {% highlight php startinline %}
 array(
-  'type'  => 'notice',
-  'class' => 'danger',
-  'title' => 'Danger: Lorem Ipsum Dollar.',
+  'type'    => 'notice',
+  'class'   => 'danger',
+  'content' => 'Danger: Lorem Ipsum Dollar.',
 ),
 {% endhighlight %}
 
 {% highlight php startinline %}
 array(
-  'type'  => 'notice',
-  'class' => 'info',
-  'title' => 'Info: Lorem Ipsum Dollar.',
+  'type'    => 'notice',
+  'class'   => 'info',
+  'content' => 'Info: Lorem Ipsum Dollar.',
 ),
 {% endhighlight %}
 
