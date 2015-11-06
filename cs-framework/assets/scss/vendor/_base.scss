@@ -940,22 +940,22 @@
 
 .cs-warning-primary{
   color: #fff !important;
-  border-color: #d02c21 !important;
+  border-color: #d02c21 #ba281e #ba281e !important;
   background: #e14d43 !important;
-  @include box-shadow(inset 0 1px #ec8b85, 0 1px 0 rgba( black, 0.15) !important);
+  @include box-shadow(0 1px 0 #ba281e !important);
+  @include text-shadow(0 -1px 1px #ba281e, 1px 0 1px #ba281e, 0 1px 1px #ba281e, -1px 0 1px #ba281e !important);
 
   &:hover,
   &:focus{
     border-color: #ba281e !important;
-    background: #dd382d !important;
-    @include box-shadow(inset 0 1px #e8776f !important);
+    background: #e35950 !important;
+    @include box-shadow(0 1px 0 #ba281e !important);
   }
 
   &:active{
     border-color: #ba281e !important;
     background: #d02c21 !important;
-    color: white !important;
-    @include box-shadow(inset 0 2px 5px -3px rgba(black, 0.5), 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8) !important);
+    @include box-shadow(inset 0 2px 0 #ba281e !important);
   }
 }
 
@@ -992,6 +992,21 @@
 
 .cs-text-right{
   text-align: right;
+}
+
+.cs-text-highlight{
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  @include border-radius(2px);
+}
+
+.cs-text-highlight-gray{
+  padding: 2px 4px;
+  font-size: 90%;
+  background-color: #f0f0f0;
+  @include border-radius(2px);
 }
 
 #cs-save-ajax{
