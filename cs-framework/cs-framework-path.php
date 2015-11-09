@@ -181,7 +181,7 @@ if ( ! function_exists( 'cs_get_all_option' ) ) {
 
 /**
  *
- * Multi language value
+ * Multi language option
  *
  * @since 1.0.0
  * @version 1.0.0
@@ -191,6 +191,32 @@ if ( ! function_exists( 'cs_get_multilang_option' ) ) {
   function cs_get_multilang_option( $option_name = '', $default = '' ) {
 
     $value     = cs_get_option( $option_name, $default );
+    $languages = cs_language_defaults();
+    $default   = $languages['default'];
+    $current   = $languages['current'];
+
+    if ( is_array( $value ) && is_array( $languages ) && isset( $value[$current] ) ) {
+      return  $value[$current];
+    } else if ( $default != $current ) {
+      return  '';
+    }
+
+    return $value;
+
+  }
+}
+
+/**
+ *
+ * Multi language value
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_multilang_value' ) ) {
+  function cs_get_multilang_value( $value = '', $default = '' ) {
+
     $languages = cs_language_defaults();
     $default   = $languages['default'];
     $current   = $languages['current'];
