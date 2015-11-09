@@ -17,7 +17,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     echo $this->element_before();
 
-    $last_id     = ( is_array( $this->value ) ) ? count( $this->value ) : 0;
+    $last_id     = ( is_array( $this->value ) ) ? max( array_keys( $this->value ) ) : 0;
     $acc_title   = ( isset( $this->field['accordion_title'] ) ) ? $this->field['accordion_title'] : __( 'Adding', 'cs-framework' );
     $field_title = ( isset( $this->field['fields'][0]['title'] ) ) ? $this->field['fields'][0]['title'] : $this->field['fields'][1]['title'];
     $field_id    = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : $this->field['fields'][1]['id'];
