@@ -8,7 +8,7 @@ $settings      = array(
   'menu_title' => 'Framework',
   'menu_type'  => 'add_menu_page',
   'menu_slug'  => 'cs-framework',
-  'ajax_save'  => false,
+  'ajax_save'  => true,
 );
 
 // ===============================================================================================

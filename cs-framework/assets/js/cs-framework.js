@@ -629,6 +629,10 @@
 
         if( $ajax.length ) {
 
+          if( typeof tinyMCE === 'object' ) {
+            tinyMCE.triggerSave();
+          }
+
           $this.prop('disabled', true).attr('value', $text);
 
           var serializedOptions = $('#csframework_form').serialize();
@@ -825,6 +829,9 @@
       $cs_body.on('click', '.cs-shortcode', function( e ) {
 
         e.preventDefault();
+
+        // init chosen
+        $selector.CSFRAMEWORK_CHOSEN();
 
         $shortcode_button = $(this);
         shortcode_target  = $shortcode_button.hasClass('cs-shortcode-textarea');

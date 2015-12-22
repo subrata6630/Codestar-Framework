@@ -10,6 +10,8 @@
 if( ! function_exists( 'cs_get_icons' ) ) {
   function cs_get_icons() {
 
+    do_action( 'cs_add_icons_before' );
+
     $jsons = glob( CS_DIR . '/fields/icon/*.json' );
 
     if( ! empty( $jsons ) ) {
@@ -35,6 +37,7 @@ if( ! function_exists( 'cs_get_icons' ) ) {
     }
 
     do_action( 'cs_add_icons' );
+    do_action( 'cs_add_icons_after' );
 
     die();
   }

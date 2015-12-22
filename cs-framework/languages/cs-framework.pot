@@ -20,23 +20,23 @@ msgstr ""
 msgid "Default options restored for only this section."
 msgstr ""
 
-#: classes/framework.class.php:363
+#: classes/framework.class.php:365
 msgid "Settings saved."
 msgstr ""
 
-#: classes/framework.class.php:364
+#: classes/framework.class.php:366
 msgid "Save"
 msgstr ""
 
-#: classes/framework.class.php:364
+#: classes/framework.class.php:366
 msgid "Saving..."
 msgstr ""
 
-#: classes/framework.class.php:365
+#: classes/framework.class.php:367
 msgid "Restore"
 msgstr ""
 
-#: classes/framework.class.php:367
+#: classes/framework.class.php:369
 msgid "show all options"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: fields/icon/icon.php:25 functions/actions.php:55
+#: fields/icon/icon.php:25 functions/actions.php:58
 msgid "Add Icon"
 msgstr ""
 
@@ -158,15 +158,15 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: fields/typography/typography.php:107 functions/actions.php:30
+#: fields/typography/typography.php:107 functions/actions.php:32
 msgid "Error! Can not load json file."
 msgstr ""
 
-#: functions/actions.php:56
+#: functions/actions.php:59
 msgid "Search a Icon..."
 msgstr ""
 
-#: functions/actions.php:57
+#: functions/actions.php:60
 msgid "Loading..."
 msgstr ""
 
