@@ -661,14 +661,16 @@
   // ======================================================
   // CSFRAMEWORK UI DIALOG OVERLAY HELPER
   // ------------------------------------------------------
-  $.widget( 'ui.dialog', $.ui.dialog, {
-      _createOverlay: function() {
-        this._super();
-        if ( !this.options.modal ) { return; }
-        this._on(this.overlay, {click: 'close'});
+  if( typeof $.widget !== 'undefined' && typeof $.ui !== 'undefined' && typeof $.ui.dialog !== 'undefined' ) {
+    $.widget( 'ui.dialog', $.ui.dialog, {
+        _createOverlay: function() {
+          this._super();
+          if ( !this.options.modal ) { return; }
+          this._on(this.overlay, {click: 'close'});
+        }
       }
-    }
-  );
+    );
+  }
 
   // ======================================================
   // CSFRAMEWORK ICONS MANAGER
@@ -1153,7 +1155,7 @@
   // ======================================================
   // CSFRAMEWORK COLORPICKER
   // ------------------------------------------------------
-  if( typeof Color.fn.toString !== 'undefined' ) {
+  if( typeof Color === 'function' ) {
 
     // adding alpha support for Automattic Color.js toString function.
     Color.fn.toString = function () {
