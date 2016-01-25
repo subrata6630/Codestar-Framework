@@ -779,7 +779,7 @@
 
               });
 
-              $load.find('.cs-icon-tooltip').tooltip({html:true, placement:'top', container:'body'});
+              $load.find('.cs-icon-tooltip').cstooltip({html:true, placement:'top', container:'body'});
 
             }
           });
@@ -1346,7 +1346,7 @@
   $.fn.CSFRAMEWORK_TOOLTIP = function() {
     return this.each(function() {
       var placement = ( cs_is_rtl ) ? 'right' : 'left';
-      $(this).tooltip({html:true, placement:placement, container:'body'});
+      $(this).cstooltip({html:true, placement:placement, container:'body'});
     });
   };
 

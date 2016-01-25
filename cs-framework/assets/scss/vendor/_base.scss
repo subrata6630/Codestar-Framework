@@ -1024,7 +1024,7 @@
   @include border-radius(2px);
 }
 
-.tooltip{
+.cs-tooltip{
   position: absolute;
   z-index: 100103;
   display: block;
@@ -1039,7 +1039,7 @@
   }
 }
 
-.tooltip-inner{
+.cs-tooltip-inner{
   max-width: 200px;
   padding: 6px 12px;
   color: #fff;

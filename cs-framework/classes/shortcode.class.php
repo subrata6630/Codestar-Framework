@@ -76,7 +76,7 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
 
     global $post;
 
-    $post_type = ( isset( $post ) ) ? $post->post_type : '';
+    $post_type = ( isset( $post->post_type ) ) ? $post->post_type : '';
 
     if( ! in_array( $post_type, $this->exclude_post_types ) ) {
       echo '<a href="#" class="button button-primary cs-shortcode" data-editor-id="'. $editor_id .'">'. __( 'Add Shortcode', 'cs-framework' ) .'</a>';
