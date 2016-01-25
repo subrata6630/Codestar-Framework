@@ -4,9 +4,9 @@
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ========================================================================
+ * Changed function name for avoid conflict
  * ======================================================================== */
-
-
 +function ($) {
   'use strict';
 
@@ -33,7 +33,7 @@
   }
 
   // http://blog.alexmaccaw.com/css-transitions
-  $.fn.emulateTransitionEnd = function (duration) {
+  $.fn.CSemulateTransitionEnd = function (duration) {
     var called = false
     var $el = this
     $(this).one('bsTransitionEnd', function () { called = true })
@@ -65,16 +65,16 @@
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ========================================================================
+ * Changed function and class names for avoid conflict
  * ======================================================================== */
-
-
 +function ($) {
   'use strict';
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
 
-  var Tooltip = function (element, options) {
+  var CSTooltip = function (element, options) {
     this.type       = null
     this.options    = null
     this.enabled    = null
@@ -82,18 +82,18 @@
     this.hoverState = null
     this.$element   = null
 
-    this.init('tooltip', element, options)
+    this.init('cstooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.4'
+  CSTooltip.VERSION  = '3.3.4'
 
-  Tooltip.TRANSITION_DURATION = 150
+  CSTooltip.TRANSITION_DURATION = 150
 
-  Tooltip.DEFAULTS = {
+  CSTooltip.DEFAULTS = {
     animation: true,
     placement: 'top',
     selector: false,
-    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+    template: '<div class="cs-tooltip" role="tooltip"><div class="cs-tooltip-arrow"></div><div class="cs-tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -105,7 +105,7 @@
     }
   }
 
-  Tooltip.prototype.init = function (type, element, options) {
+  CSTooltip.prototype.init = function (type, element, options) {
     this.enabled   = true
     this.type      = type
     this.$element  = $(element)
@@ -137,11 +137,11 @@
       this.fixTitle()
   }
 
-  Tooltip.prototype.getDefaults = function () {
-    return Tooltip.DEFAULTS
+  CSTooltip.prototype.getDefaults = function () {
+    return CSTooltip.DEFAULTS
   }
 
-  Tooltip.prototype.getOptions = function (options) {
+  CSTooltip.prototype.getOptions = function (options) {
     options = $.extend({}, this.getDefaults(), this.$element.data(), options)
 
     if (options.delay && typeof options.delay == 'number') {
@@ -154,7 +154,7 @@
     return options
   }
 
-  Tooltip.prototype.getDelegateOptions = function () {
+  CSTooltip.prototype.getDelegateOptions = function () {
     var options  = {}
     var defaults = this.getDefaults()
 
@@ -165,7 +165,7 @@
     return options
   }
 
-  Tooltip.prototype.enter = function (obj) {
+  CSTooltip.prototype.enter = function (obj) {
     var self = obj instanceof this.constructor ?
       obj : $(obj.currentTarget).data('bs.' + this.type)
 
@@ -190,7 +190,7 @@
     }, self.options.delay.show)
   }
 
-  Tooltip.prototype.leave = function (obj) {
+  CSTooltip.prototype.leave = function (obj) {
     var self = obj instanceof this.constructor ?
       obj : $(obj.currentTarget).data('bs.' + this.type)
 
@@ -210,7 +210,7 @@
     }, self.options.delay.hide)
   }
 
-  Tooltip.prototype.show = function () {
+  CSTooltip.prototype.show = function () {
     var e = $.Event('show.bs.' + this.type)
 
     if (this.hasContent() && this.enabled) {
@@ -281,12 +281,12 @@
       $.support.transition && this.$tip.hasClass('fade') ?
         $tip
           .one('bsTransitionEnd', complete)
-          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+          .CSemulateTransitionEnd(CSTooltip.TRANSITION_DURATION) :
         complete()
     }
   }
 
-  Tooltip.prototype.applyPlacement = function (offset, placement) {
+  CSTooltip.prototype.applyPlacement = function (offset, placement) {
     var $tip   = this.tip()
     var width  = $tip[0].offsetWidth
     var height = $tip[0].offsetHeight
@@ -336,21 +336,21 @@
     this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
   }
 
-  Tooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {
+  CSTooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {
     this.arrow()
       .css(isVertical ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
       .css(isVertical ? 'top' : 'left', '')
   }
 
-  Tooltip.prototype.setContent = function () {
+  CSTooltip.prototype.setContent = function () {
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    $tip.find('.cs-tooltip-inner')[this.options.html ? 'html' : 'text'](title)
     $tip.removeClass('fade in top bottom left right')
   }
 
-  Tooltip.prototype.hide = function (callback) {
+  CSTooltip.prototype.hide = function (callback) {
     var that = this
     var $tip = $(this.$tip)
     var e    = $.Event('hide.bs.' + this.type)
@@ -372,7 +372,7 @@
     $.support.transition && $tip.hasClass('fade') ?
       $tip
         .one('bsTransitionEnd', complete)
-        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+        .CSemulateTransitionEnd(CSTooltip.TRANSITION_DURATION) :
       complete()
 
     this.hoverState = null
@@ -380,18 +380,18 @@
     return this
   }
 
-  Tooltip.prototype.fixTitle = function () {
+  CSTooltip.prototype.fixTitle = function () {
     var $e = this.$element
     if ($e.attr('title') || typeof ($e.attr('data-original-title')) != 'string') {
       $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
     }
   }
 
-  Tooltip.prototype.hasContent = function () {
+  CSTooltip.prototype.hasContent = function () {
     return this.getTitle()
   }
 
-  Tooltip.prototype.getPosition = function ($element) {
+  CSTooltip.prototype.getPosition = function ($element) {
     $element   = $element || this.$element
 
     var el     = $element[0]
@@ -409,7 +409,7 @@
     return $.extend({}, elRect, scroll, outerDims, elOffset)
   }
 
-  Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
+  CSTooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
     return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2 } :
            placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
            placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
@@ -417,7 +417,7 @@
 
   }
 
-  Tooltip.prototype.getViewportAdjustedDelta = function (placement, pos, actualWidth, actualHeight) {
+  CSTooltip.prototype.getViewportAdjustedDelta = function (placement, pos, actualWidth, actualHeight) {
     var delta = { top: 0, left: 0 }
     if (!this.$viewport) return delta
 
@@ -445,7 +445,7 @@
     return delta
   }
 
-  Tooltip.prototype.getTitle = function () {
+  CSTooltip.prototype.getTitle = function () {
     var title
     var $e = this.$element
     var o  = this.options
@@ -456,33 +456,33 @@
     return title
   }
 
-  Tooltip.prototype.getUID = function (prefix) {
+  CSTooltip.prototype.getUID = function (prefix) {
     do prefix += ~~(Math.random() * 1000000)
     while (document.getElementById(prefix))
     return prefix
   }
 
-  Tooltip.prototype.tip = function () {
+  CSTooltip.prototype.tip = function () {
     return (this.$tip = this.$tip || $(this.options.template))
   }
 
-  Tooltip.prototype.arrow = function () {
-    return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'))
+  CSTooltip.prototype.arrow = function () {
+    return (this.$arrow = this.$arrow || this.tip().find('.cs-tooltip-arrow'))
   }
 
-  Tooltip.prototype.enable = function () {
+  CSTooltip.prototype.enable = function () {
     this.enabled = true
   }
 
-  Tooltip.prototype.disable = function () {
+  CSTooltip.prototype.disable = function () {
     this.enabled = false
   }
 
-  Tooltip.prototype.toggleEnabled = function () {
+  CSTooltip.prototype.toggleEnabled = function () {
     this.enabled = !this.enabled
   }
 
-  Tooltip.prototype.toggle = function (e) {
+  CSTooltip.prototype.toggle = function (e) {
     var self = this
     if (e) {
       self = $(e.currentTarget).data('bs.' + this.type)
@@ -495,7 +495,7 @@
     self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
   }
 
-  Tooltip.prototype.destroy = function () {
+  CSTooltip.prototype.destroy = function () {
     var that = this
     clearTimeout(this.timeout)
     this.hide(function () {
@@ -510,26 +510,26 @@
   function Plugin(option) {
     return this.each(function () {
       var $this   = $(this)
-      var data    = $this.data('bs.tooltip')
+      var data    = $this.data('bs.cstooltip')
       var options = typeof option == 'object' && option
 
       if (!data && /destroy|hide/.test(option)) return
-      if (!data) $this.data('bs.tooltip', (data = new Tooltip(this, options)))
+      if (!data) $this.data('bs.cstooltip', (data = new CSTooltip(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  var old = $.fn.tooltip
+  var old = $.fn.cstooltip
 
-  $.fn.tooltip             = Plugin
-  $.fn.tooltip.Constructor = Tooltip
+  $.fn.cstooltip             = Plugin
+  $.fn.cstooltip.Constructor = CSTooltip
 
 
   // TOOLTIP NO CONFLICT
   // ===================
 
-  $.fn.tooltip.noConflict = function () {
-    $.fn.tooltip = old
+  $.fn.cstooltip.noConflict = function () {
+    $.fn.cstooltip = old
     return this
   }
 
