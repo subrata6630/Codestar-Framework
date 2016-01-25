@@ -629,6 +629,10 @@
 
         if( $ajax.length ) {
 
+          if( typeof tinyMCE === 'object' ) {
+            tinyMCE.triggerSave();
+          }
+
           $this.prop('disabled', true).attr('value', $text);
 
           var serializedOptions = $('#csframework_form').serialize();
@@ -657,14 +661,16 @@
   // ======================================================
   // CSFRAMEWORK UI DIALOG OVERLAY HELPER
   // ------------------------------------------------------
-  $.widget( 'ui.dialog', $.ui.dialog, {
-      _createOverlay: function() {
-        this._super();
-        if ( !this.options.modal ) { return; }
-        this._on(this.overlay, {click: 'close'});
+  if( typeof $.widget !== 'undefined' && typeof $.ui !== 'undefined' && typeof $.ui.dialog !== 'undefined' ) {
+    $.widget( 'ui.dialog', $.ui.dialog, {
+        _createOverlay: function() {
+          this._super();
+          if ( !this.options.modal ) { return; }
+          this._on(this.overlay, {click: 'close'});
+        }
       }
-    }
-  );
+    );
+  }
 
   // ======================================================
   // CSFRAMEWORK ICONS MANAGER
@@ -773,7 +779,7 @@
 
               });
 
-              $load.find('.cs-icon-tooltip').tooltip({html:true, placement:'top', container:'body'});
+              $load.find('.cs-icon-tooltip').cstooltip({html:true, placement:'top', container:'body'});
 
             }
           });
@@ -825,6 +831,9 @@
       $cs_body.on('click', '.cs-shortcode', function( e ) {
 
         e.preventDefault();
+
+        // init chosen
+        $selector.CSFRAMEWORK_CHOSEN();
 
         $shortcode_button = $(this);
         shortcode_target  = $shortcode_button.hasClass('cs-shortcode-textarea');
@@ -1146,7 +1155,7 @@
   // ======================================================
   // CSFRAMEWORK COLORPICKER
   // ------------------------------------------------------
-  if( typeof Color.fn.toString !== 'undefined' ) {
+  if( typeof Color === 'function' ) {
 
     // adding alpha support for Automattic Color.js toString function.
     Color.fn.toString = function () {
@@ -1337,7 +1346,7 @@
   $.fn.CSFRAMEWORK_TOOLTIP = function() {
     return this.each(function() {
       var placement = ( cs_is_rtl ) ? 'right' : 'left';
-      $(this).tooltip({html:true, placement:placement, container:'body'});
+      $(this).cstooltip({html:true, placement:placement, container:'body'});
     });
   };
 

@@ -837,6 +837,7 @@
     color: #fff;
     background-color: #e14d43;
     @include opacity(0.8);
+    @include border-radius(2px);
     @include transition(opacity .2s);
 
     &:hover{
@@ -1023,9 +1024,9 @@
   @include border-radius(2px);
 }
 
-.tooltip{
+.cs-tooltip{
   position: absolute;
-  z-index: 500001;
+  z-index: 100103;
   display: block;
   visibility: visible;
   font-size: 12px;
@@ -1038,7 +1039,7 @@
   }
 }
 
-.tooltip-inner{
+.cs-tooltip-inner{
   max-width: 200px;
   padding: 6px 12px;
   color: #fff;
