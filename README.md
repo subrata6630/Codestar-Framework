@@ -112,4 +112,4 @@ Thanks for guys! Please read [credits](http://codestarframework.com/credits/). I
 ---
 
 ##### Using Codestar Framework Themes
-[![Route Responsive Multi-Purpose WordPress Theme](http://s3.routewp.com/promo/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)
+[![Route Responsive Multi-Purpose WordPress Theme](http://s3.codestarlive.com/route/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)
