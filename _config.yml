@@ -24,3 +24,8 @@ google_analytics: UA-21936069-3
 collections:
   framework_api:
     output: true
+
+highlighter: pygments
+
+pygments:
+  options: ['startinline']
