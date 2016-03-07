@@ -163,7 +163,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
     foreach ( $this->options as $request_value ) {
 
-      if( $post_type == $request_value['post_type'] ) {
+      if( in_array( $post_type, (array) $request_value['post_type'] ) ) {
 
         $request_key = $request_value['id'];
         $meta_value  = get_post_meta( $post_id, $request_key, true );
