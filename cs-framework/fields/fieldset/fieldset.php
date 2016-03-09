@@ -25,7 +25,11 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
       $field_value = ( isset( $this->value[$field_id] ) ) ? $this->value[$field_id] : '';
       $unique_id   = $this->unique .'['. $this->field['id'] .']';
 
-      echo cs_add_element( $field, $field_value, $unique_id );
+      if ( ! empty( $this->field['un_array'] ) ) {
+        echo cs_add_element( $field, cs_get_option( $field_id ), $this->unique );
+      } else {
+        echo cs_add_element( $field, $field_value, $unique_id );
+      }
 
     }
 
