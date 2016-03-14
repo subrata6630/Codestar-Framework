@@ -166,8 +166,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
       if( in_array( $post_type, (array) $request_value['post_type'] ) ) {
 
         $request_key = $request_value['id'];
-        $meta_value  = get_post_meta( $post_id, $request_key, true );
-        $request     = ( isset( $_POST[$request_key] ) ) ? $_POST[$request_key] : array();
+        $request = ( isset( $_POST[$request_key] ) ) ? $_POST[$request_key] : array();
 
         // ignore _nonce
         if( isset( $request['_nonce'] ) ) {
@@ -202,6 +201,8 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
                   if( ! empty( $validate ) ) {
 
+                    $meta_value = get_post_meta( $post_id, $request_key, true );
+
                     $errors[$field['id']] = array( 'code' => $field['id'], 'message' => $validate, 'type' => 'error' );
                     $default_value = isset( $field['default'] ) ? $field['default'] : '';
                     $request[$field['id']] = ( isset( $meta_value[$field['id']] ) ) ? $meta_value[$field['id']] : $default_value;
@@ -218,7 +219,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
         }
 
-        $request = apply_filters( 'cs_save_post', $request, $request_key, $meta_value, $this, $post );
+        $request = apply_filters( 'cs_save_post', $request, $request_key, $post );
 
         if( empty( $request ) ) {
 
