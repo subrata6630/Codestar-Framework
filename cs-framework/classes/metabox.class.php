@@ -218,7 +218,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
         }
 
-        $request = apply_filters( 'cs_save_post', $request, $request_key, $meta_value, $this );
+        $request = apply_filters( 'cs_save_post', $request, $request_key, $meta_value, $this, $post );
 
         if( empty( $request ) ) {
 
