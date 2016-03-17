@@ -2045,7 +2045,7 @@ $options[]           = array(
     array(
       'id'           => 'dep_6',
       'type'         => 'image_select',
-      'title'        => 'If check <u>Blue box</u>',
+      'title'        => 'If check <u>Blue box</u> (checkbox)',
       'options'      => array(
         'green'      => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
         'red'        => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
@@ -2068,9 +2068,38 @@ $options[]           = array(
 
     // ------------------------------------
     array(
+      'id'           => 'dep_6_alt',
+      'type'         => 'image_select',
+      'title'        => 'If check <u>Green box or Blue box</u> (checkbox)',
+      'options'      => array(
+        'green'      => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
+        'red'        => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
+        'yellow'     => 'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif',
+        'blue'       => 'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif',
+        'gray'       => 'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif',
+      ),
+      'info'         => 'Multipel Image select field input="checkbox" model. in checkbox model unselected available.',
+      'default'      => 'gray',
+      'attributes'   => array(
+        'data-depend-id' => 'dep_6_alt',
+      ),
+    ),
+
+    array(
+      'id'           => 'dummy_6_alt',
+      'type'         => 'notice',
+      'class'        => 'success',
+      'content'      => 'Green or Blue box selected!',
+      'dependency'   => array( 'dep_6_alt', 'any', 'green,blue' ),
+      //'dependency' => array( 'data-depend-id', 'any', 'value,value' ),
+    ),
+    // ------------------------------------
+
+    // ------------------------------------
+    array(
       'id'           => 'dep_7',
       'type'         => 'image_select',
-      'title'        => 'If check <u>Green box</u>',
+      'title'        => 'If check <u>Green box</u> (radio)',
       'options'      => array(
         'green'      => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
         'red'        => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
@@ -2097,7 +2126,7 @@ $options[]           = array(
     array(
       'id'           => 'dep_7_alt',
       'type'         => 'image_select',
-      'title'        => 'If check <u>Green box or Blue box</u>',
+      'title'        => 'If check <u>Green box or Blue box</u> (radio)',
       'options'      => array(
         'green'      => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
         'red'        => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
