@@ -278,18 +278,26 @@
          */
         getControlValue : function(context, control) {
 
-            // Handle radio button group
-            if(control.attr("type") == "radio" && control.size() > 1) {
-                var value = control.filter(":checked").val();
-                return value;
-            }
+          /**
+           *
+           * Codestar Framework
+           * Added multiple checkbox value control
+           *
+           * @since 1.0.0
+           * @version 1.0.0
+           *
+           */
+          if( ( control.attr("type") == "radio" || control.attr("type") == "checkbox" ) && control.size() > 1 ) {
+            return control.filter(":checked").val();
+          }
 
-            // Handle individual checkboxes & radio
-            if (control.attr("type") == "checkbox" || control.attr("type") == "radio") {
-                return control.is(":checked");
-            }
+          // Handle individual checkboxes & radio
+          if ( control.attr("type") == "checkbox" || control.attr("type") == "radio" ) {
+            return control.is(":checked");
+          }
 
-            return control.val();
+          return control.val();
+
         },
 
         /**
