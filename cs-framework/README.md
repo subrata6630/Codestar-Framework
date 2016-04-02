@@ -19,7 +19,7 @@ require_once dirname( __FILE__ ) .'/cs-framework/cs-framework.php';
 require_once get_template_directory() .'/cs-framework/cs-framework.php';
 ```
 
-* Yay! Right now you are ready to configure framework, metaboxes, wp customize, shortcoder
+* Yay! Right now you are ready to configure framework, metaboxes, taxonomies, wp customize, shortcoder
 * Take a look for config files from `themename/cs-framework/config` folder
 * Read for more from [documentation](http://codestarframework.com/documentation/)
 
@@ -28,7 +28,7 @@ require_once get_template_directory() .'/cs-framework/cs-framework.php';
 * **Way1** Extract download zip on `wp-content/plugins/cs-framework` folder under your plugin directory
 * **Way2** Upload zip file from `wordpess plugins panel -> add new -> upload plugin`
 * Active Codestar Framework plugin from wordpress plugins panel
-* Yay! Right now you are ready to configure framework, metaboxes, wp customize, shortcoder
+* Yay! Right now you are ready to configure framework, metaboxes, taxonomies, wp customize, shortcoder
 * Take a look for config files from `wp-content/plugins/cs-framework/config` folder also you can manage config files from theme directory. see overriding files method.
 * Read for more from [documentation](http://codestarframework.com/documentation/)
 
@@ -37,6 +37,7 @@ Add define code on your `themename/functions.php` directly.
 ```php
 define( 'CS_ACTIVE_FRAMEWORK',  true  ); // default true
 define( 'CS_ACTIVE_METABOX',    false ); // default true
+define( 'CS_ACTIVE_TAXONOMY',   false ); // default true
 define( 'CS_ACTIVE_SHORTCODE',  false ); // default true
 define( 'CS_ACTIVE_CUSTOMIZE',  false ); // default true
 ```
@@ -54,6 +55,7 @@ themename/cs-framework-override/fields/text/text.php
 ## Features
 - Options Framework
 - Metabox Framework
+- Taxonomy Framework
 - WP Customize Framework
 - Shortcode Generator
 - Supports Child Themes
