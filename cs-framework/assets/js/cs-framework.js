@@ -1373,7 +1373,7 @@
   $(document).ready( function() {
     $('.cs-framework').CSFRAMEWORK_TAB_NAVIGATION();
     $('.cs-reset-confirm, .cs-import-backup').CSFRAMEWORK_CONFIRM();
-    $('.cs-content, .wp-customizer, .widget-content').CSFRAMEWORK_DEPENDENCY();
+    $('.cs-content, .wp-customizer, .widget-content, .cs-taxonomy').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
     $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
