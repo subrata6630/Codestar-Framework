@@ -162,7 +162,7 @@ class CSFramework extends CSFramework_Abstract {
   public function validate_save( $request ) {
 
     $add_errors = array();
-    $section_id = ( isset( $_POST['cs_section_id'] ) ) ? $_POST['cs_section_id'] : '';
+    $section_id = cs_get_var( 'cs_section_id' );
 
     // ignore nonce requests
     if( isset( $request['_nonce'] ) ) { unset( $request['_nonce'] ); }
@@ -332,7 +332,7 @@ class CSFramework extends CSFramework_Abstract {
     $transient  = get_transient( 'cs-framework-transient' );
     $has_nav    = ( count( $this->options ) <= 1 ) ? ' cs-show-all' : '';
     $section_id = ( ! empty( $transient['section_id'] ) ) ? $transient['section_id'] : $this->sections[0]['name'];
-    $section_id = ( isset( $_GET['cs-section'] ) ) ? esc_attr( $_GET['cs-section'] ) : $section_id;
+    $section_id = cs_get_var( 'cs-section', $section_id );
 
     echo '<div class="cs-framework cs-option-framework">';
 

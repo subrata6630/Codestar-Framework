@@ -204,3 +204,51 @@ if ( ! function_exists( 'cs_load_option_fields' ) ) {
 
   }
 }
+
+/**
+ *
+ * Getting POST Var
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_var' ) ) {
+  function cs_get_var( $var, $default = '' ) {
+
+    if( isset( $_POST[$var] ) ) {
+      return $_POST[$var];
+    }
+
+    if( isset( $_GET[$var] ) ) {
+      return $_GET[$var];
+    }
+
+    return $default;
+
+  }
+}
+
+/**
+ *
+ * Getting POST Vars
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_get_vars' ) ) {
+  function cs_get_vars( $var, $depth, $default = '' ) {
+
+    if( isset( $_POST[$var][$depth] ) ) {
+      return $_POST[$var][$depth];
+    }
+
+    if( isset( $_GET[$var][$depth] ) ) {
+      return $_GET[$var][$depth];
+    }
+
+    return $default;
+
+  }
+}
