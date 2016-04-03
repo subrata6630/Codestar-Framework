@@ -5,7 +5,7 @@ weight: 101
 filename: installation/usage_as_theme.md
 ---
 
-{% highlight text hl_lines=5 %}
+```
 .
 ├── wp-content
 |   ├── themes
@@ -13,9 +13,9 @@ filename: installation/usage_as_theme.md
 |   |   ├── functions.php
 |   |   ├── ...
 |   |   ├── ...
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 /**
  *
  * Codestar Framework
@@ -27,7 +27,7 @@ require_once get_template_directory_uri() .'/cs-framework/cs-framework.php';
 // -( or )-
 // require_once get_template_directory_uri() .'/subfolder/cs-framework/cs-framework.php';
 
-{% endhighlight %}
+```
 
 > This is **not meant** replace your main **functions.php**, only put this code below your codes
 

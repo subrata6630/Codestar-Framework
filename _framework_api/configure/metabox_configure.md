@@ -5,7 +5,7 @@ weight: 302
 filename: configure/metabox_configure.md
 ---
 
-{% highlight text hl_lines=6 %}
+```
 .
 ├── themename
 |   ├── cs-framework
@@ -14,11 +14,11 @@ filename: configure/metabox_configure.md
 |   |   |   ├── metabox.config.php
 |   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
-{% endhighlight %}
+```
 
 > take a look metabox.config.php example
 
-{% highlight php startinline %}
+```php?start_line=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -83,15 +83,15 @@ $metaboxes[]      = array(
 );
 
 CSFramework_Metabox::instance( $metaboxes );
-{% endhighlight %}
+```
 
 > You should use `_custom_meta_options` as this is the id for your key declared into metabox config file. So your code must look like this:
 
-{% highlight php startinline %}
+```php?start_line=1
 
 $meta_data = get_post_meta( THE_POST_ID, '_custom_meta_options', true );
 var_dump( $meta_data );
-{% endhighlight %}
+```
 
 
 Let's open `themename/cs-framework/config/metabox.config.php` all examples there

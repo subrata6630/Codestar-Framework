@@ -5,7 +5,7 @@ weight: 220
 filename: options/sorter.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'sorter_1',
   'type'           => 'sorter',
@@ -22,11 +22,11 @@ array(
     ),
   ),
 ),
-{% endhighlight %}
+```
 
 > Another Sorter Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'sorter_2',
   'type'           => 'sorter',
@@ -48,7 +48,7 @@ array(
   'enabled_title'  => 'Active Colors',
   'disabled_title' => 'Deactive Colors',
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

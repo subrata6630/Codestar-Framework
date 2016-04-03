@@ -5,7 +5,7 @@ weight: 299
 filename: options/extendable.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 // cs-framework/fields/password/password.php
 /**
  *
@@ -32,19 +32,19 @@ class CSFramework_Option_password extends CSFramework_Options {
   }
 
 }
-{% endhighlight %}
+```
 
 > Usage:
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'option_id',
   'type'  => 'password',
   'title' => 'Password Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'my_first_option',
   'type'    => 'password',
@@ -53,7 +53,7 @@ array(
   'help'    => 'Write something. This is important for something.',
   'default' => '123456',
 ),
-{% endhighlight %}
+```
 
 You can create your own extenable fields. This example for a password field.
 

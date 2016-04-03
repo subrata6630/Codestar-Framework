@@ -5,24 +5,24 @@ weight: 208
 filename: options/icon.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_801',
   'type'  => 'icon',
   'title' => 'Icon Field',
 ),
-{% endhighlight %}
+```
 
 > Another Icon Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_802',
   'type'    => 'icon',
   'title'   => 'Icon Field',
   'default' => 'fa fa-heart',
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

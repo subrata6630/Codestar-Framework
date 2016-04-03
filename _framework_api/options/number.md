@@ -5,17 +5,17 @@ weight: 207
 filename: options/number.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_701',
   'type'  => 'number',
   'title' => 'Number Field',
 ),
-{% endhighlight %}
+```
 
 > Another Number Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_702',
   'type'    => 'number',
@@ -24,7 +24,7 @@ array(
   'help'    => 'Write something.',
   'default' => '123456',
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

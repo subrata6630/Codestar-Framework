@@ -5,7 +5,7 @@ weight: 205
 filename: options/select.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_501',
   'type'           => 'select',
@@ -17,9 +17,9 @@ array(
   ),
   'default_option' => 'Select a car',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'       => 'unique_option_502',
   'type'     => 'select',
@@ -31,9 +31,9 @@ array(
   ),
   'default'  => 'blue',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'         => 'unique_option_503',
   'type'       => 'select',
@@ -49,11 +49,11 @@ array(
   ),
   'default'    => array( 'blue', 'red' ),
 ),
-{% endhighlight %}
+```
 
 > Select with **chosen** script
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'         => 'unique_option_504',
   'type'       => 'select',
@@ -65,11 +65,11 @@ array(
   ),
   'class'      => 'chosen',
 ),
-{% endhighlight %}
+```
 
 > Multiple Select with **chosen** script
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_505',
   'type'          => 'select',
@@ -86,7 +86,7 @@ array(
     'style'       => 'width: 150px;'
   ),
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name
@@ -115,16 +115,16 @@ array(
 
 > Select with default wordpress pages [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
 
-{% highlight php startinline hl_lines=5 %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_506',
   'type'    => 'select',
   'title'   => 'Select Field for Pages',
   'options' => 'pages',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline hl_lines=5 %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_507',
   'type'          => 'select',
@@ -136,7 +136,7 @@ array(
     'sort_column' => 'post_title',
   ),
 ),
-{% endhighlight %}
+```
 
 We are getting wordpress default pages via `get_pages( $args )` function. And you can use wordpress core query args here.
 [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
@@ -145,7 +145,7 @@ We are getting wordpress default pages via `get_pages( $args )` function. And yo
 
 > Select with default wordpress posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_508',
   'type'           => 'select',
@@ -157,13 +157,13 @@ array(
   ),
   'default_option' => 'Select a post'
 ),
-{% endhighlight %}
+```
 
 ### Select with categories
 
 > Select with default wordpress categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_509',
   'type'           => 'select',
@@ -175,13 +175,13 @@ array(
   ),
   'default_option' => 'Select a category',
 ),
-{% endhighlight %}
+```
 
 ### Select with tags
 
 > Select with default wordpress post tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_510',
   'type'           => 'select',
@@ -193,13 +193,13 @@ array(
   ),
   'default_option' => 'Select a tag',
 ),
-{% endhighlight %}
+```
 
 ### Select with "custom post type" posts
 
 > Select with CPT (custom post type) posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_511',
   'type'           => 'select',
@@ -212,13 +212,13 @@ array(
   ),
   'default_option' => 'Select a post',
 ),
-{% endhighlight %}
+```
 
 ### Select with "custom post type" categories
 
 > Select with CPT (custom post type) categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_512',
   'type'           => 'select',
@@ -232,13 +232,13 @@ array(
   ),
   'default_option' => 'Select a category',
 ),
-{% endhighlight %}
+```
 
 ### Select with "custom post type" tags
 
 > Select with CPT (custom post type) tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_513',
   'type'           => 'select',
@@ -251,4 +251,4 @@ array(
   ),
   'default_option' => 'Select a tag',
 ),
-{% endhighlight %}
+```

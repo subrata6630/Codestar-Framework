@@ -5,12 +5,12 @@ weight: 215
 filename: options/backup.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'  => 'backup',
   'title' => 'Backup Field',
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `type`           | backup      | type of option

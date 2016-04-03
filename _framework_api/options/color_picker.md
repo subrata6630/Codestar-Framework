@@ -5,24 +5,24 @@ weight: 212
 filename: options/color_picker.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_3001',
   'type'  => 'color_picker',
   'title' => 'Color Picker Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_3002',
   'type'    => 'color_picker',
   'title'   => 'Color Picker Field',
   'default' => '#ffbc00',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_3003',
   'type'    => 'color_picker',
@@ -30,7 +30,7 @@ array(
   'default' => '#ffbc00',
   'rgba'    => true,
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default**  | **Description**
 | `id`             | unique       | an unique id - use nice name

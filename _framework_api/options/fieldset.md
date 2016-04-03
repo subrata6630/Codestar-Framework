@@ -5,7 +5,7 @@ weight: 221
 filename: options/fieldset.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'fieldset_1',
   'type'      => 'fieldset',
@@ -32,11 +32,11 @@ array(
 
   ),
 ),
-{% endhighlight %}
+```
 
 > Fieldset with Default and Subheading
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'fieldset_2',
   'type'      => 'fieldset',
@@ -74,7 +74,7 @@ array(
     'fieldset_2_textarea' => 'Do stuff',
   )
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

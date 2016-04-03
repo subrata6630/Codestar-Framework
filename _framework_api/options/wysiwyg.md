@@ -5,17 +5,17 @@ weight: 217
 filename: options/wysiwyg.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'wysiwyg_1',
   'type'  => 'wysiwyg',
   'title' => 'Wysiwyg Field',
 ),
-{% endhighlight %}
+```
 
 > Another Wysiwyg Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'       => 'wysiwyg_2',
   'type'     => 'wysiwyg',
@@ -26,7 +26,7 @@ array(
     'media_buttons' => false,
   )
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

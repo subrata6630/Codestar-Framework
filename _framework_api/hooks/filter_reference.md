@@ -5,7 +5,7 @@ weight: 401
 filename: hooks/filter_reference.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 // framework options filter example
 function extra_cs_framework_options( $options ) {
 
@@ -33,7 +33,7 @@ function extra_cs_framework_options( $options ) {
 
 }
 add_filter( 'cs_framework_options', 'extra_cs_framework_options' );
-{% endhighlight %}
+```
 
 | **add_filter**              | **args**
 | --------------------------- | --------

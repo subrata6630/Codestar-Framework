@@ -5,17 +5,17 @@ weight: 201
 filename: options/text.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_101', // this is must be unique
   'type'  => 'text',
   'title' => 'Text Field',
 ),
-{% endhighlight %}
+```
 
 > Another Text Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_102', // another unique id
   'type'    => 'text',
@@ -24,13 +24,13 @@ array(
   'help'    => 'Write something',
   'default' => 'do stuff',
 ),
-{% endhighlight %}
+```
 
 > How to getting value from a option field
 
-{% highlight php startinline %}
+```php?start_line=1
 echo cs_get_option( 'unique_option_102' ); // output: do stuff
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

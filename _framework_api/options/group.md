@@ -5,7 +5,7 @@ weight: 209
 filename: options/group.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'              => 'unique_option_901',
   'type'            => 'group',
@@ -30,9 +30,9 @@ array(
     ),
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'              => 'unique_group_2',
   'type'            => 'group',
@@ -62,7 +62,7 @@ array(
 
   )
 ),
-{% endhighlight %}
+```
 
 | **Key**           | **Default** | **Description**
 | `id`              | unique      | an unique id - use nice name

@@ -5,16 +5,16 @@ weight: 203
 filename: options/checkbox.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_301',
   'type'  => 'checkbox',
   'title' => 'Checkbox Field',
   'label' => 'Yes, Please do it.'
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_302',
   'type'    => 'checkbox',
@@ -22,9 +22,9 @@ array(
   'label'   => 'Yes, Please do it.',
   'default' => true
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'         => 'unique_option_303',
   'type'       => 'checkbox',
@@ -35,9 +35,9 @@ array(
     'audi'     => 'Audi',
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'       => 'unique_option_304',
   'type'     => 'checkbox',
@@ -52,7 +52,7 @@ array(
   ),
   'default'  => array( 'blue', 'red' )
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name
@@ -81,16 +81,16 @@ array(
 
 > Checkbox with default wordpress pages [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
 
-{% highlight php startinline hl_lines=5 %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_305',
   'type'    => 'checkbox',
   'title'   => 'Checkbox for Pages',
   'options' => 'pages',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline hl_lines=5 %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_306',
   'type'          => 'checkbox',
@@ -102,7 +102,7 @@ array(
     'sort_column' => 'post_title',
   ),
 ),
-{% endhighlight %}
+```
 
 We are getting wordpress default pages via `get_pages( $args )` function. And you can use wordpress core query args here.
 [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
@@ -111,7 +111,7 @@ We are getting wordpress default pages via `get_pages( $args )` function. And yo
 
 > Checkbox with default wordpress posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_307',
   'type'           => 'checkbox',
@@ -122,13 +122,13 @@ array(
     'order'        => 'DESC',
   ),
 ),
-{% endhighlight %}
+```
 
 ### CHECKBOX WITH CATEGORIES
 
 > Checkbox with default wordpress categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_308',
   'type'           => 'checkbox',
@@ -139,13 +139,13 @@ array(
     'order'        => 'ASC',
   ),
 ),
-{% endhighlight %}
+```
 
 ### CHECKBOX WITH TAGS
 
 > Checkbox with default wordpress post tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_309',
   'type'           => 'checkbox',
@@ -156,13 +156,13 @@ array(
     'order'        => 'ASC',
   ),
 ),
-{% endhighlight %}
+```
 
 ### CHECKBOX WITH CUSTOM POST TYPE POSTS
 
 > Checkbox with CPT (custom post type) posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_310',
   'type'           => 'checkbox',
@@ -174,13 +174,13 @@ array(
     'order'        => 'DESC',
   ),
 ),
-{% endhighlight %}
+```
 
 ### CHECKBOX WITH CUSTOM POST TYPE CATEGORIES
 
 > Checkbox with CPT (custom post type) categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_311',
   'type'           => 'checkbox',
@@ -193,13 +193,13 @@ array(
     'order'        => 'DESC',
   ),
 ),
-{% endhighlight %}
+```
 
 ### CHECKBOX WITH CUSTOM POST TYPE TAGS
 
 > Checkbox with CPT (custom post type) tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'             => 'unique_option_312',
   'type'           => 'checkbox',
@@ -211,4 +211,4 @@ array(
     'order'        => 'ASC',
   ),
 ),
-{% endhighlight %}
+```

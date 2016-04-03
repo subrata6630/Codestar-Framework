@@ -7,7 +7,7 @@ filename: faq/how_to_create_customizer_live_preview.md
 
 ### Edit transport type
 
-{% highlight php startinline %}
+```php?start_line=1
 // codestar color picker
 array(
   'name'          => 'codestar_color_picker',
@@ -21,13 +21,13 @@ array(
     ),
   ),
 ),
-{% endhighlight %}
+```
 
 Default Transport type for each setting is refresh, however, if you want to create live preview customization you can change it to 'postMessage'. Take a look at the example, we added trasport type to the color picker control.
 
 ### Preparing Customizer Javascript
 
-{% highlight js %}
+```js
 ( function( $ ) {
 
   // Update the site title in real time...
@@ -42,7 +42,7 @@ Default Transport type for each setting is refresh, however, if you want to crea
   });
 
 })(jQuery);
-{% endhighlight %}
+```
 
 To handle the live preview, we need to create a Javascript file for all customizer handling. Let's create our customizer file name `cs-customizer.js` and place it in your js theme folder.
 
@@ -50,7 +50,7 @@ Please notice that the control name is wrapped within `_cs_customize_options[set
 
 ### Enqueue the Script
 
-{% highlight php startinline %}
+```php?start_line=1
 /**
  *
  * Used by hook: 'customize_preview_init'
@@ -67,6 +67,6 @@ function cs_customizer_live_preview() {
   );
 }
 add_action( 'customize_preview_init', 'cs_customizer_live_preview' );
-{% endhighlight %}
+```
 
 The next step is enqueuing the javascript file we have created before.

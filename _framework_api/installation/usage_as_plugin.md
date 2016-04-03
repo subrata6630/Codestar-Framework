@@ -5,7 +5,7 @@ weight: 102
 filename: installation/usage_as_plugin.md
 ---
 
-{% highlight text hl_lines=5 %}
+```
 .
 ├── wp-content
 |   ├── plugins
@@ -13,7 +13,7 @@ filename: installation/usage_as_plugin.md
 |   |   ├── cs-framework
 |   |   ├── ...
 |   |   ├── ...
-{% endhighlight %}
+```
 
 * Download zip file from github repository
 * **Way1** Extract download zip on `wp-content/plugins/cs-framework` folder under your plugin directory

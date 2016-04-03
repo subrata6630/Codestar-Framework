@@ -5,35 +5,35 @@ weight: 206
 filename: options/switcher.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_601',
   'type'  => 'switcher',
   'title' => 'Switcher Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_602',
   'type'  => 'switcher',
   'title' => 'Switcher Field',
   'label' => 'Do you want to it ?',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_603',
   'type'    => 'switcher',
   'title'   => 'Switcher Field',
   'default' => true
 ),
-{% endhighlight %}
+```
 
 > Switcher with Dependency
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'         => 'unique_option_604',
   'type'       => 'switcher',
@@ -46,7 +46,7 @@ array(
   'title'      => 'Text Field',
   'dependency' => array( 'unique_option_604', '==', 'true' ) // dependency rule
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

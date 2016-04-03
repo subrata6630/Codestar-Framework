@@ -7,7 +7,7 @@ filename: options/image_select.md
 
 > Image select using checkbox method
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'image_select_option',
   'type'      => 'image_select',
@@ -19,11 +19,11 @@ array(
   ),
   'default'   => 'right',
 ),
-{% endhighlight %}
+```
 
 > Image select using radio method
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'image_select_option',
   'type'      => 'image_select',
@@ -36,7 +36,7 @@ array(
   'default'   => 'default',
   'radio'     => true,
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default**  | **Description**
 | `id`             | unique       | an unique id - use nice name

@@ -5,32 +5,32 @@ weight: 218
 filename: options/image.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'image_1',
   'type'  => 'image',
   'title' => 'Image',
 ),
-{% endhighlight %}
+```
 
 > Another Wysiwyg Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'image_2',
   'type'      => 'image',
   'title'     => 'Image with Custom Title',
   'add_title' => 'Add Logo',
 ),
-{% endhighlight %}
+```
 
 > Front-End Basic Usage Example
 
-{% highlight php startinline %}
+```php?start_line=1
 $image_id = cs_get_option( 'gallery_1' );
 $attachment = wp_get_attachment_image_src( $image_id, 'full' );
 var_dump( $attachment );
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

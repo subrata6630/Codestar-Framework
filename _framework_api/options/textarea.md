@@ -5,17 +5,17 @@ weight: 202
 filename: options/textarea.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_201',
   'type'  => 'textarea',
   'title' => 'Textarea Field',
 ),
-{% endhighlight %}
+```
 
 > Another Textarea Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_202',
   'type'          => 'textarea',
@@ -28,7 +28,7 @@ array(
   ),
   'after'         => '<p class="class-name">Some informations for this option.</p>',
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

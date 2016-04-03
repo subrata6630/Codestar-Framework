@@ -5,26 +5,26 @@ weight: 216
 filename: options/heading.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'heading',
   'content' => 'Heading Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'subheading',
   'content' => 'Sub Heading Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'content',
   'content' => 'Lorem ipsum dollar.',
 ),
-{% endhighlight %}
+```
 
 | **Key**    | **Default**  | **Description**
 | `type`     | heading      | heading or subheading or content

@@ -5,7 +5,7 @@ weight: 304
 filename: configure/customize_configure.md
 ---
 
-{% highlight text hl_lines=8 %}
+```
 .
 ├── themename
 |   ├── cs-framework
@@ -14,11 +14,11 @@ filename: configure/customize_configure.md
 |   |   |   ├── metabox.config.php
 |   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
-{% endhighlight %}
+```
 
 > take a look customize.config.php example
 
-{% highlight php startinline %}
+```php?start_line=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 // -----------------------------------------
 // Customize Core Fields                   -
@@ -59,15 +59,15 @@ $options[]      = array(
 );
 
 CSFramework_Customize::instance( $panels );
-{% endhighlight %}
+```
 
 > How to getting options
 
-{% highlight php startinline %}
+```php?start_line=1
 echo cs_get_customize_option( 'text_option' );
 echo cs_get_customize_option( 'text_option_with_default' );
 echo cs_get_customize_option( 'textarea_option' );
-{% endhighlight %}
+```
 
 Let's open `themename/cs-framework/config/customize.config.php` all examples there
 

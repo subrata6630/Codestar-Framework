@@ -5,37 +5,37 @@ weight: 298
 filename: options/notice.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'notice',
   'class'   => 'Success',
   'content' => 'Success: Lorem Ipsum Dollar.',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'notice',
   'class'   => 'warning',
   'content' => 'Warning: Lorem Ipsum Dollar.',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'notice',
   'class'   => 'danger',
   'content' => 'Danger: Lorem Ipsum Dollar.',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'type'    => 'notice',
   'class'   => 'info',
   'content' => 'Info: Lorem Ipsum Dollar.',
 ),
-{% endhighlight %}
+```
 
 
 | **Key**    | **Default** | **Description**

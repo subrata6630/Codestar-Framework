@@ -5,17 +5,17 @@ weight: 219
 filename: options/galley.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'gallery_1',
   'type'  => 'gallery',
   'title' => 'Gallery',
 ),
-{% endhighlight %}
+```
 
 > Another Gallery Field Example
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'          => 'gallery_2',
   'type'        => 'gallery',
@@ -24,11 +24,11 @@ array(
   'edit_title'  => 'Edit Images',
   'clear_title' => 'Remove Images',
 ),
-{% endhighlight %}
+```
 
 > Front-End Basic Usage Example
 
-{% highlight php startinline %}
+```php?start_line=1
 $gallery = cs_get_option( 'gallery_1' );
 
 if( ! empty( $gallery ) ) {
@@ -41,7 +41,7 @@ if( ! empty( $gallery ) ) {
   }
 
 }
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

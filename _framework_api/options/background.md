@@ -5,15 +5,15 @@ weight: 211
 filename: options/background.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_2001',
   'type'  => 'background',
   'title' => 'Background Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'           => 'unique_option_2002',
   'type'         => 'background',
@@ -26,9 +26,9 @@ array(
     'color'      => '',
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'           => 'unique_option_2003',
   'type'         => 'background',
@@ -41,7 +41,7 @@ array(
     'color'      => '#ffbc00',
   ),
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

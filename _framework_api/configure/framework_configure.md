@@ -5,7 +5,7 @@ weight: 301
 filename: configure/framework_configure.md
 ---
 
-{% highlight text hl_lines=5 %}
+```
 .
 ├── themename
 |   ├── cs-framework
@@ -14,11 +14,11 @@ filename: configure/framework_configure.md
 |   |   |   ├── metabox.config.php
 |   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
-{% endhighlight %}
+```
 
 > take a look framework.config.php example
 
-{% highlight php startinline %}
+```php?start_line=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -65,14 +65,14 @@ $options[]    = array(
 );
 
 CSFramework::instance( $settings, $options );
-{% endhighlight %}
+```
 
 > How to getting options
 
-{% highlight php startinline %}
+```php?start_line=1
 echo cs_get_option( 'section_1_text' );
 echo cs_get_option( 'section_1_textarea' );
-{% endhighlight %}
+```
 
 Let's open `themename/cs-framework/config/framework.config.php` all examples there
 

@@ -5,15 +5,15 @@ weight: 210
 filename: options/upload.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'    => 'unique_option_1001',
   'type'  => 'upload',
   'title' => 'Upload Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_1002',
   'type'          => 'upload',
@@ -25,9 +25,9 @@ array(
    'insert_title' => 'Use this image',
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'            => 'unique_option_1003',
   'type'          => 'upload',
@@ -39,7 +39,7 @@ array(
    'insert_title' => 'Use this video',
   ),
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

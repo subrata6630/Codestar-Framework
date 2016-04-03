@@ -5,7 +5,7 @@ weight: 1003
 filename: faq/how_to_use_dependency.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 // If text "not be empty"
 array(
   'id'           => 'dep_1',
@@ -20,10 +20,10 @@ array(
   'content'      => 'Done, this text option have something.',
   'dependency'   => array( 'dep_1', '!=', '' ),
 ),
-{% endhighlight %}
+```
 
 
-{% highlight php startinline %}
+```php?start_line=1
 // If switcher mode "ON"
 array(
   'id'           => 'dep_2',
@@ -38,9 +38,9 @@ array(
   'content'      => 'Woow! Switcher is ON',
   'dependency'   => array( 'dep_2', '==', 'true' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // If selected color is "black or white"
 array(
   'id'           => 'dep_3',
@@ -62,9 +62,9 @@ array(
   'content'      => 'Well done!',
   'dependency'   => array( 'dep_3', 'any', 'black,white' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // If radio selected is "No, Thanks"
 array(
   'id'           => 'dep_4',
@@ -86,9 +86,9 @@ array(
   'dependency'   => array( 'dep_4_no', '==', 'true' ),
   //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // If checkbox selected is "danger"
 array(
   'id'           => 'dep_5',
@@ -110,9 +110,9 @@ array(
   'dependency'   => array( 'dep_5_danger', '==', 'true' ),
   //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // If image select is "blue"
 array(
   'id'           => 'dep_6',
@@ -135,9 +135,9 @@ array(
   'dependency'   => array( 'dep_6_blue', '==', 'true' ),
   //'dependency' => array( '{ID}_{VALUE}', '==', 'true' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // If image select is "blue or green"
 array(
   'id'           => 'dep_7',
@@ -165,9 +165,9 @@ array(
   'dependency'   => array( 'dep_7', 'any', 'green,blue' ),
   //'dependency' => array( 'data-depend-id', 'any', 'value,value' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // Multiple element dependencies
 array(
   'id'           => 'dep_10',
@@ -195,9 +195,9 @@ array(
   'content'      => 'Done, Multiple Dependencies worked.',
   'dependency'   => array( 'dep_10|dep_11|dep_12', '==|==|==', 'hello|world|true' ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // Another Multiple element dependencies
 array(
   'id'           => 'dep_13',
@@ -240,6 +240,6 @@ array(
   'content'      => 'Well done, Correctly!',
   'dependency'   => array( 'dep_15', '==', 'world' ),
 ),
-{% endhighlight %}
+```
 
 Let's take a look how to using dependency

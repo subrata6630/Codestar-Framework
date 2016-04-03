@@ -5,15 +5,15 @@ weight: 214
 filename: options/typography.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'unique_option_4001',
   'type'      => 'typography',
   'title'     => 'Typography Field',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'unique_option_4002',
   'type'      => 'typography',
@@ -24,9 +24,9 @@ array(
     'font'    => 'google', // this is helper for output
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'        => 'unique_option_4002',
   'type'      => 'typography',
@@ -36,9 +36,9 @@ array(
     'font'    => 'websafe',
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 // Typography without Chosen and Variant
 array(
   'id'        => 'unique_option_4002',
@@ -51,7 +51,7 @@ array(
   'variant'   => false,
   'chosen'    => false,
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

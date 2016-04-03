@@ -5,7 +5,7 @@ weight: 204
 filename: options/radio.md
 ---
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_401',
   'type'    => 'radio',
@@ -15,9 +15,9 @@ array(
     'no'    => 'No, Thanks.',
   ),
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'      => 'unique_option_402',
   'type'    => 'radio',
@@ -28,9 +28,9 @@ array(
   ),
   'default' => 'no',
 ),
-{% endhighlight %}
+```
 
-{% highlight php startinline %}
+```php?start_line=1
 array(
   'id'         => 'unique_option_403',
   'type'       => 'radio',
@@ -45,7 +45,7 @@ array(
   ),
   'default'    => 'blue'
 ),
-{% endhighlight %}
+```
 
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name

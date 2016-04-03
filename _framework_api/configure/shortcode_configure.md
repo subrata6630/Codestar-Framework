@@ -5,7 +5,7 @@ weight: 303
 filename: configure/shortcode_configure.md
 ---
 
-{% highlight text hl_lines=7 %}
+```
 .
 ├── themename
 |   ├── cs-framework
@@ -14,11 +14,11 @@ filename: configure/shortcode_configure.md
 |   |   |   ├── metabox.config.php
 |   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
-{% endhighlight %}
+```
 
 > take a look shortcode.config.php example
 
-{% highlight php startinline %}
+```php?start_line=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -57,7 +57,7 @@ $shortcodes[]     = array(
 );
 
 CSFramework_Shortcode_Manager::instance( $shortcodes );
-{% endhighlight %}
+```
 
 Let's open `themename/cs-framework/config/shortcode.config.php` all examples there
 
