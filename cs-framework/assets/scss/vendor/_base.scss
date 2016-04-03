@@ -3,6 +3,12 @@
   margin-top: 20px;
   margin-right: 20px;
 
+  label{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
   .cs-settings-error{
     margin: 0 0 15px 0;
   }
@@ -949,19 +955,6 @@
 
 .cs-taxonomy{
   margin: 0;
-
-  .cs-taxonomy-title{
-    margin: 12px 0;
-    font-size: 1.1em;
-  }
-
-  label{
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    font-size: inherit;
-    vertical-align: inherit;
-  }
 
   > .cs-element{
     border-bottom: 0;

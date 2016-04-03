@@ -11,7 +11,6 @@ $options     = array();
 // -----------------------------------------
 $options[]   = array(
   'id'       => '_custom_category_options',
-  'title'    => 'Custom Category Options',
   'taxonomy' => 'category',
 
   // begin: fields
@@ -36,7 +35,6 @@ $options[]   = array(
 
 $options[]   = array(
   'id'       => '_custom_tag_options',
-  'title'    => 'Custom Tags Options',
   'taxonomy' => 'post_tag',
   'fields'   => array(
 

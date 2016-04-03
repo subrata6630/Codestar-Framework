@@ -86,8 +86,6 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
           $tax_value = ( $tax_edit ) ? get_term_meta( $term->term_id, $tax['id'], true ) : '';
 
-          echo ( ! empty( $tax['title'] ) ) ? '<h2 class="cs-taxonomy-title">'. $tax['title'] .'</h2>' : '';
-
           foreach ( $tax['fields'] as $field ) {
 
             $default    = ( isset( $field['default'] ) ) ? $field['default'] : '';
