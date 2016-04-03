@@ -5,7 +5,7 @@ weight: 205
 filename: options/select.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_501',
   'type'           => 'select',
@@ -19,7 +19,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'       => 'unique_option_502',
   'type'     => 'select',
@@ -33,7 +33,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_503',
   'type'       => 'select',
@@ -53,7 +53,7 @@ array(
 
 > Select with **chosen** script
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_504',
   'type'       => 'select',
@@ -69,7 +69,7 @@ array(
 
 > Multiple Select with **chosen** script
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_505',
   'type'          => 'select',
@@ -115,7 +115,7 @@ array(
 
 > Select with default wordpress pages [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_506',
   'type'    => 'select',
@@ -124,7 +124,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_507',
   'type'          => 'select',
@@ -145,7 +145,7 @@ We are getting wordpress default pages via `get_pages( $args )` function. And yo
 
 > Select with default wordpress posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_508',
   'type'           => 'select',
@@ -163,7 +163,7 @@ array(
 
 > Select with default wordpress categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_509',
   'type'           => 'select',
@@ -181,7 +181,7 @@ array(
 
 > Select with default wordpress post tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_510',
   'type'           => 'select',
@@ -199,7 +199,7 @@ array(
 
 > Select with CPT (custom post type) posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_511',
   'type'           => 'select',
@@ -218,7 +218,7 @@ array(
 
 > Select with CPT (custom post type) categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_512',
   'type'           => 'select',
@@ -238,7 +238,7 @@ array(
 
 > Select with CPT (custom post type) tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_513',
   'type'           => 'select',

@@ -5,7 +5,7 @@ weight: 219
 filename: options/galley.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'gallery_1',
   'type'  => 'gallery',
@@ -15,7 +15,7 @@ array(
 
 > Another Gallery Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'          => 'gallery_2',
   'type'        => 'gallery',
@@ -28,7 +28,7 @@ array(
 
 > Front-End Basic Usage Example
 
-```php?start_line=1
+```php?start_inline=1
 $gallery = cs_get_option( 'gallery_1' );
 
 if( ! empty( $gallery ) ) {

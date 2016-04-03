@@ -5,7 +5,7 @@ weight: 401
 filename: hooks/filter_reference.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 // framework options filter example
 function extra_cs_framework_options( $options ) {
 

@@ -18,7 +18,7 @@ filename: configure/shortcode_configure.md
 
 > take a look shortcode.config.php example
 
-```php?start_line=1
+```php?start_inline=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *

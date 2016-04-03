@@ -7,7 +7,7 @@ filename: faq/how_to_create_customizer_live_preview.md
 
 ### Edit transport type
 
-```php?start_line=1
+```php?start_inline=1
 // codestar color picker
 array(
   'name'          => 'codestar_color_picker',
@@ -50,7 +50,7 @@ Please notice that the control name is wrapped within `_cs_customize_options[set
 
 ### Enqueue the Script
 
-```php?start_line=1
+```php?start_inline=1
 /**
  *
  * Used by hook: 'customize_preview_init'

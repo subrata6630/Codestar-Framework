@@ -5,7 +5,7 @@ weight: 214
 filename: options/typography.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'unique_option_4001',
   'type'      => 'typography',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'unique_option_4002',
   'type'      => 'typography',
@@ -26,7 +26,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'unique_option_4002',
   'type'      => 'typography',
@@ -38,7 +38,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // Typography without Chosen and Variant
 array(
   'id'        => 'unique_option_4002',

@@ -18,7 +18,7 @@ filename: configure/framework_configure.md
 
 > take a look framework.config.php example
 
-```php?start_line=1
+```php?start_inline=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -69,7 +69,7 @@ CSFramework::instance( $settings, $options );
 
 > How to getting options
 
-```php?start_line=1
+```php?start_inline=1
 echo cs_get_option( 'section_1_text' );
 echo cs_get_option( 'section_1_textarea' );
 ```

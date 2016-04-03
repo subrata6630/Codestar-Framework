@@ -5,7 +5,7 @@ weight: 206
 filename: options/switcher.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_601',
   'type'  => 'switcher',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_602',
   'type'  => 'switcher',
@@ -22,7 +22,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_603',
   'type'    => 'switcher',
@@ -33,7 +33,7 @@ array(
 
 > Switcher with Dependency
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_604',
   'type'       => 'switcher',

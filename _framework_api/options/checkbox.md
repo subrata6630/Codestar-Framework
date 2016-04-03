@@ -5,7 +5,7 @@ weight: 203
 filename: options/checkbox.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_301',
   'type'  => 'checkbox',
@@ -14,7 +14,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_302',
   'type'    => 'checkbox',
@@ -24,7 +24,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_303',
   'type'       => 'checkbox',
@@ -37,7 +37,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'       => 'unique_option_304',
   'type'     => 'checkbox',
@@ -81,7 +81,7 @@ array(
 
 > Checkbox with default wordpress pages [see for more query_args](http://codex.wordpress.org/Function_Reference/get_pages)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_305',
   'type'    => 'checkbox',
@@ -90,7 +90,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_306',
   'type'          => 'checkbox',
@@ -111,7 +111,7 @@ We are getting wordpress default pages via `get_pages( $args )` function. And yo
 
 > Checkbox with default wordpress posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_307',
   'type'           => 'checkbox',
@@ -128,7 +128,7 @@ array(
 
 > Checkbox with default wordpress categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_308',
   'type'           => 'checkbox',
@@ -145,7 +145,7 @@ array(
 
 > Checkbox with default wordpress post tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_309',
   'type'           => 'checkbox',
@@ -162,7 +162,7 @@ array(
 
 > Checkbox with CPT (custom post type) posts [learn more query_args](http://codex.wordpress.org/Function_Reference/get_posts)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_310',
   'type'           => 'checkbox',
@@ -180,7 +180,7 @@ array(
 
 > Checkbox with CPT (custom post type) categories [learn more query_args](http://codex.wordpress.org/Function_Reference/get_categories)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_311',
   'type'           => 'checkbox',
@@ -199,7 +199,7 @@ array(
 
 > Checkbox with CPT (custom post type) tags [learn more query_args](http://codex.wordpress.org/Function_Reference/get_terms)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'unique_option_312',
   'type'           => 'checkbox',

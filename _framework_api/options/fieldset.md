@@ -5,7 +5,7 @@ weight: 221
 filename: options/fieldset.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'fieldset_1',
   'type'      => 'fieldset',
@@ -36,7 +36,7 @@ array(
 
 > Fieldset with Default and Subheading
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'fieldset_2',
   'type'      => 'fieldset',

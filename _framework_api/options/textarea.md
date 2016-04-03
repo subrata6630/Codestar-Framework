@@ -5,7 +5,7 @@ weight: 202
 filename: options/textarea.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_201',
   'type'  => 'textarea',
@@ -15,7 +15,7 @@ array(
 
 > Another Textarea Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_202',
   'type'          => 'textarea',

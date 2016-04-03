@@ -18,7 +18,7 @@ filename: configure/metabox_configure.md
 
 > take a look metabox.config.php example
 
-```php?start_line=1
+```php?start_inline=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -87,7 +87,7 @@ CSFramework_Metabox::instance( $metaboxes );
 
 > You should use `_custom_meta_options` as this is the id for your key declared into metabox config file. So your code must look like this:
 
-```php?start_line=1
+```php?start_inline=1
 
 $meta_data = get_post_meta( THE_POST_ID, '_custom_meta_options', true );
 var_dump( $meta_data );

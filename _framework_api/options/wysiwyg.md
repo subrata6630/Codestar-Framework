@@ -5,7 +5,7 @@ weight: 217
 filename: options/wysiwyg.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'wysiwyg_1',
   'type'  => 'wysiwyg',
@@ -15,7 +15,7 @@ array(
 
 > Another Wysiwyg Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'       => 'wysiwyg_2',
   'type'     => 'wysiwyg',

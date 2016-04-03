@@ -5,7 +5,7 @@ weight: 209
 filename: options/group.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'              => 'unique_option_901',
   'type'            => 'group',
@@ -32,7 +32,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'              => 'unique_group_2',
   'type'            => 'group',

@@ -5,7 +5,7 @@ weight: 215
 filename: options/backup.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'type'  => 'backup',
   'title' => 'Backup Field',

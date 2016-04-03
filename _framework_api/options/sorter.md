@@ -5,7 +5,7 @@ weight: 220
 filename: options/sorter.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'sorter_1',
   'type'           => 'sorter',
@@ -26,7 +26,7 @@ array(
 
 > Another Sorter Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'             => 'sorter_2',
   'type'           => 'sorter',

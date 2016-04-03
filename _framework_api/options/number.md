@@ -5,7 +5,7 @@ weight: 207
 filename: options/number.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_701',
   'type'  => 'number',
@@ -15,7 +15,7 @@ array(
 
 > Another Number Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_702',
   'type'    => 'number',

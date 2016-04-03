@@ -5,7 +5,7 @@ weight: 298
 filename: options/notice.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'type'    => 'notice',
   'class'   => 'Success',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'type'    => 'notice',
   'class'   => 'warning',
@@ -21,7 +21,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'type'    => 'notice',
   'class'   => 'danger',
@@ -29,7 +29,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'type'    => 'notice',
   'class'   => 'info',

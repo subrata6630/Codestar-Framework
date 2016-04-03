@@ -5,7 +5,7 @@ weight: 299
 filename: options/extendable.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 // cs-framework/fields/password/password.php
 /**
  *
@@ -36,7 +36,7 @@ class CSFramework_Option_password extends CSFramework_Options {
 
 > Usage:
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'option_id',
   'type'  => 'password',
@@ -44,7 +44,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'my_first_option',
   'type'    => 'password',

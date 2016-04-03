@@ -18,7 +18,7 @@ filename: configure/customize_configure.md
 
 > take a look customize.config.php example
 
-```php?start_line=1
+```php?start_inline=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 // -----------------------------------------
 // Customize Core Fields                   -
@@ -63,7 +63,7 @@ CSFramework_Customize::instance( $panels );
 
 > How to getting options
 
-```php?start_line=1
+```php?start_inline=1
 echo cs_get_customize_option( 'text_option' );
 echo cs_get_customize_option( 'text_option_with_default' );
 echo cs_get_customize_option( 'textarea_option' );

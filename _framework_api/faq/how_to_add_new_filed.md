@@ -13,7 +13,7 @@ filename: faq/how_to_use_this.md
 |   |   |   ├── password.php
 ```
 
-```php?start_line=1
+```php?start_inline=1
 if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 /**
  *
@@ -40,7 +40,7 @@ class CSFramework_Option_password extends CSFramework_Options {
 }
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_1',
   'type'  => 'password',

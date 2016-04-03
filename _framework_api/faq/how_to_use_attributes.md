@@ -7,7 +7,7 @@ filename: faq/how_to_use_attributes.md
 
 > [read more about tag_input attributes](http://www.w3schools.com/tags/tag_input.asp)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_101',
   'type'          => 'text',
@@ -23,7 +23,7 @@ array(
 
 > [read more about tag_textarea attributes](http://www.w3schools.com/tags/tag_textarea.asp)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_102',
   'type'          => 'textarea',
@@ -38,7 +38,7 @@ array(
 
 > [read more about tag_select attributes](http://www.w3schools.com/tags/tag_select.asp)
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_103',
   'type'       => 'select',

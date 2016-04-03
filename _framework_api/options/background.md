@@ -5,7 +5,7 @@ weight: 211
 filename: options/background.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_2001',
   'type'  => 'background',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'           => 'unique_option_2002',
   'type'         => 'background',
@@ -28,7 +28,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'           => 'unique_option_2003',
   'type'         => 'background',

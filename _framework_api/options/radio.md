@@ -5,7 +5,7 @@ weight: 204
 filename: options/radio.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_401',
   'type'    => 'radio',
@@ -17,7 +17,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_402',
   'type'    => 'radio',
@@ -30,7 +30,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'         => 'unique_option_403',
   'type'       => 'radio',

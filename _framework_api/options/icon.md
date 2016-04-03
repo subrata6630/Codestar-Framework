@@ -5,7 +5,7 @@ weight: 208
 filename: options/icon.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_801',
   'type'  => 'icon',
@@ -15,7 +15,7 @@ array(
 
 > Another Icon Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_802',
   'type'    => 'icon',

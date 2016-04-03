@@ -5,7 +5,7 @@ weight: 1003
 filename: faq/how_to_use_dependency.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 // If text "not be empty"
 array(
   'id'           => 'dep_1',
@@ -23,7 +23,7 @@ array(
 ```
 
 
-```php?start_line=1
+```php?start_inline=1
 // If switcher mode "ON"
 array(
   'id'           => 'dep_2',
@@ -40,7 +40,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // If selected color is "black or white"
 array(
   'id'           => 'dep_3',
@@ -64,7 +64,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // If radio selected is "No, Thanks"
 array(
   'id'           => 'dep_4',
@@ -88,7 +88,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // If checkbox selected is "danger"
 array(
   'id'           => 'dep_5',
@@ -112,7 +112,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // If image select is "blue"
 array(
   'id'           => 'dep_6',
@@ -137,7 +137,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // If image select is "blue or green"
 array(
   'id'           => 'dep_7',
@@ -167,7 +167,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // Multiple element dependencies
 array(
   'id'           => 'dep_10',
@@ -197,7 +197,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 // Another Multiple element dependencies
 array(
   'id'           => 'dep_13',

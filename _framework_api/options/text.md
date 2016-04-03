@@ -5,7 +5,7 @@ weight: 201
 filename: options/text.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_101', // this is must be unique
   'type'  => 'text',
@@ -15,7 +15,7 @@ array(
 
 > Another Text Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_102', // another unique id
   'type'    => 'text',
@@ -28,7 +28,7 @@ array(
 
 > How to getting value from a option field
 
-```php?start_line=1
+```php?start_inline=1
 echo cs_get_option( 'unique_option_102' ); // output: do stuff
 ```
 

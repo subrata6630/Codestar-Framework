@@ -5,7 +5,7 @@ weight: 212
 filename: options/color_picker.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_3001',
   'type'  => 'color_picker',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_3002',
   'type'    => 'color_picker',
@@ -22,7 +22,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'      => 'unique_option_3003',
   'type'    => 'color_picker',

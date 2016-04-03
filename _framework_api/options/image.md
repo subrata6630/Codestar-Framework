@@ -5,7 +5,7 @@ weight: 218
 filename: options/image.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'image_1',
   'type'  => 'image',
@@ -15,7 +15,7 @@ array(
 
 > Another Wysiwyg Field Example
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'image_2',
   'type'      => 'image',
@@ -26,7 +26,7 @@ array(
 
 > Front-End Basic Usage Example
 
-```php?start_line=1
+```php?start_inline=1
 $image_id = cs_get_option( 'gallery_1' );
 $attachment = wp_get_attachment_image_src( $image_id, 'full' );
 var_dump( $attachment );

@@ -7,7 +7,7 @@ filename: options/image_select.md
 
 > Image select using checkbox method
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'image_select_option',
   'type'      => 'image_select',
@@ -23,7 +23,7 @@ array(
 
 > Image select using radio method
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'        => 'image_select_option',
   'type'      => 'image_select',

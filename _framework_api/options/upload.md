@@ -5,7 +5,7 @@ weight: 210
 filename: options/upload.md
 ---
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'    => 'unique_option_1001',
   'type'  => 'upload',
@@ -13,7 +13,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_1002',
   'type'          => 'upload',
@@ -27,7 +27,7 @@ array(
 ),
 ```
 
-```php?start_line=1
+```php?start_inline=1
 array(
   'id'            => 'unique_option_1003',
   'type'          => 'upload',
