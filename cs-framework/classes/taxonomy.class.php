@@ -33,16 +33,13 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
     $this->options = apply_filters( 'cs_taxonomy_options', $options );
 
     if( ! empty( $this->options ) ) {
-
       $this->addAction( 'admin_init', 'add_taxonomy_fields' );
-
     }
 
   }
 
   // instance
   public static function instance( $options = array() ) {
-
     if ( is_null( self::$instance ) && CS_ACTIVE_TAXONOMY ) {
       self::$instance = new self( $options );
     }
@@ -53,6 +50,8 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
   public function add_taxonomy_fields() {
 
     foreach ( $this->options as $option ) {
+
+      if( empty( $option['fields'] ) ) { continue; }
 
       $taxonomy = $option['taxonomy'];
 
