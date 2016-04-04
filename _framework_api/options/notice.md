@@ -37,7 +37,6 @@ array(
 ),
 ```
 
-
 | **Key**    | **Default** | **Description**
 | `type`     | notice      | type of option
 | `class`    | null        | success, warning, danger, info classes for notice

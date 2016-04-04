@@ -11,9 +11,6 @@ filename: configure/framework_configure.md
 |   ├── cs-framework
 |   |   ├── config
 |   |   |   ├── framework.config.php
-|   |   |   ├── metabox.config.php
-|   |   |   ├── shortcode.config.php
-|   |   |   ├── customize.config.php
 ```
 
 > take a look framework.config.php example

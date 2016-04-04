@@ -34,6 +34,6 @@ require_once get_template_directory_uri() .'/cs-framework/cs-framework.php';
 * Download zip file from github repository
 * Extract download zip on `themename/cs-framework` folder under your theme directory
 * Add framework include code on your theme `themename/functions.php` file
-* Yay! Right now you are ready to configure framework, metaboxes, wp customize, shortcoder
+* Yay! Right now you are ready to configure framework, metaboxes, taxonomies, wp customize, shortcoder
 * Take a look for config files from `themename/cs-framework/config` folder
 * Read for about [configuration](#configuration)

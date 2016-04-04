@@ -10,9 +10,6 @@ filename: configure/customize_configure.md
 ├── themename
 |   ├── cs-framework
 |   |   ├── config
-|   |   |   ├── framework.config.php
-|   |   |   ├── metabox.config.php
-|   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
 ```
 
@@ -24,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 // Customize Core Fields                   -
 // -----------------------------------------
 $options        = array();
+
 $options[]      = array(
   'name'        => 'core_fields',
   'title'       => 'Core Fields',

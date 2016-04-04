@@ -10,10 +10,7 @@ filename: configure/metabox_configure.md
 ├── themename
 |   ├── cs-framework
 |   |   ├── config
-|   |   |   ├── framework.config.php
 |   |   |   ├── metabox.config.php
-|   |   |   ├── shortcode.config.php
-|   |   |   ├── customize.config.php
 ```
 
 > take a look metabox.config.php example
@@ -28,9 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
  * @version 1.0
  *
  */
-$metaboxes        = array();
+$options        = array();
 
-$metaboxes[]      = array(
+$options[]      = array(
   'id'            => '_custom_meta_options',
   'title'         => 'Custom Options',
   'post_type'     => 'page', // or post or CPT or array( 'page', 'post' )
@@ -82,13 +79,12 @@ $metaboxes[]      = array(
   ),
 );
 
-CSFramework_Metabox::instance( $metaboxes );
+CSFramework_Metabox::instance( $options );
 ```
 
 > You should use `_custom_meta_options` as this is the id for your key declared into metabox config file. So your code must look like this:
 
 ```php?start_inline=1
-
 $meta_data = get_post_meta( THE_POST_ID, '_custom_meta_options', true );
 var_dump( $meta_data );
 ```

@@ -7,12 +7,13 @@ filename: installation/configuration.md
 
 ### Standard Configure
 
-```
+```html
 .
 ├── cs-framework
 |   ├── config
 |   |   ├── framework.config.php
 |   |   ├── metabox.config.php
+|   |   ├── taxonomy.config.php
 |   |   ├── shortcode.config.php
 |   |   ├── customize.config.php
 ```
@@ -28,6 +29,7 @@ After installation, you can modify directly config files from `cs-framework/conf
 |   |   ├── config
 |   |   |   ├── framework.config.php
 |   |   |   ├── metabox.config.php
+|   |   |   ├── taxonomy.config.php
 |   |   |   ├── shortcode.config.php
 |   |   |   ├── customize.config.php
 ```
@@ -75,5 +77,6 @@ If you do not want to touch framework files, you can use `add_filter` method. Yo
 | add_filter   | cs_framework_options  |
 | add_filter   | cs_framework_settings |
 | add_filter   | cs_metabox_options    |
+| add_filter   | cs_taxonomy_options   |
 | add_filter   | cs_shortcode_options  |
 | add_filter   | cs_customize_options  |

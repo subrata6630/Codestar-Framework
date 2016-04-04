@@ -76,6 +76,36 @@ array(
 ),
 ```
 
+```php?start_inline=1
+array(
+  'id'        => 'fieldset_3',
+  'type'      => 'fieldset',
+  'title'     => 'Fieldset Field',
+  'un_array'  => true,
+  'fields'    => array(
+
+    array(
+      'id'    => 'fieldset_1_text',
+      'type'  => 'text',
+      'title' => 'Text Field',
+    ),
+
+    array(
+      'id'    => 'fieldset_1_textarea',
+      'type'  => 'textarea',
+      'title' => 'Textarea Field',
+    ),
+
+  ),
+),
+
+// un_array mode means,
+// you can call fieldset children with out the fieldset id
+// for eg.
+echo cs_get_option( 'fieldset_1_text' );
+echo cs_get_option( 'fieldset_1_textarea' );
+```
+
 | **Key**          | **Default** | **Description**
 | `id`             | unique      | an unique id - use nice name
 | `type`           | sorter      | type of option
@@ -95,3 +125,4 @@ array(
 | `show_only_lang` | null        | multilangual support for language keys eg. 'en' or 'tr' or 'es'
 | **Extra Key**    | ---         | ---
 | `fields`         | array       | fields of group field this is inside fields of field
+| `un_array`       | false       | Means you can call fieldset children with out the fieldset id

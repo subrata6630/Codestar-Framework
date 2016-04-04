@@ -10,10 +10,7 @@ filename: configure/shortcode_configure.md
 ├── themename
 |   ├── cs-framework
 |   |   ├── config
-|   |   |   ├── framework.config.php
-|   |   |   ├── metabox.config.php
 |   |   |   ├── shortcode.config.php
-|   |   |   ├── customize.config.php
 ```
 
 > take a look shortcode.config.php example

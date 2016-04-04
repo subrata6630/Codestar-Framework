@@ -40,9 +40,11 @@ add_filter( 'cs_framework_options', 'extra_cs_framework_options' );
 | `cs_framework_settings`     | This filter for change to current **framework** settings
 | `cs_framework_options`      | This filter for change to current **framework** options
 | `cs_metabox_options`        | This filter for change to current **metabox** options
+| `cs_taxonomy_options`       | This filter for change to current **taxonomy** options
 | `cs_shortcode_options`      | This filter for change to current **shortcode** options
 | `cs_customize_options`      | This filter for change to current **customize** options
 | `cs_save_post`              | This filter for metabox options save changes
+| `cs_save_taxonomy`          | This filter for taxonomy options save changes
 | `cs_shortcode_exclude`      | This filter for exlude post types for "add shortcode" option
 | `cs_get_path_locate`        | This filter for framework path initalize
 | `cs_locate_template`        | This filter for framework template initalize

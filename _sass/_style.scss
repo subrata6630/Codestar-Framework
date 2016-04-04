@@ -239,7 +239,7 @@ body{
 }
 
 /* others */
-.cs-4in1{
+.cs-5in1{
   font-size: 75px;
   .cs-icon-4x{
     display: inline-block;
@@ -292,6 +292,20 @@ body{
 
 .pagination .disabled{
   opacity: 0.75;
+}
+
+.col-sm-5th{
+  float: left;
+  width: 20%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .col-sm-5th{
+    float: none;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1400px) {
