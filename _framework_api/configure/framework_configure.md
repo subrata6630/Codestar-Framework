@@ -95,6 +95,6 @@ Let's open `themename/cs-framework/config/framework.config.php` all examples the
 | `menu_position`    | null           | menu of position
 | `menu_capability`  | manage_options | capability
 | `ajax_save`        | false          | saving options without refresh
-| `show_reset_all`   | false          | show -reset all options- button
+| `show_reset`       | false          | show -reset all options- button
 
 also you can use override method for config. [see override](#override-configure)
