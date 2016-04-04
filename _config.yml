@@ -6,7 +6,7 @@ description: A Lightweight and easy-to-use WordPress Options Framework
 # baseurl: /codestar-framework
 url: http://codestarframework.com/
 port: 1986
-version: 1.0.0
+version: 1.0.1
 
 # Settings
 permalink: pretty
