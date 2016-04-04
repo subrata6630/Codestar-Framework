@@ -95,8 +95,8 @@ msgid "or"
 msgstr "veya"
 
 #: fields/backup/backup.php:29
-msgid "!!! Reset All Options !!!"
-msgstr "!!! Tüm Ayarları Sıfırla !!!"
+msgid "Reset All Options"
+msgstr "Tüm Ayarları Sıfırla"
 
 #: fields/backup/backup.php:30
 msgid "Please be sure for reset all of framework options."

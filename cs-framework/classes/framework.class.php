@@ -362,9 +362,16 @@ class CSFramework extends CSFramework_Abstract {
       echo '<header class="cs-header">';
       echo '<h1>Codestar Framework <small>by Codestar</small></h1>';
       echo '<fieldset>';
-      echo ( $this->settings['ajax_save'] === true ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
+
+      echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
+
       submit_button( __( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
       submit_button( __( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
+
+      if( $this->settings['show_reset'] ) {
+        submit_button( __( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
+      }
+
       echo '</fieldset>';
       echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( 'show all options', 'cs-framework' ) .'</a>' : '';
       echo '<div class="clear"></div>';

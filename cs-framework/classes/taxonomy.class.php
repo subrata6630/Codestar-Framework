@@ -52,9 +52,9 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
   // add taxonomy add/edit fields
   public function add_taxonomy_fields() {
 
-    foreach ( $this->options as $value ) {
+    foreach ( $this->options as $option ) {
 
-      $taxonomy = $value['taxonomy'];
+      $taxonomy = $option['taxonomy'];
 
       $this->addAction( $taxonomy .'_add_form_fields', 'render_taxonomy_form_fields' );
       $this->addAction( $taxonomy .'_edit_form', 'render_taxonomy_form_fields' );
@@ -71,28 +71,28 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
     global $cs_errors;
 
-    $tax_edit  = ( is_a( $term, 'WP_Term' ) ) ? true : false;
-    $taxonomy  = ( $tax_edit ) ? $term->taxonomy : $term;
-    $classname = ( $tax_edit ) ? 'edit' : 'add';
+    $form_edit = ( is_a( $term, 'WP_Term' ) ) ? true : false;
+    $taxonomy  = ( $form_edit ) ? $term->taxonomy : $term;
+    $classname = ( $form_edit ) ? 'edit' : 'add';
     $cs_errors = get_transient( 'cs-taxonomy-transient' );
 
     wp_nonce_field( 'cs-taxonomy', 'cs-taxonomy-nonce' );
 
     echo '<div class="cs-framework cs-taxonomy cs-taxonomy-'. $classname .'-fields">';
 
-      foreach( $this->options as $tax ) {
+      foreach( $this->options as $option ) {
 
-        if( $taxonomy == $tax['taxonomy'] ) {
+        if( $taxonomy == $option['taxonomy'] ) {
 
-          $tax_value = ( $tax_edit ) ? get_term_meta( $term->term_id, $tax['id'], true ) : '';
+          $tax_value = ( $form_edit ) ? get_term_meta( $term->term_id, $option['id'], true ) : '';
 
-          foreach ( $tax['fields'] as $field ) {
+          foreach ( $option['fields'] as $field ) {
 
             $default    = ( isset( $field['default'] ) ) ? $field['default'] : '';
             $elem_id    = ( isset( $field['id'] ) ) ? $field['id'] : '';
             $elem_value = ( is_array( $tax_value ) && isset( $tax_value[$elem_id] ) ) ? $tax_value[$elem_id] : $default;
 
-            echo cs_add_element( $field, $elem_value, $tax['id'] );
+            echo cs_add_element( $field, $elem_value, $option['id'] );
 
           }
 

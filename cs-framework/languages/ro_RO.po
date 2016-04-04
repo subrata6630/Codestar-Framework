@@ -102,7 +102,7 @@ msgid "or"
 msgstr "sau"
 
 #: fields/backup/backup.php:29
-msgid "!!! Reset All Options !!!"
+msgid "Reset All Options"
 msgstr "Resetează toate opțiunile"
 
 #: fields/backup/backup.php:30

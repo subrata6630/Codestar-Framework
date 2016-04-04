@@ -20,23 +20,27 @@ msgstr ""
 msgid "Default options restored for only this section."
 msgstr ""
 
-#: classes/framework.class.php:365
+#: classes/framework.class.php:366
 msgid "Settings saved."
 msgstr ""
 
-#: classes/framework.class.php:366
+#: classes/framework.class.php:368
 msgid "Save"
 msgstr ""
 
-#: classes/framework.class.php:366
+#: classes/framework.class.php:368
 msgid "Saving..."
 msgstr ""
 
-#: classes/framework.class.php:367
+#: classes/framework.class.php:369
 msgid "Restore"
 msgstr ""
 
-#: classes/framework.class.php:369
+#: classes/framework.class.php:372
+msgid "Reset All Options"
+msgstr ""
+
+#: classes/framework.class.php:376
 msgid "show all options"
 msgstr ""
 

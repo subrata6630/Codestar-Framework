@@ -9,6 +9,7 @@ $settings      = array(
   'menu_type'  => 'add_menu_page',
   'menu_slug'  => 'cs-framework',
   'ajax_save'  => false,
+  'show_reset' => false,
 );
 
 // ===============================================================================================

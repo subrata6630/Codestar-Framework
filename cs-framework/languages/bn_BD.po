@@ -100,8 +100,8 @@ msgid "or"
 msgstr "অথবা"
 
 #: fields/backup/backup.php:29
-msgid "!!! Reset All Options !!!"
-msgstr "!!! সমস্ত অপশনসমূহ রিসেট !!!"
+msgid "Reset All Options"
+msgstr "সমস্ত অপশনসমূহ রিসেট"
 
 #: fields/backup/backup.php:30
 msgid "Please be sure for reset all of framework options."
