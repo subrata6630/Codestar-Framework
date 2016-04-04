@@ -32,7 +32,20 @@ $settings      = array(
   'menu_type'  => 'add_menu_page',
   'menu_slug'  => 'cs-framework',
   'ajax_save'  => false,
+  'show_reset' => false,
 );
+
+/*
+// Alternative Settings
+$settings       = array(
+  'menu_parent' => 'tools.php',
+  'menu_title'  => 'Framework',
+  'menu_type'   => 'add_submenu_page',
+  'menu_slug'   => 'cs-framework',
+  'ajax_save'   => false,
+  'show_reset'  => false,
+);
+*/
 
 // Framework Options
 $options      = array();
@@ -74,19 +87,14 @@ echo cs_get_option( 'section_1_textarea' );
 Let's open `themename/cs-framework/config/framework.config.php` all examples there
 
 | **Settings keys**  | **Default**    | **Description**
-| `menu_title`       | Framework      | an unique name use nice name
-| `menu_type`        | add_menu_page  | type of option
-| `menu_slug`        | cs-framework   | Title of field
-| `menu_icon`        | null           | Supporting dashicon
-| `menu_position`    | null           | Title of field
-| `menu_capability`  | manage_options | Title of field
-| `ajax_save`        | false          | Title of field
-
-| **Options keys**   | **Default**    | **Description**
-| `name`             | Framework      | an unique name use nice name
-| `title`            | add_menu_page  | type of option
-| `icon`             | cs-framework   | Title of field
-| `fields`           | null           | Supporting dashicon
-
+| `menu_parent`      | null           | working with add_submenu_page type
+| `menu_title`       | Framework      | options menu name
+| `menu_type`        | add_menu_page  | type of menu
+| `menu_slug`        | cs-framework   | slug of menu
+| `menu_icon`        | null           | supporting dashicon
+| `menu_position`    | null           | menu of position
+| `menu_capability`  | manage_options | capability
+| `ajax_save`        | false          | saving options without refresh
+| `show_reset_all`   | false          | show -reset all options- button
 
 also you can use override method for config. [see override](#override-configure)
