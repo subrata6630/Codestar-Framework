@@ -26,24 +26,36 @@ if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
  *
  */
 
-// Framework Settings
-$settings      = array(
-  'menu_title' => 'Framework',
-  'menu_type'  => 'add_menu_page',
-  'menu_slug'  => 'cs-framework',
-  'ajax_save'  => false,
-  'show_reset' => false,
+// Top level Menu
+$settings           = array(
+  'menu_title'      => 'Framework',
+  'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
+  'menu_slug'       => 'cs-framework',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Codestar Framework <small>by Codestar</small>',
 );
 
 /*
-// Alternative Settings
-$settings       = array(
-  'menu_parent' => 'tools.php',
-  'menu_title'  => 'Framework',
-  'menu_type'   => 'add_submenu_page',
-  'menu_slug'   => 'cs-framework',
-  'ajax_save'   => false,
-  'show_reset'  => false,
+// child of another menu in wordpress
+$settings           = array(
+  'menu_title'      => 'Framework',
+  'menu_type'       => 'theme', // <----- under appearance
+  'menu_slug'       => 'cs-framework',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Codestar Framework <small>by Codestar</small>',
+);
+
+// child of another by parent slug
+$settings           = array(
+  'menu_title'      => 'Framework',
+  'menu_type'       => 'submenu', // <------- set to submenu
+ 'menu_parent'      => 'your_parent_slug', // <-------
+  'menu_slug'       => 'cs-framework',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Codestar Framework <small>by Codestar</small>',
 );
 */
 
@@ -87,14 +99,15 @@ echo cs_get_option( 'section_1_textarea' );
 Let's open `themename/cs-framework/config/framework.config.php` all examples there
 
 | **Settings keys**  | **Default**    | **Description**
-| `menu_parent`      | null           | working with add_submenu_page type
+| `menu_parent`      | null           | working with "submenu" type
 | `menu_title`       | Framework      | options menu name
-| `menu_type`        | add_menu_page  | type of menu
+| `menu_type`        | menu           | type of menu, submenu, options, theme, etc.
 | `menu_slug`        | cs-framework   | slug of menu
 | `menu_icon`        | null           | supporting dashicon
 | `menu_position`    | null           | menu of position
 | `menu_capability`  | manage_options | capability
 | `ajax_save`        | false          | saving options without refresh
-| `show_reset`       | false          | show -reset all options- button
+| `show_reset_all`   | false          | show -reset all options- button
+| `framework_title`  | text           | options framework header title
 
 also you can use override method for config. [see override](#override-configure)
