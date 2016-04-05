@@ -102,8 +102,8 @@ msgid "or"
 msgstr "یا"
 
 #: fields/backup/backup.php:29
-msgid "!!! Reset All Options !!!"
-msgstr "!!! تنظیم مجدد همه گزینه !!!"
+msgid "Reset All Options"
+msgstr "تنظیم مجدد همه گزینه"
 
 #: fields/backup/backup.php:30
 msgid "Please be sure for reset all of framework options."
