@@ -114,9 +114,10 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
   // shortcode generator function for dialog
   public function shortcode_generator() {
 
-    if( ! isset( $_REQUEST['shortcode'] ) ) { die(); }
+    $request = cs_get_var( 'shortcode' );
 
-    $request   = $_REQUEST['shortcode'];
+    if( empty( $request ) ) { die(); }
+
     $shortcode = $this->shortcodes[$request];
 
     if( isset( $shortcode['fields'] ) ) {
@@ -126,6 +127,7 @@ class CSFramework_Shortcode_Manager extends CSFramework_Abstract{
         if( isset( $field['id'] ) ) {
           $field['attributes'] = ( isset( $field['attributes'] ) ) ? wp_parse_args( array( 'data-atts' => $field['id'] ), $field['attributes'] ) : array( 'data-atts' => $field['id'] );
         }
+
         $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
 
         if( in_array( $field['type'], array('image_select', 'checkbox') ) && isset( $field['options'] ) ) {
