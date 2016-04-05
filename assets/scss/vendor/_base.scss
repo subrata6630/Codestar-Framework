@@ -3,6 +3,12 @@
   margin-top: 20px;
   margin-right: 20px;
 
+  label{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
   .cs-settings-error{
     margin: 0 0 15px 0;
   }
@@ -413,11 +419,14 @@
 .cs-field-switcher{
 
   label{
+    display: block;
     float: left;
     cursor: pointer;
     position: relative;
     width: 62px;
     height: 26px;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
     @include border-radius(20px);
 
@@ -891,8 +900,11 @@
 
   .cs-modules{
     float: left;
-    width: 45%;
-    margin-right: 10px;
+    width: 50%;
+  }
+
+  .cs-enabled{
+    margin-right: 15px;
   }
 
   .cs-disabled,
@@ -938,6 +950,107 @@
         border-color: #bbb;
       }
     }
+  }
+}
+
+.cs-taxonomy{
+  margin: 0;
+
+  > .cs-element{
+    border-bottom: 0;
+
+    &:hover{
+      background: none;
+    }
+  }
+
+  > .cs-field-heading{
+    font-size: 1.1em;
+    padding: 20px !important;
+    border: 1px solid #ddd;
+  }
+
+  > .cs-field-subheading{
+    font-size: 12px;
+    padding: 15px !important;
+    border: 1px solid #ddd;
+  }
+
+  > .cs-field-notice{
+
+    .cs-notice{
+      padding: 15px;
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+  }
+}
+
+.cs-taxonomy-add-fields{
+
+  > .cs-element{
+    padding: 8px 0;
+    margin: 0 0 10px;
+
+    > .cs-title{
+      float: none;
+      width: 100%;
+      padding: 2px 2px 4px 0;
+
+      h4{
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+
+    > .cs-fieldset{
+      margin-left: 0;
+
+      > .cs-help{
+        right: -5px;
+      }
+    }
+  }
+}
+
+.cs-taxonomy-edit-fields{
+
+  > .cs-element{
+    padding: 20px 0;
+    border-bottom: 0;
+
+    > .cs-title{
+      width: 225px;
+
+      h4{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    > .cs-fieldset{
+      margin-left: 225px;
+
+      > .cs-help{
+        top: -5px;
+        right: -5px;
+      }
+    }
+  }
+
+  > .cs-field-notice{
+    margin: 20px 0;
+  }
+
+  > .cs-field-subheading,
+  > .cs-field-heading{
+    margin: 20px 0;
+    border: 1px solid #ddd;
   }
 }
 
@@ -995,6 +1108,14 @@
 
 .cs-text-right{
   text-align: right;
+}
+
+.cs-block-left{
+  float: left;
+}
+
+.cs-block-right{
+  float: right;
 }
 
 .cs-text-highlight{
