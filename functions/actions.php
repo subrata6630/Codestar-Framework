@@ -46,6 +46,30 @@ if( ! function_exists( 'cs_get_icons' ) ) {
 
 /**
  *
+ * Export options
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if( ! function_exists( 'cs_export_options' ) ) {
+  function cs_export_options() {
+
+    header('Content-Type: plain/text');
+    header('Content-disposition: attachment; filename=backup-options-'. gmdate( 'd-m-Y' ) .'.txt');
+    header('Content-Transfer-Encoding: binary');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+
+    echo cs_encode_string( get_option( CS_OPTION ) );
+
+    die();
+  }
+  add_action( 'wp_ajax_cs-export-options', 'cs_export_options' );
+}
+
+/**
+ *
  * Set icons for wp dialog
  *
  * @since 1.0.0
