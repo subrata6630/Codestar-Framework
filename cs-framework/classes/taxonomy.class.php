@@ -51,15 +51,18 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
     foreach ( $this->options as $option ) {
 
-      if( empty( $option['fields'] ) ) { continue; }
+      $opt_taxonomy = $option['taxonomy'];
+      $get_taxonomy = cs_get_var( 'taxonomy' );
 
-      $taxonomy = $option['taxonomy'];
+      if( $get_taxonomy == $opt_taxonomy ) {
 
-      $this->addAction( $taxonomy .'_add_form_fields', 'render_taxonomy_form_fields' );
-      $this->addAction( $taxonomy .'_edit_form', 'render_taxonomy_form_fields' );
+        $this->addAction( $opt_taxonomy .'_add_form_fields', 'render_taxonomy_form_fields' );
+        $this->addAction( $opt_taxonomy .'_edit_form', 'render_taxonomy_form_fields' );
 
-      $this->addAction( 'created_'. $taxonomy, 'save_taxonomy' );
-      $this->addAction( 'edited_'. $taxonomy, 'save_taxonomy' );
+        $this->addAction( 'created_'. $opt_taxonomy, 'save_taxonomy' );
+        $this->addAction( 'edited_'. $opt_taxonomy, 'save_taxonomy' );
+
+      }
 
     }
 

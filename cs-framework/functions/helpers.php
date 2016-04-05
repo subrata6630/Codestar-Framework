@@ -24,7 +24,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $hidden  = ' hidden';
       $depend .= ' data-'. $sub .'controller="'. $field['dependency'][0] .'"';
       $depend .= ' data-'. $sub .'condition="'. $field['dependency'][1] .'"';
-      $depend .= " data-". $sub ."value='". $field['dependency'][2] ."'";
+      $depend .= ' data-'. $sub .'value="'. $field['dependency'][2] .'"';
     }
 
     $output .= '<div class="cs-element cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
@@ -167,46 +167,6 @@ if ( ! function_exists( 'cs_array_search' ) ) {
 
 /**
  *
- * Load options fields
- *
- * @since 1.0.0
- * @version 1.0.0
- *
- */
-if ( ! function_exists( 'cs_load_option_fields' ) ) {
-  function cs_load_option_fields() {
-
-    $located_fields = array();
-
-    foreach ( glob( CS_DIR .'/fields/*/*.php' ) as $cs_field ) {
-      $located_fields[] = basename( $cs_field );
-      cs_locate_template( str_replace(  CS_DIR, '', $cs_field ) );
-    }
-
-    $override_name = apply_filters( 'cs_framework_override', 'cs-framework-override' );
-    $override_dir  = get_template_directory() .'/'. $override_name .'/fields';
-
-    if( is_dir( $override_dir ) ) {
-
-      foreach ( glob( $override_dir .'/*/*.php' ) as $override_field ) {
-
-        if( ! in_array( basename( $override_field ), $located_fields ) ) {
-
-          cs_locate_template( str_replace( $override_dir, '/fields', $override_field ) );
-
-        }
-
-      }
-
-    }
-
-    do_action( 'cs_load_option_fields' );
-
-  }
-}
-
-/**
- *
  * Getting POST Var
  *
  * @since 1.0.0
@@ -249,6 +209,46 @@ if ( ! function_exists( 'cs_get_vars' ) ) {
     }
 
     return $default;
+
+  }
+}
+
+/**
+ *
+ * Load options fields
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'cs_load_option_fields' ) ) {
+  function cs_load_option_fields() {
+
+    $located_fields = array();
+
+    foreach ( glob( CS_DIR .'/fields/*/*.php' ) as $cs_field ) {
+      $located_fields[] = basename( $cs_field );
+      cs_locate_template( str_replace(  CS_DIR, '', $cs_field ) );
+    }
+
+    $override_name = apply_filters( 'cs_framework_override', 'cs-framework-override' );
+    $override_dir  = get_template_directory() .'/'. $override_name .'/fields';
+
+    if( is_dir( $override_dir ) ) {
+
+      foreach ( glob( $override_dir .'/*/*.php' ) as $override_field ) {
+
+        if( ! in_array( basename( $override_field ), $located_fields ) ) {
+
+          cs_locate_template( str_replace( $override_dir, '/fields', $override_field ) );
+
+        }
+
+      }
+
+    }
+
+    do_action( 'cs_load_option_fields' );
 
   }
 }

@@ -75,7 +75,6 @@ class CSFramework extends CSFramework_Abstract {
       $this->get_option = get_option( CS_OPTION );
       $this->addAction( 'admin_init', 'settings_api' );
       $this->addAction( 'admin_menu', 'admin_menu' );
-      $this->addAction( 'wp_ajax_cs-export-options', 'export' );
 
     }
 
@@ -318,10 +317,10 @@ class CSFramework extends CSFramework_Abstract {
 
     $args = wp_parse_args( $this->settings, $defaults_menu_args );
 
-    if( $args['menu_type'] == 'add_submenu_page' ) {
-      call_user_func( $args['menu_type'], $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
+    if( $args['menu_type'] == 'submenu' ) {
+      call_user_func( 'add_'. $args['menu_type'] .'_page', $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
     } else {
-      call_user_func( $args['menu_type'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+      call_user_func( 'add_'. $args['menu_type'] .'_page', $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
     }
 
   }
@@ -360,7 +359,7 @@ class CSFramework extends CSFramework_Abstract {
       settings_fields( $this->unique. '_group' );
 
       echo '<header class="cs-header">';
-      echo '<h1>Codestar Framework <small>by Codestar</small></h1>';
+      echo '<h1>'. $this->settings['framework_title'] .'</h1>';
       echo '<fieldset>';
 
       echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
@@ -368,7 +367,7 @@ class CSFramework extends CSFramework_Abstract {
       submit_button( __( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
       submit_button( __( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
 
-      if( $this->settings['show_reset'] ) {
+      if( $this->settings['show_reset_all'] ) {
         submit_button( __( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
       }
 
@@ -459,7 +458,9 @@ class CSFramework extends CSFramework_Abstract {
       echo '</div>'; // end .cs-body
 
       echo '<footer class="cs-footer">';
-      echo 'Codestar Framework <strong>v'. CS_VERSION .' by Codestar</strong>';
+      echo '<div class="cs-block-left">Powered by Codestar Framework.</div>';
+      echo '<div class="cs-block-right">Version '. CS_VERSION .'</div>';
+      echo '<div class="clear"></div>';
       echo '</footer>'; // end .cs-footer
 
       echo '</form>'; // end form
@@ -467,21 +468,6 @@ class CSFramework extends CSFramework_Abstract {
       echo '<div class="clear"></div>';
 
     echo '</div>'; // end .cs-framework
-
-  }
-
-  // export options
-  public function export() {
-
-    header('Content-Type: plain/text');
-    header('Content-disposition: attachment; filename=backup-options-'. gmdate( 'd-m-Y' ) .'.txt');
-    header('Content-Transfer-Encoding: binary');
-    header('Pragma: no-cache');
-    header('Expires: 0');
-
-    echo cs_encode_string( get_option( CS_OPTION ) );
-
-    die();
 
   }
 
