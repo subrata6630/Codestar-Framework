@@ -6,8 +6,16 @@ layout: default
   <div class="container">
     <h1>{{ site.title }}</h1>
     <h3>{{ site.description }}</h3>
-    <a href="{{ site.github }}/archive/master.zip" class="btn btn-outline-inverse btn-lg"><i class="octicon octicon-cloud-download"></i> Download {{ site.title }}</a>
-    <div class="version">Currently v{{ site.version }}</div>
+    <p><a href="{{ site.github }}/archive/{{ site.version }}.zip" class="btn btn-outline-inverse btn-lg"><i class="octicon octicon-cloud-download"></i> Download {{ site.title }}</a></p>
+
+    <div>
+      <a href="{{ site.github }}/blob/master/CHANGELOG.md" target="_blank" class="btn btn-outline-inverse btn-xs"><i class="octicon octicon-sync"></i> Changelog</a>
+      <a href="{{ site.github }}/issues" target="_blank" class="btn btn-outline-inverse btn-xs"><i class="octicon octicon-issue-opened"></i> Issues</a>
+      <a href="{{ site.github }}/releases" target="_blank" class="btn btn-outline-inverse btn-xs"><i class="octicon octicon-tag"></i> Releases</a>
+    </div>
+
+    <p class="version">Current version {{ site.version }}</p>
+
   </div>
 </div>
 

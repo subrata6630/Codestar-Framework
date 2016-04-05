@@ -54,7 +54,16 @@ body{
     color: $base_highlight_color;
   }
 
-  .btn {
+  .btn-xs {
+    padding: 1px 5px !important;
+    font-size: 12px !important;
+
+    .octicon{
+      font-size: 12px !important;
+    }
+  }
+
+  .btn-lg {
     padding: 20px 40px;
     font-size: 20px;
 
