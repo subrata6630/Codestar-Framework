@@ -1,5 +1,10 @@
 # Codestar Framework Changelog
 
+## 1.0.2
+- Added: Fallback file for avoid missing core functions
+- Improved: `cs_validate_save` action. Added $request param
+- Updated: Font Awesome 4.5.0 icons package
+
 ## 1.0.1
 - Added: Taxonomy options framework
 - Added: Taxonomy css styles and rtl support
