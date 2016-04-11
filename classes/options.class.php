@@ -153,6 +153,10 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       $out .= "<strong>". __( 'USAGE', 'cs-framework' ) .":</strong>";
       $out .= "\n";
       $out .= ( isset( $this->field['id'] ) ) ? "cs_get_option( '". $this->field['id'] ."' );" : '';
+      $out .= "\n";
+      $out .= "<strong>". __( 'ID', 'cs-framework' ) .":</strong>";
+      $out .= "\n";
+      $out .= ( isset( $this->field['id'] ) ) ? "". $this->field['id'] ."" : '';
       $out .= "</pre>";
 
     }
