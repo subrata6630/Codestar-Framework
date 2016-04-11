@@ -10,7 +10,11 @@
  */
 if( ! function_exists( 'get_term_meta' ) ) {
   function get_term_meta( $term_id, $key = '', $single = false ) {
-    return get_metadata( 'term', $term_id, $key, $single );
+
+    $terms = get_option( 'cs_term_'. $key );
+
+    return ( ! empty( $terms[$term_id] ) ) ? $terms[$term_id] : false;
+
   }
 }
 
@@ -25,7 +29,9 @@ if( ! function_exists( 'get_term_meta' ) ) {
  */
 if( ! function_exists( 'add_term_meta' ) ) {
   function add_term_meta( $term_id, $meta_key = '', $meta_value, $unique = false ) {
-    return add_metadata( 'term', $term_id, $meta_key = '', $meta_value, $unique = false );
+
+    return update_term_meta( $term_id, $meta_key, $meta_value, $unique );
+
   }
 }
 
@@ -40,7 +46,17 @@ if( ! function_exists( 'add_term_meta' ) ) {
  */
 if( ! function_exists( 'update_term_meta' ) ) {
   function update_term_meta( $term_id, $meta_key, $meta_value, $prev_value = '' ) {
-    return update_metadata( 'term', $term_id, $meta_key, $meta_value, $prev_value );
+
+    if ( ! empty( $term_id ) || ! empty( $meta_key ) || ! empty( $meta_value ) ) {
+
+      $terms = get_option( 'cs_term_'. $meta_key );
+
+      $terms[$term_id] = $meta_value;
+
+      update_option( 'cs_term_'. $meta_key, $terms );
+
+    }
+
   }
 }
 
@@ -55,6 +71,16 @@ if( ! function_exists( 'update_term_meta' ) ) {
  */
 if( ! function_exists( 'delete_term_meta' ) ) {
   function delete_term_meta( $term_id, $meta_key, $meta_value = '', $delete_all = false ) {
-    return delete_metadata( 'term', $term_id, $meta_key, $meta_value, $delete_all );
+
+    if ( ! empty( $term_id ) || ! empty( $meta_key ) ) {
+
+      $terms = get_option( 'cs_term_'. $meta_key );
+
+      unset( $terms[$term_id] );
+
+      update_option( 'cs_term_'. $meta_key, $terms );
+
+    }
+
   }
 }
