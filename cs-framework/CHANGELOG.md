@@ -1,6 +1,6 @@
 # Codestar Framework Changelog
 
-## 1.0.2
+## PRE-RELEASE 1.0.2
 - Added: Fallback file for avoid missing core functions
 - Added: Debug light option for showing element id
 - Improved: `cs_validate_save` action. Added $request param
