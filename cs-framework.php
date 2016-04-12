@@ -54,6 +54,7 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
 
     // helpers
     cs_locate_template( 'functions/deprecated.php'     );
+    cs_locate_template( 'functions/fallback.php'       );
     cs_locate_template( 'functions/helpers.php'        );
     cs_locate_template( 'functions/actions.php'        );
     cs_locate_template( 'functions/enqueue.php'        );
