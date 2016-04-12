@@ -48,7 +48,7 @@ msgstr ""
 msgid "CONFIG"
 msgstr ""
 
-#: classes/options.class.php:131
+#: classes/options.class.php:131 classes/options.class.php:151
 msgid "USAGE"
 msgstr ""
 
@@ -56,7 +56,11 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
-#: classes/options.class.php:213
+#: classes/options.class.php:155
+msgid "ID"
+msgstr ""
+
+#: classes/options.class.php:227
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 
