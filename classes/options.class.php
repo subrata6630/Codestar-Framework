@@ -144,6 +144,22 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
       $out .= "</pre>";
 
     }
+    
+    if( ( isset( $this->field['debug_light'] ) && $this->field['debug_light'] === true ) || ( defined( 'CS_OPTIONS_DEBUG_LIGHT' ) && CS_OPTIONS_DEBUG_LIGHT ) ) {
+
+      $value = $this->element_value();
+
+      $out .= "<pre>";
+      $out .= "<strong>". __( 'USAGE', 'cs-framework' ) .":</strong>";
+      $out .= "\n";
+      $out .= ( isset( $this->field['id'] ) ) ? "cs_get_option( '". $this->field['id'] ."' );" : '';
+      $out .= "\n";
+      $out .= "<strong>". __( 'ID', 'cs-framework' ) .":</strong>";
+      $out .= "\n";
+      $out .= ( isset( $this->field['id'] ) ) ? "". $this->field['id'] ."" : '';
+      $out .= "</pre>";
+
+    }
 
     return $out;
 
