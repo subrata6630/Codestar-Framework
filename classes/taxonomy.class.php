@@ -61,6 +61,7 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
         $this->addAction( 'created_'. $opt_taxonomy, 'save_taxonomy' );
         $this->addAction( 'edited_'. $opt_taxonomy, 'save_taxonomy' );
+        $this->addAction( 'delete_'. $opt_taxonomy, 'delete_taxonomy' );
 
       }
 
@@ -73,7 +74,7 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
     global $cs_errors;
 
-    $form_edit = ( is_a( $term, 'WP_Term' ) ) ? true : false;
+    $form_edit = ( is_object( $term ) && isset( $term->taxonomy ) ) ? true : false;
     $taxonomy  = ( $form_edit ) ? $term->taxonomy : $term;
     $classname = ( $form_edit ) ? 'edit' : 'add';
     $cs_errors = get_transient( 'cs-taxonomy-transient' );
@@ -111,6 +112,7 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
     if ( wp_verify_nonce( cs_get_var( 'cs-taxonomy-nonce' ), 'cs-taxonomy' ) ) {
 
+      $errors = array();
       $taxonomy = cs_get_var( 'taxonomy' );
 
       foreach ( $this->options as $request_value ) {
@@ -192,6 +194,29 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
       }
 
       set_transient( 'cs-taxonomy-transient', $errors, 10 );
+
+    }
+
+  }
+
+  // delete taxonomy
+  public function delete_taxonomy( $term_id ) {
+
+    $taxonomy = cs_get_var( 'taxonomy' );
+
+    if( ! empty( $taxonomy ) ) {
+
+      foreach ( $this->options as $request_value ) {
+
+        if( $taxonomy == $request_value['taxonomy'] ) {
+
+          $request_key = $request_value['id'];
+
+          delete_term_meta( $term_id, $request_key );
+
+        }
+
+      }
 
     }
 
