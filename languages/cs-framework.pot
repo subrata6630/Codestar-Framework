@@ -48,7 +48,7 @@ msgstr ""
 msgid "CONFIG"
 msgstr ""
 
-#: classes/options.class.php:131
+#: classes/options.class.php:131 classes/options.class.php:151
 msgid "USAGE"
 msgstr ""
 
@@ -56,7 +56,11 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
-#: classes/options.class.php:213
+#: classes/options.class.php:155
+msgid "ID"
+msgstr ""
+
+#: classes/options.class.php:227
 msgid "You are editing language: ( <strong>%s</strong> )"
 msgstr ""
 
@@ -73,12 +77,12 @@ msgstr ""
 msgid "Insert Shortcode"
 msgstr ""
 
-#: fields/background/background.php:33 fields/background/background.php:34
+#: fields/background/background.php:34 fields/background/background.php:35
 #: fields/upload/upload.php:23 fields/upload/upload.php:24
 msgid "Upload"
 msgstr ""
 
-#: fields/background/background.php:35 fields/upload/upload.php:25
+#: fields/background/background.php:36 fields/upload/upload.php:25
 msgid "Use Image"
 msgstr ""
 
