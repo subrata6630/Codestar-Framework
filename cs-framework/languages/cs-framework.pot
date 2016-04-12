@@ -77,12 +77,12 @@ msgstr ""
 msgid "Insert Shortcode"
 msgstr ""
 
-#: fields/background/background.php:33 fields/background/background.php:34
+#: fields/background/background.php:34 fields/background/background.php:35
 #: fields/upload/upload.php:23 fields/upload/upload.php:24
 msgid "Upload"
 msgstr ""
 
-#: fields/background/background.php:35 fields/upload/upload.php:25
+#: fields/background/background.php:36 fields/upload/upload.php:25
 msgid "Use Image"
 msgstr ""
 
