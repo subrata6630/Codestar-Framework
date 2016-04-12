@@ -243,7 +243,7 @@ class CSFramework extends CSFramework_Abstract {
 
     $request = apply_filters( 'cs_validate_save', $request );
 
-    do_action( 'cs_validate_save' );
+    do_action( 'cs_validate_save', $request );
 
     // set transient
     $transient_time = ( cs_language_defaults() !== false ) ? 30 : 10;
