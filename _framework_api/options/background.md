@@ -23,6 +23,7 @@ array(
     'repeat'     => '',
     'position'   => '',
     'attachment' => '',
+    'size'       => '',
     'color'      => '',
   ),
 ),
@@ -38,6 +39,7 @@ array(
     'repeat'     => 'repeat-x',
     'position'   => 'center center',
     'attachment' => 'fixed',
+    'size'       => 'cover',
     'color'      => '#ffbc00',
   ),
 ),
@@ -67,4 +69,5 @@ array(
 | `image`          | image       | default image value of field
 | `repeat`         | null        | default repeat value of field
 | `attachment`     | null        | default attachment value of field
+| `size`           | null        | default size value of field
 | `color`          | null        | default color value of field
