@@ -3,6 +3,7 @@
 ## PRE-RELEASE 1.0.2
 - Added: Fallback file for avoid missing core functions
 - Added: Debug light option for showing element id
+- Added: Background size option for background field
 - Improved: `cs_validate_save` action. Added $request param
 - Updated: Font Awesome 4.5.0 icons package
 
