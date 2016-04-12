@@ -22,6 +22,7 @@ class CSFramework_Option_background extends CSFramework_Options {
       'repeat'      => '',
       'position'    => '',
       'attachment'  => '',
+      'size'        => '',
       'color'       => '',
     );
 
@@ -89,6 +90,22 @@ class CSFramework_Option_background extends CSFramework_Options {
           'data-atts'     => 'attachment',
         ),
         'value'           => $this->value['attachment']
+    ) );
+    echo cs_add_element( array(
+        'pseudo'          => true,
+        'type'            => 'select',
+        'name'            => $this->element_name( '[size]' ),
+        'options'         => array(
+          ''              => 'size',
+          'cover'         => 'cover',
+          'contain'       => 'contain',
+          'inherit'       => 'inherit',
+          'initial'       => 'initial',
+        ),
+        'attributes'      => array(
+          'data-atts'     => 'size',
+        ),
+        'value'           => $this->value['size']
     ) );
     echo cs_add_element( array(
         'pseudo'          => true,
