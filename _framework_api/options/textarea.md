@@ -43,6 +43,8 @@ array(
 | `before`         | null        | extra text for field before area
 | `after`          | null        | extra text for field after area
 | `name`           | null        | name of field
+| `debug`          | null        | showing all config information
+| `debug_light`    | null        | showing some config information
 | `attirbutes`     | array       | attributes of field. supporting only html standard attributes [see an example](#how-to-use-attributes)
 | `sanitize`       | textarea    | sanitize of field. can be enabled or disabled
 | `validate`       | null        | validate of field. can be enabled or disabled

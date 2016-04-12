@@ -21,3 +21,5 @@ array(
 | `wrap_class`     | null        | extra class of field wrapper
 | `before`         | null        | extra text for field before area
 | `after`          | null        | extra text for field after area
+| `debug`          | null        | showing all config information
+| `debug_light`    | null        | showing some config information

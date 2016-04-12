@@ -65,6 +65,8 @@ You can create your own extenable fields. This example for a password field.
 | `default`        | null        | Default value for field when start framework
 | `help`           | null        | Help for option, it will show on tooltip
 | `name`           | null        | custom input name
+| `debug`          | null        | showing all config information
+| `debug_light`    | null        | showing some config information
 | `dependency`     | null        | extra element class name design element field.
 | `class`          | null        | extra element class name design element field.
 | `wrap_class`     | null        | extra element area class name.

@@ -56,6 +56,8 @@ if( ! empty( $gallery ) ) {
 | `before`         | null        | extra text for field before area
 | `after`          | null        | extra text for field after area
 | `name`           | null        | name of field
+| `debug`          | null        | showing all config information
+| `debug_light`    | null        | showing some config information
 | `sanitize`       | null        | sanitize of field. can be enabled or disabled
 | `validate`       | null        | validate of field. can be enabled or disabled
 | `multilang`      | false       | multilangual support of field
