@@ -112,6 +112,7 @@ class CSFramework_Taxonomy extends CSFramework_Abstract{
 
     if ( wp_verify_nonce( cs_get_var( 'cs-taxonomy-nonce' ), 'cs-taxonomy' ) ) {
 
+      $errors = array();
       $taxonomy = cs_get_var( 'taxonomy' );
 
       foreach ( $this->options as $request_value ) {
