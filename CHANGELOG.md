@@ -18,7 +18,6 @@
 - Changed: Menu type names in framework config file. for eg. from `add_menu_page` to `menu`
 - Improved: Theme Check plugin compatibility
 - Improved: Dependency script for multiple checkboxes values
-- Improved: `cs_validate_save` action. Added $request param
 
 ## 1.0.0
 - Initial Release
