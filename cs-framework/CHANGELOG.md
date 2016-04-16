@@ -1,5 +1,8 @@
 # Codestar Framework Changelog
 
+## PRE-RELEASE 1.0.2
+- Improved: Icons select field for avoid conflict
+
 ## 1.0.1
 - Added: Taxonomy options framework
 - Added: Taxonomy css styles and rtl support
