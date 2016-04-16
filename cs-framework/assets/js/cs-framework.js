@@ -750,7 +750,7 @@
 
                 e.preventDefault();
 
-                var icon = $(this).data('icon');
+                var icon = $(this).data('cs-icon');
 
                 $parent.find('i').removeAttr('class').addClass(icon);
                 $parent.find('input').val(icon).trigger('change');
@@ -769,7 +769,7 @@
 
                   var $ico = $(this);
 
-                  if ( $ico.data('icon').search( new RegExp( value, 'i' ) ) < 0 ) {
+                  if ( $ico.data('cs-icon').search( new RegExp( value, 'i' ) ) < 0 ) {
                     $ico.hide();
                   } else {
                     $ico.show();
