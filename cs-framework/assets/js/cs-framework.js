@@ -659,6 +659,58 @@
   // ======================================================
 
   // ======================================================
+  // CSFRAMEWORK SAVE TAXONOMY CLEAR FORM ELEMENTS
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_TAXONOMY = function() {
+    return this.each( function() {
+
+      var $this   = $(this),
+          $parent = $this.parent();
+
+      // Only works in add-tag form
+      if( $parent.attr('id') == 'addtag' ) {
+
+        var $submit  = $parent.find('#submit'),
+            $name    = $parent.find('#tag-name'),
+            $wrap    = $parent.find('.cs-framework'),
+            $clone   = $wrap.find('.cs-element').clone(),
+            $list    = $('#the-list'),
+            flooding = false;
+
+        $submit.on( 'click', function() {
+
+          if( !flooding ) {
+
+            $list.on( 'DOMNodeInserted', function() {
+
+              if( flooding ) {
+
+                $wrap.empty();
+                $wrap.html( $clone );
+                $clone = $clone.clone();
+
+                $wrap.CSFRAMEWORK_RELOAD_PLUGINS();
+                $wrap.CSFRAMEWORK_DEPENDENCY();
+
+                flooding = false;
+
+              }
+
+            });
+
+          }
+
+          flooding = true;
+
+        });
+
+      }
+
+    });
+  };
+  // ======================================================
+
+  // ======================================================
   // CSFRAMEWORK UI DIALOG OVERLAY HELPER
   // ------------------------------------------------------
   if( typeof $.widget !== 'undefined' && typeof $.ui !== 'undefined' && typeof $.ui.dialog !== 'undefined' ) {
@@ -1376,6 +1428,7 @@
     $('.cs-content, .wp-customizer, .widget-content, .cs-taxonomy').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
+    $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
     $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
