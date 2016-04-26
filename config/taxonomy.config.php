@@ -11,7 +11,7 @@ $options     = array();
 // -----------------------------------------
 $options[]   = array(
   'id'       => '_custom_taxonomy_options',
-  'taxonomy' => 'taxonomy_name', // category, post_tag or your custom taxonomy name
+  'taxonomy' => 'cpt-category', // category, post_tag or your custom taxonomy name
   'fields'   => array(
 
     array(
@@ -31,7 +31,7 @@ $options[]   = array(
 
 $options[]   = array(
   'id'       => '_custom_taxonomy_options',
-  'taxonomy' => 'another_taxonomy_name', // category, post_tag or your custom taxonomy name
+  'taxonomy' => 'cpt-tag', // category, post_tag or your custom taxonomy name
   'fields'   => array(
 
     array(
