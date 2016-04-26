@@ -1,6 +1,7 @@
 # Codestar Framework Changelog
 
 ## PRE-RELEASE 1.0.2
+- Added: Support for WP Nav Menus select
 - Added: Taxonomy framework clear form elements after saving
 - Updated: Chosen jquery plugin v1.5.1
 - Improved: Icons select field for avoid conflict
