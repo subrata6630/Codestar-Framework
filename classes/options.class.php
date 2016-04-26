@@ -290,6 +290,20 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
         }
 
       break;
+      
+      // Support WordPress Nav Menus
+      case 'menus':
+      case 'menu':
+
+        $menus = get_terms( 'nav_menu' );
+
+        if ( ! is_wp_error( $menus ) && ! empty( $menus ) ) {
+          foreach ( $menus as $menu ) {
+            $options[$menu->term_id] = $menu->name;
+          }
+        }
+
+      break;
 
       case 'custom':
       case 'callback':
