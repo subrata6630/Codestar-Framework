@@ -777,6 +777,14 @@ $options[]   = array(
         ),
 
         array(
+          'id'             => 'unique_select_10_1',
+          'type'           => 'select',
+          'title'          => 'Select with Menus',
+          'options'        => 'menus',
+          'default_option' => 'Select a menu'
+        ),
+
+        array(
           'id'         => 'unique_select_11',
           'type'       => 'select',
           'title'      => 'Select with Pages with Multi-Select',
