@@ -27,7 +27,14 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $depend .= ' data-'. $sub .'value="'. $field['dependency'][2] .'"';
     }
 
-    $output .= '<div class="cs-element cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
+    // Add $field_title as a class name. To take a advantage of no-title class and entered title class names to style it.
+    if( isset( $field['title'] ) ) {
+      $field_title = $field['title'];
+    } else {
+      $field_title = 'no-title';
+    }
+
+    $output .= '<div class="cs-element element-'. preg_replace('/[^a-z]/', "-", strtolower($field_title)) .' cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
 
     if( isset( $field['title'] ) ) {
       $field_desc = ( isset( $field['desc'] ) ) ? '<p class="cs-text-desc">'. $field['desc'] .'</p>' : '';
