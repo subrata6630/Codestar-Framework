@@ -6,6 +6,7 @@
 - Added: A filter for external icon-jsons load
 - Added: Auto Class name for all fields and generating classname by field title
 - Updated: Chosen jquery plugin v1.5.1
+- Updated: Google Fonts json for Typography field
 - Improved: Icons select field for avoid conflict
 
 ## 1.0.1
