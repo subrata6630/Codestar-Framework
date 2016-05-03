@@ -12,7 +12,7 @@ if( ! function_exists( 'cs_get_icons' ) ) {
 
     do_action( 'cs_add_icons_before' );
 
-    $jsons = glob( CS_DIR . '/fields/icon/*.json' );
+    $jsons = apply_filters( 'cs_add_icons_json', glob( CS_DIR . '/fields/icon/*.json' ) );
 
     if( ! empty( $jsons ) ) {
 
