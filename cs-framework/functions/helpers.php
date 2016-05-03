@@ -17,6 +17,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
     $languages  = cs_language_defaults();
     $class      = 'CSFramework_Option_' . $field['type'];
     $wrap_class = ( isset( $field['wrap_class'] ) ) ? ' ' . $field['wrap_class'] : '';
+    $el_class   = ( isset( $field['title'] ) ) ? sanitize_title( $field['title'] ) : 'no-title';
     $hidden     = ( isset( $field['show_only_language'] ) && ( $field['show_only_language'] != $languages['current'] ) ) ? ' hidden' : '';
     $is_pseudo  = ( isset( $field['pseudo'] ) ) ? ' cs-pseudo-field' : '';
 
@@ -27,7 +28,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $depend .= ' data-'. $sub .'value="'. $field['dependency'][2] .'"';
     }
 
-    $output .= '<div class="cs-element cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
+    $output .= '<div class="cs-element cs-element-'. $el_class .' cs-field-'. $field['type'] . $is_pseudo . $wrap_class . $hidden .'"'. $depend .'>';
 
     if( isset( $field['title'] ) ) {
       $field_desc = ( isset( $field['desc'] ) ) ? '<p class="cs-text-desc">'. $field['desc'] .'</p>' : '';
