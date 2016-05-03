@@ -21,6 +21,7 @@ class CSFramework_Option_group extends CSFramework_Options {
     $acc_title   = ( isset( $this->field['accordion_title'] ) ) ? $this->field['accordion_title'] : __( 'Adding', 'cs-framework' );
     $field_title = ( isset( $this->field['fields'][0]['title'] ) ) ? $this->field['fields'][0]['title'] : $this->field['fields'][1]['title'];
     $field_id    = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : $this->field['fields'][1]['id'];
+    $el_class    = ( isset( $this->field['title'] ) ) ? sanitize_title( $field_title ) : 'no-title';
     $search_id   = cs_array_search( $this->field['fields'], 'id', $acc_title );
 
     if( ! empty( $search_id ) ) {
@@ -30,7 +31,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     }
 
-    echo '<div class="cs-group hidden">';
+    echo '<div class="cs-group cs-group-'. $el_class .'-adding hidden">';
 
       echo '<h4 class="cs-group-title">'. $acc_title .'</h4>';
       echo '<div class="cs-group-content">';
@@ -40,7 +41,6 @@ class CSFramework_Option_group extends CSFramework_Options {
         $field_default  = ( isset( $field['default'] ) ) ? $field['default'] : '';
         echo cs_add_element( $field, $field_default, $unique );
       }
-      // Added Class of cs-remove => Specific Class for Group Remove Button
       echo '<div class="cs-element cs-text-right cs-remove"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', 'cs-framework' ) .'</a></div>';
       echo '</div>';
 
@@ -62,8 +62,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
           $field_title = ( ! empty( $search_id ) ) ? $acc_title : $field_title;
 
-          // Added Specific ID for each Group Accordion
-          echo '<div id="'. preg_replace('/[^a-z]/', "-", strtolower($title)) .'" class="cs-group">';
+          echo '<div class="cs-group cs-group-'. $el_class .'-'. ( $key + 1 ) .'">';
           echo '<h4 class="cs-group-title">'. $field_title .': '. $title .'</h4>';
           echo '<div class="cs-group-content">';
 
@@ -74,7 +73,6 @@ class CSFramework_Option_group extends CSFramework_Options {
             echo cs_add_element( $field, $value, $unique );
           }
 
-          // Added Class of cs-remove - Specific Class for Group Remove Button
           echo '<div class="cs-element cs-text-right cs-remove"><a href="#" class="button cs-warning-primary cs-remove-group">'. __( 'Remove', 'cs-framework' ) .'</a></div>';
           echo '</div>';
           echo '</div>';
