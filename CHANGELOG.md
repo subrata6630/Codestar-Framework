@@ -4,8 +4,9 @@
 - Added: Support for WP Nav Menus select
 - Added: Taxonomy framework clear form elements after saving
 - Added: A filter for external icon-jsons load
+- Added: An action `cs_customize_options_config` for customize config options
 - Added: Auto Class name for all fields and generating classname by field title
-- Changed: Action from `cs_validate_save` to 'cs_validate_save_after' for save after framework options
+- Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
 - Updated: Chosen jquery plugin v1.5.1
 - Updated: Google Fonts json for Typography field
 - Improved: Icons select field for avoid conflict
