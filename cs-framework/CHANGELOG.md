@@ -8,8 +8,10 @@
 - Added: Auto Class name for all fields and generating classname by field title
 - Added: Chinese language po/mo
 - Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
+- Fixed: Color picker appears twice in widgets
 - Updated: Chosen jquery plugin v1.5.1
 - Updated: Google Fonts json for Typography field
+- Updated: Font Awesome 4.6.3 icons package
 - Improved: Icons select field for avoid conflict
 
 ## 1.0.1
