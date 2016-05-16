@@ -668,7 +668,7 @@
           $parent = $this.parent();
 
       // Only works in add-tag form
-      if( $parent.attr('id') == 'addtag' ) {
+      if( $parent.attr('id') === 'addtag' ) {
 
         var $submit  = $parent.find('#submit'),
             $name    = $parent.find('#tag-name'),
@@ -1429,7 +1429,7 @@
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
     $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
-    $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
+    $('.cs-framework').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
     $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
