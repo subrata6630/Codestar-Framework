@@ -9,6 +9,7 @@
 - Added: Chinese language po/mo
 - Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
 - Fixed: Color picker appears twice in widgets
+- Fixed: Fieldset default value option
 - Updated: Chosen jquery plugin v1.5.1
 - Updated: Google Fonts json for Typography field
 - Updated: Font Awesome 4.6.3 icons package
