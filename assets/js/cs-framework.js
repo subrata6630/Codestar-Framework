@@ -1429,7 +1429,7 @@
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
     $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
-    $('.cs-framework, .wp-customizer').CSFRAMEWORK_RELOAD_PLUGINS();
+    $('.cs-framework, .wp-customizer, #widgets-right').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
     $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
