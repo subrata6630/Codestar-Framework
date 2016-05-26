@@ -1320,7 +1320,7 @@
                 $container.on('click', '.wp-picker-clear', function() {
 
                   a8cIris._color._alpha = 1;
-                  $alpha_text.text('');
+                  $alpha_text.text('').trigger('change');
                   $alpha_slider.slider('option', 'value', 100).trigger('slide');
 
                 });
