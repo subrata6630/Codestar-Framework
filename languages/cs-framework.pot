@@ -118,11 +118,11 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: fields/group/group.php:21
+#: fields/group/group.php:22
 msgid "Adding"
 msgstr ""
 
-#: fields/group/group.php:44 fields/group/group.php:76
+#: fields/group/group.php:45 fields/group/group.php:77
 msgid "Remove"
 msgstr ""
 
