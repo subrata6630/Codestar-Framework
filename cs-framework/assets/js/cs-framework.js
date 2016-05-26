@@ -996,8 +996,6 @@
             // main-shortcode attributes
             $('[' + ruleAttr + ']', '.cs-dialog-load .cs-element:not(.hidden)').each( function() {
               var _this_main = $(this), _this_main_atts = _this_main.data('atts');
-
-              console.log(_this_main_atts);
               send_to_shortcode += base.validate_atts( _this_main_atts, _this_main );  // validate empty atts
             });
 
@@ -1387,8 +1385,6 @@
   // ------------------------------------------------------
   $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
     $(document).on('widget-added widget-updated', function( event, $widget ) {
-      console.log(event);
-      console.log('here');
       $widget.CSFRAMEWORK_RELOAD_PLUGINS();
       $widget.CSFRAMEWORK_DEPENDENCY();
     });
