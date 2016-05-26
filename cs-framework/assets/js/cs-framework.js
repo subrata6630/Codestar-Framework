@@ -1387,6 +1387,8 @@
   // ------------------------------------------------------
   $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
     $(document).on('widget-added widget-updated', function( event, $widget ) {
+      console.log(event);
+      console.log('here');
       $widget.CSFRAMEWORK_RELOAD_PLUGINS();
       $widget.CSFRAMEWORK_DEPENDENCY();
     });
@@ -1429,7 +1431,7 @@
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
     $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
-    $('.cs-framework, .wp-customizer, #widgets-right').CSFRAMEWORK_RELOAD_PLUGINS();
+    $('.cs-framework, #widgets-right').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
     $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
