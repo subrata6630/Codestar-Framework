@@ -7,6 +7,7 @@
 - Added: An action `cs_customize_options_config` for customize config options
 - Added: Auto Class name for all fields and generating classname by field title
 - Added: Chinese language po/mo
+- Added: Post type list support
 - Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
 - Fixed: Color picker appears twice in widgets
 - Fixed: Clear button of color-picker in customizer
