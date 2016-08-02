@@ -303,7 +303,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
         }
 
       break;
-      
+
       case 'post_types':
       case 'post_type':
 

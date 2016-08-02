@@ -47,7 +47,7 @@
 
         } else {
 
-          $('#cs-tab-'+$target).fadeIn('fast').siblings().hide();
+          $('#cs-tab-'+$target).show().siblings().hide();
           $nav.find('a').removeClass('cs-section-active');
           $el.addClass('cs-section-active');
           $reset.val($target);

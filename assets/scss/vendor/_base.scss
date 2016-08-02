@@ -259,10 +259,6 @@
       @include box-shadow(none);
     }
   }
-
-  .cs-element:last-child{
-    border-bottom: 0 !important;
-  }
 }
 
 .cs-metabox-framework{
@@ -278,10 +274,9 @@
 .cs-element{
   position: relative;
   padding: 30px;
-  border-bottom: 1px solid #eee;
 
-  &:hover{
-    background-color: #f9f9f9;
+  + .cs-element{
+    border-top: 1px solid #eee;
   }
 
   p:last-child{
@@ -746,7 +741,10 @@
 .cs-field-notice{
   padding: 0 !important;
   border: 0 !important;
-  margin-top: -1px;
+
+  + .cs-element{
+    border-top: 0;
+  }
 
   .cs-notice{
     font-size: 12px;
