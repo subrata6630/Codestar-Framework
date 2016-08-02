@@ -7,11 +7,13 @@
 - Added: An action `cs_customize_options_config` for customize config options
 - Added: Auto Class name for all fields and generating classname by field title
 - Added: Chinese language po/mo
+- Added: Post type list support
+- Added: Typenow param for specific metabox options
 - Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
 - Fixed: Color picker appears twice in widgets
 - Fixed: Clear button of color-picker in customizer
 - Fixed: Fieldset default value option
-- Updated: Chosen jquery plugin v1.5.1
+- Updated: Chosen jquery plugin v1.6.1
 - Updated: Google Fonts json for Typography field
 - Updated: Font Awesome 4.6.3 icons package
 - Improved: Icons select field for avoid conflict
