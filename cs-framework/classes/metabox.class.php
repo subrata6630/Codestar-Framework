@@ -63,16 +63,15 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
     wp_nonce_field( 'cs-framework-metabox', 'cs-framework-metabox-nonce' );
 
-    $unique       = $callback['args']['id'];
-    $sections     = $callback['args']['sections'];
-    $meta_value   = get_post_meta( $post->ID, $unique, true );
-    $transient    = get_transient( 'cs-metabox-transient' );
-    $cs_errors    = $transient['errors'];
-    $has_nav      = ( count( $sections ) >= 2 && $callback['args']['context'] != 'side' ) ? true : false;
-    $show_all     = ( ! $has_nav ) ? ' cs-show-all' : '';
-    $section_name = ( ! empty( $sections[0]['fields'] ) ) ? $sections[0]['name'] : $sections[1]['name'];
-    $section_id   = ( ! empty( $transient['ids'][$unique] ) ) ? $transient['ids'][$unique] : $section_name;
-    $section_id   = cs_get_var( 'cs-section', $section_id );
+    $unique     = $callback['args']['id'];
+    $sections   = $callback['args']['sections'];
+    $meta_value = get_post_meta( $post->ID, $unique, true );
+    $transient  = get_transient( 'cs-metabox-transient' );
+    $cs_errors  = $transient['errors'];
+    $has_nav    = ( count( $sections ) >= 2 && $callback['args']['context'] != 'side' ) ? true : false;
+    $show_all   = ( ! $has_nav ) ? ' cs-show-all' : '';
+    $section_id = ( ! empty( $transient['ids'][$unique] ) ) ? $transient['ids'][$unique] : '';
+    $section_id = cs_get_var( 'cs-section', $section_id );
 
     echo '<div class="cs-framework cs-metabox-framework">';
 
@@ -85,6 +84,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
           echo '<div class="cs-nav">';
 
             echo '<ul>';
+            $num = 0;
             foreach( $sections as $value ) {
 
               if( ! empty( $value['typenow'] ) && $value['typenow'] !== $typenow ) { continue; }
@@ -92,12 +92,13 @@ class CSFramework_Metabox extends CSFramework_Abstract{
               $tab_icon = ( ! empty( $value['icon'] ) ) ? '<i class="cs-icon '. $value['icon'] .'"></i>' : '';
 
               if( isset( $value['fields'] ) ) {
-                $active_section = ( $section_id == $value['name'] ) ? ' class="cs-section-active"' : '';
+                $active_section = ( ( empty( $section_id ) && $num === 0 ) || $section_id == $value['name'] ) ? ' class="cs-section-active"' : '';
                 echo '<li><a href="#"'. $active_section .' data-section="'. $value['name'] .'">'. $tab_icon . $value['title'] .'</a></li>';
               } else {
                 echo '<li><div class="cs-seperator">'. $tab_icon . $value['title'] .'</div></li>';
               }
 
+              $num++;
             }
             echo '</ul>';
 
@@ -108,13 +109,14 @@ class CSFramework_Metabox extends CSFramework_Abstract{
         echo '<div class="cs-content">';
 
           echo '<div class="cs-sections">';
+          $num = 0;
           foreach( $sections as $v ) {
+
+            if( ! empty( $v['typenow'] ) && $v['typenow'] !== $typenow ) { continue; }
 
             if( isset( $v['fields'] ) ) {
 
-              if( ! empty( $v['typenow'] ) && $v['typenow'] !== $typenow ) { continue; }
-
-              $active_content = ( $section_id == $v['name'] ) ? ' style="display: block;"' : '';
+              $active_content = ( ( empty( $section_id ) && $num === 0 ) || $section_id == $v['name'] ) ? ' style="display: block;"' : '';
 
               echo '<div id="cs-tab-'. $v['name'] .'" class="cs-section"'. $active_content .'>';
               echo ( isset( $v['title'] ) ) ? '<div class="cs-section-title"><h3>'. $v['title'] .'</h3></div>' : '';
@@ -130,6 +132,8 @@ class CSFramework_Metabox extends CSFramework_Abstract{
               echo '</div>';
 
             }
+
+            $num++;
           }
           echo '</div>';
 
