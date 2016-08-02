@@ -59,7 +59,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
   // metabox render content
   public function render_meta_box_content( $post, $callback ) {
 
-    global $post, $cs_errors;
+    global $post, $cs_errors, $typenow;
 
     wp_nonce_field( 'cs-framework-metabox', 'cs-framework-metabox-nonce' );
 
@@ -87,6 +87,8 @@ class CSFramework_Metabox extends CSFramework_Abstract{
             echo '<ul>';
             foreach( $sections as $value ) {
 
+              if( ! empty( $value['typenow'] ) && $value['typenow'] !== $typenow ) { continue; }
+
               $tab_icon = ( ! empty( $value['icon'] ) ) ? '<i class="cs-icon '. $value['icon'] .'"></i>' : '';
 
               if( isset( $value['fields'] ) ) {
@@ -106,16 +108,18 @@ class CSFramework_Metabox extends CSFramework_Abstract{
         echo '<div class="cs-content">';
 
           echo '<div class="cs-sections">';
-          foreach( $sections as $val ) {
+          foreach( $sections as $v ) {
 
-            if( isset( $val['fields'] ) ) {
+            if( isset( $v['fields'] ) ) {
 
-              $active_content = ( $section_id == $val['name'] ) ? ' style="display: block;"' : '';
+              if( ! empty( $v['typenow'] ) && $v['typenow'] !== $typenow ) { continue; }
 
-              echo '<div id="cs-tab-'. $val['name'] .'" class="cs-section"'. $active_content .'>';
-              echo ( isset( $val['title'] ) ) ? '<div class="cs-section-title"><h3>'. $val['title'] .'</h3></div>' : '';
+              $active_content = ( $section_id == $v['name'] ) ? ' style="display: block;"' : '';
 
-              foreach ( $val['fields'] as $field_key => $field ) {
+              echo '<div id="cs-tab-'. $v['name'] .'" class="cs-section"'. $active_content .'>';
+              echo ( isset( $v['title'] ) ) ? '<div class="cs-section-title"><h3>'. $v['title'] .'</h3></div>' : '';
+
+              foreach ( $v['fields'] as $field_key => $field ) {
 
                 $default    = ( isset( $field['default'] ) ) ? $field['default'] : '';
                 $elem_id    = ( isset( $field['id'] ) ) ? $field['id'] : '';
