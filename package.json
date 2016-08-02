@@ -2,7 +2,7 @@
   "name": "codestar-framework",
   "title": "Codestar Framework",
   "description": "A Lightweight and easy-to-use WordPress Options Framework",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

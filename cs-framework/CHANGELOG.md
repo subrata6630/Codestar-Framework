@@ -12,7 +12,7 @@
 - Fixed: Color picker appears twice in widgets
 - Fixed: Clear button of color-picker in customizer
 - Fixed: Fieldset default value option
-- Updated: Chosen jquery plugin v1.5.1
+- Updated: Chosen jquery plugin v1.6.1
 - Updated: Google Fonts json for Typography field
 - Updated: Font Awesome 4.6.3 icons package
 - Improved: Icons select field for avoid conflict
