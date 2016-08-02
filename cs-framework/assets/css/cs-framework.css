@@ -744,9 +744,6 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.cs-framework .cs-element:last-child {
-  border-bottom: 0 !important;
-}
 
 .cs-metabox-framework {
   margin: -6px -12px -12px -12px;
@@ -758,10 +755,9 @@
 .cs-element {
   position: relative;
   padding: 30px;
-  border-bottom: 1px solid #eee;
 }
-.cs-element:hover {
-  background-color: #f9f9f9;
+.cs-element + .cs-element {
+  border-top: 1px solid #eee;
 }
 .cs-element p:last-child {
   margin-bottom: 0 !important;
@@ -1171,7 +1167,9 @@
 .cs-field-notice {
   padding: 0 !important;
   border: 0 !important;
-  margin-top: -1px;
+}
+.cs-field-notice + .cs-element {
+  border-top: 0;
 }
 .cs-field-notice .cs-notice {
   font-size: 12px;
