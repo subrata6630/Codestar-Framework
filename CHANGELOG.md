@@ -17,6 +17,7 @@
 - Updated: Google Fonts json for Typography field
 - Updated: Font Awesome 4.6.3 icons package
 - Improved: Icons select field for avoid conflict
+- Improved: Locate path function for windows servers
 
 ## 1.0.1
 - Added: Taxonomy options framework

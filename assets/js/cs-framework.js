@@ -333,7 +333,7 @@
         wp_media_frame.on( 'select', function() {
 
           var attachment = wp_media_frame.state().get('selection').first().attributes;
-          var thumbnail  = ( typeof attachment.sizes.thumbnail !== 'undefined' ) ? attachment.sizes.thumbnail.url : attachment.url;
+          var thumbnail = ( typeof attachment.sizes !== 'undefined' && typeof attachment.sizes.thumbnail !== 'undefined' ) ? attachment.sizes.thumbnail.url : attachment.url;
 
           $preview.removeClass('hidden');
           $img.attr('src', thumbnail);
