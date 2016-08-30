@@ -8,7 +8,7 @@ filename: options/notice.md
 ```php?start_inline=1
 array(
   'type'    => 'notice',
-  'class'   => 'Success',
+  'class'   => 'success',
   'content' => 'Success: Lorem Ipsum Dollar.',
 ),
 ```
