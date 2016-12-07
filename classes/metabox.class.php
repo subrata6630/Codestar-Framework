@@ -225,15 +225,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
           } else {
 
-            if( get_post_meta( $post_id, $request_key ) ) {
-
-              update_post_meta( $post_id, $request_key, $request );
-
-            } else {
-
-              add_post_meta( $post_id, $request_key, $request );
-
-            }
+            update_post_meta( $post_id, $request_key, $request );
 
           }
 
